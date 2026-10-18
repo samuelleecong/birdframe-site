@@ -29,7 +29,8 @@ async function openCache(enabled) {
 async function download(url, expectedBytes, onProgress) {
   const response = await fetch(url, { mode: 'cors', credentials: 'omit' });
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  const total = Number(response.headers.get('content-length')) || expectedBytes || 0;
+  // Content-Length is the compressed size when the server gzips the file, so prefer the known size.
+  const total = expectedBytes || Number(response.headers.get('content-length')) || 0;
   if (!response.body?.getReader) {
     const buffer = await response.arrayBuffer();
     onProgress({ loaded: buffer.byteLength, total: buffer.byteLength });
