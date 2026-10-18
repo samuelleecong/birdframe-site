@@ -1,0 +1,47 @@
+[
+ {
+  "key": "00",
+  "src": "samples/00.jpg",
+  "thumb": "samples/00-thumb.jpg",
+  "label": "Meadow",
+  "alt": "A green meadow with a small bird on a fallen log",
+  "width": 3072,
+  "height": 2048
+ },
+ {
+  "key": "02",
+  "src": "samples/02.jpg",
+  "thumb": "samples/02-thumb.jpg",
+  "label": "Dead tree",
+  "alt": "Two birds against a pale sky, one perched on a dead treetop and one flying above it",
+  "width": 3072,
+  "height": 2048
+ },
+ {
+  "key": "07",
+  "src": "samples/07.jpg",
+  "thumb": "samples/07-thumb.jpg",
+  "label": "Spruce",
+  "alt": "A small spruce with a bird on its tip and a second bird half-hidden in its branches",
+  "width": 3072,
+  "height": 2048
+ },
+ {
+  "key": "09",
+  "src": "samples/09.jpg",
+  "thumb": "samples/09-thumb.jpg",
+  "label": "Grey sky",
+  "alt": "A small bird flying across a grey sky",
+  "width": 3072,
+  "height": 2048
+ },
+ {
+  "key": "13",
+  "src": "samples/13.jpg",
+  "thumb": "samples/13-thumb.jpg",
+  "label": "Red finch",
+  "alt": "A red finch on top of a spruce against a dark sky",
+  "width": 3072,
+  "height": 2048
+ }
+]
