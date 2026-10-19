@@ -5,7 +5,8 @@
 //   GeometryHelpers.swift      createTilingCrops, validatedDetection, calculateCrop
 //                              and DetectionCoordinateMapping (2,048 px decode)
 //   ImageProcessor.swift       processTiling, makeCropResults
-//   DetectionMerge.swift       merge (confidence-first, source-aware NMS)
+//   DetectionMerge.swift       merge (tile-edge pieces out, complete boxes first,
+//                              confidence-ordered, source-aware NMS)
 //   ProcessingSettings.swift   Tight/Balanced/Wide = 2/3/5, 1:1, min crop 20 px
 //
 // Pure functions only (no DOM), so the parity tools can run this file as is.
@@ -289,6 +290,12 @@ const MERGE = Object.freeze({
   weakFullFragmentConfidenceGap: f32(0.25),
   clippedFragmentContainmentThreshold: 0.85,
   clippedFragmentSupportConfidence: f32(0.5),
+  // A box ending within 3% of the tile (along that axis) of an interior
+  // tile edge counts as cut by it.
+  tileEdgeTolerance: 0.03,
+  // Similar-sized complete boxes need this containment to be one bird.
+  comparableCompleteContainmentThreshold: 0.75,
+  comparableAreaRatio: 2,
   seamComparableDimensionRatio: 0.9,
   seamDuplicateContainmentThreshold: 0.25,
   seamDuplicateMaxCenterOffset: 0.65,
@@ -301,12 +308,13 @@ function tileRectFor(source, W, H) {
 }
 
 function clippedSides(box, tile, W, H) {
-  const tol = Math.max(2, Math.min(tile.w, tile.h) * 0.01);
+  const tolX = Math.max(2, tile.w * MERGE.tileEdgeTolerance);
+  const tolY = Math.max(2, tile.h * MERGE.tileEdgeTolerance);
   const sides = [];
-  if (tile.x > 0 && Math.abs(box.x - tile.x) <= tol) sides.push('minX');
-  if (maxX(tile) < W && Math.abs(maxX(box) - maxX(tile)) <= tol) sides.push('maxX');
-  if (tile.y > 0 && Math.abs(box.y - tile.y) <= tol) sides.push('minY');
-  if (maxY(tile) < H && Math.abs(maxY(box) - maxY(tile)) <= tol) sides.push('maxY');
+  if (tile.x > 0 && Math.abs(box.x - tile.x) <= tolX) sides.push('minX');
+  if (maxX(tile) < W && Math.abs(maxX(box) - maxX(tile)) <= tolX) sides.push('maxX');
+  if (tile.y > 0 && Math.abs(box.y - tile.y) <= tolY) sides.push('minY');
+  if (maxY(tile) < H && Math.abs(maxY(box) - maxY(tile)) <= tolY) sides.push('maxY');
   return sides;
 }
 
@@ -314,6 +322,12 @@ function isComplete(d, W, H) {
   const tile = tileRectFor(d.source, W, H);
   if (!tile) return true;
   return clippedSides(d.bbox, tile, W, H).length === 0;
+}
+
+/** DetectionMerge.isAnchor: a complete box able to support removing a piece. */
+function isAnchor(d, W, H) {
+  if (!(W > 0 && H > 0)) return false;
+  return d.confidence >= MERGE.clippedFragmentSupportConfidence && isComplete(d, W, H);
 }
 
 function supportExtends(support, candidate, side) {
@@ -383,11 +397,18 @@ function isComparableSeamDuplicate(a, b, W, H) {
   return isAdjacentToInternalSeam(a, W, H) !== isAdjacentToInternalSeam(b, W, H);
 }
 
+/** DetectionMerge.crossSourceContainmentThreshold. */
+function crossSourceContainmentThreshold(a, b, W, H) {
+  if (!(W > 0 && H > 0) || !isComplete(a, W, H) || !isComplete(b, W, H)) return MERGE.containmentThreshold;
+  const ratio = Math.max(area(a.bbox), area(b.bbox)) / Math.max(Math.min(area(a.bbox), area(b.bbox)), 1);
+  return ratio < MERGE.comparableAreaRatio ? MERGE.comparableCompleteContainmentThreshold : MERGE.containmentThreshold;
+}
+
 function isDuplicate(a, b, iouThreshold, W, H) {
   if (iou(a.bbox, b.bbox) >= iouThreshold) return true;
   if (a.source === b.source) return false;
   const c = containment(a.bbox, b.bbox);
-  if (c >= MERGE.containmentThreshold) return true;
+  if (c >= crossSourceContainmentThreshold(a, b, W, H)) return true;
   const stronger = a.confidence >= b.confidence ? a : b;
   const weaker = a.confidence >= b.confidence ? b : a;
   if (weaker.source === 'full'
@@ -409,7 +430,11 @@ export function mergeDetections(dets, W, H, iouThreshold = SETTINGS.iouThreshold
   if (dets.length === 0) return [];
   const withIds = dets.map((d, i) => (d.id == null ? { ...d, id: i } : d));
   const candidates = W > 0 && H > 0 ? removeSupportedClippedFragments(withIds, W, H) : withIds;
-  let remaining = [...candidates].sort(bestFirst);
+  // Complete boxes able to support a piece rank first, then bestFirst.
+  let remaining = candidates
+    .map((d) => ({ d, anchor: isAnchor(d, W, H) }))
+    .sort((a, b) => (a.anchor !== b.anchor ? (a.anchor ? -1 : 1) : bestFirst(a.d, b.d)))
+    .map((x) => x.d);
   const kept = [];
   while (remaining.length) {
     const best = remaining.shift();
