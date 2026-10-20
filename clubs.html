@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BirdFrame for clubs and user groups</title>
+<meta name="description" content="A member discount, a free licence for your raffle, and for nonprofits 30% of code sales back to the club. Everything a bird club, camera club or Mac user group needs to share BirdFrame.">
+<meta property="og:title" content="BirdFrame for clubs and user groups">
+<meta property="og:description" content="20% off for members, a free licence for your raffle, and 30% back to nonprofit clubs.">
+<meta property="og:image" content="assets/og.jpg">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+.blurb{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:14px}
+.blurb p{margin:0 0 10px}
+.blurb .row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:8px}
+.blurb h3{margin:0 0 8px;font-size:16px}
+.copybtn{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;padding:7px 12px;font:inherit;font-size:14px;cursor:pointer}
+.copybtn.ok{background:var(--spruce);color:var(--spruce-ink);border-color:var(--spruce)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="./"><img src="assets/icon-512.png" alt="">BirdFrame</a>
+    <div class="links"><a href="./">Home</a><a href="demo/">Try it</a>
+      <a class="btn" href="mailto:birdframe.app@gmail.com?subject=BirdFrame%20for%20our%20club">Get your club code</a></div>
+  </nav>
+
+  <header class="hero" style="grid-template-columns:1fr">
+    <div class="copy">
+      <h1>A small thank-you for your members</h1>
+      <p class="lede">BirdFrame is a Mac app that finds the birds in a whole album or folder and crops each one the way you like. Bird clubs, camera clubs and Mac user groups can offer it to members at a discount.</p>
+      <div class="ctas"><a class="btn" href="mailto:birdframe.app@gmail.com?subject=BirdFrame%20for%20our%20club">Get your club code</a><a class="btn ghost" href="demo/">Try it on a photo</a></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>What your club gets</h2>
+    <div class="terms">
+      <div class="step"><b>20% off for members</b><span>Your own named code for the Mac App Store: $23.99 instead of $29.99.</span></div>
+      <div class="step"><b>A free licence</b><span>For your raffle, a photo-contest prize, or the newsletter editor.</span></div>
+      <div class="step"><b>30% back to nonprofits</b><span>For nonprofit clubs, 30% of my proceeds from your code goes to the club, paid monthly.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ready to paste into your newsletter</h2>
+    <div class="blurb">
+      <h3>Short</h3>
+      <p id="b-short">Members save 20% on BirdFrame, a Mac app that finds the birds in a whole album or folder and crops each one the way you like. Free for up to 50 photos at a time. Use code [YOUR CODE] on the Mac App Store: https://getbirdframe.com</p>
+      <div class="row"><span class="fine">About 45 words</span><button class="copybtn" data-target="b-short">Copy</button></div>
+    </div>
+    <div class="blurb">
+      <h3>Longer</h3>
+      <p id="b-long">Come home with hundreds of photos and a bird in the corner of each one? BirdFrame, a Mac app made by a one-person studio, goes through a whole Apple Photos album or folder, finds the birds, even small, distant or half-hidden ones, and crops each in the framing you pick. Your originals stay untouched. It's free for up to 50 photos at a time, and members get 20% off the full version with code [YOUR CODE]. Try it on one of your own photos in your browser first: https://getbirdframe.com/demo/</p>
+      <div class="row"><span class="fine">About 90 words</span><button class="copybtn" data-target="b-long">Copy</button></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pictures and a short video</h2>
+    <div class="shots">
+      <img src="assets/02-batch.jpg" alt="A batch of photos with each bird found and cropped" loading="lazy">
+      <img src="assets/03-framing.jpg" alt="Choosing Tight, Balanced or Wide framing" loading="lazy">
+    </div>
+    <p class="fine" style="margin-top:10px">Use these freely in your newsletter or slides. <a href="assets/demo.mp4">Download the 35-second demo video</a> for a meeting.</p>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <p class="lede" style="margin-top:12px">Email <a href="mailto:birdframe.app@gmail.com?subject=BirdFrame%20for%20our%20club">birdframe.app@gmail.com</a> with your club's name. I reply personally with your code and a free licence, usually within a day. It's a Mac app, so it suits members who use a Mac.</p>
+  </section>
+
+  <footer>
+    <span>BirdFrame is made by Samuel Lee, a one-person studio.</span>
+    <span><a href="./">Home</a> · <a href="partners.html">Creators</a> · <a href="press.html">Press</a></span>
+  </footer>
+</div>
+<script>
+document.querySelectorAll(".copybtn").forEach(b => b.addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(document.getElementById(b.dataset.target).innerText);
+        b.textContent = 'Copied'; b.classList.add('ok'); setTimeout(() => { b.textContent = 'Copy'; b.classList.remove('ok'); }, 1500); } catch (e) {}
+}));
+</script>
+</body>
+</html>
