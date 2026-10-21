@@ -70,6 +70,7 @@ section.try{border-top:0;padding-top:0}
 .crops .meta span{color:var(--muted)}
 .crops a.btn{align-self:flex-start}
 #result-note{margin-top:14px}
+#result-note:empty{display:none}
 
 .cta{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;background:var(--night);color:var(--night-ink);border-radius:16px;padding:36px!important;margin-block:28px;border-top:0!important}
 .cta h2{color:var(--night-ink)}

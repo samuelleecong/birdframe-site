@@ -314,10 +314,9 @@ function showResult(seconds) {
     ? "BirdFrame didn't find a bird in this photo."
     : 'Pick a framing, then download the crops you like.');
   const tooSmall = birds.length - n;
-  els.note.textContent = [
-    tooSmall > 0 ? `${tooSmall === 1 ? 'One more bird was' : `${tooSmall} more birds were`} too small to crop.` : '',
-    'It can occasionally miss a bird.',
-  ].filter(Boolean).join(' ');
+  els.note.textContent = tooSmall > 0
+    ? `${tooSmall === 1 ? 'One more bird was' : `${tooSmall} more birds were`} too small to crop.`
+    : '';
   els.framing.hidden = n === 0;
   renderCrops();
   els.title.focus({ preventScroll: true });
