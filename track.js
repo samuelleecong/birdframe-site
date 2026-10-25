@@ -102,7 +102,7 @@
   window.bfStoreLink = storeLink;
   window.bfSend = send;
   document.addEventListener('click', e => {
-    const a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+    const a = e.target.closest && e.target.closest('a[href^="https://apps.apple.com"]');
     if (!a) return;
     a.href = storeLink(a.href.split('?')[0]);
     const target = a.dataset.cta || (a.closest('nav') ? 'nav' : a.closest('.hero') ? 'hero' : a.closest('#pricing') ? 'pricing' : 'other');
