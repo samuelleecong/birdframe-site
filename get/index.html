@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>BirdFrame on the Mac App Store</title>
+<link rel="stylesheet" href="../style.css">
+<script src="../track.js"></script>
+</head>
+<body>
+<div class="wrap" style="padding-block:80px">
+  <p class="lede">Opening the Mac App Store… <a id="go" href="https://apps.apple.com/app/birdframe/id6754513569">Continue</a></p>
+</div>
+<script>
+  (function () {
+    var href = window.bfStoreLink ? bfStoreLink('https://apps.apple.com/app/birdframe/id6754513569') : 'https://apps.apple.com/app/birdframe/id6754513569';
+    document.getElementById('go').href = href;
+    if (window.bfSend) bfSend('app_store_click', { target: 'get_page' });
+    setTimeout(function () { location.replace(href); }, 300);
+  })();
+</script>
+</body>
+</html>
