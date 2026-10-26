@@ -47,6 +47,7 @@ section{padding-block:64px;border-top:1px solid var(--line)}
 .plan{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:10px}
 .plan .amt{font-family:var(--display);font-size:42px}
 .plan.full{border-color:var(--spruce);border-width:2px}
+.deal{margin-top:16px;padding:12px 16px;border-radius:10px;background:var(--card);border:1px solid var(--mark);font-size:16px;max-width:40em}
 .faq{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px;margin-top:28px}
 .faq h3{font-size:19px;margin-bottom:6px}
 .faq p{color:var(--muted);font-size:16px}
