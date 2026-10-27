@@ -81,7 +81,8 @@ section.try{border-top:0;padding-top:0}
 .cta .btn:focus-visible{outline-color:var(--night-ink)}
 .cta-buy{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 
-.noscript{max-width:1120px;margin:0 auto 40px;padding:0 20px}
+.noscript-msg{margin:0;font-weight:500}
+.first-run{margin-top:12px}
 
 @media (max-width:900px){
   .result{grid-template-columns:1fr}

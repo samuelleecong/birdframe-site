@@ -3,7 +3,7 @@
 
 import { startDetector as startBackend, webgpuAvailable, wasmAvailable } from './detector.js';
 import { loadImage, makeDetectionCanvas, findBirds, makeCrops, renderCrop, passesSelfTest } from './pipeline.js';
-import { FRAMING } from './core.js';
+import { FRAMING, cropPixelRect } from './core.js';
 import { MODEL_FILES } from './config.js';
 
 const $ = (id) => document.getElementById(id);
@@ -17,6 +17,36 @@ const els = {
 const CROP_SOURCE_MAX_AREA = 16_000_000; // keep full resolution for crops up to 16 MP
 const DOWNLOAD_MAX_SIDE = 1000; // downloads are a taste; the Mac app saves full-size crops
 const mb = (bytes) => (bytes / 1e6).toFixed(bytes < 10e6 ? 1 : 0);
+
+// App Store links carry a campaign token so App Store Connect can say which channel an install came from:
+// ?ref=… if the link had one (newsletters, directories), otherwise the kind of site the visitor came from.
+// Nothing is stored and no cookie is set. Few, broad names, because Apple hides a campaign under 5 installs.
+const SOURCES = [
+  ['hn', /(^|\.)ycombinator\.com$/],
+  ['producthunt', /(^|\.)producthunt\.com$/],
+  ['reddit', /(^|\.)reddit\.com$/],
+  ['ai', /(^|\.)(chatgpt\.com|openai\.com|perplexity\.ai|claude\.ai|gemini\.google\.com|copilot\.microsoft\.com)$/],
+  ['search', /(^|\.)(google\.[a-z.]+|bing\.com|duckduckgo\.com|search\.yahoo\.com|ecosia\.org|search\.brave\.com|kagi\.com)$/],
+  ['social', /(^|\.)(facebook\.com|instagram\.com|threads\.net|t\.co|x\.com|twitter\.com|youtube\.com|bsky\.app|linkedin\.com|lnkd\.in|pinterest\.[a-z.]+)$/],
+  ['alternativeto', /(^|\.)alternativeto\.net$/],
+  ['macupdate', /(^|\.)macupdate\.com$/],
+  ['saashub', /(^|\.)saashub\.com$/],
+  ['uneed', /(^|\.)uneed\.best$/],
+  ['macrumors-forum', /(^|\.)macrumors\.com$/],
+];
+
+function campaign() {
+  const ref = new URLSearchParams(location.search).get('ref');
+  if (ref && /^[a-z0-9][a-z0-9-]{0,39}$/i.test(ref)) return ref.toLowerCase();
+  let host = '';
+  try { host = new URL(document.referrer).hostname.toLowerCase(); } catch { /* no referrer */ }
+  if (!host) return 'demo-direct';
+  if (host === location.hostname) return 'demo-site';
+  for (const [name, pattern] of SOURCES) if (pattern.test(host)) return name;
+  return 'demo-web';
+}
+
+const STORE_URL = `https://apps.apple.com/app/apple-store/id6754513569?pt=127908484&ct=${campaign()}&mt=8`;
 
 let detectorPromise = null;
 let detectorEp = null;
@@ -73,7 +103,7 @@ function retryButton(label, fn) {
 }
 
 function appStoreLink() {
-  return el('a', { class: 'btn small ghost', href: 'https://apps.apple.com/app/birdframe/id6754513569', text: 'BirdFrame for Mac' });
+  return el('a', { class: 'btn small ghost', href: STORE_URL, text: 'BirdFrame for Mac' });
 }
 
 function shrinkForDownload(canvas) {
@@ -102,6 +132,11 @@ async function startDetector(ep) {
       if (cached) {
         setStatus('Getting the bird finder ready…');
         setProgress(null);
+        return;
+      }
+      if (total && loaded >= total) {
+        setStatus('Starting the bird finder…');
+        setProgress(1);
         return;
       }
       setStatus(`Getting the bird finder ready: ${mb(loaded)} of ${mb(total || MODEL_FILES[0].bytes)} MB. It downloads once, then your browser keeps it.`);
@@ -141,6 +176,7 @@ function getDetector() {
 }
 
 function explainDetectorError(e, retry) {
+  setStatus('');
   if (e.stage === 'unsupported') {
     showProblem("This browser can't run the bird finder. Try the latest Safari, Chrome, Edge or Firefox, or a computer. BirdFrame for Mac works on any Mac with macOS 15 or later.", [appStoreLink()]);
   } else if (e.stage === 'runtime') {
@@ -240,7 +276,7 @@ async function handlePhoto(source, meta) {
   }
   if (controller.signal.aborted) return;
 
-  setStatus('Searching the whole photo…');
+  setStatus(detectorEp === 'wasm' ? 'Searching the whole photo. In this browser that can take up to 30 seconds…' : 'Searching the whole photo…');
   setProgress(0.02);
   const t0 = performance.now();
   let result;
@@ -314,12 +350,25 @@ function showResult(seconds) {
     ? "BirdFrame didn't find a bird in this photo."
     : 'Pick a framing, then download the crops you like.');
   const tooSmall = birds.length - n;
-  els.note.textContent = tooSmall > 0
+  photo.smallNote = tooSmall > 0
     ? `${tooSmall === 1 ? 'One more bird was' : `${tooSmall} more birds were`} too small to crop.`
     : '';
+  els.note.textContent = photo.smallNote;
   els.framing.hidden = n === 0;
   renderCrops();
   els.title.focus({ preventScroll: true });
+}
+
+// Downloads here stop at 1,000 px; say so, with the full size the Mac app would save.
+function sizeNote(crops, W, H) {
+  const full = crops.map((c) => cropPixelRect(c.cropRect, W, H));
+  const big = full.filter((r) => Math.max(r.w, r.h) > DOWNLOAD_MAX_SIDE);
+  if (!big.length) return '';
+  const top = big.reduce((a, b) => (a.w * a.h >= b.w * b.h ? a : b));
+  const size = `${Math.round(top.w).toLocaleString('en-US')} × ${Math.round(top.h).toLocaleString('en-US')} px`;
+  return crops.length === 1
+    ? `Downloads here are up to 1,000 px. BirdFrame for Mac saves this crop at its full ${size}.`
+    : `Downloads here are up to 1,000 px. BirdFrame for Mac saves these crops at full size, up to ${size}.`;
 }
 
 async function renderCrops() {
@@ -327,6 +376,7 @@ async function renderCrops() {
   const current = photo;
   const framing = currentFraming();
   const crops = makeCrops(current.birds, current.W, current.H, FRAMING[framing]);
+  els.note.textContent = [current.smallNote, sizeNote(crops, current.W, current.H)].filter(Boolean).join(' ');
   for (const u of cropUrls) URL.revokeObjectURL(u);
   cropUrls = [];
   const items = [];
@@ -375,6 +425,7 @@ function renderSamples() {
 }
 
 async function init() {
+  for (const a of document.querySelectorAll('a[href^="https://apps.apple.com/"]')) a.href = STORE_URL;
   els.choose.addEventListener('click', () => {
     els.file.click();
     // Start getting ready while the visitor picks a photo.

@@ -6,10 +6,22 @@ import { rgbaToTensor, selectBirdQueries, SETTINGS } from './core.js';
 
 const CACHE_NAME = 'birdframe-demo-v1';
 
-function tagged(stage, e) {
-  const err = e instanceof Error ? e : new Error(String(e));
-  err.stage = err.stage || stage;
-  return err;
+// The runtime asks for its WebAssembly binary only when the session is created, after the 40 MB model
+// has downloaded. Fetch it alongside the model instead and hand it over (env.wasm.wasmBinary), so it
+// isn't downloaded twice in browsers whose cache doesn't serve the runtime's own request (WebKit).
+const RUNTIME_FILES = {
+  webgpu: ['ort-wasm-simd-threaded.asyncify.mjs', 'ort-wasm-simd-threaded.asyncify.wasm'],
+  wasm: ['ort-wasm-simd-threaded.mjs', 'ort-wasm-simd-threaded.wasm'],
+};
+
+function fetchRuntime(ortBase, ep) {
+  const [glue, binary] = RUNTIME_FILES[ep] || [];
+  if (!binary) return Promise.resolve(null);
+  fetch(ortBase + glue, { mode: 'cors', credentials: 'same-origin' }).then((r) => r.arrayBuffer()).catch(() => {}); // 10–20 KB, warms the cache
+  return fetch(ortBase + binary, { mode: 'cors', credentials: 'omit' })
+    .then((r) => (r.ok ? r.arrayBuffer() : null))
+    .then((b) => (b && b.byteLength > 8 && String.fromCharCode(...new Uint8Array(b, 0, 4)) === '\0asm' ? b : null)) // else the runtime fetches it itself
+    .catch(() => null);
 }
 
 async function sha256Hex(buffer) {
@@ -117,7 +129,10 @@ export async function createEngine({ ep, candidates, ortBase, cache = true, sess
     throw tagged('runtime', e);
   }
 
+  const runtime = fetchRuntime(ortBase, ep);
   let bytes = await loadModelBytes(candidates, cache, onProgress);
+  const wasmBinary = await runtime;
+  if (wasmBinary) ort.env.wasm.wasmBinary = wasmBinary;
   let session;
   try {
     session = await ort.InferenceSession.create(new Uint8Array(bytes.buffer), {

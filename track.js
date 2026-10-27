@@ -3,7 +3,7 @@
 (() => {
   const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPtbFPqPdkhFrhk3cLJ2hblnX10RbqNf0tjJgeY8KeFnsjl_jLo36XIA6HU0cNGjmwdA/exec'; // Apps Script web app (analytics/website/waitlist.gs)
   const PIXEL_ID = '1664656798359783'; // Meta dataset "BirdFrame website" in the BirdFrame business portfolio
-  const PT = ''; // App Store Connect provider token; enables campaign links (pt/ct) when set
+  const PT = '127908484'; // App Store Connect provider token (from the campaign links made in ASC, 26 Oct); enables campaign links (pt/ct)
 
   const ses = {
     get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
