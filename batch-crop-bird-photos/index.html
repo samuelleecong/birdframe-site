@@ -3,71 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to batch crop bird photos on a Mac (full resolution) | BirdFrame</title>
-<meta name="description" content="Crop hundreds or thousands of bird photos in one go on your Mac, from Apple Photos or a folder of JPEG, HEIC or RAW files, without cropping by hand and without losing resolution.">
+<title>How to batch crop photos on a Mac, each around its bird</title>
+<meta name="description" content="The usual Mac batch croppers apply one box to every photo. Here&#x27;s how to crop hundreds of bird photos in one go, each around its bird, at full resolution.">
 <link rel="canonical" href="https://getbirdframe.com/batch-crop-bird-photos/">
-<meta property="og:title" content="Batch crop bird photos on a Mac, at full resolution">
-<meta property="og:description" content="No cropping by hand: every bird in an album or folder, cropped in one go from the full-size original.">
+<meta property="og:title" content="How to batch crop bird photos on a Mac">
+<meta property="og:description" content="The usual Mac batch croppers apply one box to every photo. Here&#x27;s how to crop hundreds of bird photos in one go, each around its bird, at full resolution.">
 <meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
 <meta property="og:url" content="https://getbirdframe.com/batch-crop-bird-photos/">
+<meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="../style.css">
-<style>.article{max-width:42em}.article h2{margin:40px 0 12px}.article p,.article li{color:var(--muted)}.article p+p{margin-top:14px}.article ol{padding-left:22px}.article li+li{margin-top:8px}.article img{border-radius:10px;border:1px solid var(--line);margin:24px 0}</style>
+<link rel="stylesheet" href="../guides/guide.css">
 <script src="../track.js" defer></script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HowTo","name":"Batch crop bird photos on a Mac",
- "tool":[{"@type":"HowToTool","name":"BirdFrame for Mac (macOS 15 or later)"}],
- "step":[{"@type":"HowToStep","text":"Open BirdFrame and choose an Apple Photos album or a folder of JPEG, HEIC or RAW photos."},
-         {"@type":"HowToStep","text":"Pick a framing: Tight, Balanced or Wide."},
-         {"@type":"HowToStep","text":"Run it. Every bird it finds is cropped from the full-size original."},
-         {"@type":"HowToStep","text":"Review the crops and keep the ones you like. Photos edits are reversible; folder exports never touch the originals."}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getbirdframe.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to batch crop bird photos on a Mac", "item": "https://getbirdframe.com/batch-crop-bird-photos/"}]}, {"@type": "Article", "headline": "How to batch crop bird photos on a Mac", "description": "The usual Mac batch croppers apply one box to every photo. Here's how to crop hundreds of bird photos in one go, each around its bird, at full resolution.", "url": "https://getbirdframe.com/batch-crop-bird-photos/", "datePublished": "2026-10-25", "dateModified": "2026-10-27", "author": {"@type": "Person", "name": "Samuel Lee", "url": "https://www.linkedin.com/in/samuel-lee-cong/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png", "sameAs": ["https://apps.apple.com/app/birdframe/id6754513569", "https://www.youtube.com/@birdframeapp", "https://www.instagram.com/birdframe.app/"]}, "image": "https://getbirdframe.com/assets/og.jpg", "about": {"@type": "SoftwareApplication", "name": "BirdFrame", "operatingSystem": "macOS 15 or later", "applicationCategory": "PhotographyApplication", "url": "https://apps.apple.com/app/birdframe/id6754513569", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can Lightroom or Apple Photos batch crop around each bird?", "acceptedAnswer": {"@type": "Answer", "text": "No. Lightroom can sync one crop to many photos, but that applies the same box to every photo, and the bird is somewhere different in each frame. Apple Photos can't copy a crop at all. BirdFrame finds the bird in each photo and crops around it."}}, {"@type": "Question", "name": "Does BirdFrame change my original photos?", "acceptedAnswer": {"@type": "Answer", "text": "No. In Apple Photos the crops are reversible edits, so Revert to Original brings the full photo back. From a folder, BirdFrame saves new JPEGs and never changes the source files."}}, {"@type": "Question", "name": "Does it work with RAW files?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. From a folder it reads Canon CR2 and CR3, Nikon NEF, Sony ARW, Fujifilm RAF, OM System and Olympus ORF, Panasonic RW2 and DNG. A RAW+JPEG pair counts as one photo, and crops are saved as JPEGs."}}, {"@type": "Question", "name": "What if there are two birds in one photo?", "acceptedAnswer": {"@type": "Answer", "text": "Export Crops, after an album or folder run, saves a separate JPEG of each bird. Crop & Apply in Apple Photos gives each photo one crop that frames all its birds, because a Photos edit can hold only one crop."}}]}, {"@type": "HowTo", "name": "Batch crop bird photos on a Mac", "step": [{"@type": "HowToStep", "text": "Open BirdFrame and choose an Apple Photos album or a folder of JPEG, HEIC or RAW photos."}, {"@type": "HowToStep", "text": "Pick a framing (Tight, Balanced or Wide) and a shape (square, 4:3, 3:2 or 16:9)."}, {"@type": "HowToStep", "text": "Run it. Every bird it finds is cropped from the full-size original."}, {"@type": "HowToStep", "text": "Review the crops. In Photos they are reversible edits; choose Export Crops to save a separate JPEG of each bird."}]}]}</script>
 </head>
 <body>
 <div class="wrap">
   <nav>
-    <a class="brand" href="../"><img src="../assets/icon-512.png" alt="">BirdFrame</a>
-    <div class="links"><a class="btn" href="https://apps.apple.com/app/birdframe/id6754513569">Get it on the Mac App Store</a></div>
+    <a class="brand" href="../"><img src="../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links"><a href="../guides/">Guides</a><a class="btn" href="https://apps.apple.com/app/birdframe/id6754513569">Get it on the Mac App Store</a></div>
   </nav>
 
   <main class="article">
+    <p class="crumb"><a href="../guides/">Guides</a> · Updated 27 October 2026</p>
     <h1>How to batch crop bird photos on a Mac</h1>
-    <p class="lede" style="margin-top:18px">A day out with a long lens can leave you with a thousand frames where the bird is a small shape in the middle of a lot of branches. Cropping them one at a time takes hours. Here is how to crop the whole set in one go, without losing resolution.</p>
 
-    <h2>Why cropping in bulk is usually hard</h2>
-    <p>Most batch tools crop every photo the same way: the same box, the same place. That works for product shots, but not for birds, because the bird is somewhere different in every frame. So people end up opening each photo, dragging a crop box around the bird, and moving on to the next one. Some workflows also export a smaller copy, which throws away the detail you paid for in a long lens.</p>
+    <p class="lede">A day out with a long lens can leave you with a thousand frames where the bird is a small shape among a lot of branches. Cropping them one at a time takes hours. Here is how to crop the whole set in one go, without losing resolution.</p>
+
+    <div class="tldr"><p><b>Short answer:</b> the usual batch tools on a Mac (Automator, Shortcuts, <code>sips</code>, Lightroom Sync) apply the same crop box to every photo, which doesn't work for birds because the bird moves. BirdFrame, a Mac app, finds the bird in each photo and crops around it, Tight, Balanced or Wide, for a whole album or folder in one run. Every crop is cut from the full-size original. It's free for up to 50 photos per run.</p></div>
+
+    <h2>The usual ways to batch crop on a Mac</h2>
+    <p>macOS and the common photo apps have a few ways to crop many photos at once. They all apply one box to every photo:</p>
+    <div class="scroll"><table>
+      <tr><th>Tool</th><th>What it does</th><th>Good for</th></tr>
+      <tr><td>Automator, <i>Crop Images</i> action</td><td>"This action trims supported images to the specified dimensions. All crop areas are automatically centered on the image" (Apple's description of the action).</td><td>Scans, screenshots, product shots</td></tr>
+      <tr><td>Shortcuts, <i>Crop Image</i> action</td><td>Crops every image to one width and height at a fixed position: the centre, a corner, or custom X/Y.</td><td>Repeating one crop on many files</td></tr>
+      <tr><td><code>sips</code> in Terminal</td><td>Crops every file to one size, centred or at a fixed offset (<code>--cropToHeightWidth</code>, <code>--cropOffset</code>).</td><td>Scripts, identical framing</td></tr>
+      <tr><td>Preview</td><td>Crops the image you have open. Each photo needs its own selection.</td><td>A handful of photos</td></tr>
+      <tr><td>Apple Photos</td><td>Crops one photo at a time. Copy Edits doesn't include the crop (<a href="../crop-multiple-photos-apple-photos/">more on Photos</a>).</td><td>A handful of photos</td></tr>
+      <tr><td>Lightroom Classic</td><td>Sync or Auto Sync copies one crop to the selected photos.</td><td>Sequences where the subject doesn't move</td></tr>
+    </table></div>
+    <p>A fixed box is fine when the subject sits in the same place in every frame. Birds don't: one frame has the bird on the left branch, the next has it in flight on the right. A centred or synced crop cuts the bird off or misses it. So people end up opening each photo and dragging a crop box around the bird, one at a time. Some workflows also export a smaller copy first, which throws away the detail you carried a long lens for.</p>
 
     <h2>Crop every bird in one run with BirdFrame</h2>
     <p>BirdFrame is a Mac app made for this one job. It finds the bird in each photo, including small, distant and half-hidden birds, and crops around it.</p>
+    <figure><img src="../guides/img/treetop-found.jpg" width="1600" height="795" alt="Two birds in a spruce, one half-hidden in the branches, found and cropped by BirdFrame" loading="lazy">
+      <figcaption>Two birds, one half-hidden in the branches, found and cropped. Each crop is cut from the 20-megapixel original (shown smaller here).</figcaption></figure>
     <ol>
-      <li><b>Choose your photos.</b> An Apple Photos album, or a folder of JPEG, HEIC or RAW files (CR2, CR3, NEF, ARW, ORF, RAF, RW2 and DNG). A RAW+JPEG pair counts as one photo.</li>
-      <li><b>Pick a framing.</b> Tight, Balanced or Wide, square or rectangular.</li>
-      <li><b>Run it.</b> Each bird gets its own crop, so a photo with two birds gives you two crops.</li>
-      <li><b>Review and keep.</b> In Photos the crops are reversible edits. From a folder you get new files and the originals are never changed.</li>
+      <li><b>Choose your photos.</b> An Apple Photos album, or a folder of JPEG, HEIC or RAW files (CR2, CR3, NEF, ARW, ORF, RAF, RW2 and DNG). Subfolders are included, and a RAW+JPEG pair counts as one photo.</li>
+      <li><b>Pick a framing and a shape.</b> Tight (the bird fills about half the frame), Balanced (about a third) or Wide (about a fifth); square, 4:3, 3:2 or 16:9. The preview shows the result before anything is changed.</li>
+      <li><b>Run it.</b> For an album, Crop &amp; Apply saves reversible edits in Photos. For a folder, Crop Photos prepares the results. Either way, Export Crops saves a separate JPEG of each bird.</li>
+      <li><b>Review and keep.</b> Open any result to check it. Changed your mind about the framing? Run it again: in Photos the new crop is taken from the original, not from the cropped copy.</li>
     </ol>
-    <img src="../assets/02-batch.jpg" alt="A batch of bird photos in BirdFrame, each bird found and cropped" loading="lazy">
+    <img src="../assets/02-batch.jpg" width="1600" height="1000" alt="A batch of bird photos in BirdFrame, each bird found and cropped" loading="lazy" style="border-radius:10px;border:1px solid var(--line);margin:24px 0">
 
     <h2>Full resolution, nothing generated</h2>
-    <p>Crops are cut from the full-size original. Nothing is downscaled, upscaled or filled in, so every pixel in the crop is one your camera recorded. Everything runs on your Mac and no photos are uploaded.</p>
+    <p>Crops are cut from the full-size original. Nothing is downscaled, upscaled or filled in, so every pixel in the crop is one your camera recorded. Exported crops are saved as high-quality JPEGs and keep the photo's capture date, camera and lens details and, unless you turn it off to protect a nest site, its location. Everything runs on your Mac and no photos are uploaded.</p>
+
+    <h2>Ready for eBird and iNaturalist</h2>
+    <p>When you choose Export Crops, tick <b>For iNaturalist</b> to get a tight crop of every bird, with file names that start with the capture date and the date and location kept in each file. For eBird checklists, a Balanced crop leaves the "canvas" eBird asks for. See <a href="../crop-photos-for-inaturalist/">cropping for iNaturalist</a> and <a href="../crop-bird-photos-for-ebird/">cropping for eBird</a>.</p>
 
     <h2>How long does it take?</h2>
-    <p>In one real run, 17 photos from a single outing gave 20 bird crops in 16 seconds on an M4 Mac. The smallest bird was 0.03% of the frame. Larger batches simply run longer; you can leave it going and come back to the results.</p>
+    <p>In one real run, 17 photos from a single outing gave 20 bird crops in 16 seconds on an M4 Mac. The smallest bird was 0.03% of the frame. Larger batches simply run longer; you can leave it going and come back to the results. Apple silicon Macs are fastest.</p>
 
     <h2>What it costs</h2>
-    <p>BirdFrame is free for up to 50 photos per run, with every feature included. To crop bigger batches in one go, it's a one-time $29.99. No subscription. It needs macOS 15 or later; Apple silicon is fastest.</p>
+    <p>BirdFrame is free for up to 50 photos per run, as many runs as you like, with every feature included. To crop bigger batches in one go, it's a one-time $29.99. No subscription. It needs macOS 15 or later.</p>
 
-    <div class="ctas" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
-      <a class="btn" href="https://apps.apple.com/app/birdframe/id6754513569">Download free on the Mac App Store</a>
-      <a class="btn ghost" href="../demo/">Try it on one photo in your browser</a>
+    <h2>Questions</h2>
+    <h3>Can Lightroom or Apple Photos batch crop around each bird?</h3>
+    <p>No. Lightroom can sync one crop to many photos, but that applies the same box to every photo, and the bird is somewhere different in each frame. Apple Photos can't copy a crop at all. BirdFrame finds the bird in each photo and crops around it.</p>
+    <h3>Does BirdFrame change my original photos?</h3>
+    <p>No. In Apple Photos the crops are reversible edits, so Revert to Original brings the full photo back. From a folder, BirdFrame saves new JPEGs and never changes the source files.</p>
+    <h3>Does it work with RAW files?</h3>
+    <p>Yes. From a folder it reads Canon CR2 and CR3, Nikon NEF, Sony ARW, Fujifilm RAF, OM System and Olympus ORF, Panasonic RW2 and DNG. A RAW+JPEG pair counts as one photo, and crops are saved as JPEGs.</p>
+    <h3>What if there are two birds in one photo?</h3>
+    <p>Export Crops, after an album or folder run, saves a separate JPEG of each bird. Crop &amp; Apply in Apple Photos gives each photo one crop that frames all its birds, because a Photos edit can hold only one crop.</p>
+
+    <div class="cta-box">
+      <p><b>Crop every bird in one go, at full resolution.</b> BirdFrame finds the birds in a whole album or folder and crops each one from the full-size original. Free for up to 50 photos per run.</p>
+      <div class="ctas"><a class="btn" href="https://apps.apple.com/app/birdframe/id6754513569">Download free on the Mac App Store</a><a class="btn ghost" href="../demo/">Try it on a photo</a></div>
     </div>
+    <aside class="related"><h2>Related guides</h2><ul><li><a href="../how-to-crop-bird-photos/">How to crop bird photos</a></li><li><a href="../crop-bird-photos-for-ebird/">How to crop bird photos for eBird</a></li><li><a href="../crop-photos-for-inaturalist/">Crop bird photos before you upload them to iNaturalist</a></li></ul></aside>
   </main>
 
   <footer>
     <span>Made by Samuel Lee, a one-person studio. Questions: <a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
-    <span><a href="../">Home</a> · <a href="../press.html">Press</a> · <a href="https://samuelleecong.github.io/bird-detect-privacy/">Privacy</a></span>
+    <span><a href="../">Home</a> · <a href="../guides/">Guides</a> · <a href="../press.html">Press</a> · <a href="https://samuelleecong.github.io/bird-detect-privacy/">Privacy</a></span>
   </footer>
 </div>
 </body>

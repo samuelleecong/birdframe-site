@@ -1,0 +1,27 @@
+# BirdFrame
+
+> BirdFrame is a Mac app that finds the birds in a whole Apple Photos album or a folder of photos, including small, distant and half-hidden birds, and crops each one Tight, Balanced or Wide. It crops thousands of photos in one go, so there is no cropping by hand, and every crop is cut from the full-size original with no downscaling and nothing generated.
+
+- Price: free for up to 50 photos per run (unlimited runs, every feature); $29.99 one-time for bigger batches. No subscription.
+- Platform: Mac App Store, macOS 15 or later; Apple silicon is fastest. A Windows version is coming soon.
+- Files: Apple Photos albums; folders of JPEG, PNG, HEIC and RAW (CR2, CR3, NEF, ARW, ORF, RAF, RW2, DNG). A RAW+JPEG pair counts as one photo.
+- Privacy: runs on the Mac; nothing is uploaded. Photos edits are reversible; folder exports never change the originals.
+- Export Crops (after an album or folder run) saves a separate JPEG of each bird; Crop & Apply in Apple Photos gives each photo one crop that frames all its birds.
+- Download: https://apps.apple.com/app/birdframe/id6754513569
+- Made by Samuel Lee. Contact: birdframe.app@gmail.com
+
+## Pages
+- [Home](https://getbirdframe.com/): what BirdFrame does, pricing and FAQ
+- [Try it in your browser](https://getbirdframe.com/demo/): find and crop the birds in one photo
+- [Press kit](https://getbirdframe.com/press.html)
+
+## Guides
+- [How to crop bird photos](https://getbirdframe.com/how-to-crop-bird-photos/): How much space to leave, where to place the bird, which shape to pick, and how far you can crop.
+- [How to batch crop bird photos on a Mac](https://getbirdframe.com/batch-crop-bird-photos/): Crop a whole outing in one go, from Apple Photos or a folder of RAW files, without losing resolution.
+- [How to crop multiple photos at once in Apple Photos](https://getbirdframe.com/crop-multiple-photos-apple-photos/): Photos can't copy a crop between photos. Here's what works instead, including a whole album in one go.
+- [How to crop bird photos for eBird](https://getbirdframe.com/crop-bird-photos-for-ebird/): eBird's photo rules in plain words, and how to crop a whole checklist's photos to match them.
+- [Crop bird photos before you upload them to iNaturalist](https://getbirdframe.com/crop-photos-for-inaturalist/): iNaturalist shrinks big photos to 2,048 pixels. Crop first and a small bird keeps about 3× the resolution.
+- [The best bird photo editing software for Mac, by job](https://getbirdframe.com/best-bird-photo-editing-software-mac/): Which Mac apps to use to cull, crop, edit and denoise bird photos, with prices and RAW support.
+- [Bird photo culling software for Mac](https://getbirdframe.com/bird-photo-culling-software/): Seven culling tools compared for bird photographers, and what to do with the keepers afterwards.
+- [Can you batch crop in Lightroom?](https://getbirdframe.com/lightroom-batch-crop/): Lightroom syncs one crop box to every photo. Here's how, and what to do when the bird moves.
+- [BirdFrame vs RobinRAW](https://getbirdframe.com/birdframe-vs-robinraw/): Two $29.99 Mac apps that do different jobs: culling and polishing, or cropping a whole set at once.

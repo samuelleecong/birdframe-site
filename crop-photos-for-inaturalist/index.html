@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crop bird photos before uploading to iNaturalist (and why)</title>
+<meta name="description" content="iNaturalist stores photos at up to 2,048 pixels, so a small bird in an uncropped frame loses most of its detail. Crop first, from the original. Here&#x27;s how.">
+<link rel="canonical" href="https://getbirdframe.com/crop-photos-for-inaturalist/">
+<meta property="og:title" content="Crop bird photos before you upload them to iNaturalist">
+<meta property="og:description" content="iNaturalist stores photos at up to 2,048 pixels, so a small bird in an uncropped frame loses most of its detail. Crop first, from the original. Here&#x27;s how.">
+<meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
+<meta property="og:url" content="https://getbirdframe.com/crop-photos-for-inaturalist/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guides/guide.css">
+<script src="../track.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getbirdframe.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Crop bird photos before you upload them to iNaturalist", "item": "https://getbirdframe.com/crop-photos-for-inaturalist/"}]}, {"@type": "Article", "headline": "Crop bird photos before you upload them to iNaturalist", "description": "iNaturalist stores photos at up to 2,048 pixels, so a small bird in an uncropped frame loses most of its detail. Crop first, from the original. Here's how.", "url": "https://getbirdframe.com/crop-photos-for-inaturalist/", "datePublished": "2026-10-27", "dateModified": "2026-10-27", "author": {"@type": "Person", "name": "Samuel Lee", "url": "https://www.linkedin.com/in/samuel-lee-cong/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png", "sameAs": ["https://apps.apple.com/app/birdframe/id6754513569", "https://www.youtube.com/@birdframeapp", "https://www.instagram.com/birdframe.app/"]}, "image": "https://getbirdframe.com/assets/og.jpg", "about": {"@type": "SoftwareApplication", "name": "BirdFrame", "operatingSystem": "macOS 15 or later", "applicationCategory": "PhotographyApplication", "url": "https://apps.apple.com/app/birdframe/id6754513569", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Should I crop photos before uploading to iNaturalist?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for small or distant subjects. iNaturalist stores photos at up to 2,048 pixels on the long side, so cropping first from the full-size original keeps far more detail of the bird. Add one wider photo too if the habitat helps the identification."}}, {"@type": "Question", "name": "What size are iNaturalist photos?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 2,048 × 2,048 pixels; larger uploads are resized to fit. In nearly 2,000 photos we downloaded at iNaturalist's 'original' size, none was larger than 2,048 pixels."}}, {"@type": "Question", "name": "How many photos can an iNaturalist observation have?", "acceptedAnswer": {"@type": "Answer", "text": "iNaturalist's uploader takes up to 20 photos per observation, a limit iNaturalist explained on its forum in 2020."}}, {"@type": "Question", "name": "Does BirdFrame work for insects or plants?", "acceptedAnswer": {"@type": "Answer", "text": "No. BirdFrame finds birds. For other subjects, crop by hand or with a general photo editor."}}]}]}</script>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../"><img src="../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links"><a href="../guides/">Guides</a><a class="btn" href="https://apps.apple.com/app/birdframe/id6754513569">Get it on the Mac App Store</a></div>
+  </nav>
+
+  <main class="article">
+    <p class="crumb"><a href="../guides/">Guides</a> · Updated 27 October 2026</p>
+    <h1>Crop bird photos before you upload them to iNaturalist</h1>
+
+    <p class="lede">Identifiers on iNaturalist look at thousands of photos. When the bird is a small shape in a big frame, they have to zoom in, and often there isn't enough detail left to zoom into. A crop before you upload fixes that.</p>
+
+    <div class="tldr"><p><b>Short answer:</b> iNaturalist stores photos at up to 2,048 pixels on the long side. Upload an uncropped 24-megapixel photo and it's shrunk to about a third of its width, along with the bird. Crop the bird from the full-size original first and it keeps about three times the resolution, and more on higher-resolution cameras. Add one wider shot if the habitat matters.</p></div>
+
+    <h2>Why cropping first keeps more detail</h2>
+    <p>iNaturalist keeps every photo at no more than 2,048 × 2,048 pixels and resizes larger uploads to fit (it's set in <a href="https://github.com/inaturalist/inaturalist/blob/main/app/models/local_photo.rb">iNaturalist's source code</a>). We checked: of nearly 2,000 public-domain photos downloaded at iNaturalist's largest ("original") size, none was wider or taller than 2,048 pixels, and about 1,700 were exactly 2,048. So whatever you upload, that's the most iNaturalist keeps.</p>
+    <p>Here's what that means for a typical distant bird in a 24-megapixel photo (6,000 × 4,000 pixels), where the bird is 300 pixels long:</p>
+    <div class="scroll"><table>
+      <tr><th>What you upload</th><th>What iNaturalist keeps</th><th>The bird's length</th></tr>
+      <tr><td>The whole photo, 6,000 × 4,000</td><td>2,048 × 1,365</td><td>about 100 px</td></tr>
+      <tr><td>A Balanced crop, 900 × 900</td><td>900 × 900 (no resize)</td><td>300 px</td></tr>
+      <tr><td>A Tight crop, 600 × 600</td><td>600 × 600 (no resize)</td><td>300 px, filling half the frame</td></tr>
+    </table></div>
+    <p>Same photo, three times the detail on the bird, just from cropping before the upload. It only works if you crop the full-size original. Cropping a downsized copy, or iNaturalist's own copy, can't bring the detail back.</p>
+    <p><b>A real example.</b> The photo below is a 20-megapixel original (5,472 × 3,648) with a small bird 255 pixels tall. Uploaded whole, iNaturalist would keep it at 2,048 × 1,365, and the bird would be 95 pixels tall. Cropped first (Balanced, 765 × 765), it's small enough that iNaturalist keeps it as it is, and the bird stays 255 pixels tall: about 2.7 times the detail.</p>
+    <figure><img src="../guides/img/meadow-found.jpg" width="1600" height="633" alt="A small bird on a log in a meadow, shown in the full photo and as a crop" loading="lazy">
+      <figcaption>Uncropped, an identifier has to find the bird first. Cropped from the original, it's the first thing they see, at full detail.</figcaption></figure>
+
+    <h2>What identifiers ask for</h2>
+    <p>iNaturalist's own blog (<a href="https://www.inaturalist.org/blog/134313">"Smartphone Photography for iNaturalist"</a>, August 2026) puts it simply: the automatic species suggestions look at one photo, the first one by default, so make the first photo a clear close-up of the organism and add context shots after it. The long-running forum thread <a href="https://forum.inaturalist.org/t/a-plea-to-crop-your-photos/35251">"A plea to crop your photos!"</a> makes the same request on behalf of human identifiers. Cropping is never required, but for small birds it makes an observation much easier to identify.</p>
+    <ul>
+      <li><b>First photo:</b> a tight crop of the bird, sharp and well lit.</li>
+      <li><b>Extra photos:</b> other angles, the underwing, a flight shot, or a wider frame showing habitat. iNaturalist's uploader takes up to 20 photos per observation (a limit iNaturalist explained on its forum in 2020).</li>
+      <li><b>Files:</b> JPG, PNG or GIF, each under 20 MB.</li>
+      <li><b>Edit honestly.</b> iNaturalist accepts cropping, but not AI upscaling, generative fill or background replacement (<a href="https://help.inaturalist.org/en/support/solutions/articles/151000220431">iNaturalist help</a>). A crop from the original keeps only pixels your camera recorded.</li>
+      <li><b>One bird per observation.</b> If two species are in one frame, crop each and make two observations.</li>
+    </ul>
+
+    <h2>Crop a whole trip for iNaturalist in one go</h2>
+    <p>BirdFrame is a Mac app with an export made for this:</p>
+    <ol>
+      <li><b>Choose a folder</b> (or an Apple Photos album) with your photos. JPEG, HEIC and RAW files from Canon, Nikon, Sony, Fujifilm, OM System, Panasonic and DNG work (a few newer RAW variants, such as Nikon High Efficiency RAW, are skipped).</li>
+      <li><b>Run it.</b> BirdFrame finds the bird in every photo, including small, distant and half-hidden ones. A photo with two birds gives two crops.</li>
+      <li><b>Export Crops and tick <i>For iNaturalist</i>.</b> You get a tight crop of every bird, cut from the full-size original. File names start with the capture date (for example <code>2026-05-14_IMG_1234_bird_001.jpg</code>), and each file keeps its date, camera details and location.</li>
+      <li><b>Drag the files into iNaturalist's uploader</b>, which reads the date and place from each photo.</li>
+    </ol>
+    <div class="note"><b>Protecting a nest?</b> Turn off <i>Include location in exported crops</i> in BirdFrame's settings before exporting, and the files won't carry GPS coordinates. You can still set an obscured location in iNaturalist.</div>
+    <p>BirdFrame finds birds only, so it won't help with insects or plants. It's free for up to 50 photos per run, and a one-time $29.99 unlocks bigger batches.</p>
+
+    <h2>Questions</h2>
+    <h3>Should I crop photos before uploading to iNaturalist?</h3>
+    <p>Yes, for small or distant subjects. iNaturalist stores photos at up to 2,048 pixels on the long side, so cropping first from the full-size original keeps far more detail of the bird. Add one wider photo too if the habitat helps the identification.</p>
+    <h3>What size are iNaturalist photos?</h3>
+    <p>Up to 2,048 × 2,048 pixels; larger uploads are resized to fit. In nearly 2,000 photos we downloaded at iNaturalist's "original" size, none was larger than 2,048 pixels.</p>
+    <h3>How many photos can an iNaturalist observation have?</h3>
+    <p>iNaturalist's uploader takes up to 20 photos per observation, a limit iNaturalist explained on its forum in 2020.</p>
+    <h3>Does BirdFrame work for insects or plants?</h3>
+    <p>No. BirdFrame finds birds. For other subjects, crop by hand or with a general photo editor.</p>
+
+    <div class="cta-box">
+      <p><b>Crop every bird in one go, at full resolution.</b> BirdFrame finds the birds in a whole album or folder and crops each one from the full-size original. Free for up to 50 photos per run.</p>
+      <div class="ctas"><a class="btn" href="https://apps.apple.com/app/birdframe/id6754513569">Download free on the Mac App Store</a><a class="btn ghost" href="../demo/">Try it on a photo</a></div>
+    </div>
+    <aside class="related"><h2>Related guides</h2><ul><li><a href="../crop-bird-photos-for-ebird/">How to crop bird photos for eBird</a></li><li><a href="../how-to-crop-bird-photos/">How to crop bird photos</a></li><li><a href="../batch-crop-bird-photos/">How to batch crop bird photos on a Mac</a></li></ul></aside>
+  </main>
+
+  <footer>
+    <span>Made by Samuel Lee, a one-person studio. Questions: <a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
+    <span><a href="../">Home</a> · <a href="../guides/">Guides</a> · <a href="../press.html">Press</a> · <a href="https://samuelleecong.github.io/bird-detect-privacy/">Privacy</a></span>
+  </footer>
+</div>
+</body>
+</html>

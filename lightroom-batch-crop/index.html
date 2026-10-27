@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can you batch crop in Lightroom? Yes, but not around a bird</title>
+<meta name="description" content="Lightroom Classic can sync one crop to many photos, but it copies the same box, so a moving bird gets cut off. How it works, and how to crop each bird instead.">
+<link rel="canonical" href="https://getbirdframe.com/lightroom-batch-crop/">
+<meta property="og:title" content="Can you batch crop in Lightroom?">
+<meta property="og:description" content="Lightroom Classic can sync one crop to many photos, but it copies the same box, so a moving bird gets cut off. How it works, and how to crop each bird instead.">
+<meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
+<meta property="og:url" content="https://getbirdframe.com/lightroom-batch-crop/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guides/guide.css">
+<script src="../track.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getbirdframe.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Can you batch crop in Lightroom?", "item": "https://getbirdframe.com/lightroom-batch-crop/"}]}, {"@type": "Article", "headline": "Can you batch crop in Lightroom?", "description": "Lightroom Classic can sync one crop to many photos, but it copies the same box, so a moving bird gets cut off. How it works, and how to crop each bird instead.", "url": "https://getbirdframe.com/lightroom-batch-crop/", "datePublished": "2026-10-27", "dateModified": "2026-10-27", "author": {"@type": "Person", "name": "Samuel Lee", "url": "https://www.linkedin.com/in/samuel-lee-cong/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png", "sameAs": ["https://apps.apple.com/app/birdframe/id6754513569", "https://www.youtube.com/@birdframeapp", "https://www.instagram.com/birdframe.app/"]}, "image": "https://getbirdframe.com/assets/og.jpg", "about": {"@type": "SoftwareApplication", "name": "BirdFrame", "operatingSystem": "macOS 15 or later", "applicationCategory": "PhotographyApplication", "url": "https://apps.apple.com/app/birdframe/id6754513569", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can Lightroom batch crop photos?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. In Lightroom Classic you can crop one photo, then sync or paste that crop to other selected photos. It copies the crop's position, size, shape and angle, so every photo gets the same box."}}, {"@type": "Question", "name": "Can Lightroom crop each photo around the subject automatically?", "acceptedAnswer": {"@type": "Answer", "text": "No. Lightroom has no subject-aware batch crop. An Adobe Community idea asking for AI-recommended crops has been open for voting since September 2021."}}, {"@type": "Question", "name": "How do I crop each bird in a batch of RAW files?", "acceptedAnswer": {"@type": "Answer", "text": "Use a tool that finds the bird in each photo. BirdFrame reads CR2, CR3, NEF, ARW, ORF, RAF, RW2 and DNG from a folder and saves a JPEG crop of every bird, cut from the full-size RAW, without changing the originals."}}]}]}</script>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../"><img src="../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links"><a href="../guides/">Guides</a><a class="btn" href="https://apps.apple.com/app/birdframe/id6754513569">Get it on the Mac App Store</a></div>
+  </nav>
+
+  <main class="article">
+    <p class="crumb"><a href="../guides/">Guides</a> · Updated 27 October 2026</p>
+    <h1>Can you batch crop in Lightroom?</h1>
+
+    <p class="lede">Lightroom is where many bird photographers do everything else, so it's the first place people look for a batch crop. It has one, but it's built for photos where the subject stays put.</p>
+
+    <div class="tldr"><p><b>Short answer:</b> yes, Lightroom Classic can crop many photos at once by syncing or pasting one crop to all of them. But it copies the same box (position, size, shape and angle) to every photo, so when the bird moves between frames the crop misses it. To crop each bird separately in a batch, use a tool that finds the bird in every frame, such as BirdFrame, and keep editing in Lightroom.</p></div>
+
+    <h2>How to batch crop in Lightroom Classic</h2>
+    <ol>
+      <li>In the Develop module, crop one photo the way you want.</li>
+      <li>Select that photo first, then the other photos you want cropped the same way.</li>
+      <li>Click <b>Sync</b>, tick <b>Crop</b> (you can also sync just the aspect ratio or the angle), and click Synchronize. Or turn on <b>Auto Sync</b> to apply every change to the whole selection as you make it.</li>
+    </ol>
+    <p>You can also copy a crop with Copy and Paste Settings. Either way, the crop is non-destructive, so you can reset it later.</p>
+
+    <h2>Why it misses birds</h2>
+    <p>Synced crops are relative to the frame, not to the subject. That's perfect for a tripod sequence or a set of product shots. In a burst of a warbler moving through a bush, or a tern turning in the sky, the bird is somewhere different in every frame. A synced crop that fits frame 1 cuts the bird off in frame 4 and misses it entirely in frame 9, so you end up fixing each one by hand.</p>
+    <p>As of October 2026, Adobe hasn't added a subject-aware batch crop. An Adobe Community idea, <a href="https://community.adobe.com/t5/lightroom-classic-ideas/p-ai-use-ai-to-recommend-composition-and-crop-images/idc-p/15496199">"Use AI to recommend composition and crop images"</a>, has been open for voting since September 2021. Lightroom's newer Assisted Culling picks photos on subject and eye focus, but it doesn't crop them.</p>
+
+    <h2>Crop each bird in a batch, then keep using Lightroom</h2>
+    <p>BirdFrame is a Mac app that finds the bird in every photo and crops each one, in one go. It reads RAW files directly, so it fits next to a Lightroom Classic catalogue without importing anything:</p>
+    <ol>
+      <li><b>Point BirdFrame at the folder</b> where your RAW files (or exported JPEGs) are. CR2, CR3, NEF, ARW, ORF, RAF, RW2 and DNG are supported, and a RAW+JPEG pair counts as one photo.</li>
+      <li><b>Pick Tight, Balanced or Wide</b> and a shape (1:1, 4:3, 3:2 or 16:9). BirdFrame finds the birds, including small and half-hidden ones, and each bird gets its own crop.</li>
+      <li><b>Export Crops</b> to a new folder. The crops are JPEGs cut from the full-size original, with no downscaling and nothing generated, and they keep the capture date, camera, lens and location. Your RAW files and catalogue are untouched.</li>
+      <li><b>Add the new folder to your Lightroom catalogue</b> if you want the JPEGs there too, or use them straight away for eBird, iNaturalist, a club slideshow or social posts.</li>
+    </ol>
+    <div class="note"><b>Edit first or crop first?</b> BirdFrame's crops are JPEGs. If you want your Lightroom edits in them, export your edited keepers from Lightroom as full-size JPEGs, then crop that folder with BirdFrame. If you want to keep editing the RAW, use BirdFrame's crops for sharing and leave the RAW in Lightroom.</div>
+    <figure><img src="../guides/img/treetop-found.jpg" width="1600" height="795" alt="Two birds in a spruce, one half-hidden, found and cropped" loading="lazy">
+      <figcaption>The birds are somewhere different in every frame, so the crop has to follow them.</figcaption></figure>
+    <p>BirdFrame is free for up to 50 photos per run, and a one-time $29.99 unlocks bigger batches. No subscription. It needs macOS 15 or later.</p>
+
+    <h2>Questions</h2>
+    <h3>Can Lightroom batch crop photos?</h3>
+    <p>Yes. In Lightroom Classic you can crop one photo, then sync or paste that crop to other selected photos. It copies the crop's position, size, shape and angle, so every photo gets the same box.</p>
+    <h3>Can Lightroom crop each photo around the subject automatically?</h3>
+    <p>No. Lightroom has no subject-aware batch crop. An Adobe Community idea asking for AI-recommended crops has been open for voting since September 2021.</p>
+    <h3>How do I crop each bird in a batch of RAW files?</h3>
+    <p>Use a tool that finds the bird in each photo. BirdFrame reads CR2, CR3, NEF, ARW, ORF, RAF, RW2 and DNG from a folder and saves a JPEG crop of every bird, cut from the full-size RAW, without changing the originals.</p>
+
+    <div class="cta-box">
+      <p><b>Crop every bird in one go, at full resolution.</b> BirdFrame finds the birds in a whole album or folder and crops each one from the full-size original. Free for up to 50 photos per run.</p>
+      <div class="ctas"><a class="btn" href="https://apps.apple.com/app/birdframe/id6754513569">Download free on the Mac App Store</a><a class="btn ghost" href="../demo/">Try it on a photo</a></div>
+    </div>
+    <aside class="related"><h2>Related guides</h2><ul><li><a href="../batch-crop-bird-photos/">How to batch crop bird photos on a Mac</a></li><li><a href="../crop-multiple-photos-apple-photos/">How to crop multiple photos at once in Apple Photos</a></li><li><a href="../bird-photo-culling-software/">Bird photo culling software for Mac</a></li></ul></aside>
+  </main>
+
+  <footer>
+    <span>Made by Samuel Lee, a one-person studio. Questions: <a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
+    <span><a href="../">Home</a> · <a href="../guides/">Guides</a> · <a href="../press.html">Press</a> · <a href="https://samuelleecong.github.io/bird-detect-privacy/">Privacy</a></span>
+  </footer>
+</div>
+</body>
+</html>
