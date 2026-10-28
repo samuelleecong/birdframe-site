@@ -104,7 +104,8 @@
   document.addEventListener('click', e => {
     const a = e.target.closest && e.target.closest('a[href^="https://apps.apple.com"]');
     if (!a) return;
-    a.href = storeLink(a.href.split('?')[0]);
+    // A link that names its own campaign (e.g. ct=ja-site on /ja/) keeps it; other links get one from this visit.
+    if (!/[?&]ct=/.test(a.href)) a.href = storeLink(a.href.split('?')[0]);
     const target = a.dataset.cta || (a.closest('nav') ? 'nav' : a.closest('.hero') ? 'hero' : a.closest('#pricing') ? 'pricing' : 'other');
     send('app_store_click', { target });
     pixel('trackCustom', 'AppStoreClick', { placement: target });
@@ -112,10 +113,16 @@
 
   // Waitlist: any element with data-waitlist="windows" or "mac_link" opens the dialog;
   // a form with data-waitlist-form="…" signs up inline.
-  const COPY = {
+  const JA = document.documentElement.lang === 'ja'; // the Japanese page (/ja/) gets Japanese dialog text
+  const COPY = JA ? {
+    windows: { h: 'Windows 版は準備中です', p: 'メールアドレスを登録すると、公開したときにお知らせします。お送りするのはその1通だけです。', b: '登録する', done: '登録しました。公開したらメールでお知らせします。' },
+    mac_link: { h: 'Mac 用のリンクを受け取る', p: 'Mac で開けるダウンロードリンクをメールでお送りします。', b: 'リンクを送る', done: '送信しました。Mac でメールを確認してください。' },
+  } : {
     windows: { h: 'BirdFrame for Windows is coming soon', p: 'Leave your email and we\'ll tell you when it\'s out. One email, nothing else.', b: 'Notify me', done: 'You\'re on the list. We\'ll email you when it\'s out.' },
     mac_link: { h: 'Get the link on your Mac', p: 'We\'ll email you the download link to open on your Mac.', b: 'Email me the link', done: 'Sent. Check your inbox on your Mac.' },
   };
+  const ERR = JA ? { email: 'メールアドレスを確認してください。', other: '送信できませんでした。birdframe.app@gmail.com までメールでご連絡ください。' }
+    : { email: 'That email doesn\'t look right.', other: 'Something went wrong. Please email birdframe.app@gmail.com instead.' };
   function formHTML(list) {
     const c = COPY[list];
     return '<input type="email" name="email" required autocomplete="email" placeholder="you@example.com" aria-label="Email">' +
@@ -138,7 +145,7 @@
         })
         .catch(err => {
           btn.disabled = false;
-          msg.textContent = err.message === 'email' ? 'That email doesn\'t look right.' : 'Something went wrong. Please email birdframe.app@gmail.com instead.';
+          msg.textContent = err.message === 'email' ? ERR.email : ERR.other;
         });
     });
   }

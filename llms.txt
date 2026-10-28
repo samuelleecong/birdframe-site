@@ -12,6 +12,7 @@
 
 ## Pages
 - [Home](https://getbirdframe.com/): what BirdFrame does, pricing and FAQ
+- [日本語 (Japanese)](https://getbirdframe.com/ja/): what BirdFrame does, pricing and FAQ, in Japanese
 - [Try it in your browser](https://getbirdframe.com/demo/): find and crop the birds in one photo
 - [Press kit](https://getbirdframe.com/press.html)
 
