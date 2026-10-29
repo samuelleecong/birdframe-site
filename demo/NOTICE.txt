@@ -1,7 +1,7 @@
 BirdFrame web demo: third-party notices
 =======================================
 
-The demo page, its styles and scripts are (c) 2026 Samuel Lee. It runs
+The demo page, its styles and scripts are (c) 2026 BirdFrame. It runs
 entirely in your browser and loads the following third-party works.
 
 
@@ -50,7 +50,7 @@ SOFTWARE.
 
 
 4. Sample photos
-   All sample photos are by Samuel Lee, the developer of BirdFrame.
+   All sample photos are by the developer of BirdFrame.
 
 
 Apache License 2.0 (applies to item 2)
