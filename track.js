@@ -22,6 +22,13 @@
   if (ref === location.host) ref = '';
   const tagged = {};
   UTM.forEach(k => { if (q.get(k)) tagged[k] = q.get(k).slice(0, 100); });
+  // Outreach links carry ?ref=<segment>-<nnn> (clubs, press, tours…). Count it as the source, as the demo's campaign()
+  // does, so site events and App Store campaign links (ct) show which pitch a visit came from. Explicit UTMs win.
+  const refTok = q.get('ref') || '';
+  if (!tagged.utm_source && /^[a-z0-9][a-z0-9-]{0,39}$/i.test(refTok)) {
+    tagged.utm_source = refTok.toLowerCase();
+    if (!tagged.utm_medium) tagged.utm_medium = 'ref';
+  }
   if (Object.keys(tagged).length) ses.set('bf_touch', JSON.stringify(tagged));
   else if (ref && !ses.get('bf_touch')) ses.set('bf_touch', JSON.stringify({ utm_source: ref, utm_medium: 'referral' }));
   if (q.get('fbclid')) ses.set('bf_fb', '1');
