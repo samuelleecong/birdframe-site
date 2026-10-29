@@ -344,6 +344,8 @@ function showResult(seconds) {
   const numbers = birds.map((_, i) => (croppedIdx.has(i) ? [...croppedIdx].filter((k) => k <= i).length : null));
   drawBoxes(birds, false, numbers);
 
+  els.caption.replaceChildren(...sizeLine(birds, W, H));
+
   const n = crops.length;
   els.title.textContent = n === 0 ? 'No birds found' : n === 1 ? 'Found 1 bird' : `Found ${n} birds`;
   setStatus(n === 0
@@ -357,6 +359,18 @@ function showResult(seconds) {
   els.framing.hidden = n === 0;
   renderCrops();
   els.title.focus({ preventScroll: true });
+}
+
+// How much of the photo the main (largest) bird fills, beside the typical bird photo from the
+// 1,995-photo study at /how-small-is-the-bird/ (main bird median 6.6%).
+function sizeLine(birds, W, H) {
+  if (!birds.length) return [];
+  const area = (b) => b.bbox.w * b.bbox.h;
+  const main = birds.reduce((a, b) => (area(b) > area(a) ? b : a));
+  const pct = (100 * area(main)) / (W * H);
+  const shown = pct < 1 ? pct.toFixed(2) : pct.toFixed(1);
+  return [`The main bird fills ${shown}% of this photo; in the typical bird photo it's 6.6%. `,
+    el('a', { href: '../how-small-is-the-bird/', text: 'How small is the bird?' })];
 }
 
 // Downloads here stop at 1,000 px; say so, with the full size the Mac app would save.

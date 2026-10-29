@@ -15,6 +15,7 @@
 - [日本語 (Japanese)](https://getbirdframe.com/ja/): what BirdFrame does, pricing and FAQ, in Japanese
 - [Try it in your browser](https://getbirdframe.com/demo/): find and crop the birds in one photo
 - [Press kit](https://getbirdframe.com/press.html)
+- [How small is the bird? (data)](https://getbirdframe.com/how-small-is-the-bird/): 4,511 birds measured in 1,995 public-domain bird photos; in the typical photo the bird fills 6.6% of the frame. Charts and a free CSV (CC0).
 
 ## Guides
 - [How to crop bird photos](https://getbirdframe.com/how-to-crop-bird-photos/): How much space to leave, where to place the bird, which shape to pick, and how far you can crop.
