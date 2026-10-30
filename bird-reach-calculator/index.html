@@ -164,7 +164,7 @@
     <h3>Why crop from the full-size original?</h3>
     <p>Every pixel on the bird counts. If a photo is shrunk before you crop it, the bird shrinks with it: a 24-megapixel photo resized to 2,048 pixels wide keeps about 12% of its pixels, so a bird 1,000 pixels long ends up about 340 pixels long. Crop from the original first, then resize the crop if you need to.</p>
 
-    <details class="embed-box">
+    <details class="embed-box" id="embed">
       <summary>Add this calculator to your site</summary>
       <p class="fine">Free for any page: paste this where you want the calculator, and keep the link under it.</p>
       <textarea id="embedCode" readonly rows="5" aria-label="Code to embed the calculator">&lt;iframe src="https://getbirdframe.com/bird-reach-calculator/?embed=1&amp;amp;ref=embed" title="Bird photography reach calculator" width="100%" height="1960" style="border:0;max-width:720px" loading="lazy" allow="clipboard-write"&gt;&lt;/iframe&gt;
@@ -507,6 +507,7 @@
 
   const embedCode = document.getElementById('embedCode');
   const embedCopied = document.getElementById('embedCopied');
+  if (location.hash === '#embed') document.getElementById('embed').open = true; // follow-up notes link straight to the embed code
   const copyEmbed = document.getElementById('copyEmbed');
   if (copyEmbed) copyEmbed.addEventListener('click', () => {
     const done = () => { embedCopied.textContent = 'Code copied.'; setTimeout(() => { embedCopied.textContent = ''; }, 2500); };
