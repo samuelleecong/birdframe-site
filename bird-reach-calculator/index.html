@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../guides/guide.css">
 <script src="../track.js" defer></script>
+<script type="module" src="scene.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Bird photography reach calculator", "url": "https://getbirdframe.com/bird-reach-calculator/", "description": "Pick a camera body, lens, teleconverter and distance to see how many pixels land on the bird, how much of the frame it fills, and the crop left at full resolution.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": "en", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does the bird look so small in my photos?", "acceptedAnswer": {"@type": "Answer", "text": "Because the frame is much wider than the bird. At 600 mm and 20 metres, a full-frame sensor takes in a scene about 1.2 metres wide, so a 25 cm bird spans about a fifth of the frame's width and its box covers only about 4% of the frame. On a 45-megapixel body that is still about 1,760 pixels across the bird, which is why a crop works."}}, {"@type": "Question", "name": "Is a teleconverter better than cropping?", "acceptedAnswer": {"@type": "Answer", "text": "A teleconverter multiplies the focal length, so a 1.4x puts about 1.4 times as many pixels across the bird (about twice the pixel area) and a 2x about twice as many (four times the area). The cost is light: a 1.4x loses one stop and a 2x loses two, and both soften the image a little and can slow autofocus. Cropping adds no pixels; it only discards the rest of the frame. With a sharp lens in good light, the teleconverter usually records more real detail. In poor light, heat haze or with a softer lens, a crop from the bare lens can match it."}}, {"@type": "Question", "name": "Does a crop-sensor camera give more reach?", "acceptedAnswer": {"@type": "Answer", "text": "It doesn't magnify the bird more: the lens projects the same-size image on any sensor. What changes is how many pixels land on it. A Canon R7 fits 6,960 pixels across 22.3 mm of sensor, about 312 per millimetre; a Canon R5 fits 8,192 across 36 mm, about 228 per millimetre. So at the same focal length and distance the R7 puts about 1.37 times as many pixels across the bird. The APS-C crop mode on a full-frame camera adds no pixels: it only trims the frame, so the bird fills more of a smaller picture."}}, {"@type": "Question", "name": "How much can I crop and still print?", "acceptedAnswer": {"@type": "Answer", "text": "A common rule for a sharp print seen up close is 300 pixels per inch. An 8 × 10 inch print then needs 2,400 × 3,000 pixels (7.2 megapixels), and a 4 × 6 inch print 1,200 × 1,800 (2.2 megapixels). Prints seen from further away look fine at 200 pixels per inch or less, and screens need fewer pixels still: an image 1,920 pixels wide fills a full-HD screen. The calculator shows the 300 ppi print size of the crop where the bird spans half the width."}}, {"@type": "Question", "name": "How does distance change it?", "acceptedAnswer": {"@type": "Answer", "text": "The bird's image shrinks in step with distance. Halve the distance and you roughly double the pixels across the bird and quadruple its pixel area: about the same gain as a 2x teleconverter, with no light lost. Twice as far gives half the pixels across. That's why fieldwork, hides and patience beat almost any new lens."}}, {"@type": "Question", "name": "Why crop from the full-size original?", "acceptedAnswer": {"@type": "Answer", "text": "Every pixel on the bird counts. If a photo is shrunk before you crop it, the bird shrinks with it: a 24-megapixel photo resized to 2,048 pixels wide keeps about 12% of its pixels, so a bird 1,000 pixels long ends up about 340 pixels long. Crop from the original first, then resize the crop if you need to."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getbirdframe.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Bird photography reach calculator", "item": "https://getbirdframe.com/bird-reach-calculator/"}]}]}</script>
 <style>
 [hidden]{display:none!important}
@@ -57,6 +58,14 @@
 .nums dt{font-weight:600;color:var(--ink);font-size:15px}
 .nums dd{margin:2px 0 0;color:var(--muted);font-size:16px}
 .article .out .fine{margin-top:8px}
+.has3d .pv{display:none}
+.pv3{position:relative;width:100%;max-width:560px;margin:16px 0 6px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.pv3 canvas{display:block;width:100%}
+.pv3-v{position:absolute;left:0;right:0;border-radius:6px;box-shadow:0 0 0 1px var(--line),0 0 0 6px var(--card);overflow:hidden}
+.pv3-scene{cursor:grab}.pv3-scene.grab{cursor:grabbing}
+.pv3-v span{position:absolute;left:8px;top:8px;font-size:12px;font-weight:600;line-height:1;padding:5px 8px;border-radius:999px;background:rgba(22,32,26,.55);color:#fff;pointer-events:none}
+.pv3-crop{position:absolute;left:0;top:0;border:1.5px dashed #fff;outline:1px solid rgba(22,32,26,.35);pointer-events:none;display:none}
+.pv3-ring{position:absolute;left:0;top:0;width:28px;height:28px;border:1.5px solid var(--mark);border-radius:50%;pointer-events:none;display:none}
 .calc-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
 .calc-bar button{cursor:pointer;font-family:inherit}
 @media (max-width:900px){.calc.two{grid-template-columns:1fr;max-width:44em}}
@@ -361,6 +370,7 @@
       o(panel, 'pct').textContent = ok ? 'The bird is closer than the lens can focus: increase the distance.' : 'Fill in every field to see the result.';
       ['take', 'area', 'crop'].forEach(k => { o(panel, k).textContent = ''; });
       [bird, crop, ring].forEach(e => e.setAttribute('visibility', 'hidden'));
+      announce(panel, null);
       return;
     }
     o(panel, 'px').textContent = nf(Math.round(r.px));
@@ -391,6 +401,12 @@
     ring.setAttribute('visibility', L < 10 ? 'visible' : 'hidden');
     svg.setAttribute('aria-label', 'Preview drawn to scale: the bird spans ' + pctf(r.pct) + "% of the frame's width" +
       (r.fits ? ', and the dashed box is the crop where it spans half the width.' : '.'));
+    announce(panel, {px: r.px, fw: r.fw, fh: r.fh, fe: r.fe, fits: r.fits, dmm, lmm, sensorW: c.sw * r.fw / c.pw, bird: s.bird});
+  }
+  // The 3D preview (scene.js) listens for this; the SVG above is its fallback.
+  function announce(panel, reach) {
+    panel.reach = reach;
+    panel.dispatchEvent(new Event('reach'));
   }
 
   function update(fromUser) {
