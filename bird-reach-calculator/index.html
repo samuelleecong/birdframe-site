@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="../guides/guide.css">
 <script src="../track.js" defer></script>
 <script type="module" src="scene.js"></script>
+<script>if (new URLSearchParams(location.search).get('embed') === '1') { document.documentElement.classList.add('embed'); const b = document.createElement('base'); b.target = '_blank'; document.head.appendChild(b); } // ?embed=1: other sites' iframes; links open in a new tab</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Bird photography reach calculator", "url": "https://getbirdframe.com/bird-reach-calculator/", "description": "Pick a camera body, lens, teleconverter and distance to see how many pixels land on the bird, how much of the frame it fills, and the crop left at full resolution.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": "en", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does the bird look so small in my photos?", "acceptedAnswer": {"@type": "Answer", "text": "Because the frame is much wider than the bird. At 600 mm and 20 metres, a full-frame sensor takes in a scene about 1.2 metres wide, so a 25 cm bird spans about a fifth of the frame's width and its box covers only about 4% of the frame. On a 45-megapixel body that is still about 1,760 pixels across the bird, which is why a crop works."}}, {"@type": "Question", "name": "Is a teleconverter better than cropping?", "acceptedAnswer": {"@type": "Answer", "text": "A teleconverter multiplies the focal length, so a 1.4x puts about 1.4 times as many pixels across the bird (about twice the pixel area) and a 2x about twice as many (four times the area). The cost is light: a 1.4x loses one stop and a 2x loses two, and both soften the image a little and can slow autofocus. Cropping adds no pixels; it only discards the rest of the frame. With a sharp lens in good light, the teleconverter usually records more real detail. In poor light, heat haze or with a softer lens, a crop from the bare lens can match it."}}, {"@type": "Question", "name": "Does a crop-sensor camera give more reach?", "acceptedAnswer": {"@type": "Answer", "text": "It doesn't magnify the bird more: the lens projects the same-size image on any sensor. What changes is how many pixels land on it. A Canon R7 fits 6,960 pixels across 22.3 mm of sensor, about 312 per millimetre; a Canon R5 fits 8,192 across 36 mm, about 228 per millimetre. So at the same focal length and distance the R7 puts about 1.37 times as many pixels across the bird. The APS-C crop mode on a full-frame camera adds no pixels: it only trims the frame, so the bird fills more of a smaller picture."}}, {"@type": "Question", "name": "How much can I crop and still print?", "acceptedAnswer": {"@type": "Answer", "text": "A common rule for a sharp print seen up close is 300 pixels per inch. An 8 × 10 inch print then needs 2,400 × 3,000 pixels (7.2 megapixels), and a 4 × 6 inch print 1,200 × 1,800 (2.2 megapixels). Prints seen from further away look fine at 200 pixels per inch or less, and screens need fewer pixels still: an image 1,920 pixels wide fills a full-HD screen. The calculator shows the 300 ppi print size of the crop where the bird spans half the width."}}, {"@type": "Question", "name": "How does distance change it?", "acceptedAnswer": {"@type": "Answer", "text": "The bird's image shrinks in step with distance. Halve the distance and you roughly double the pixels across the bird and quadruple its pixel area: about the same gain as a 2x teleconverter, with no light lost. Twice as far gives half the pixels across. That's why fieldwork, hides and patience beat almost any new lens."}}, {"@type": "Question", "name": "Why crop from the full-size original?", "acceptedAnswer": {"@type": "Answer", "text": "Every pixel on the bird counts. If a photo is shrunk before you crop it, the bird shrinks with it: a 24-megapixel photo resized to 2,048 pixels wide keeps about 12% of its pixels, so a bird 1,000 pixels long ends up about 340 pixels long. Crop from the original first, then resize the crop if you need to."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getbirdframe.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Bird photography reach calculator", "item": "https://getbirdframe.com/bird-reach-calculator/"}]}]}</script>
 <style>
 [hidden]{display:none!important}
@@ -70,6 +71,13 @@
 .calc-bar button{cursor:pointer;font-family:inherit}
 @media (max-width:900px){.calc.two{grid-template-columns:1fr;max-width:44em}}
 @media (max-width:560px){.fields,.other{grid-template-columns:1fr}.setup{padding:16px}.pair{grid-template-columns:minmax(0,1fr) 6.5em}}
+.embed-box{margin-top:28px;max-width:44em}
+.embed-box summary{cursor:pointer;font-weight:500;color:var(--ink)}
+.embed-box textarea{display:block;width:100%;margin:10px 0 12px;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);resize:vertical}
+.embed-credit,.embed nav,.embed footer,.embed .crumb,.embed .calc-page>h2,.embed .calc-page>h3,.embed .calc-page>p:not(.embed-credit),.embed .cta-box,.embed .embed-box{display:none}
+.embed .embed-credit{display:block;margin-top:14px}
+.embed .calc-page h1{margin-top:6px;font-size:30px}
+.embed .calc{margin-top:16px}
 </style>
 </head>
 <body>
@@ -135,6 +143,7 @@
       <button type="button" class="btn ghost" id="copy">Copy link to this setup</button>
       <span class="fine" id="copied" role="status"></span>
     </div>
+    <p class="fine embed-credit">Free calculator by <a href="https://getbirdframe.com/?ref=embed">BirdFrame</a>, the Mac app that crops thousands of bird photos in one go, from the full-size original.</p>
     <noscript><p class="fine">The calculator needs JavaScript.</p></noscript>
 
     <h2>How it's worked out</h2>
@@ -154,6 +163,14 @@
     <p>The bird's image shrinks in step with distance. Halve the distance and you roughly double the pixels across the bird and quadruple its pixel area: about the same gain as a 2x teleconverter, with no light lost. Twice as far gives half the pixels across. That's why fieldwork, hides and patience beat <a href="../is-400mm-enough-for-bird-photography/">almost any new lens</a>.</p>
     <h3>Why crop from the full-size original?</h3>
     <p>Every pixel on the bird counts. If a photo is shrunk before you crop it, the bird shrinks with it: a 24-megapixel photo resized to 2,048 pixels wide keeps about 12% of its pixels, so a bird 1,000 pixels long ends up about 340 pixels long. Crop from the original first, then resize the crop if you need to.</p>
+
+    <details class="embed-box">
+      <summary>Add this calculator to your site</summary>
+      <p class="fine">Free for any page: paste this where you want the calculator, and keep the link under it.</p>
+      <textarea id="embedCode" readonly rows="5" aria-label="Code to embed the calculator">&lt;iframe src="https://getbirdframe.com/bird-reach-calculator/?embed=1&amp;amp;ref=embed" title="Bird photography reach calculator" width="100%" height="1900" style="border:0;max-width:720px" loading="lazy" allow="clipboard-write"&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://getbirdframe.com/bird-reach-calculator/"&gt;Bird photography reach calculator&lt;/a&gt; by BirdFrame&lt;/p&gt;</textarea>
+      <button type="button" class="btn ghost" id="copyEmbed">Copy the code</button> <span class="fine" id="embedCopied" role="status"></span>
+    </details>
 
     <div class="cta-box">
       <p><b>Crop every bird in one go, from the full-size original.</b> BirdFrame finds the birds in a whole folder or Apple Photos album and crops each one Tight, Balanced or Wide, cut from the full-size original: nothing downscaled, nothing generated. Free for up to 50 photos per run, then $29.99 once. Mac App Store, macOS 15 or later.</p>
@@ -473,7 +490,9 @@
   copyBtn.addEventListener('click', () => {
     const path = urlFor();
     history.replaceState(null, '', path);
-    const url = location.origin + path;
+    const link = new URL(location.origin + path);
+    link.searchParams.delete('embed'); // a link copied inside an embed opens the full page
+    const url = link.toString();
     const done = () => { copied.textContent = 'Link copied.'; setTimeout(() => { copied.textContent = ''; }, 2500); };
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, () => window.prompt('Copy this link:', url));
     else window.prompt('Copy this link:', url);
@@ -484,6 +503,15 @@
   const ref = params.get('ref') || '';
   if (/^[a-z0-9][a-z0-9-]{0,39}$/i.test(ref)) document.querySelectorAll('a[href*="ct=calc"]').forEach(a => {
     const u = new URL(a.href); u.searchParams.set('ct', ref.toLowerCase()); a.href = u.toString();
+  });
+
+  const embedCode = document.getElementById('embedCode');
+  const embedCopied = document.getElementById('embedCopied');
+  const copyEmbed = document.getElementById('copyEmbed');
+  if (copyEmbed) copyEmbed.addEventListener('click', () => {
+    const done = () => { embedCopied.textContent = 'Code copied.'; setTimeout(() => { embedCopied.textContent = ''; }, 2500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(embedCode.value).then(done, () => embedCode.select());
+    else embedCode.select();
   });
 
   fill(panelA);
