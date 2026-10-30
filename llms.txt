@@ -31,3 +31,5 @@
 - [Christmas Bird Count photos: how to document a rare bird](https://getbirdframe.com/christmas-bird-count-photos/): What a rare bird report needs on the 127th count, how to crop the photo, and how it reaches the regional editor.
 - [How much can you crop a bird photo?](https://getbirdframe.com/how-much-can-you-crop-a-bird-photo/): Pixels left after a crop, print sizes at 300 and 240 ppi, screen sizes, and crop vs teleconverter vs getting closer.
 - [Crop RAW bird photos on a Mac](https://getbirdframe.com/crop-raw-photos-mac/): Crop a whole folder of CR3, NEF, ARW or other RAW files in one go, and what to check in the JPEG crops.
+- [Is 400mm enough for bird photography?](https://getbirdframe.com/is-400mm-enough-for-bird-photography/): Pixels across a songbird, a kingfisher and a heron at 5 to 30 m with 400 mm on six cameras, compared with 600 and 800 mm.
+- [Crop sensor or full frame for bird photography?](https://getbirdframe.com/crop-sensor-vs-full-frame-for-bird-photography/): Pixels on the bird with the same lens and distance: Canon R7 vs R5, Nikon Z50II vs Z8, Sony A6700 vs A7R V, OM-1 vs A1.
