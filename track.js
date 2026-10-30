@@ -2,7 +2,7 @@
 // Event contract: BirdFrame/analytics/EVENTS.md ("Website"). Backend: analytics/website/waitlist.gs.
 (() => {
   const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPtbFPqPdkhFrhk3cLJ2hblnX10RbqNf0tjJgeY8KeFnsjl_jLo36XIA6HU0cNGjmwdA/exec'; // Apps Script web app (analytics/website/waitlist.gs)
-  const PIXEL_ID = '1664656798359783'; // Meta dataset "BirdFrame website" in the BirdFrame business portfolio
+  const PIXEL_ID = ''; // off since 31 Oct 2026 (the Meta ad test never left draft; launch week). To re-enable: '1664656798359783', the Meta dataset "BirdFrame website" in the BirdFrame business portfolio
   const PT = '127908484'; // App Store Connect provider token (from the campaign links made in ASC, 26 Oct); enables campaign links (pt/ct)
 
   const ses = {
