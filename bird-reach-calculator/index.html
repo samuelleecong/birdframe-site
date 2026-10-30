@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bird photography reach calculator: how big will the bird be?</title>
+<meta name="description" content="Free reach calculator for bird photography: pick your camera, lens, teleconverter and distance to see how many pixels land on the bird and the crop left.">
+<link rel="canonical" href="https://getbirdframe.com/bird-reach-calculator/">
+<meta property="og:title" content="Bird photography reach calculator: how big will the bird be?">
+<meta property="og:description" content="Free reach calculator for bird photography: pick your camera, lens, teleconverter and distance to see how many pixels land on the bird and the crop left.">
+<meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
+<meta property="og:url" content="https://getbirdframe.com/bird-reach-calculator/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guides/guide.css">
+<script src="../track.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Bird photography reach calculator", "url": "https://getbirdframe.com/bird-reach-calculator/", "description": "Pick a camera body, lens, teleconverter and distance to see how many pixels land on the bird, how much of the frame it fills, and the crop left at full resolution.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": "en", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does the bird look so small in my photos?", "acceptedAnswer": {"@type": "Answer", "text": "Because the frame is much wider than the bird. At 600 mm and 20 metres, a full-frame sensor takes in a scene about 1.2 metres wide, so a 25 cm bird spans about a fifth of the frame's width and its box covers only about 4% of the frame. On a 45-megapixel body that is still about 1,760 pixels across the bird, which is why a crop works."}}, {"@type": "Question", "name": "Is a teleconverter better than cropping?", "acceptedAnswer": {"@type": "Answer", "text": "A teleconverter multiplies the focal length, so a 1.4x puts about 1.4 times as many pixels across the bird (about twice the pixel area) and a 2x about twice as many (four times the area). The cost is light: a 1.4x loses one stop and a 2x loses two, and both soften the image a little and can slow autofocus. Cropping adds no pixels; it only discards the rest of the frame. With a sharp lens in good light, the teleconverter usually records more real detail. In poor light, heat haze or with a softer lens, a crop from the bare lens can match it."}}, {"@type": "Question", "name": "Does a crop-sensor camera give more reach?", "acceptedAnswer": {"@type": "Answer", "text": "It doesn't magnify the bird more: the lens projects the same-size image on any sensor. What changes is how many pixels land on it. A Canon R7 fits 6,960 pixels across 22.3 mm of sensor, about 312 per millimetre; a Canon R5 fits 8,192 across 36 mm, about 228 per millimetre. So at the same focal length and distance the R7 puts about 1.37 times as many pixels across the bird. The APS-C crop mode on a full-frame camera adds no pixels: it only trims the frame, so the bird fills more of a smaller picture."}}, {"@type": "Question", "name": "How much can I crop and still print?", "acceptedAnswer": {"@type": "Answer", "text": "A common rule for a sharp print seen up close is 300 pixels per inch. An 8 × 10 inch print then needs 2,400 × 3,000 pixels (7.2 megapixels), and a 4 × 6 inch print 1,200 × 1,800 (2.2 megapixels). Prints seen from further away look fine at 200 pixels per inch or less, and screens need fewer pixels still: an image 1,920 pixels wide fills a full-HD screen. The calculator shows the 300 ppi print size of the crop where the bird spans half the width."}}, {"@type": "Question", "name": "How does distance change it?", "acceptedAnswer": {"@type": "Answer", "text": "The bird's image shrinks in step with distance. Halve the distance and you roughly double the pixels across the bird and quadruple its pixel area: about the same gain as a 2x teleconverter, with no light lost. Twice as far gives half the pixels across. That's why fieldwork, hides and patience beat almost any new lens."}}, {"@type": "Question", "name": "Why crop from the full-size original?", "acceptedAnswer": {"@type": "Answer", "text": "Every pixel on the bird counts. If a photo is shrunk before you crop it, the bird shrinks with it: a 24-megapixel photo resized to 2,048 pixels wide keeps about 12% of its pixels, so a bird 1,000 pixels long ends up about 340 pixels long. Crop from the original first, then resize the crop if you need to."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getbirdframe.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Bird photography reach calculator", "item": "https://getbirdframe.com/bird-reach-calculator/"}]}]}</script>
+<style>
+[hidden]{display:none!important}
+.article.calc-page{max-width:none}
+.calc-page>:not(.calc){max-width:44em}
+.calc{display:grid;gap:20px;margin-top:28px;max-width:44em}
+.calc.two{max-width:none;grid-template-columns:1fr 1fr}
+.setup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+.article .setup-h{font-size:22px;margin:0 0 14px}
+.fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 16px}
+.fields .wide{grid-column:1/-1}
+.fld{display:flex;flex-direction:column;gap:8px;min-width:0}
+.lab{display:flex;flex-direction:column;gap:6px;font-size:15px;font-weight:500;color:var(--ink);min-width:0}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 7em;gap:10px;align-items:end;min-width:0}
+.other{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 6em;gap:10px;align-items:end;min-width:0}
+.setup select,.setup input[type=number]{font:inherit;font-size:16px;font-weight:400;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);width:100%;min-width:0;min-height:44px}
+.setup select{appearance:none;-webkit-appearance:none;padding-right:36px;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 19px) 52%,calc(100% - 14px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+.setup select:focus-visible,.setup input:focus-visible,.setup button:focus-visible,.calc-bar button:focus-visible{outline:3px solid var(--mark);outline-offset:1px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips button{font:inherit;font-size:14px;padding:4px 12px;min-height:32px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--muted);cursor:pointer}
+.chips button[aria-pressed=true]{border-color:var(--spruce);color:var(--ink);font-weight:600}
+.chk{display:flex;gap:10px;align-items:center;font-size:15px;color:var(--ink);cursor:pointer}
+.chk input{width:20px;height:20px;margin:0;accent-color:var(--spruce)}
+.article .hint{font-size:14px;line-height:1.45;margin:0}
+.out{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.article .big{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;color:var(--ink)}
+.big b{font-family:var(--display);font-size:clamp(44px,7vw,60px);line-height:1;font-weight:600}
+.article .out .pct{margin-top:6px}
+.article .out .take{margin-top:12px;color:var(--ink);font-weight:500}
+.pv{display:block;width:100%;max-width:460px;height:auto;margin:16px 0 6px}
+.pv-frame{fill:var(--paper);stroke:var(--line);stroke-width:1.5}
+.pv-bird{fill:var(--ink)}
+.pv-eye{fill:var(--paper)}
+.pv-crop{fill:none;stroke:var(--spruce);stroke-width:1.5;stroke-dasharray:5 4}
+.pv-ring{fill:none;stroke:var(--mark);stroke-width:1.5}
+.nums{margin:16px 0 0;display:grid;gap:12px}
+.nums dt{font-weight:600;color:var(--ink);font-size:15px}
+.nums dd{margin:2px 0 0;color:var(--muted);font-size:16px}
+.article .out .fine{margin-top:8px}
+.calc-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.calc-bar button{cursor:pointer;font-family:inherit}
+@media (max-width:900px){.calc.two{grid-template-columns:1fr;max-width:44em}}
+@media (max-width:560px){.fields,.other{grid-template-columns:1fr}.setup{padding:16px}.pair{grid-template-columns:minmax(0,1fr) 6.5em}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../"><img src="../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links"><a href="../guides/">Guides</a><a class="btn" href="https://apps.apple.com/app/apple-store/id6754513569?pt=127908484&ct=calc&mt=8">Get it on the Mac App Store</a></div>
+  </nav>
+
+  <main class="article calc-page">
+    <p class="crumb"><a href="../guides/">Guides</a> · Free tool</p>
+    <h1>Bird photography reach calculator</h1>
+    <p class="lede">How big will the bird be? Pick your camera, lens and distance to see how many pixels land on the bird, how much of the frame it fills, and the crop you're left with at full resolution.</p>
+
+    <div class="calc" id="calc">
+      <section class="setup" aria-label="Setup A">
+        <h2 class="setup-h">Your setup</h2>
+        <div class="fields">
+          <label class="lab wide">Camera body<select data-k="cam"><option value="canon-r7">Canon EOS R7</option></select></label>
+          <div class="other wide" data-show="other" hidden>
+            <label class="lab">Sensor width (mm)<input data-k="sw" type="number" inputmode="decimal" min="1" max="100" step="any"></label>
+            <label class="lab">Image width (pixels)<input data-k="pw" type="number" inputmode="numeric" min="100" max="30000" step="1"></label>
+            <label class="lab">Shape<select data-k="ar"><option value="1.5">3:2</option><option value="1.333">4:3</option></select></label>
+          </div>
+          <div class="fld">
+            <label class="lab"><span data-t="flab">Focal length (mm)</span><input data-k="f" type="number" inputmode="decimal" min="1" max="5000" step="any"></label>
+            <div class="chips" data-show="chips" role="group" aria-label="Common focal lengths"><button type="button" data-f="400" aria-label="400 mm">400</button><button type="button" data-f="500" aria-label="500 mm">500</button><button type="button" data-f="600" aria-label="600 mm">600</button><button type="button" data-f="800" aria-label="800 mm">800</button></div>
+            <p class="hint" data-show="bridge" hidden>Fixed-lens camera: enter the 35mm-equivalent focal length (3000 at full zoom on the P1000, 2000 on the P950).</p>
+          </div>
+          <label class="lab" data-show="tc">Teleconverter<select data-k="tc"><option value="1">None</option><option value="1.4">1.4x</option><option value="2">2x</option></select></label>
+          <label class="chk wide" data-show="crop" hidden><input type="checkbox" data-k="crop"><span data-t="crop">APS-C crop mode</span></label>
+          <div class="pair wide">
+            <label class="lab">Distance to the bird<input data-k="d" type="number" inputmode="decimal" min="0.1" max="100000" step="any"></label>
+            <label class="lab">Unit<select data-k="u" aria-label="Distance unit"><option value="m">metres</option><option value="ft">feet</option></select></label>
+          </div>
+          <label class="lab wide">Bird<select data-k="bird"><option value="american-robin">American Robin</option></select></label>
+          <div class="pair wide" data-show="custom" hidden>
+            <label class="lab">Bird length, bill to tail<input data-k="len" type="number" inputmode="decimal" min="1" max="300" step="any"></label>
+            <label class="lab">Unit<select data-k="lu" aria-label="Length unit"><option value="cm">cm</option><option value="in">inches</option></select></label>
+          </div>
+        </div>
+        <div class="out">
+          <p class="big" aria-live="polite"><b data-o="px">–</b><span>pixels across the bird</span></p>
+          <p class="pct" data-o="pct"></p>
+          <p class="take" data-o="take"></p>
+          <svg class="pv" viewBox="0 0 300 200" role="img" aria-label="Frame preview">
+            <rect class="pv-frame" x="0.75" y="0.75" width="298.5" height="198.5" rx="4"/>
+            <circle class="pv-ring" cx="150" cy="100" r="14" visibility="hidden"/>
+            <g class="pv-bird"><path d="M0 17L10 13.5C12 6 19 2.5 26 3C33 3.5 37 8 41 11C53 12 65 17 74 25L100 41L97 47L73 37C66 44 55 48.5 45 48.5C31 48.5 19 42 14 30C12.5 25 9 21 1.5 19ZM39 47.5h2.2v12.5h-2.2zM46 47.5h2.2v12.5h-2.2z"/><circle class="pv-eye" cx="21" cy="10" r="1.8"/></g>
+            <rect class="pv-crop" x="0" y="0" width="0" height="0" visibility="hidden"/>
+          </svg>
+          <p class="fine">Drawn to scale. Dashed box: the crop where the bird spans half the width.</p>
+          <dl class="nums">
+            <div><dt>Bird's box (estimate)</dt><dd data-o="area"></dd></div>
+            <div><dt>Crop so the bird spans half the frame width</dt><dd data-o="crop"></dd></div>
+          </dl>
+          <p class="fine">Box estimate: assumes the box around the bird is about 0.6 times as tall as the bird is long.</p>
+        </div>
+      </section>
+    </div>
+    <div class="calc-bar">
+      <button type="button" class="btn ghost" id="compare" aria-expanded="false">Compare with another setup</button>
+      <button type="button" class="btn ghost" id="copy">Copy link to this setup</button>
+      <span class="fine" id="copied" role="status"></span>
+    </div>
+    <noscript><p class="fine">The calculator needs JavaScript.</p></noscript>
+
+    <h2>How it's worked out</h2>
+    <p>The calculator uses the thin-lens equation: the bird's image on the sensor is its length × focal length ÷ (distance − focal length), with the focal length multiplied by the teleconverter. Pixels across the bird are that image size × the camera's pixels per millimetre of sensor width. Camera figures come from the makers' published specifications, and bird lengths are the middle of the bill-to-tail range given by All About Birds, the RSPB, BirdLife Australia and NZ Birds Online.</p>
+    <p>Treat the result as a best case. A bird turned towards you, a lens whose focal length shrinks a little when focused close, or a frame that isn't quite sharp all mean fewer useful pixels.</p>
+
+    <h2>Questions</h2>
+    <h3>Why does the bird look so small in my photos?</h3>
+    <p>Because the frame is much wider than the bird. At 600 mm and 20 metres, a full-frame sensor takes in a scene about 1.2 metres wide, so a 25 cm bird spans about a fifth of the frame's width and its box covers only about 4% of the frame. On a 45-megapixel body that is still about 1,760 pixels across the bird, which is why a crop works.</p>
+    <h3>Is a teleconverter better than cropping?</h3>
+    <p>A teleconverter multiplies the focal length, so a 1.4x puts about 1.4 times as many pixels across the bird (about twice the pixel area) and a 2x about twice as many (four times the area). The cost is light: a 1.4x loses one stop and a 2x loses two, and both soften the image a little and can slow autofocus. Cropping adds no pixels; it only discards the rest of the frame. With a sharp lens in good light, the teleconverter usually records more real detail. In poor light, heat haze or with a softer lens, a crop from the bare lens can match it.</p>
+    <h3>Does a crop-sensor camera give more reach?</h3>
+    <p>It doesn't magnify the bird more: the lens projects the same-size image on any sensor. What changes is how many pixels land on it. A Canon R7 fits 6,960 pixels across 22.3 mm of sensor, about 312 per millimetre; a Canon R5 fits 8,192 across 36 mm, about 228 per millimetre. So at the same focal length and distance the R7 puts about 1.37 times as many pixels across the bird. The APS-C crop mode on a full-frame camera adds no pixels: it only trims the frame, so the bird fills more of a smaller picture.</p>
+    <h3>How much can I crop and still print?</h3>
+    <p>A common rule for a sharp print seen up close is 300 pixels per inch. An 8 × 10 inch print then needs 2,400 × 3,000 pixels (7.2 megapixels), and a 4 × 6 inch print 1,200 × 1,800 (2.2 megapixels). Prints seen from further away look fine at 200 pixels per inch or less, and screens need fewer pixels still: an image 1,920 pixels wide fills a full-HD screen. The calculator shows the 300 ppi print size of the crop where the bird spans half the width.</p>
+    <h3>How does distance change it?</h3>
+    <p>The bird's image shrinks in step with distance. Halve the distance and you roughly double the pixels across the bird and quadruple its pixel area: about the same gain as a 2x teleconverter, with no light lost. Twice as far gives half the pixels across. That's why fieldwork, hides and patience beat almost any new lens.</p>
+    <h3>Why crop from the full-size original?</h3>
+    <p>Every pixel on the bird counts. If a photo is shrunk before you crop it, the bird shrinks with it: a 24-megapixel photo resized to 2,048 pixels wide keeps about 12% of its pixels, so a bird 1,000 pixels long ends up about 340 pixels long. Crop from the original first, then resize the crop if you need to.</p>
+
+    <div class="cta-box">
+      <p><b>Crop every bird in one go, from the full-size original.</b> BirdFrame finds the birds in a whole folder or Apple Photos album and crops each one Tight, Balanced or Wide, cut from the full-size original: nothing downscaled, nothing generated. Free for up to 50 photos per run, then $29.99 once. Mac App Store, macOS 15 or later.</p>
+      <div class="ctas"><a class="btn" href="https://apps.apple.com/app/apple-store/id6754513569?pt=127908484&ct=calc&mt=8">Download free on the Mac App Store</a><a class="btn ghost" href="../demo/">Try it on a photo</a></div>
+    </div>
+  </main>
+
+  <footer>
+    <span>Made by a one-person studio. Questions: <a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
+    <span><a href="../">Home</a> · <a href="../guides/">Guides</a> · <a href="../press.html">Press</a> · <a href="../privacy/">Privacy</a></span>
+  </footer>
+</div>
+<script>
+(() => {
+  'use strict';
+  // Camera bodies: [id, group, name, sensor width mm, sensor height mm, pixel width, pixel height,
+  // APS-C crop-mode factor (0 = none), 35mm-equivalent factor for fixed-lens cameras (0 = interchangeable lens)].
+  // Sources: marketing/reach-calculator-2026-10-30/SPECS.md
+  const CAMS = [
+    ["canon-r5","Canon","Canon EOS R5",36.0,24.0,8192,5464,1.6,0],
+    ["canon-r5-ii","Canon","Canon EOS R5 Mark II",36.0,24.0,8192,5464,1.6,0],
+    ["canon-r6-ii","Canon","Canon EOS R6 Mark II",35.9,23.9,6000,4000,1.6,0],
+    ["canon-r7","Canon","Canon EOS R7",22.3,14.8,6960,4640,0,0],
+    ["canon-r10","Canon","Canon EOS R10",22.3,14.9,6000,4000,0,0],
+    ["canon-r8","Canon","Canon EOS R8",35.9,23.9,6000,4000,1.6,0],
+    ["canon-r3","Canon","Canon EOS R3",36.0,24.0,6000,4000,1.6,0],
+    ["canon-r1","Canon","Canon EOS R1",36.0,24.0,6000,4000,1.6,0],
+    ["canon-90d","Canon","Canon EOS 90D",22.3,14.8,6960,4640,0,0],
+    ["canon-7d-ii","Canon","Canon EOS 7D Mark II",22.4,15.0,5472,3648,0,0],
+    ["canon-5d-iv","Canon","Canon EOS 5D Mark IV",36.0,24.0,6720,4480,0,0],
+    ["nikon-z8","Nikon","Nikon Z8",35.9,23.9,8256,5504,1.5,0],
+    ["nikon-z9","Nikon","Nikon Z9",35.9,23.9,8256,5504,1.5,0],
+    ["nikon-z6-iii","Nikon","Nikon Z6III",35.9,23.9,6048,4032,1.5,0],
+    ["nikon-z50-ii","Nikon","Nikon Z50II",23.5,15.7,5568,3712,0,0],
+    ["nikon-zf","Nikon","Nikon Zf",35.9,23.9,6048,4032,1.5,0],
+    ["nikon-d500","Nikon","Nikon D500",23.5,15.7,5568,3712,0,0],
+    ["nikon-d850","Nikon","Nikon D850",35.9,23.9,8256,5504,1.5,0],
+    ["sony-a1","Sony","Sony A1",35.9,24.0,8640,5760,1.5,0],
+    ["sony-a1-ii","Sony","Sony A1 II",35.9,24.0,8640,5760,1.5,0],
+    ["sony-a9-iii","Sony","Sony A9 III",35.6,23.8,6000,4000,1.5,0],
+    ["sony-a7r-v","Sony","Sony A7R V",35.7,23.8,9504,6336,1.5,0],
+    ["sony-a7-iv","Sony","Sony A7 IV",35.9,23.9,7008,4672,1.5,0],
+    ["sony-a6700","Sony","Sony A6700",23.3,15.5,6192,4128,0,0],
+    ["sony-a6400","Sony","Sony A6400",23.5,15.6,6000,4000,0,0],
+    ["om-1","OM System","OM System OM-1",17.4,13.0,5184,3888,0,0],
+    ["om-1-ii","OM System","OM System OM-1 Mark II",17.4,13.0,5184,3888,0,0],
+    ["panasonic-g9-ii","Panasonic","Panasonic Lumix G9 II",17.3,13.0,5776,4336,0,0],
+    ["fujifilm-x-h2","Fujifilm","Fujifilm X-H2",23.5,15.7,7728,5152,0,0],
+    ["fujifilm-x-h2s","Fujifilm","Fujifilm X-H2S",23.5,15.7,6240,4160,0,0],
+    ["fujifilm-x-t5","Fujifilm","Fujifilm X-T5",23.5,15.7,7728,5152,0,0],
+    ["nikon-p1000","Bridge cameras (fixed lens)","Nikon Coolpix P1000",6.17,4.55,4608,3456,0,5.566],
+    ["nikon-p950","Bridge cameras (fixed lens)","Nikon Coolpix P950",6.17,4.55,4608,3456,0,5.602],
+  ];
+  const BRIDGE_MAX = {"nikon-p1000": 3000, "nikon-p950": 2000}; // full zoom, 35mm equivalent
+  // Birds: [id, name, bill-to-tail length cm (midpoint of the published range)]. Sources: SPECS.md
+  const BIRDS = [
+    ["ruby-throated-hummingbird","Ruby-throated Hummingbird",8],
+    ["goldcrest","Goldcrest",9],
+    ["japanese-white-eye","Japanese White-eye",11],
+    ["blue-tit","Blue Tit",12],
+    ["black-capped-chickadee","Black-capped Chickadee",13.5],
+    ["european-robin","European Robin",14],
+    ["downy-woodpecker","Downy Woodpecker",15.5],
+    ["house-sparrow","House Sparrow",16],
+    ["common-kingfisher","Common Kingfisher",16],
+    ["barn-swallow","Barn Swallow",17],
+    ["northern-cardinal","Northern Cardinal",22],
+    ["american-robin","American Robin",24],
+    ["blue-jay","Blue Jay",26],
+    ["american-kestrel","American Kestrel",26.5],
+    ["mourning-dove","Mourning Dove",28.5],
+    ["rainbow-lorikeet","Rainbow Lorikeet",30],
+    ["tui","Tui",30],
+    ["belted-kingfisher","Belted Kingfisher",31.5],
+    ["barn-owl","Barn Owl",36],
+    ["laughing-kookaburra","Laughing Kookaburra",42.5],
+    ["great-horned-owl","Great Horned Owl",54.5],
+    ["red-tailed-hawk","Red-tailed Hawk",55],
+    ["osprey","Osprey",56],
+    ["mallard","Mallard",57.5],
+    ["snowy-owl","Snowy Owl",61.5],
+    ["bald-eagle","Bald Eagle",83.5],
+    ["grey-heron","Grey Heron",94],
+    ["great-egret","Great Egret",99],
+    ["sandhill-crane","Sandhill Crane",100],
+    ["great-blue-heron","Great Blue Heron",117],
+  ];
+  const MEDIAN_AREA = 6.6; // % of the frame covered by the main bird's box in the median photo (/how-small-is-the-bird/)
+
+  /* MATH START: mirrored in marketing/reach-calculator-2026-10-30/test_math.py */
+  const BOX_RATIO = 0.6; // assumed box height / bird length
+  function reach(o) {
+    // o: sw (sensor width mm), pw, ph (pixels), crop (crop-mode factor or 0), eq (35mm-equivalent factor or 0),
+    //    f (focal length typed, mm), tc (teleconverter), dmm (distance mm), lmm (bird length mm)
+    const k = o.crop > 1 ? o.crop : 1;
+    const fw = Math.round(o.pw / k), fh = Math.round(o.ph / k); // frame size in pixels
+    const fe = o.eq ? o.f / o.eq : o.f * o.tc; // real focal length at the sensor, mm
+    if (!(o.dmm > fe)) return null;
+    const img = o.lmm * fe / (o.dmm - fe); // bird's image on the sensor, mm
+    const px = img * o.pw / o.sw; // pixels across the bird
+    const pct = px / fw * 100;
+    const area = Math.min(px, fw) * Math.min(px * BOX_RATIO, fh) / (fw * fh) * 100;
+    const cw = Math.round(2 * px), ch = Math.round(2 * px * fh / fw); // crop where the bird spans half the width
+    return {fe, img, px, pct, area, fw, fh, cw, ch, fits: cw < fw, mp: cw * ch / 1e6, inW: cw / 300, inH: ch / 300};
+  }
+  /* MATH END */
+
+  const KEYS = ['cam', 'f', 'tc', 'crop', 'd', 'u', 'bird', 'len', 'lu', 'sw', 'pw', 'ar'];
+  const DEF = {cam: 'canon-r7', f: '600', tc: '1', crop: '', d: '20', u: 'm', bird: 'american-robin', len: '25', lu: 'cm', sw: '23.5', pw: '6000', ar: '1.5'};
+  const camById = Object.fromEntries(CAMS.map(c => [c[0], c]));
+  const birdById = Object.fromEntries(BIRDS.map(b => [b[0], b]));
+  const calc = document.getElementById('calc');
+  const cmpBtn = document.getElementById('compare');
+  const copyBtn = document.getElementById('copy');
+  const copied = document.getElementById('copied');
+  const panelA = calc.querySelector('.setup');
+  let panelB = null;
+
+  const nf = (n, d = 0) => n.toLocaleString('en-US', {minimumFractionDigits: d, maximumFractionDigits: d});
+  const pctf = p => p < 0.1 ? String(+p.toPrecision(2)) : p < 1 ? nf(p, 2) : p < 100 ? nf(p, 1) : nf(p, 0);
+  const num = v => v !== null && v !== '' && isFinite(+v) && +v > 0;
+  const el = (panel, k) => panel.querySelector('[data-k="' + k + '"]');
+  const o = (panel, k) => panel.querySelector('[data-o="' + k + '"]');
+
+  function fill(panel) {
+    const groups = {};
+    CAMS.forEach(c => { (groups[c[1]] = groups[c[1]] || []).push(c); });
+    el(panel, 'cam').innerHTML = Object.keys(groups).map(g => '<optgroup label="' + g + '">' +
+      groups[g].map(c => '<option value="' + c[0] + '">' + c[2] + '</option>').join('') + '</optgroup>').join('') +
+      '<option value="other">Other camera</option>';
+    const bands = [[15, 'Under 15 cm'], [25, '15 to 25 cm'], [40, '25 to 40 cm'], [70, '40 to 70 cm'], [1e9, 'Over 70 cm']];
+    let html = '', lo = 0;
+    bands.forEach(([hi, label]) => {
+      const list = BIRDS.filter(b => b[2] >= lo && b[2] < hi);
+      lo = hi;
+      if (list.length) html += '<optgroup label="' + label + '">' + list.map(b =>
+        '<option value="' + b[0] + '">' + b[1] + ' (' + nf(b[2], b[2] % 1 ? 1 : 0) + ' cm, ' + nf(b[2] / 2.54, 1) + ' in)</option>').join('') + '</optgroup>';
+    });
+    el(panel, 'bird').innerHTML = html + '<option value="custom">Custom size</option>';
+  }
+
+  function getState(panel) {
+    const s = {};
+    KEYS.forEach(k => { const e = el(panel, k); s[k] = e.type === 'checkbox' ? (e.checked ? '1' : '') : e.value.trim(); });
+    return s;
+  }
+  function setState(panel, s) {
+    KEYS.forEach(k => { const e = el(panel, k); if (e.type === 'checkbox') e.checked = s[k] === '1'; else e.value = s[k]; });
+    panel.dataset.cam = s.cam; panel.dataset.u = s.u; panel.dataset.lu = s.lu;
+  }
+  function fromQuery(p, suf) {
+    const s = Object.assign({}, DEF);
+    const g = k => p.get(k + suf);
+    if (camById[g('cam')] || g('cam') === 'other') s.cam = g('cam');
+    ['f', 'd', 'len', 'sw', 'pw'].forEach(k => { if (num(g(k))) s[k] = String(+g(k)); });
+    if (['1', '1.4', '2'].includes(g('tc'))) s.tc = g('tc');
+    if (g('crop') === '1') s.crop = '1';
+    if (['m', 'ft'].includes(g('u'))) s.u = g('u');
+    if (birdById[g('bird')] || g('bird') === 'custom') s.bird = g('bird');
+    if (['cm', 'in'].includes(g('lu'))) s.lu = g('lu');
+    if (['1.5', '1.333'].includes(g('ar'))) s.ar = g('ar');
+    if (BRIDGE_MAX[s.cam] && !num(g('f'))) s.f = String(BRIDGE_MAX[s.cam]);
+    return s;
+  }
+  function camOf(s) {
+    if (s.cam === 'other') {
+      const ar = +s.ar || 1.5, pw = Math.round(+s.pw);
+      return {sw: +s.sw, pw, ph: Math.round(pw / ar), crop: 0, eq: 0};
+    }
+    const c = camById[s.cam] || camById[DEF.cam];
+    return {sw: c[3], pw: c[5], ph: c[6], crop: c[7], eq: c[8]};
+  }
+  function writeQuery(p, s, suf) {
+    const c = camOf(s);
+    const set = (k, v) => { if (v) p.set(k + suf, v); else p.delete(k + suf); };
+    set('cam', s.cam); set('f', s.f); set('tc', c.eq ? '' : s.tc); set('crop', c.crop && s.crop ? '1' : '');
+    set('d', s.d); set('u', s.u); set('bird', s.bird);
+    set('len', s.bird === 'custom' ? s.len : ''); set('lu', s.bird === 'custom' ? s.lu : '');
+    set('sw', s.cam === 'other' ? s.sw : ''); set('pw', s.cam === 'other' ? s.pw : ''); set('ar', s.cam === 'other' ? s.ar : '');
+  }
+  function urlFor() {
+    const p = new URLSearchParams(location.search); // keeps ref and any other parameters
+    writeQuery(p, getState(panelA), '');
+    if (panelB) writeQuery(p, getState(panelB), '2'); else KEYS.forEach(k => p.delete(k + '2'));
+    const qs = p.toString();
+    return location.pathname + (qs ? '?' + qs : '') + location.hash;
+  }
+
+  function takeaway(r) {
+    if (r.pct >= 100) return 'The bird is longer than the frame is wide: step back or zoom out to fit it in.';
+    if (!r.fits) return 'The bird already fills the frame: little or no crop needed.';
+    if (r.px >= 1500) return 'Plenty of bird: room to crop and still print it well.';
+    if (r.px >= 800) return 'A good crop: plenty for screens and fine for a small print.';
+    if (r.px >= 300) return 'Small in the frame: enough for screens and records, not for a big print.';
+    return "The bird is a speck: most of this frame isn't bird. Get closer if you can.";
+  }
+
+  function render(panel) {
+    const s = getState(panel), c = camOf(s);
+    const show = (key, on) => panel.querySelectorAll('[data-show="' + key + '"]').forEach(e => { e.hidden = !on; });
+    show('other', s.cam === 'other'); show('bridge', !!c.eq); show('chips', !c.eq); show('tc', !c.eq);
+    show('crop', c.crop > 0); show('custom', s.bird === 'custom');
+    panel.querySelector('[data-t="flab"]').textContent = c.eq ? 'Focal length (35mm equivalent)' : 'Focal length (mm)';
+    panel.querySelector('[data-t="crop"]').textContent = 'APS-C crop mode (' + c.crop + 'x)';
+    panel.querySelectorAll('[data-f]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === s.f)));
+    const dmm = s.u === 'ft' ? +s.d * 304.8 : +s.d * 1000;
+    const lmm = s.bird === 'custom' ? (s.lu === 'in' ? +s.len * 25.4 : +s.len * 10) : (birdById[s.bird] || birdById[DEF.bird])[2] * 10;
+    const ok = [+s.f, dmm, lmm, c.sw, c.pw].every(num);
+    const r = ok ? reach({sw: c.sw, pw: c.pw, ph: c.ph, crop: s.crop === '1' ? c.crop : 0, eq: c.eq, f: +s.f, tc: +s.tc || 1, dmm, lmm}) : null;
+    const svg = panel.querySelector('svg');
+    const bird = svg.querySelector('.pv-bird'), crop = svg.querySelector('.pv-crop'), ring = svg.querySelector('.pv-ring');
+    if (!r) {
+      o(panel, 'px').textContent = '–';
+      o(panel, 'pct').textContent = ok ? 'The bird is closer than the lens can focus: increase the distance.' : 'Fill in every field to see the result.';
+      ['take', 'area', 'crop'].forEach(k => { o(panel, k).textContent = ''; });
+      [bird, crop, ring].forEach(e => e.setAttribute('visibility', 'hidden'));
+      return;
+    }
+    o(panel, 'px').textContent = nf(Math.round(r.px));
+    o(panel, 'pct').textContent = r.pct >= 100 ? 'The bird is longer than the frame is wide (' + pctf(r.pct) + '% of the width).'
+      : "That's " + pctf(r.pct) + "% of the frame's width.";
+    o(panel, 'take').textContent = takeaway(r);
+    const ratio = r.area / MEDIAN_AREA;
+    const rel = ratio >= 1.25 ? 'bigger than in' : ratio <= 0.8 ? 'smaller than in' : 'about the same as in';
+    o(panel, 'area').innerHTML = 'About ' + pctf(r.area) + '% of the frame: ' + rel +
+      ' the <a href="../how-small-is-the-bird/">typical bird photo</a>, where the main bird’s box covers ' + MEDIAN_AREA + '% of the frame.';
+    o(panel, 'crop').textContent = r.fits
+      ? nf(r.cw) + ' × ' + nf(r.ch) + ' px (' + nf(r.mp, r.mp < 0.1 ? 3 : r.mp < 1 ? 2 : 1) + ' MP). At 300 ppi that prints ' + nf(r.inW, 1) + ' × ' + nf(r.inH, 1) +
+        ' in (' + nf(r.inW * 2.54, 1) + ' × ' + nf(r.inH * 2.54, 1) + ' cm).'
+      : 'None needed: the bird already fills the frame, spanning half its width or more.';
+    // Preview, drawn to scale: 300 units = the frame's width.
+    const W = 300, H = Math.round(W * r.fh / r.fw * 10) / 10, L = W * r.px / r.fw, sc = L / 100;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.querySelector('.pv-frame').setAttribute('height', H - 1.5);
+    bird.setAttribute('transform', 'translate(' + (W / 2 - 50 * sc).toFixed(2) + ' ' + (H / 2 - 31 * sc).toFixed(2) + ') scale(' + sc.toFixed(4) + ')');
+    bird.setAttribute('visibility', 'visible');
+    if (r.fits) {
+      const cw = 2 * L, ch = cw * H / W;
+      crop.setAttribute('x', (W / 2 - cw / 2).toFixed(2)); crop.setAttribute('y', (H / 2 - ch / 2).toFixed(2));
+      crop.setAttribute('width', cw.toFixed(2)); crop.setAttribute('height', ch.toFixed(2));
+    }
+    crop.setAttribute('visibility', r.fits ? 'visible' : 'hidden');
+    ring.setAttribute('cy', H / 2);
+    ring.setAttribute('visibility', L < 10 ? 'visible' : 'hidden');
+    svg.setAttribute('aria-label', 'Preview drawn to scale: the bird spans ' + pctf(r.pct) + "% of the frame's width" +
+      (r.fits ? ', and the dashed box is the crop where it spans half the width.' : '.'));
+  }
+
+  function update(fromUser) {
+    render(panelA);
+    if (panelB) render(panelB);
+    if (fromUser) history.replaceState(null, '', urlFor());
+  }
+
+  function onInput(panel, e) {
+    const k = e.target.dataset && e.target.dataset.k;
+    const s = getState(panel);
+    if (k === 'cam' && panel.dataset.cam !== s.cam) {
+      const fEl = el(panel, 'f'), wasBridge = !!BRIDGE_MAX[panel.dataset.cam], max = BRIDGE_MAX[s.cam];
+      if (max && !wasBridge) fEl.value = max;
+      else if (max) fEl.value = Math.min(+fEl.value || max, max);
+      else if (wasBridge) fEl.value = DEF.f;
+      if (!camOf(s).crop) el(panel, 'crop').checked = false; // crop mode is per body
+      panel.dataset.cam = s.cam;
+    }
+    if (k === 'u' && panel.dataset.u !== s.u && num(s.d)) { // keep the same distance in the new unit
+      const v = s.u === 'ft' ? +s.d / 0.3048 : +s.d * 0.3048;
+      el(panel, 'd').value = +v.toFixed(v < 100 ? 1 : 0);
+    }
+    if (k === 'lu' && panel.dataset.lu !== s.lu && num(s.len)) {
+      el(panel, 'len').value = +(s.lu === 'in' ? +s.len / 2.54 : +s.len * 2.54).toFixed(1);
+    }
+    panel.dataset.u = el(panel, 'u').value; panel.dataset.lu = el(panel, 'lu').value;
+    update(true);
+  }
+  function wire(panel) {
+    panel.addEventListener('input', e => onInput(panel, e));
+    panel.addEventListener('change', e => onInput(panel, e));
+    panel.addEventListener('click', e => {
+      const b = e.target.closest && e.target.closest('[data-f]');
+      if (!b) return;
+      el(panel, 'f').value = b.dataset.f;
+      update(true);
+    });
+  }
+
+  function setCompare(on, state) {
+    if (on && !panelB) {
+      panelB = panelA.cloneNode(true);
+      panelB.setAttribute('aria-label', 'Setup B');
+      calc.appendChild(panelB);
+      setState(panelB, state || getState(panelA));
+      wire(panelB);
+    } else if (!on && panelB) {
+      panelB.remove();
+      panelB = null;
+    }
+    calc.classList.toggle('two', !!panelB);
+    panelA.querySelector('.setup-h').textContent = panelB ? 'Setup A' : 'Your setup';
+    if (panelB) panelB.querySelector('.setup-h').textContent = 'Setup B';
+    cmpBtn.textContent = panelB ? 'Remove setup B' : 'Compare with another setup';
+    cmpBtn.setAttribute('aria-expanded', String(!!panelB));
+  }
+  cmpBtn.addEventListener('click', () => {
+    const on = !panelB;
+    setCompare(on);
+    update(true);
+    if (on) el(panelB, 'cam').focus();
+  });
+  copyBtn.addEventListener('click', () => {
+    const path = urlFor();
+    history.replaceState(null, '', path);
+    const url = location.origin + path;
+    const done = () => { copied.textContent = 'Link copied.'; setTimeout(() => { copied.textContent = ''; }, 2500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, () => window.prompt('Copy this link:', url));
+    else window.prompt('Copy this link:', url);
+  });
+
+  // Outreach links carry ?ref=: credit the App Store campaign to it, as track.js does on other pages; ct=calc otherwise.
+  const params = new URLSearchParams(location.search);
+  const ref = params.get('ref') || '';
+  if (/^[a-z0-9][a-z0-9-]{0,39}$/i.test(ref)) document.querySelectorAll('a[href*="ct=calc"]').forEach(a => {
+    const u = new URL(a.href); u.searchParams.set('ct', ref.toLowerCase()); a.href = u.toString();
+  });
+
+  fill(panelA);
+  setState(panelA, fromQuery(params, ''));
+  wire(panelA);
+  if (params.get('cam2')) setCompare(true, fromQuery(params, '2'));
+  update(false);
+})();
+</script>
+</body>
+</html>

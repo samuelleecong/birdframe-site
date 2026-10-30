@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crop RAW bird photos on a Mac: CR3, NEF, ARW, RAF and more</title>
+<meta name="description" content="Crop a whole folder of CR2, CR3, NEF, ARW, ORF, RAF, RW2 or DNG bird photos on a Mac in one go, each from the full-size original, and what to check in the crops.">
+<link rel="canonical" href="https://getbirdframe.com/crop-raw-photos-mac/">
+<meta property="og:title" content="Crop RAW bird photos on a Mac">
+<meta property="og:description" content="Crop a whole folder of CR2, CR3, NEF, ARW, ORF, RAF, RW2 or DNG bird photos on a Mac in one go, each from the full-size original, and what to check in the crops.">
+<meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
+<meta property="og:url" content="https://getbirdframe.com/crop-raw-photos-mac/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guides/guide.css">
+<script src="../track.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getbirdframe.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Crop RAW bird photos on a Mac", "item": "https://getbirdframe.com/crop-raw-photos-mac/"}]}, {"@type": "Article", "headline": "Crop RAW bird photos on a Mac", "description": "Crop a whole folder of CR2, CR3, NEF, ARW, ORF, RAF, RW2 or DNG bird photos on a Mac in one go, each from the full-size original, and what to check in the crops.", "url": "https://getbirdframe.com/crop-raw-photos-mac/", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "author": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png", "sameAs": ["https://apps.apple.com/app/birdframe/id6754513569", "https://www.youtube.com/@birdframeapp", "https://www.instagram.com/birdframe.app/"]}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png", "sameAs": ["https://apps.apple.com/app/birdframe/id6754513569", "https://www.youtube.com/@birdframeapp", "https://www.instagram.com/birdframe.app/"]}, "image": "https://getbirdframe.com/assets/og.jpg", "about": {"@type": "SoftwareApplication", "name": "BirdFrame", "operatingSystem": "macOS 15 or later", "applicationCategory": "PhotographyApplication", "url": "https://apps.apple.com/app/birdframe/id6754513569", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can BirdFrame edit RAW files?", "acceptedAnswer": {"@type": "Answer", "text": "No. It reads them and saves a JPEG crop of each bird it finds. It doesn't change exposure, colour or anything else, and your RAW files stay exactly as they are. Do your RAW editing in your usual editor."}}, {"@type": "Question", "name": "Which RAW formats does BirdFrame read?", "acceptedAnswer": {"@type": "Answer", "text": "Canon CR2 and CR3, Nikon NEF, Sony ARW, Fujifilm RAF, OM System and Olympus ORF, Panasonic RW2, and DNG, from a folder. Some variants don't open on every Mac yet, such as Nikon High Efficiency RAW and Fujifilm compressed RAF; BirdFrame skips them and says so."}}, {"@type": "Question", "name": "What happens to RAW+JPEG pairs?", "acceptedAnswer": {"@type": "Answer", "text": "A RAW+JPEG pair counts as one photo, so each shot is cropped once, not twice. BirdFrame crops a pair from its JPEG, so set the camera's JPEG to its largest size."}}, {"@type": "Question", "name": "Do the crops keep the date and location?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each exported crop keeps its photo's capture date, camera and lens details and GPS location. To leave location out, for example to protect a nest site, turn off Include location in exported crops in Settings → General → Exports."}}]}]}</script>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../"><img src="../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links"><a href="../guides/">Guides</a><a class="btn" href="https://apps.apple.com/app/birdframe/id6754513569">Get it on the Mac App Store</a></div>
+  </nav>
+
+  <main class="article">
+    <p class="crumb"><a href="../guides/">Guides</a> · Updated 30 October 2026</p>
+    <h1>Crop RAW bird photos on a Mac</h1>
+
+    <p class="lede">One RAW photo is easy to crop on a Mac in Apple Photos or any RAW editor; a few thousand from a trip is the hard part. BirdFrame crops a whole folder of CR2, CR3, NEF, ARW, ORF, RAF, RW2 or DNG files in one go: it finds the birds and saves a JPEG crop of each one, cut from the full-size original, and leaves your RAW files as they are.</p>
+
+    <div class="tldr"><p><b>Short answer:</b> Apple Photos and most RAW editors crop one photo at a time, and batch tools paste the same box onto every photo, which misses a bird that moves. BirdFrame reads a folder of RAW files, subfolders included, finds the birds, including small, distant and half-hidden ones, and crops each one Tight, Balanced or Wide. Export Crops saves every crop as a JPEG in a new folder, and the RAW files never change. It's free for up to 50 photos per run.</p></div>
+
+    <h2>The problem: thousands of RAW frames</h2>
+    <p>A morning at a wetland can leave you with hundreds of frames, and a week-long trip with thousands. In most of them the bird is a small shape, somewhere different in every frame. Cropping by hand means opening each RAW file, finding the bird, dragging a box around it and exporting, again and again. At 20 seconds a photo, 3,000 frames is more than 16 hours of cropping. BirdFrame does the whole folder in one go instead, so there's no cropping by hand.</p>
+
+    <h2>How the usual Mac tools handle a batch</h2>
+    <div class="scroll"><table>
+      <tr><th>Tool</th><th>What it does with a batch of photos</th></tr>
+      <tr><td>Apple Photos</td><td>Crops one photo at a time. Copy Edits doesn't include the crop (<a href="../crop-multiple-photos-apple-photos/">more on Photos</a>).</td></tr>
+      <tr><td>Lightroom Classic</td><td>Sync or Auto Sync copies one crop to the selected photos (<a href="../lightroom-batch-crop/">why that cuts off a moving bird</a>).</td></tr>
+      <tr><td>Automator, Shortcuts, <code>sips</code></td><td>Crop every image to one fixed box, centred or at a set position.</td></tr>
+      <tr><td>BirdFrame</td><td>Finds the birds in each photo and crops around each one, for a whole folder in one go.</td></tr>
+    </table></div>
+    <p>A fixed or synced box works when the subject sits in the same place in every frame. Birds don't: one frame has the bird on a branch on the left, the next has it taking off on the right.</p>
+
+    <h2>Crop a folder of RAW files with BirdFrame</h2>
+    <ol>
+      <li><b>Choose the folder.</b> BirdFrame reads Canon CR2 and CR3, Nikon NEF, Sony ARW, Fujifilm RAF, OM System and Olympus ORF, Panasonic RW2 and DNG, and JPEG, PNG and HEIC files in the same folder. Subfolders are included, and a RAW+JPEG pair counts as one photo.</li>
+      <li><b>Pick a framing and a shape.</b> Tight (the bird fills about half the frame), Balanced (about a third) or Wide (about a fifth); square, 4:3, 3:2 or 16:9. The preview shows the crops before anything is saved.</li>
+      <li><b>Click Crop Photos.</b> BirdFrame finds the birds in every photo, including small, distant and half-hidden ones. Open any result to check it.</li>
+      <li><b>Click Export Crops and choose a folder.</b> BirdFrame saves every crop as a JPEG in a new folder inside the one you chose, then offers to show it in Finder. A photo with two birds gives two crops. Tick <i>For iNaturalist</i> if you want tight crops with file names that start with the capture date.</li>
+    </ol>
+    <figure><img src="../guides/img/treetop-found.jpg" width="1600" height="795" alt="Two birds in a spruce, one half-hidden in the branches, boxed in the full photo, with a crop of each" loading="lazy">
+      <figcaption>Two birds, one half-hidden in the branches. When you export, each gets its own crop, cut from the 20-megapixel original (shown smaller here).</figcaption></figure>
+
+    <h2>Full resolution, nothing generated</h2>
+    <p>Each crop is cut from the full-size original. Nothing is downscaled, upscaled or filled in, so a crop holds all the detail the frame had around the bird. The crops are high-quality JPEGs that keep the photo's capture date, camera and lens details and, unless you turn it off to protect a nest site, its location. Your RAW files are never changed, and everything runs on your Mac, with nothing uploaded.</p>
+
+    <h2>What to check in the crops</h2>
+    <ul>
+      <li><b>They're JPEGs, not RAW files.</b> A crop is a finished picture, ready to share, upload to eBird or iNaturalist, or print. It can't be developed again like a RAW file, so keep the RAW for heavy editing. BirdFrame doesn't edit RAW files.</li>
+      <li><b>Your edits aren't in them.</b> BirdFrame works from the files in the folder, not from adjustments you've made in Lightroom or another editor. If you want your edits in the crops, export the edited keepers as full-size JPEGs first, then crop that folder.</li>
+      <li><b>The size is what the bird gave you.</b> Crops are never enlarged, so a distant bird gives a small crop. Open one in Preview and choose Tools &gt; Show Inspector to see its size in pixels, then compare it with what you need (<a href="../how-much-can-you-crop-a-bird-photo/">how many pixels a print or a screen needs</a>).</li>
+      <li><b>Date, camera and location.</b> The same Inspector shows whether the capture date, camera, lens and location came through. To leave location out of future exports, turn off <i>Include location in exported crops</i> in Settings → General → Exports.</li>
+      <li><b>RAW+JPEG pairs.</b> A pair is cropped from its JPEG, so set the camera's JPEG to its largest size; a small JPEG gives small crops.</li>
+      <li><b>File names.</b> Each crop takes its original's file name plus a bird number (for example <code>IMG_1234_bird_001.jpg</code>), so it's easy to find the RAW file behind any crop.</li>
+      <li><b>Skipped files.</b> Some RAW variants don't open on every Mac yet, such as Nikon High Efficiency RAW and Fujifilm compressed RAF. BirdFrame skips them and says so. Shoot RAW+JPEG, or convert them to DNG with Adobe DNG Converter.</li>
+    </ul>
+
+    <h2>What it costs</h2>
+    <p>BirdFrame is free for up to 50 photos per run, as many runs as you like, and a RAW+JPEG pair counts as one photo. A one-time $29.99 unlocks bigger batches, so a whole trip crops in one go. There's no subscription, and it needs macOS 15 or later; Apple silicon Macs are fastest.</p>
+
+    <h2>Questions</h2>
+    <h3>Can BirdFrame edit RAW files?</h3>
+    <p>No. It reads them and saves a JPEG crop of each bird it finds. It doesn't change exposure, colour or anything else, and your RAW files stay exactly as they are. Do your RAW editing in your usual editor.</p>
+    <h3>Which RAW formats does BirdFrame read?</h3>
+    <p>Canon CR2 and CR3, Nikon NEF, Sony ARW, Fujifilm RAF, OM System and Olympus ORF, Panasonic RW2, and DNG, from a folder. Some variants don't open on every Mac yet, such as Nikon High Efficiency RAW and Fujifilm compressed RAF; BirdFrame skips them and says so.</p>
+    <h3>What happens to RAW+JPEG pairs?</h3>
+    <p>A RAW+JPEG pair counts as one photo, so each shot is cropped once, not twice. BirdFrame crops a pair from its JPEG, so set the camera's JPEG to its largest size.</p>
+    <h3>Do the crops keep the date and location?</h3>
+    <p>Yes. Each exported crop keeps its photo's capture date, camera and lens details and GPS location. To leave location out, for example to protect a nest site, turn off Include location in exported crops in Settings → General → Exports.</p>
+
+    <div class="cta-box">
+      <p><b>Crop every bird in one go, at full resolution.</b> BirdFrame finds the birds in a whole album or folder and crops each one from the full-size original. Free for up to 50 photos per run.</p>
+      <div class="ctas"><a class="btn" href="https://apps.apple.com/app/birdframe/id6754513569">Download free on the Mac App Store</a><a class="btn ghost" href="../demo/">Try it on a photo</a></div>
+    </div>
+    <aside class="related"><h2>Related guides</h2><ul><li><a href="../lightroom-batch-crop/">Can you batch crop in Lightroom?</a></li><li><a href="../batch-crop-bird-photos/">How to batch crop bird photos on a Mac</a></li><li><a href="../how-much-can-you-crop-a-bird-photo/">How much can you crop a bird photo?</a></li></ul></aside>
+  </main>
+
+  <footer>
+    <span>Made by a one-person studio. Questions: <a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
+    <span><a href="../">Home</a> · <a href="../guides/">Guides</a> · <a href="../press.html">Press</a> · <a href="../privacy/">Privacy</a></span>
+  </footer>
+</div>
+</body>
+</html>

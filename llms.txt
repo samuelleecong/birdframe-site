@@ -16,6 +16,7 @@
 - [Try it in your browser](https://getbirdframe.com/demo/): find and crop the birds in one photo
 - [Press kit](https://getbirdframe.com/press.html)
 - [How small is the bird? (data)](https://getbirdframe.com/how-small-is-the-bird/): 4,511 birds measured in 1,995 public-domain bird photos; in the typical photo the bird fills 6.6% of the frame. Charts and a free CSV (CC0).
+- [Bird photography reach calculator](https://getbirdframe.com/bird-reach-calculator/): free tool: pick a camera body, lens, teleconverter and distance to see how many pixels land on the bird, how much of the frame it fills, and the crop left at full resolution.
 
 ## Guides
 - [How to crop bird photos](https://getbirdframe.com/how-to-crop-bird-photos/): How much space to leave, where to place the bird, which shape to pick, and how far you can crop.
@@ -28,3 +29,5 @@
 - [Can you batch crop in Lightroom?](https://getbirdframe.com/lightroom-batch-crop/): Lightroom syncs one crop box to every photo. Here's how, and what to do when the bird moves.
 - [BirdFrame vs RobinRAW](https://getbirdframe.com/birdframe-vs-robinraw/): Two $29.99 Mac apps that do different jobs: culling and polishing, or cropping a whole set at once.
 - [Christmas Bird Count photos: how to document a rare bird](https://getbirdframe.com/christmas-bird-count-photos/): What a rare bird report needs on the 127th count, how to crop the photo, and how it reaches the regional editor.
+- [How much can you crop a bird photo?](https://getbirdframe.com/how-much-can-you-crop-a-bird-photo/): Pixels left after a crop, print sizes at 300 and 240 ppi, screen sizes, and crop vs teleconverter vs getting closer.
+- [Crop RAW bird photos on a Mac](https://getbirdframe.com/crop-raw-photos-mac/): Crop a whole folder of CR3, NEF, ARW or other RAW files in one go, and what to check in the JPEG crops.
