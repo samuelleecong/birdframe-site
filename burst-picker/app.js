@@ -16,7 +16,7 @@ const IMAGE_EXT = /\.(jpe?g|png|webp|heic|heif|avif|gif|bmp|tiff?)$/i;
 
 const $ = (id) => document.getElementById(id);
 const els = {
-  choose: $('choose'), file: $('file'), drop: $('drop'), work: $('work'), status: $('status'),
+  choose: $('choose'), sample: $('sample'), file: $('file'), drop: $('drop'), work: $('work'), status: $('status'),
   meter: $('meter'), progress: $('progress'), problem: $('problem'), results: $('results'), cta: $('cta-results'),
 };
 
@@ -326,7 +326,7 @@ function pickFiles(list) {
   return { files: all.slice(0, MAX_FILES), skipped: Math.max(0, all.length - MAX_FILES), ignored: (list?.length || 0) - all.length };
 }
 
-async function start(list) {
+async function start(list, { sample = false } = {}) {
   const { files, skipped, ignored } = pickFiles(list);
   run?.controller.abort();
   const controller = new AbortController();
@@ -400,7 +400,10 @@ async function start(list) {
   if (signal.aborted) return;
   const seconds = (performance.now() - t0) / 1000;
   setProgress(null);
-  setStatus(`Checked ${files.length} photo${files.length === 1 ? '' : 's'} in ${seconds < 10 ? seconds.toFixed(1) : Math.round(seconds)} seconds.`);
+  const took = `${seconds < 10 ? seconds.toFixed(1) : Math.round(seconds)} seconds`;
+  setStatus(sample
+    ? `Checked the sample burst in ${took}. It's one photo of a finch, with blur added to some frames and the bird taken out of one.`
+    : `Checked ${files.length} photo${files.length === 1 ? '' : 's'} in ${took}.`);
   els.results.dataset.seconds = seconds.toFixed(2);
   els.results.dataset.done = 'true';
 }
@@ -490,6 +493,31 @@ async function showResults(records, { skipped, signal }) {
 
 // ------------------------------------------------------------------ input
 
+// A burst to try without photos of your own: one finch photo (demo sample 13), blurred by different amounts,
+// with the bird painted out of one frame (marketing/burst-picker-2026-11-01/make_burst.py, resized to 3072 px).
+const SAMPLE = ['IMG_1002', 'IMG_1003', 'IMG_1004', 'IMG_1006', 'IMG_1007', 'IMG_1008'];
+
+async function startSample() {
+  els.sample.disabled = true;
+  els.work.hidden = false;
+  els.problem.hidden = true;
+  setStatus('Getting the sample burst…');
+  getDetector().catch(() => {}); // get ready while the sample downloads
+  try {
+    const files = await Promise.all(SAMPLE.map(async (n) => {
+      const r = await fetch(`samples/${n}.jpg`);
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return new File([await r.blob()], `${n}.JPG`, { type: 'image/jpeg' });
+    }));
+    await start(files, { sample: true });
+  } catch {
+    setStatus('');
+    showProblem("Couldn't load the sample burst. Check your connection and try again.");
+  } finally {
+    els.sample.disabled = false;
+  }
+}
+
 function init() {
   // Outreach links carry ?ref=: credit the App Store campaign to it (as track.js does); ct=burst otherwise.
   const ref = new URLSearchParams(location.search).get('ref') || '';
@@ -504,6 +532,7 @@ function init() {
     els.file.click();
     getDetector().catch(() => {}); // get ready while the photos are picked
   });
+  els.sample.addEventListener('click', startSample);
   els.file.addEventListener('change', () => {
     const list = [...(els.file.files || [])];
     els.file.value = '';
