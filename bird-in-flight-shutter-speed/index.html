@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shutter speed for birds in flight: freeze-the-wings calculator</title>
+<meta name="description" content="Free bird-in-flight calculator: see how much the wings and body blur at your shutter speed, the speed that freezes them, and how often a burst catches sharp wings.">
+<link rel="canonical" href="https://getbirdframe.com/bird-in-flight-shutter-speed/">
+<meta property="og:title" content="What shutter speed freezes a bird in flight?">
+<meta property="og:description" content="Free bird-in-flight calculator: see how much the wings and body blur at your shutter speed, the speed that freezes them, and how often a burst catches sharp wings.">
+<meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
+<meta property="og:url" content="https://getbirdframe.com/bird-in-flight-shutter-speed/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guides/guide.css">
+<script src="../track.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Bird in flight shutter speed calculator", "url": "https://getbirdframe.com/bird-in-flight-shutter-speed/", "description": "Pick a camera, lens, distance and bird to see how many pixels the wingtips and the whole bird blur at a shutter speed, the shutter speed that freezes them, and how many frames a second a burst catches with the wings sharp.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": "en", "datePublished": "2026-11-01", "dateModified": "2026-11-01", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getbirdframe.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "What shutter speed freezes a bird in flight?", "item": "https://getbirdframe.com/bird-in-flight-shutter-speed/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What shutter speed do I need for birds in flight?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on what you want sharp. For the body of a bird you're panning with, many bird photographers start around 1/2000. Freezing the wingtips mid-stroke can take far more: the tip of a wing 0.9 m long, beating 2.5 times a second through a 100° stroke, peaks at about 12 metres a second, and close up that can call for 1/8000 or faster. Set your camera, lens, distance and bird above to see the speed for your shot."}}, {"@type": "Question", "name": "Why are the wingtips blurred when the eye is sharp?", "acceptedAnswer": {"@type": "Answer", "text": "Panning cancels the bird's flight, not its flapping. Mid-stroke, the wingtips sweep up and down past the body at several metres a second, while the head barely moves against your lens. So a frame can have a sharp eye and soft wingtips, and many photographers like a little wingtip blur because it shows motion."}}, {"@type": "Question", "name": "Does a faster burst help?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Twice in every wingbeat, at the top and the bottom of the stroke, the wings stop for an instant as they change direction. Each frame is a chance to land near that moment, so more frames a second means more frames with sharp wings. The catch is finding them among hundreds of near-identical shots: the free Burst Picker finds the sharpest bird in each burst."}}, {"@type": "Question", "name": "Why do distance and focal length matter?", "acceptedAnswer": {"@type": "Answer", "text": "Blur is counted in pixels, and the bigger the bird is in the frame, the more pixels each centimetre of wing movement crosses. Halve the distance or double the focal length and the blur roughly doubles at the same shutter speed, along with the bird's size. A camera with smaller pixels shows more blur in pixels for the same reason. APS-C crop mode on a full-frame camera doesn't change it: it only trims the frame."}}, {"@type": "Question", "name": "What do 1 px and 3 px of blur mean?", "acceptedAnswer": {"@type": "Answer", "text": "They're how far a point on the bird smears across the photo while the shutter is open, counted in the photo's own pixels and seen at 100%, one photo pixel to one screen pixel. One pixel or less is pixel-sharp: as crisp as the sensor allows. Up to about 3 pixels is hard to see unless you zoom right in, and usually disappears once the photo is shrunk for a screen or the web. They're rules of thumb, not hard limits."}}]}]}</script>
+<style>
+[hidden]{display:none!important}
+.article.calc-page{max-width:none}
+.calc-page>:not(.calc){max-width:44em}
+.calc{margin-top:28px;max-width:44em}
+.setup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+.article .setup-h{font-size:22px;margin:0 0 14px}
+.fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 16px}
+.fields .wide{grid-column:1/-1}
+.fld{display:flex;flex-direction:column;gap:8px;min-width:0}
+.lab{display:flex;flex-direction:column;gap:6px;font-size:15px;font-weight:500;color:var(--ink);min-width:0}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 7em;gap:10px;align-items:end;min-width:0}
+.other{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:end;min-width:0}
+.setup select,.setup input[type=number]{font:inherit;font-size:16px;font-weight:400;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);width:100%;min-width:0;min-height:44px}
+.setup select{appearance:none;-webkit-appearance:none;padding-right:36px;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 19px) 52%,calc(100% - 14px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+.setup select:focus-visible,.setup input:focus-visible,.setup button:focus-visible,.calc-bar button:focus-visible{outline:3px solid var(--mark);outline-offset:1px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips button{font:inherit;font-size:14px;padding:4px 12px;min-height:32px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--muted);cursor:pointer}
+.chips button[aria-pressed=true]{border-color:var(--spruce);color:var(--ink);font-weight:600}
+.chk{display:flex;gap:10px;align-items:center;font-size:15px;color:var(--ink);cursor:pointer}
+.chk input{width:20px;height:20px;margin:0;accent-color:var(--spruce)}
+.article .hint{font-size:14px;line-height:1.45;margin:0}
+.out{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.article .out .fit{margin:0 0 18px;color:var(--ink)}
+.article .out .warn{margin:-10px 0 18px;color:var(--ink);font-weight:500}
+.warn::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mark);margin-right:8px;vertical-align:1px}
+.res+.res{margin-top:20px}
+.article .res-h{margin:0;font-size:15px;font-weight:600;color:var(--ink)}
+.article .big{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;color:var(--ink);margin-top:4px}
+.big b{font-family:var(--display);font-size:clamp(40px,7vw,56px);line-height:1;font-weight:600}
+.article .res .verdict{margin-top:6px;color:var(--ink)}
+.nums{margin:22px 0 0;display:grid;gap:12px}
+.nums dt{font-weight:600;color:var(--ink);font-size:15px}
+.nums dd{margin:2px 0 0;color:var(--muted);font-size:16px}
+.article .out .take{margin-top:18px;color:var(--ink);font-weight:500}
+.article .out .fine{margin-top:8px}
+.calc-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.calc-bar button{cursor:pointer;font-family:inherit}
+.src{margin-top:22px}
+.src summary{cursor:pointer;font-weight:500;color:var(--ink)}
+.article .src .fine{margin-top:10px}
+.article .src li{font-size:15px}
+@media (max-width:560px){.fields,.other{grid-template-columns:1fr}.setup{padding:16px}.pair{grid-template-columns:minmax(0,1fr) 6.5em}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../"><img src="../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links"><a href="../guides/">Guides</a><a class="btn" data-windows-swap="Windows waitlist" href="https://apps.apple.com/app/apple-store/id6754513569?pt=127908484&ct=bif&mt=8">Get it on the Mac App Store</a></div>
+  </nav>
+
+  <main class="article calc-page">
+    <p class="crumb"><a href="../guides/">Guides</a> · Free tool</p>
+    <h1>What shutter speed freezes a bird in flight?</h1>
+    <p class="lede">Pick your camera, lens, distance and bird to see how far the wingtips and the whole bird blur at your shutter speed, the speed it takes to freeze them, and how often a burst catches the wings sharp.</p>
+
+    <div class="calc" id="calc">
+      <section class="setup" aria-label="Your setup">
+        <h2 class="setup-h">Your setup</h2>
+        <div class="fields">
+          <label class="lab wide">Camera body<select data-k="cam"><option value="canon-r7">Canon EOS R7</option></select></label>
+          <div class="other wide" data-show="other" hidden>
+            <label class="lab">Sensor width (mm)<input data-k="sw" type="number" inputmode="decimal" min="1" max="100" step="any"></label>
+            <label class="lab">Image width (pixels)<input data-k="pw" type="number" inputmode="numeric" min="100" max="30000" step="1"></label>
+          </div>
+          <div class="fld">
+            <label class="lab"><span data-t="flab">Focal length (mm)</span><input data-k="f" type="number" inputmode="decimal" min="1" max="5000" step="any"></label>
+            <div class="chips" data-show="chips" role="group" aria-label="Common focal lengths"><button type="button" data-f="400" aria-label="400 mm">400</button><button type="button" data-f="500" aria-label="500 mm">500</button><button type="button" data-f="600" aria-label="600 mm">600</button><button type="button" data-f="800" aria-label="800 mm">800</button></div>
+            <p class="hint" data-show="bridge" hidden>Fixed-lens camera: enter the 35mm-equivalent focal length (3000 at full zoom on the P1000, 2000 on the P950).</p>
+          </div>
+          <label class="lab" data-show="tc">Teleconverter<select data-k="tc"><option value="1">None</option><option value="1.4">1.4x</option><option value="2">2x</option></select></label>
+          <div class="fld wide" data-show="crop" hidden>
+            <label class="chk"><input type="checkbox" data-k="crop"><span data-t="crop">APS-C crop mode</span></label>
+            <p class="hint" data-show="cropnote" hidden>Crop mode trims the frame. It doesn't change the blur: the pixels stay the same size.</p>
+          </div>
+          <div class="pair wide">
+            <label class="lab">Distance to the bird<input data-k="d" type="number" inputmode="decimal" min="0.1" max="100000" step="any"></label>
+            <label class="lab">Unit<select data-k="u" aria-label="Distance unit"><option value="m">metres</option><option value="ft">feet</option></select></label>
+          </div>
+          <div class="fld wide">
+            <label class="lab">Bird<select data-k="bird"><option value="osprey">Osprey</option></select></label>
+            <p class="hint" data-o="birdinfo"></p>
+          </div>
+          <div class="fld wide">
+            <label class="lab">Shutter speed (1/… second)<input data-k="s" type="number" inputmode="numeric" min="1" max="64000" step="any"></label>
+            <div class="chips" role="group" aria-label="Common shutter speeds"><button type="button" data-s="500">1/500</button><button type="button" data-s="1000">1/1000</button><button type="button" data-s="2000">1/2000</button><button type="button" data-s="3200">1/3200</button><button type="button" data-s="4000">1/4000</button><button type="button" data-s="8000">1/8000</button></div>
+          </div>
+          <div class="fld wide">
+            <label class="lab">Burst rate (frames a second)<input data-k="fps" type="number" inputmode="decimal" min="1" max="120" step="any"></label>
+            <div class="chips" role="group" aria-label="Common burst rates"><button type="button" data-fps="10" aria-label="10 frames a second">10</button><button type="button" data-fps="15" aria-label="15 frames a second">15</button><button type="button" data-fps="20" aria-label="20 frames a second">20</button><button type="button" data-fps="30" aria-label="30 frames a second">30</button></div>
+          </div>
+        </div>
+        <div class="out" aria-live="polite">
+          <p class="fit" data-o="fit"></p>
+          <p class="warn" data-o="warn" hidden></p>
+          <div class="res">
+            <p class="res-h">Wingtips mid-stroke, panning with the bird</p>
+            <p class="big"><b data-o="wing">–</b><span data-o="wingctx">of blur</span></p>
+            <p class="verdict" data-o="wingv"></p>
+          </div>
+          <div class="res">
+            <p class="res-h">Whole bird crossing, camera still</p>
+            <p class="big"><b data-o="body">–</b><span>of blur</span></p>
+            <p class="verdict" data-o="bodyv"></p>
+          </div>
+          <dl class="nums">
+            <div><dt>Shutter to keep the wingtips pixel-sharp (1 px)</dt><dd data-o="n1"></dd></div>
+            <div><dt>Shutter to keep them sharp on screen (3 px)</dt><dd data-o="n3"></dd></div>
+          </dl>
+          <p class="take" data-o="burst"></p>
+          <p class="fine">Estimates, measured at 100%: one photo pixel to one screen pixel.</p>
+        </div>
+      </section>
+    </div>
+    <div class="calc-bar">
+      <button type="button" class="btn ghost" id="copy">Copy link to this setup</button>
+      <span class="fine" id="copied" role="status"></span>
+    </div>
+    <noscript><p class="fine">The calculator needs JavaScript.</p></noscript>
+
+    <h2>How it works</h2>
+    <p>You pan with the bird, so its body stays put in the frame and the blur that's left comes from the flapping wings. Each wing is taken to sweep through an arc of <span data-o="stroke">100</span>° at the bird's wingbeat rate: fastest mid-stroke, and stopping for an instant at the top and bottom. The calculator turns that wingtip speed into pixels on your sensor, from the lens's magnification at your distance and the size of your camera's pixels, and measures blur at 100%. The camera-still line uses the bird's cruising speed instead, for a bird crossing in front of a camera that doesn't move. Real birds speed up, glide, turn and flap harder on take-off, so treat every number as an estimate.</p>
+
+    <details class="src" id="sources">
+      <summary>Where the numbers come from</summary>
+<!-- SOURCES START: written by marketing/bif-shutter-2026-11-01/inline_species.py; don't edit by hand -->
+      <p class="fine">Camera sensor sizes and pixel counts are the makers' published specifications. Every bird is taken to beat its wings through a 100° stroke (est.; 80–130° depending on speed, <a href="https://lup.lub.lu.se/search/files/2984168/624229.pdf" rel="nofollow noopener">Park et al. 2001</a>). Values marked est. are estimates.</p>
+      <ul class="src-list">
+        <li><b>American Kestrel</b>: wingspan 0.56 m (<a href="https://web.archive.org/web/20260111205828/https://www.allaboutbirds.org/guide/American_Kestrel/id" rel="nofollow noopener">All About Birds</a>); cruising speed 11 m/s (est. from the Lesser Kestrel, <a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001, radar</a>); 5.5 wingbeats a second (est. from the size and weight of the Lesser Kestrel, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Bald Eagle</b>: wingspan 2.04 m (<a href="https://web.archive.org/web/20260113032050/https://www.allaboutbirds.org/guide/Bald_Eagle/id" rel="nofollow noopener">All About Birds</a>); cruising speed 14 m/s (est. from the White-tailed Eagle, <a href="https://doi.org/10.1098/rsif.2013.0419" rel="nofollow noopener">Pennycuick et al. 2013</a>); 2.6 wingbeats a second (est. from the size and weight of the White-tailed Eagle, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Barn Owl</b>: wingspan 0.88 m (<a href="https://www.rspb.org.uk/birds-and-wildlife/barn-owl" rel="nofollow noopener">RSPB</a>); cruising speed 11 m/s (est. from size and weight, <a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007</a>); 4.4 wingbeats a second (<a href="https://doi.org/10.1098/rsif.2022.0168" rel="nofollow noopener">Krishnan et al. 2022</a>).</li>
+        <li><b>Barn Swallow</b>: wingspan 0.31 m (<a href="https://web.archive.org/web/20260104200746/https://www.allaboutbirds.org/guide/Barn_Swallow/id" rel="nofollow noopener">All About Birds</a>); cruising speed 11 m/s (<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001, radar</a>); 8 wingbeats a second (<a href="https://lup.lub.lu.se/search/files/2984168/624229.pdf" rel="nofollow noopener">Park et al. 2001</a>).</li>
+        <li><b>Black Kite</b>: wingspan 1.45 m (<a href="https://birds-europe.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=130467" rel="nofollow noopener">Naturalis</a>); cruising speed 12 m/s (<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001, radar</a>); 2.7 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Canada Goose</b>: wingspan 1.49 m (<a href="https://web.archive.org/web/20260116045557/https://www.allaboutbirds.org/guide/Canada_Goose/id" rel="nofollow noopener">All About Birds</a>); cruising speed 17 m/s (<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007, radar</a>); 4 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Common Kestrel</b>: wingspan 0.76 m (<a href="https://www.rspb.org.uk/birds-and-wildlife/kestrel" rel="nofollow noopener">RSPB</a>); cruising speed 13 m/s (<a href="https://doi.org/10.1098/rsif.2013.0419" rel="nofollow noopener">Pennycuick et al. 2013</a>); 5.2 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Common Swift</b>: wingspan 0.45 m (<a href="https://www.rspb.org.uk/birds-and-wildlife/swift" rel="nofollow noopener">RSPB</a>); cruising speed 11 m/s (<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001, radar</a>); 8 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Common Tern</b>: wingspan 0.78 m (<a href="https://web.archive.org/web/20260121045731/https://www.allaboutbirds.org/guide/Common_Tern/id" rel="nofollow noopener">All About Birds</a>); cruising speed 11 m/s (<a href="https://doi.org/10.1098/rsif.2013.0419" rel="nofollow noopener">Pennycuick et al. 2013</a>); 4.6 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Great Blue Heron</b>: wingspan 1.84 m (<a href="https://web.archive.org/web/20251226100908/https://www.allaboutbirds.org/guide/Great_Blue_Heron/id" rel="nofollow noopener">All About Birds</a>); cruising speed 11 m/s (est. from the Grey Heron, <a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001, radar</a>); 2.7 wingbeats a second (est. from the size and weight of the Grey Heron, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Great Egret</b>: wingspan 1.38 m (<a href="https://web.archive.org/web/20260101090441/https://www.allaboutbirds.org/guide/Great_Egret/id" rel="nofollow noopener">All About Birds</a>); cruising speed 10 m/s (<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001, radar</a>); 3.1 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Grey Heron</b>: wingspan 1.85 m (<a href="https://www.rspb.org.uk/birds-and-wildlife/grey-heron" rel="nofollow noopener">RSPB</a>); cruising speed 11 m/s (<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001, radar</a>); 2.7 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Herring Gull</b>: wingspan 1.4 m (<a href="https://www.rspb.org.uk/birds-and-wildlife/herring-gull" rel="nofollow noopener">RSPB</a>); cruising speed 13 m/s (<a href="https://doi.org/10.1098/rsif.2013.0419" rel="nofollow noopener">Pennycuick et al. 2013</a>); 4 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Mallard</b>: wingspan 0.89 m (<a href="https://web.archive.org/web/20260101150710/https://www.allaboutbirds.org/guide/Mallard/id" rel="nofollow noopener">All About Birds</a>); cruising speed 19 m/s (<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007, radar</a>); 7.1 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Mute Swan</b>: wingspan 2.23 m (<a href="https://web.archive.org/web/20250514072031/https://www.allaboutbirds.org/guide/Mute_Swan/id" rel="nofollow noopener">All About Birds</a>); cruising speed 16 m/s (<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007, radar</a>); 3.7 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Northern Gannet</b>: wingspan 1.82 m (<a href="https://web.archive.org/web/20260115181005/https://www.allaboutbirds.org/guide/Northern_Gannet/id/" rel="nofollow noopener">All About Birds</a>); cruising speed 18 m/s (est. from size and weight, <a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007</a>); 3.9 wingbeats a second (<a href="https://doi.org/10.1098/rsif.2022.0168" rel="nofollow noopener">Krishnan et al. 2022</a>).</li>
+        <li><b>Northern Harrier</b>: wingspan 1.1 m (<a href="https://web.archive.org/web/20260425031718/https://www.allaboutbirds.org/guide/northern_harrier/id" rel="nofollow noopener">All About Birds</a>); cruising speed 9.1 m/s (est. from the Hen Harrier, <a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007, radar</a>); 3.6 wingbeats a second (est. from the size and weight of the Hen Harrier, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Osprey</b>: wingspan 1.65 m (<a href="https://web.archive.org/web/20251220154950/https://www.allaboutbirds.org/guide/osprey/id/" rel="nofollow noopener">All About Birds</a>); cruising speed 11 m/s (<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001, radar</a>); 3.2 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Peregrine Falcon</b>: wingspan 1.05 m (<a href="https://web.archive.org/web/20260121074601/https://www.allaboutbirds.org/guide/peregrine_falcon/id" rel="nofollow noopener">All About Birds</a>); cruising speed 12 m/s (<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001, radar</a>); 5.2 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Red Kite</b>: wingspan 1.85 m (<a href="https://www.rspb.org.uk/birds-and-wildlife/red-kite" rel="nofollow noopener">RSPB</a>); cruising speed 12 m/s (<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007, radar</a>); 2.6 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Red-tailed Hawk</b>: wingspan 1.24 m (<a href="https://web.archive.org/web/20260102064137/https://www.allaboutbirds.org/guide/red-tailed_hawk/id/" rel="nofollow noopener">All About Birds</a>); cruising speed 13 m/s (est. from the Common Buzzard, <a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001, radar</a>); 3.5 wingbeats a second (est. from the size and weight of the Common Buzzard, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>Ruby-throated Hummingbird</b>: wingspan 0.1 m (<a href="https://web.archive.org/web/20250627175738/https://www.allaboutbirds.org/guide/Ruby-throated_Hummingbird/id" rel="nofollow noopener">All About Birds</a>); cruising speed 7.8 m/s (est. from size and weight, <a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007</a>); 53 wingbeats a second (<a href="https://www.allaboutbirds.org/guide/Ruby-throated_Hummingbird/overview" rel="nofollow noopener">All About Birds</a>).</li>
+        <li><b>Sandhill Crane</b>: wingspan 2 m (<a href="https://web.archive.org/web/20260116180226/https://www.allaboutbirds.org/guide/sandhill_crane/id" rel="nofollow noopener">All About Birds</a>); cruising speed 15 m/s (est. from the Common Crane, <a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007, radar</a>); 3.1 wingbeats a second (est. from the size and weight of the Common Crane, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+        <li><b>White-tailed Eagle</b>: wingspan 2.2 m (<a href="https://www.rspb.org.uk/birds-and-wildlife/white-tailed-eagle" rel="nofollow noopener">RSPB</a>); cruising speed 14 m/s (<a href="https://doi.org/10.1098/rsif.2013.0419" rel="nofollow noopener">Pennycuick et al. 2013</a>); 2.6 wingbeats a second (est. from size and weight, <a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>).</li>
+      </ul>
+<!-- SOURCES END -->
+    </details>
+
+    <div class="cta-box">
+      <p><b>Shoot the burst. Keep the sharpest.</b> The free <a data-bp href="../burst-picker/?ref=bif-tool">Burst Picker</a> shows which frame in a burst has the sharpest bird. BirdFrame for Mac crops the birds in thousands of photos in one go, so there's no cropping by hand, and cuts every crop from the full-size original, at full resolution. Each burst becomes one Moment showing its clearest bird. Free for up to 50 photos per run.</p>
+      <div class="ctas"><a class="btn" data-windows-swap="Join the Windows waitlist" href="https://apps.apple.com/app/apple-store/id6754513569?pt=127908484&ct=bif&mt=8">Download free on the Mac App Store</a><a class="btn ghost" data-bp href="../burst-picker/?ref=bif-tool">Try the Burst Picker</a></div>
+    </div>
+
+    <h2>Questions</h2>
+    <h3>What shutter speed do I need for birds in flight?</h3>
+    <p>It depends on what you want sharp. For the body of a bird you're panning with, many bird photographers start around 1/2000. Freezing the wingtips mid-stroke can take far more: the tip of a wing 0.9 m long, beating 2.5 times a second through a 100° stroke, peaks at about 12 metres a second, and close up that can call for 1/8000 or faster. Set your camera, lens, distance and bird above to see the speed for your shot.</p>
+    <h3>Why are the wingtips blurred when the eye is sharp?</h3>
+    <p>Panning cancels the bird's flight, not its flapping. Mid-stroke, the wingtips sweep up and down past the body at several metres a second, while the head barely moves against your lens. So a frame can have a sharp eye and soft wingtips, and many photographers like a little wingtip blur because it shows motion.</p>
+    <h3>Does a faster burst help?</h3>
+    <p>Yes. Twice in every wingbeat, at the top and the bottom of the stroke, the wings stop for an instant as they change direction. Each frame is a chance to land near that moment, so more frames a second means more frames with sharp wings. The catch is finding them among hundreds of near-identical shots: the free <a data-bp href="../burst-picker/?ref=bif-tool">Burst Picker</a> finds the sharpest bird in each burst.</p>
+    <h3>Why do distance and focal length matter?</h3>
+    <p>Blur is counted in pixels, and the bigger the bird is in the frame, the more pixels each centimetre of wing movement crosses. Halve the distance or double the focal length and the blur roughly doubles at the same shutter speed, along with the bird's size. A camera with smaller pixels shows more blur in pixels for the same reason. APS-C crop mode on a full-frame camera doesn't change it: it only trims the frame.</p>
+    <h3>What do 1 px and 3 px of blur mean?</h3>
+    <p>They're how far a point on the bird smears across the photo while the shutter is open, counted in the photo's own pixels and seen at 100%, one photo pixel to one screen pixel. One pixel or less is pixel-sharp: as crisp as the sensor allows. Up to about 3 pixels is hard to see unless you zoom right in, and usually disappears once the photo is shrunk for a screen or the web. They're rules of thumb, not hard limits.</p>
+
+    <p class="fine">Also free: the <a href="../bird-reach-calculator/">reach calculator</a> shows how many pixels land on the bird with your camera, lens and distance.</p>
+  </main>
+
+  <footer>
+    <span>Made by a one-person studio. Questions: <a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
+    <span><a href="../">Home</a> · <a href="../guides/">Guides</a> · <a href="../press.html">Press</a> · <a href="../privacy/">Privacy</a></span>
+  </footer>
+</div>
+<script>
+(() => {
+  'use strict';
+  // Camera bodies, copied from the reach calculator: [id, group, name, sensor width mm, sensor height mm, pixel width,
+  // pixel height, APS-C crop-mode factor (0 = none), 35mm-equivalent factor for fixed-lens cameras (0 = interchangeable lens)].
+  // Sources: marketing/reach-calculator-2026-10-30/SPECS.md
+  const CAMS = [
+    ["canon-r5","Canon","Canon EOS R5",36.0,24.0,8192,5464,1.6,0],
+    ["canon-r5-ii","Canon","Canon EOS R5 Mark II",36.0,24.0,8192,5464,1.6,0],
+    ["canon-r6-ii","Canon","Canon EOS R6 Mark II",35.9,23.9,6000,4000,1.6,0],
+    ["canon-r6-iii","Canon","Canon EOS R6 Mark III",35.9,23.9,6960,4640,1.6,0],
+    ["canon-r7","Canon","Canon EOS R7",22.3,14.8,6960,4640,0,0],
+    ["canon-r10","Canon","Canon EOS R10",22.3,14.9,6000,4000,0,0],
+    ["canon-r8","Canon","Canon EOS R8",35.9,23.9,6000,4000,1.6,0],
+    ["canon-r3","Canon","Canon EOS R3",36.0,24.0,6000,4000,1.6,0],
+    ["canon-r1","Canon","Canon EOS R1",36.0,24.0,6000,4000,1.6,0],
+    ["canon-90d","Canon","Canon EOS 90D",22.3,14.8,6960,4640,0,0],
+    ["canon-7d-ii","Canon","Canon EOS 7D Mark II",22.4,15.0,5472,3648,0,0],
+    ["canon-5d-iv","Canon","Canon EOS 5D Mark IV",36.0,24.0,6720,4480,0,0],
+    ["nikon-z8","Nikon","Nikon Z8",35.9,23.9,8256,5504,1.5,0],
+    ["nikon-z9","Nikon","Nikon Z9",35.9,23.9,8256,5504,1.5,0],
+    ["nikon-z6-iii","Nikon","Nikon Z6III",35.9,23.9,6048,4032,1.5,0],
+    ["nikon-z5-ii","Nikon","Nikon Z5II",35.9,23.9,6048,4032,1.5,0],
+    ["nikon-z50-ii","Nikon","Nikon Z50II",23.5,15.7,5568,3712,0,0],
+    ["nikon-zf","Nikon","Nikon Zf",35.9,23.9,6048,4032,1.5,0],
+    ["nikon-d500","Nikon","Nikon D500",23.5,15.7,5568,3712,0,0],
+    ["nikon-d850","Nikon","Nikon D850",35.9,23.9,8256,5504,1.5,0],
+    ["sony-a1","Sony","Sony A1",35.9,24.0,8640,5760,1.5,0],
+    ["sony-a1-ii","Sony","Sony A1 II",35.9,24.0,8640,5760,1.5,0],
+    ["sony-a9-iii","Sony","Sony A9 III",35.6,23.8,6000,4000,1.5,0],
+    ["sony-a7r-v","Sony","Sony A7R V",35.7,23.8,9504,6336,1.5,0],
+    ["sony-a7r-vi","Sony","Sony A7R VI",35.9,24.0,9984,6656,1.5,0],
+    ["sony-a7-iv","Sony","Sony A7 IV",35.9,23.9,7008,4672,1.5,0],
+    ["sony-a7-v","Sony","Sony A7 V",35.9,23.9,7008,4672,1.5,0],
+    ["sony-a6700","Sony","Sony A6700",23.3,15.5,6192,4128,0,0],
+    ["sony-a6400","Sony","Sony A6400",23.5,15.6,6000,4000,0,0],
+    ["om-1","OM System","OM System OM-1",17.4,13.0,5184,3888,0,0],
+    ["om-1-ii","OM System","OM System OM-1 Mark II",17.4,13.0,5184,3888,0,0],
+    ["om-3","OM System","OM System OM-3",17.4,13.0,5184,3888,0,0],
+    ["om-5","OM System","OM System OM-5",17.4,13.0,5184,3888,0,0],
+    ["olympus-e-m1x","OM System","Olympus OM-D E-M1X",17.4,13.0,5184,3888,0,0],
+    ["olympus-e-m1-iii","OM System","Olympus OM-D E-M1 Mark III",17.4,13.0,5184,3888,0,0],
+    ["olympus-e-m1-ii","OM System","Olympus OM-D E-M1 Mark II",17.4,13.0,5184,3888,0,0],
+    ["panasonic-g9-ii","Panasonic","Panasonic Lumix G9 II",17.3,13.0,5776,4336,0,0],
+    ["panasonic-g9","Panasonic","Panasonic Lumix G9",17.3,13.0,5184,3888,0,0],
+    ["fujifilm-x-h2","Fujifilm","Fujifilm X-H2",23.5,15.7,7728,5152,0,0],
+    ["fujifilm-x-h2s","Fujifilm","Fujifilm X-H2S",23.5,15.7,6240,4160,0,0],
+    ["fujifilm-x-t5","Fujifilm","Fujifilm X-T5",23.5,15.7,7728,5152,0,0],
+    ["fujifilm-gfx100-ii","Fujifilm","Fujifilm GFX100 II",43.8,32.9,11648,8736,0,0],
+    ["fujifilm-gfx100s-ii","Fujifilm","Fujifilm GFX100S II",43.8,32.9,11648,8736,0,0],
+    ["fujifilm-gfx100s","Fujifilm","Fujifilm GFX100S",43.8,32.9,11648,8736,0,0],
+    ["fujifilm-gfx100","Fujifilm","Fujifilm GFX100",43.8,32.9,11648,8736,0,0],
+    ["nikon-p1000","Bridge cameras (fixed lens)","Nikon Coolpix P1000",6.17,4.55,4608,3456,0,5.566],
+    ["nikon-p950","Bridge cameras (fixed lens)","Nikon Coolpix P950",6.17,4.55,4608,3456,0,5.602],
+  ];
+  const BRIDGE_MAX = {"nikon-p1000": 3000, "nikon-p950": 2000}; // full zoom, 35mm equivalent
+
+  /* SPECIES START: written by marketing/bif-shutter-2026-11-01/inline_species.py from species.json; don't edit by hand */
+  const STROKE_DEG = 100;
+  const SPECIES = [
+    {"id": "barn-swallow", "name": "Barn Swallow", "span": 0.31, "v": 11.0, "hz": 8.0, "est": []},
+    {"id": "common-swift", "name": "Common Swift", "span": 0.45, "v": 11.0, "hz": 8.0, "est": ["hz"]},
+    {"id": "ruby-throated-hummingbird", "name": "Ruby-throated Hummingbird", "span": 0.1, "v": 7.8, "hz": 53.0, "est": ["v"]},
+    {"id": "american-kestrel", "name": "American Kestrel", "span": 0.56, "v": 11.0, "hz": 5.5, "est": ["hz", "v"]},
+    {"id": "common-kestrel", "name": "Common Kestrel", "span": 0.76, "v": 13.0, "hz": 5.2, "est": ["hz"]},
+    {"id": "peregrine-falcon", "name": "Peregrine Falcon", "span": 1.05, "v": 12.0, "hz": 5.2, "est": ["hz"]},
+    {"id": "osprey", "name": "Osprey", "span": 1.65, "v": 11.0, "hz": 3.2, "est": ["hz"]},
+    {"id": "bald-eagle", "name": "Bald Eagle", "span": 2.04, "v": 14.0, "hz": 2.6, "est": ["hz", "v"]},
+    {"id": "white-tailed-eagle", "name": "White-tailed Eagle", "span": 2.2, "v": 14.0, "hz": 2.6, "est": ["hz"]},
+    {"id": "red-tailed-hawk", "name": "Red-tailed Hawk", "span": 1.24, "v": 13.0, "hz": 3.5, "est": ["hz", "v"]},
+    {"id": "red-kite", "name": "Red Kite", "span": 1.85, "v": 12.0, "hz": 2.6, "est": ["hz"]},
+    {"id": "black-kite", "name": "Black Kite", "span": 1.45, "v": 12.0, "hz": 2.7, "est": ["hz"]},
+    {"id": "northern-harrier", "name": "Northern Harrier", "span": 1.1, "v": 9.1, "hz": 3.6, "est": ["hz", "v"]},
+    {"id": "barn-owl", "name": "Barn Owl", "span": 0.88, "v": 11.0, "hz": 4.4, "est": ["v"]},
+    {"id": "great-blue-heron", "name": "Great Blue Heron", "span": 1.84, "v": 11.0, "hz": 2.7, "est": ["hz", "v"]},
+    {"id": "grey-heron", "name": "Grey Heron", "span": 1.85, "v": 11.0, "hz": 2.7, "est": ["hz"]},
+    {"id": "great-egret", "name": "Great Egret", "span": 1.38, "v": 10.0, "hz": 3.1, "est": ["hz"]},
+    {"id": "sandhill-crane", "name": "Sandhill Crane", "span": 2.0, "v": 15.0, "hz": 3.1, "est": ["hz", "v"]},
+    {"id": "mallard", "name": "Mallard", "span": 0.89, "v": 19.0, "hz": 7.1, "est": ["hz"]},
+    {"id": "canada-goose", "name": "Canada Goose", "span": 1.49, "v": 17.0, "hz": 4.0, "est": ["hz"]},
+    {"id": "mute-swan", "name": "Mute Swan", "span": 2.23, "v": 16.0, "hz": 3.7, "est": ["hz"]},
+    {"id": "northern-gannet", "name": "Northern Gannet", "span": 1.82, "v": 18.0, "hz": 3.9, "est": ["v"]},
+    {"id": "herring-gull", "name": "Herring Gull", "span": 1.4, "v": 13.0, "hz": 4.0, "est": ["hz"]},
+    {"id": "common-tern", "name": "Common Tern", "span": 0.78, "v": 11.0, "hz": 4.6, "est": ["hz"]},
+  ];
+  /* SPECIES END */
+
+  /* MATH START: mirrored in marketing/bif-shutter-2026-11-01/test_math.py */
+  const STEPS = [250, 320, 400, 500, 640, 800, 1000, 1250, 1600, 2000, 2500, 3200, 4000, 5000, 6400, 8000,
+    10000, 12800, 16000, 20000, 25600, 32000]; // standard shutter speeds (1/x), in third stops
+  const SHARP = 1, SCREEN = 3; // blur targets in pixels: "pixel-sharp" and "sharp on screen"
+  function stepUp(den) { // the nearest standard shutter speed at or above 1/den; 0 = faster than 1/32000
+    for (const s of STEPS) if (s >= den * (1 - 1e-9)) return s;
+    return 0;
+  }
+  function bif(o) {
+    // o: sw (sensor width mm), pw (image width px), eq (35mm-equivalent factor or 0), crop (crop-mode factor or 0),
+    //    f (focal length typed, mm), tc (teleconverter), dmm (distance mm), span (wingspan m),
+    //    v (cruising airspeed m/s, or null when no figure is published: no camera-still result),
+    //    hz (wingbeats a second), amp (wing stroke, degrees), s (shutter speed 1/s), fps (frames a second)
+    const pos = x => typeof x === 'number' && isFinite(x) && x > 0;
+    if (![o.sw, o.pw, o.f, o.tc, o.dmm, o.span, o.hz, o.amp, o.s, o.fps].every(pos)) return null;
+    if (!(o.eq >= 0) || !(o.crop >= 0)) return null;
+    const fe = o.eq ? o.f / o.eq : o.f * o.tc; // real focal length at the sensor, mm
+    if (!(o.dmm > fe)) return null;
+    const p = o.sw / o.pw; // pixel pitch, mm
+    const m = fe / (o.dmm - fe); // magnification
+    const k = 1000 * m / p; // pixels per metre at the bird
+    const t = 1 / o.s; // exposure, s
+    const R = o.span / 2, phi = o.amp * Math.PI / 180;
+    const vTip = Math.PI * phi * R * o.hz; // peak wingtip speed against the body (mid-stroke), m/s
+    const wing = vTip * t * k; // wingtip blur mid-stroke when panning, px
+    const hasV = pos(o.v);
+    const body = hasV ? o.v * t * k : null; // whole-bird blur, camera still, px
+    const need = (v, B) => v * k / B; // shutter denominator that keeps the blur to B px
+    const frac = 2 / Math.PI * Math.asin(Math.min(1, SCREEN / wing)); // share of frames with wingtips within 3 px
+    const fw = Math.round(o.pw / (o.crop > 1 ? o.crop : 1)); // frame width, px (crop mode trims it)
+    const spanPx = o.span * k; // wingspan on the sensor, px
+    return {fe, p, m, k, t, vTip, wing, body, w1: need(vTip, SHARP), w3: need(vTip, SCREEN), b1: hasV ? need(o.v, SHARP) : null,
+      b3: hasV ? need(o.v, SCREEN) : null, frac, perSec: o.fps * frac, perBeat: o.fps / o.hz, fw, spanPx, spanPct: spanPx / fw * 100};
+  }
+  /* MATH END */
+
+  const KEYS = ['cam', 'f', 'tc', 'crop', 'd', 'u', 'bird', 's', 'fps', 'sw', 'pw'];
+  const birdById = Object.fromEntries(SPECIES.map(b => [b.id, b]));
+  const DEF = {cam: 'canon-r7', f: '600', tc: '1', crop: '', d: '50', u: 'm', bird: birdById.osprey ? 'osprey' : (SPECIES[0] || {}).id,
+    s: '2000', fps: '20', sw: '23.5', pw: '6000'};
+  const camById = Object.fromEntries(CAMS.map(c => [c[0], c]));
+  const panel = document.querySelector('#calc .setup');
+  const copyBtn = document.getElementById('copy');
+  const copied = document.getElementById('copied');
+
+  const nf = (n, d = 0) => n.toLocaleString('en-US', {minimumFractionDigits: d, maximumFractionDigits: d});
+  const num = v => v !== null && v !== '' && isFinite(+v) && +v > 0;
+  const el = k => panel.querySelector('[data-k="' + k + '"]');
+  const out = k => panel.querySelector('[data-o="' + k + '"]');
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const pxf = b => (b < 10 ? nf(b, 1) : nf(Math.round(b))) + ' px';
+  const one = n => n < 10 ? nf(n, Math.abs(n - Math.round(n)) < 0.05 ? 0 : 1) : nf(Math.round(n));
+
+  function fill() {
+    const groups = {};
+    CAMS.forEach(c => { (groups[c[1]] = groups[c[1]] || []).push(c); });
+    el('cam').innerHTML = Object.keys(groups).map(g => '<optgroup label="' + g + '">' +
+      groups[g].map(c => '<option value="' + c[0] + '">' + c[2] + '</option>').join('') + '</optgroup>').join('') +
+      '<option value="other">Other camera</option>';
+    el('bird').innerHTML = SPECIES.slice().sort((a, b) => a.name.localeCompare(b.name))
+      .map(b => '<option value="' + esc(b.id) + '">' + esc(b.name) + '</option>').join('');
+    document.querySelectorAll('[data-o="stroke"]').forEach(e => { e.textContent = nf(STROKE_DEG); });
+  }
+
+  function getState() {
+    const s = {};
+    KEYS.forEach(k => { const e = el(k); s[k] = e.type === 'checkbox' ? (e.checked ? '1' : '') : e.value.trim(); });
+    return s;
+  }
+  function setState(s) {
+    KEYS.forEach(k => { const e = el(k); if (e.type === 'checkbox') e.checked = s[k] === '1'; else e.value = s[k]; });
+    panel.dataset.cam = s.cam; panel.dataset.u = s.u;
+  }
+  function fromQuery(p) {
+    const s = Object.assign({}, DEF);
+    if (camById[p.get('cam')] || p.get('cam') === 'other') s.cam = p.get('cam');
+    ['f', 'd', 's', 'fps', 'sw', 'pw'].forEach(k => { if (num(p.get(k))) s[k] = String(+p.get(k)); });
+    if (['1', '1.4', '2'].includes(p.get('tc'))) s.tc = p.get('tc');
+    if (p.get('crop') === '1') s.crop = '1';
+    if (['m', 'ft'].includes(p.get('u'))) s.u = p.get('u');
+    if (birdById[p.get('bird')]) s.bird = p.get('bird');
+    if (s.u === 'ft' && !num(p.get('d'))) s.d = '164';
+    if (BRIDGE_MAX[s.cam] && !num(p.get('f'))) s.f = String(BRIDGE_MAX[s.cam]);
+    return s;
+  }
+  function camOf(s) {
+    if (s.cam === 'other') return {sw: +s.sw, pw: Math.round(+s.pw), crop: 0, eq: 0};
+    const c = camById[s.cam] || camById[DEF.cam];
+    return {sw: c[3], pw: c[5], crop: c[7], eq: c[8]};
+  }
+  function urlFor() {
+    const p = new URLSearchParams(location.search); // keeps ref and any other parameters
+    const s = getState(), c = camOf(s);
+    const set = (k, v) => { if (v) p.set(k, v); else p.delete(k); };
+    set('cam', s.cam); set('f', s.f); set('tc', c.eq ? '' : s.tc); set('crop', c.crop && s.crop ? '1' : '');
+    set('d', s.d); set('u', s.u); set('bird', s.bird); set('s', s.s); set('fps', s.fps);
+    set('sw', s.cam === 'other' ? s.sw : ''); set('pw', s.cam === 'other' ? s.pw : '');
+    const qs = p.toString();
+    return location.pathname + (qs ? '?' + qs : '') + location.hash;
+  }
+
+  function wingVerdict(b) {
+    if (b <= SHARP) return 'Pixel-sharp: the wingtips are frozen even at 100%.';
+    if (b <= SCREEN) return 'Sharp on screen: only a hint of blur at 100%.';
+    if (b <= 8) return 'Slightly soft wingtips at 100%; fine once the photo is shrunk for the web.';
+    if (b <= 25) return 'Blurred wingtips mid-stroke, though the eye can still be sharp.';
+    return 'Strongly blurred wingtips mid-stroke: they show the motion, but they won\'t look sharp.';
+  }
+  function speed(den, short) { // a shutter-speed requirement in plain words
+    if (den <= STEPS[0]) return '1/' + STEPS[0] + ' or slower.';
+    const s = stepUp(den);
+    if (s && s <= 8000) return '1/' + s + '.';
+    const burst = ' The burst is how you get the sharp frame.';
+    if (!s) return 'Faster than 1/32000, beyond any shutter.' + (short ? '' : burst);
+    return 'About 1/' + s + ': faster than the 1/8000 most shutters can do' + (short ? '.' : ', so the shutter can\'t freeze it.' + burst);
+  }
+  function bodyVerdict(r) {
+    if (r.body === null) return 'No published cruising speed for this bird, so no camera-still figure.';
+    if (r.body <= SHARP) return 'Pixel-sharp even without panning.';
+    if (r.body <= SCREEN) return 'Sharp on screen even without panning.';
+    const s = stepUp(r.b3);
+    return 'Pan with the bird: held still, ' + (s && s <= 8000 ? 'you\'d need about 1/' + s + ' to keep it within 3 px.'
+      : 'no shutter up to 1/8000 keeps it within 3 px.');
+  }
+  function burstLine(r, fps) {
+    const at = 'At ' + one(fps) + ' fps ';
+    if (r.frac >= 1) return at + 'every frame keeps the wingtips within 3 px.';
+    const beat = r.perBeat >= 1 ? ' Each wingbeat gets about ' + one(r.perBeat) + ' frames.'
+      : ' The wings beat about ' + one(1 / r.perBeat) + ' times between frames.';
+    if (r.perSec >= 1) return at + 'about ' + one(r.perSec) + ' frames a second catch the wingtips within 3 px, near the top or bottom of the stroke.' + beat;
+    return at + 'about one frame every ' + one(1 / r.perSec) + ' seconds catches the wingtips within 3 px, near the top or bottom of the stroke.' + beat;
+  }
+  function birdInfo(b) {
+    const est = f => (b.est || []).includes(f) ? ', est.' : '';
+    const ftIn = m => { const i = Math.round(m / 0.0254); return i < 12 ? i + ' in' : Math.floor(i / 12) + ' ft ' + (i % 12) + ' in'; };
+    const speed = b.v ? 'cruising speed ' + one(b.v) + ' m/s (' + nf(b.v * 2.23694) + ' mph' + est('v') + ')' : 'no published cruising speed';
+    return 'Wingspan ' + String(+b.span.toFixed(2)) + ' m (' + ftIn(b.span) + est('span') + ') · ' + speed + ' · ' +
+      one(b.hz) + ' wingbeats a second' + (est('hz') ? ' (est.)' : '') + '.';
+  }
+
+  function render() {
+    const s = getState(), c = camOf(s);
+    const show = (key, on) => panel.querySelectorAll('[data-show="' + key + '"]').forEach(e => { e.hidden = !on; });
+    show('other', s.cam === 'other'); show('bridge', !!c.eq); show('chips', !c.eq); show('tc', !c.eq);
+    show('crop', c.crop > 0); show('cropnote', c.crop > 0 && s.crop === '1');
+    panel.querySelector('[data-t="flab"]').textContent = c.eq ? 'Focal length (35mm equivalent)' : 'Focal length (mm)';
+    panel.querySelector('[data-t="crop"]').textContent = 'APS-C crop mode (' + c.crop + 'x)';
+    panel.querySelectorAll('[data-f]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === s.f)));
+    panel.querySelectorAll('[data-s]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.s === s.s)));
+    panel.querySelectorAll('[data-fps]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.fps === s.fps)));
+    const b = birdById[s.bird] || birdById[DEF.bird];
+    out('birdinfo').textContent = b ? birdInfo(b) : '';
+    const dmm = s.u === 'ft' ? +s.d * 304.8 : +s.d * 1000;
+    const ok = !!b && [+s.f, dmm, +s.s, +s.fps, c.sw, c.pw].every(num);
+    const r = ok ? bif({sw: c.sw, pw: c.pw, eq: c.eq, crop: s.crop === '1' ? c.crop : 0, f: +s.f, tc: +s.tc || 1, dmm,
+      span: b.span, v: b.v, hz: b.hz, amp: STROKE_DEG, s: +s.s, fps: +s.fps}) : null;
+    const warn = out('warn');
+    if (!r) {
+      ['wing', 'body'].forEach(k => { out(k).textContent = '–'; });
+      out('wingctx').textContent = 'of blur';
+      out('fit').textContent = ok ? 'The bird is closer than the lens can focus: increase the distance.' : 'Fill in every field to see the result.';
+      ['wingv', 'bodyv', 'n1', 'n3', 'burst'].forEach(k => { out(k).textContent = ''; });
+      warn.hidden = true;
+      return;
+    }
+    out('fit').textContent = 'Wingspan on the sensor: ' + nf(Math.round(r.spanPx)) + ' px (' + nf(r.spanPct, r.spanPct < 10 ? 1 : 0) + '% of the frame width).';
+    warn.textContent = 'At this distance the bird is wider than the frame: step back or zoom out.';
+    warn.hidden = !(r.spanPct > 100);
+    out('wing').textContent = pxf(r.wing);
+    out('wingctx').textContent = 'of blur on a wingspan of ' + nf(Math.round(r.spanPx)) + ' px';
+    out('wingv').textContent = wingVerdict(r.wing);
+    out('body').textContent = r.body === null ? '–' : pxf(r.body);
+    out('bodyv').textContent = bodyVerdict(r);
+    out('n1').textContent = speed(r.w1, stepUp(r.w3) === 0 || stepUp(r.w3) > 8000);
+    out('n3').textContent = speed(r.w3);
+    out('burst').textContent = burstLine(r, +s.fps);
+  }
+
+  function update(fromUser) {
+    render();
+    if (fromUser) history.replaceState(null, '', urlFor());
+  }
+  function onInput(e) {
+    const k = e.target.dataset && e.target.dataset.k;
+    const s = getState();
+    if (k === 'cam' && panel.dataset.cam !== s.cam) {
+      const fEl = el('f'), wasBridge = !!BRIDGE_MAX[panel.dataset.cam], max = BRIDGE_MAX[s.cam];
+      if (max && !wasBridge) fEl.value = max;
+      else if (max) fEl.value = Math.min(+fEl.value || max, max);
+      else if (wasBridge) fEl.value = DEF.f;
+      if (!camOf(s).crop) el('crop').checked = false; // crop mode is per body
+      panel.dataset.cam = s.cam;
+    }
+    if (k === 'u' && panel.dataset.u !== s.u && num(s.d)) { // keep the same distance in the new unit
+      const v = s.u === 'ft' ? +s.d / 0.3048 : +s.d * 0.3048;
+      el('d').value = +v.toFixed(v < 100 ? 1 : 0);
+    }
+    panel.dataset.u = el('u').value;
+    update(true);
+  }
+  panel.addEventListener('input', onInput);
+  panel.addEventListener('change', onInput);
+  panel.addEventListener('click', e => {
+    const b = e.target.closest && e.target.closest('[data-f],[data-s],[data-fps]');
+    if (!b) return;
+    if (b.dataset.f) el('f').value = b.dataset.f;
+    if (b.dataset.s) el('s').value = b.dataset.s;
+    if (b.dataset.fps) el('fps').value = b.dataset.fps;
+    update(true);
+  });
+  copyBtn.addEventListener('click', () => {
+    const path = urlFor();
+    history.replaceState(null, '', path);
+    const url = location.origin + path;
+    const done = () => { copied.textContent = 'Link copied.'; setTimeout(() => { copied.textContent = ''; }, 2500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, () => window.prompt('Copy this link:', url));
+    else window.prompt('Copy this link:', url);
+  });
+
+  // Outreach links carry ?ref=: credit the App Store campaign to it, as track.js does on other pages; ct=bif otherwise.
+  // The Burst Picker links carry the same ref (else ref=bif-tool).
+  const params = new URLSearchParams(location.search);
+  const ref = params.get('ref') || '';
+  if (/^[a-z0-9][a-z0-9-]{0,39}$/i.test(ref)) {
+    document.querySelectorAll('a[href*="ct=bif"]').forEach(a => {
+      const u = new URL(a.href); u.searchParams.set('ct', ref.toLowerCase()); a.href = u.toString();
+    });
+    document.querySelectorAll('a[data-bp]').forEach(a => {
+      const u = new URL(a.href); u.searchParams.set('ref', ref.toLowerCase()); a.href = u.toString();
+    });
+  }
+
+  fill();
+  setState(fromQuery(params));
+  update(false);
+})();
+</script>
+</body>
+</html>
