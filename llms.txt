@@ -14,6 +14,7 @@
 - [Home](https://getbirdframe.com/): what BirdFrame does, pricing and FAQ
 - [日本語 (Japanese)](https://getbirdframe.com/ja/): what BirdFrame does, pricing and FAQ, in Japanese
 - [野鳥撮影のリーチ計算ツール (Japanese reach calculator)](https://getbirdframe.com/ja/bird-reach-calculator/): the reach calculator in Japanese, with Japanese birds (カワセミ, シマエナガ, オオワシ…)
+- [連写ピッカー (Japanese Burst Picker)](https://getbirdframe.com/ja/burst-picker/): the Burst Picker in Japanese: drop in a burst of bird photos to see which frame has the sharpest bird; runs in the browser, nothing is uploaded
 - [Try it in your browser](https://getbirdframe.com/demo/): find and crop the birds in one photo
 - [Press kit](https://getbirdframe.com/press.html)
 - [How small is the bird? (data)](https://getbirdframe.com/how-small-is-the-bird/): 4,511 birds measured in 1,995 public-domain bird photos; in the typical photo the bird fills 6.6% of the frame. Charts and a free CSV (CC0).
