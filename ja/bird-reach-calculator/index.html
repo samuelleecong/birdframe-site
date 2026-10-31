@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>野鳥撮影のリーチ計算ツール：鳥は何ピクセルで写る？｜BirdFrame</title>
+<meta name="description" content="無料の野鳥撮影リーチ計算ツール。カメラ、レンズ、テレコン、鳥までの距離を選ぶと、鳥にかかるピクセル数、フレームに占める割合、フル解像度のまま残るトリミングの大きさがわかります。">
+<link rel="canonical" href="https://getbirdframe.com/ja/bird-reach-calculator/">
+<link rel="alternate" hreflang="en" href="https://getbirdframe.com/bird-reach-calculator/">
+<link rel="alternate" hreflang="ja" href="https://getbirdframe.com/ja/bird-reach-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://getbirdframe.com/bird-reach-calculator/">
+<meta property="og:title" content="野鳥撮影のリーチ計算ツール：鳥は何ピクセルで写る？">
+<meta property="og:description" content="無料の野鳥撮影リーチ計算ツール。カメラ、レンズ、テレコン、鳥までの距離を選ぶと、鳥にかかるピクセル数、フレームに占める割合、フル解像度のまま残るトリミングの大きさがわかります。">
+<meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
+<meta property="og:url" content="https://getbirdframe.com/ja/bird-reach-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="BirdFrame">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../guides/guide.css">
+<script src="../../track.js" defer></script>
+<script type="module" src="../../bird-reach-calculator/scene.js"></script>
+<script>if (new URLSearchParams(location.search).get('embed') === '1') { document.documentElement.classList.add('embed'); const b = document.createElement('base'); b.target = '_blank'; document.head.appendChild(b); } // ?embed=1: other sites' iframes; links open in a new tab</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "野鳥撮影のリーチ計算ツール", "url": "https://getbirdframe.com/ja/bird-reach-calculator/", "description": "カメラ、レンズ、テレコンバーター、鳥までの距離を選ぶと、鳥にかかるピクセル数、フレームに占める割合、フル解像度のまま残るトリミングの大きさを計算します。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": "ja", "datePublished": "2026-10-31", "dateModified": "2026-10-31", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "author": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "なぜ写真の鳥はこんなに小さく写るのですか？", "acceptedAnswer": {"@type": "Answer", "text": "フレームが鳥よりずっと広いからです。600 mm で 20 m 先を撮ると、フルサイズのセンサーに写る範囲は幅約 1.2 m です。全長 25 cm の鳥はフレームの幅の約5分の1にしかならず、鳥を囲む枠はフレームの約4%です。それでも 4,500 万画素のカメラなら鳥の長さは約 1,760 ピクセルあるので、トリミングが生きてきます。"}}, {"@type": "Question", "name": "テレコンバーターとトリミング、どちらがよいですか？", "acceptedAnswer": {"@type": "Answer", "text": "テレコンバーターは焦点距離を伸ばすので、1.4x なら鳥にかかるピクセル数は約1.4倍（面積では約2倍）、2x なら約2倍（面積では4倍）になります。代わりに光を失います。1.4x で1段、2x で2段暗くなり、どちらも画質がわずかに落ち、AF が遅くなることもあります。トリミングはピクセルを増やさず、フレームの残りを捨てるだけです。シャープなレンズで光が十分なら、たいていテレコンバーターのほうが細部まで記録できます。暗い場面や陽炎が出ているとき、またはやや甘いレンズでは、テレコンなしで撮ってトリミングしても同じくらいになることがあります。"}}, {"@type": "Question", "name": "APS-C のカメラのほうが「寄れる」のですか？", "acceptedAnswer": {"@type": "Answer", "text": "鳥が大きく写るわけではありません。レンズがセンサーに結ぶ像の大きさは、どのセンサーでも同じです。変わるのは、その像にかかるピクセル数です。Canon EOS R7 は 22.3 mm のセンサー幅に 6,960 ピクセル（1ミリあたり約312）、Canon EOS R5 は 36 mm に 8,192 ピクセル（1ミリあたり約228）を並べています。そのため同じ焦点距離・同じ距離なら、R7 のほうが鳥にかかるピクセル数が約1.37倍になります。フルサイズ機の APS-C クロップはピクセルを増やしません。フレームの周りを切り落とし、小さくなった画面の中で鳥が大きく見えるだけです。"}}, {"@type": "Question", "name": "どこまでトリミングしても、プリントできますか？", "acceptedAnswer": {"@type": "Answer", "text": "近くで見るプリントをシャープに仕上げる目安は 300 ppi（1インチあたり300ピクセル）です。この場合、A4（21.0 × 29.7 cm）には 2,480 × 3,508 ピクセル（約870万画素）、L判（8.9 × 12.7 cm）には 1,051 × 1,500 ピクセル（約160万画素）が必要です。離れて見るプリントなら 200 ppi 以下でもきれいに見え、画面で見るならさらに少なくて済みます。幅 1,920 ピクセルあれば、フルHDの画面いっぱいに表示できます。計算ツールでは、鳥が幅の半分を占めるトリミングを 300 ppi でプリントしたときの大きさを表示します。"}}, {"@type": "Question", "name": "距離を変えると、どうなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "鳥の像は距離に比例して小さくなります。距離を半分にすると、鳥にかかるピクセル数はほぼ2倍、面積では4倍になります。2x テレコンバーターとほぼ同じ効果で、しかも光を失いません。距離が2倍になれば、ピクセル数は半分です。新しいレンズよりも、フィールドでの工夫やブラインド、そして根気が効くのはこのためです。"}}, {"@type": "Question", "name": "なぜ元のフルサイズの写真からトリミングするのですか？", "acceptedAnswer": {"@type": "Answer", "text": "鳥にかかる1ピクセル1ピクセルが大切だからです。トリミングの前に写真を縮小すると、鳥も一緒に小さくなります。2,400 万画素の写真を幅 2,048 ピクセルに縮小すると、残るピクセルは約12%。長さ 1,000 ピクセルだった鳥は、約340 ピクセルになってしまいます。まず元の写真からトリミングし、必要ならそのあとでトリミングした画像を縮小しましょう。"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/ja/"}, {"@type": "ListItem", "position": 2, "name": "野鳥撮影のリーチ計算ツール", "item": "https://getbirdframe.com/ja/bird-reach-calculator/"}]}]}</script>
+<style>
+:root{--display:"Newsreader","Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;--body:"Public Sans","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+body{line-height:1.8}
+h1,h2,h3{line-height:1.35;letter-spacing:.01em}
+h1,h2{word-break:keep-all;overflow-wrap:anywhere}
+[hidden]{display:none!important}
+.article.calc-page{max-width:none}
+.calc-page>:not(.calc){max-width:44em}
+.calc{display:grid;gap:20px;margin-top:28px;max-width:44em}
+.calc.two{max-width:none;grid-template-columns:1fr 1fr}
+.setup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0;line-height:1.6}
+.article .setup-h{font-size:22px;margin:0 0 14px}
+.fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 16px}
+.fields .wide{grid-column:1/-1}
+.fld{display:flex;flex-direction:column;gap:8px;min-width:0}
+.lab{display:flex;flex-direction:column;gap:6px;font-size:15px;font-weight:500;color:var(--ink);min-width:0}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 7em;gap:10px;align-items:end;min-width:0}
+.other{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 6em;gap:10px;align-items:end;min-width:0}
+.setup select,.setup input[type=number]{font:inherit;font-size:16px;font-weight:400;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);width:100%;min-width:0;min-height:44px}
+.setup select{appearance:none;-webkit-appearance:none;padding-right:36px;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 19px) 52%,calc(100% - 14px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+.setup select:focus-visible,.setup input:focus-visible,.setup button:focus-visible,.calc-bar button:focus-visible{outline:3px solid var(--mark);outline-offset:1px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips button{font:inherit;font-size:14px;padding:4px 12px;min-height:32px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--muted);cursor:pointer}
+.chips button[aria-pressed=true]{border-color:var(--spruce);color:var(--ink);font-weight:600}
+.chk{display:flex;gap:10px;align-items:center;font-size:15px;color:var(--ink);cursor:pointer}
+.chk input{width:20px;height:20px;margin:0;accent-color:var(--spruce)}
+.article .hint{font-size:14px;line-height:1.45;margin:0}
+.out{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.article .big{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;color:var(--ink)}
+.big b{font-family:var(--display);font-size:clamp(44px,7vw,60px);line-height:1;font-weight:600}
+.article .out .pct{margin-top:6px}
+.article .out .take{margin-top:12px;color:var(--ink);font-weight:500}
+.pv{display:block;width:100%;max-width:460px;height:auto;margin:16px 0 6px}
+.pv-frame{fill:var(--paper);stroke:var(--line);stroke-width:1.5}
+.pv-bird{fill:var(--ink)}
+.pv-eye{fill:var(--paper)}
+.pv-crop{fill:none;stroke:var(--spruce);stroke-width:1.5;stroke-dasharray:5 4}
+.pv-ring{fill:none;stroke:var(--mark);stroke-width:1.5}
+.nums{margin:16px 0 0;display:grid;gap:12px}
+.nums dt{font-weight:600;color:var(--ink);font-size:15px}
+.nums dd{margin:2px 0 0;color:var(--muted);font-size:16px}
+.article .out .fine{margin-top:8px}
+.has3d .pv{display:none}
+.pv3{position:relative;width:100%;max-width:560px;margin:16px 0 6px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.pv3 canvas{display:block;width:100%}
+.pv3-v{position:absolute;left:0;right:0;border-radius:6px;box-shadow:0 0 0 1px var(--line),0 0 0 6px var(--card);overflow:hidden}
+.pv3-scene{cursor:grab}.pv3-scene.grab{cursor:grabbing}
+.pv3-v span{position:absolute;left:8px;top:8px;font-size:12px;font-weight:600;line-height:1;padding:5px 8px;border-radius:999px;background:rgba(22,32,26,.55);color:#fff;pointer-events:none}
+.pv3-crop{position:absolute;left:0;top:0;border:1.5px dashed #fff;outline:1px solid rgba(22,32,26,.35);pointer-events:none;display:none}
+.pv3-ring{position:absolute;left:0;top:0;width:28px;height:28px;border:1.5px solid var(--mark);border-radius:50%;pointer-events:none;display:none}
+.calc-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.calc-bar button{cursor:pointer;font-family:inherit}
+@media (max-width:900px){.calc.two{grid-template-columns:1fr;max-width:44em}}
+@media (max-width:560px){.fields,.other{grid-template-columns:1fr}.setup{padding:16px}.pair{grid-template-columns:minmax(0,1fr) 6.5em}}
+.embed-box{margin-top:28px;max-width:44em}
+.embed-box summary{cursor:pointer;font-weight:500;color:var(--ink)}
+.embed-box textarea{display:block;width:100%;margin:10px 0 12px;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);resize:vertical}
+.embed-credit,.embed nav,.embed footer,.embed .crumb,.embed .calc-page>h2,.embed .calc-page>h3,.embed .calc-page>p:not(.embed-credit),.embed .cta-box,.embed .embed-box{display:none}
+.embed .embed-credit{display:block;margin-top:14px}
+.embed .calc-page h1{margin-top:6px;font-size:30px}
+.embed .calc{margin-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../"><img src="../../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links"><a class="btn" href="https://apps.apple.com/jp/app/birdframe/id6754513569?pt=127908484&ct=ja-calc&mt=8">Mac App Store で入手</a></div>
+  </nav>
+
+  <main class="article calc-page">
+    <p class="crumb"><a href="../">BirdFrame</a> · 無料ツール</p>
+    <h1>野鳥撮影の<wbr>リーチ計算ツール</h1>
+    <p class="lede">鳥はどれくらいの大きさで写るのか。カメラ、レンズ、距離を選ぶと、鳥にかかるピクセル数、フレームに占める割合、フル解像度のまま残るトリミングの大きさがわかります。</p>
+
+    <div class="calc" id="calc">
+      <section class="setup" aria-label="機材 A">
+        <h2 class="setup-h">あなたの機材</h2>
+        <div class="fields">
+          <label class="lab wide">カメラ<select data-k="cam"><option value="canon-r7">Canon EOS R7</option></select></label>
+          <div class="other wide" data-show="other" hidden>
+            <label class="lab">センサーの幅（mm）<input data-k="sw" type="number" inputmode="decimal" min="1" max="100" step="any"></label>
+            <label class="lab">画像の幅（ピクセル）<input data-k="pw" type="number" inputmode="numeric" min="100" max="30000" step="1"></label>
+            <label class="lab">縦横比<select data-k="ar"><option value="1.5">3:2</option><option value="1.333">4:3</option></select></label>
+          </div>
+          <div class="fld">
+            <label class="lab"><span data-t="flab">焦点距離（mm）</span><input data-k="f" type="number" inputmode="decimal" min="1" max="5000" step="any"></label>
+            <div class="chips" data-show="chips" role="group" aria-label="よく使う焦点距離"><button type="button" data-f="400" aria-label="400 mm">400</button><button type="button" data-f="500" aria-label="500 mm">500</button><button type="button" data-f="600" aria-label="600 mm">600</button><button type="button" data-f="800" aria-label="800 mm">800</button></div>
+            <p class="hint" data-show="bridge" hidden>レンズ一体型カメラ：35mm判換算の焦点距離を入力してください（P1000 は最大ズームで 3000、P950 は 2000）。</p>
+          </div>
+          <label class="lab" data-show="tc">テレコンバーター<select data-k="tc"><option value="1">なし</option><option value="1.4">1.4x</option><option value="2">2x</option></select></label>
+          <label class="chk wide" data-show="crop" hidden><input type="checkbox" data-k="crop"><span data-t="crop">APS-C クロップ</span></label>
+          <div class="pair wide">
+            <label class="lab">鳥までの距離<input data-k="d" type="number" inputmode="decimal" min="0.1" max="100000" step="any"></label>
+            <label class="lab">単位<select data-k="u" aria-label="距離の単位"><option value="m">メートル</option><option value="ft">フィート</option></select></label>
+          </div>
+          <label class="lab wide">鳥<select data-k="bird"><option value="kawasemi">カワセミ</option></select></label>
+          <div class="pair wide" data-show="custom" hidden>
+            <label class="lab">鳥の全長（くちばしから尾まで）<input data-k="len" type="number" inputmode="decimal" min="1" max="300" step="any"></label>
+            <label class="lab">単位<select data-k="lu" aria-label="長さの単位"><option value="cm">cm</option><option value="in">インチ</option></select></label>
+          </div>
+        </div>
+        <div class="out">
+          <p class="big" aria-live="polite"><b data-o="px">–</b><span>ピクセル（鳥のくちばしから尾まで）</span></p>
+          <p class="pct" data-o="pct"></p>
+          <p class="take" data-o="take"></p>
+          <svg class="pv" viewBox="0 0 300 200" role="img" aria-label="フレームのプレビュー">
+            <rect class="pv-frame" x="0.75" y="0.75" width="298.5" height="198.5" rx="4"/>
+            <circle class="pv-ring" cx="150" cy="100" r="14" visibility="hidden"/>
+            <g class="pv-bird"><path d="M0 17L10 13.5C12 6 19 2.5 26 3C33 3.5 37 8 41 11C53 12 65 17 74 25L100 41L97 47L73 37C66 44 55 48.5 45 48.5C31 48.5 19 42 14 30C12.5 25 9 21 1.5 19ZM39 47.5h2.2v12.5h-2.2zM46 47.5h2.2v12.5h-2.2z"/><circle class="pv-eye" cx="21" cy="10" r="1.8"/></g>
+            <rect class="pv-crop" x="0" y="0" width="0" height="0" visibility="hidden"/>
+          </svg>
+          <p class="fine">縮尺どおりに描いています。点線の枠は、鳥が幅の半分を占めるトリミング範囲です。</p>
+          <dl class="nums">
+            <div><dt>鳥を囲む枠（推定）</dt><dd data-o="area"></dd></div>
+            <div><dt>鳥が幅の半分を占めるトリミング</dt><dd data-o="crop"></dd></div>
+          </dl>
+          <p class="fine">枠の推定：鳥を囲む枠の高さを、鳥の全長の約0.6倍と仮定しています。</p>
+        </div>
+      </section>
+    </div>
+    <div class="calc-bar">
+      <button type="button" class="btn ghost" id="compare" aria-expanded="false">別の機材と比べる</button>
+      <button type="button" class="btn ghost" id="copy">この設定のリンクをコピー</button>
+      <span class="fine" id="copied" role="status"></span>
+    </div>
+    <p class="fine embed-credit">無料の計算ツール：<a href="https://getbirdframe.com/ja/?ref=embed-ja">BirdFrame</a>（何千枚もの野鳥写真を一度に、元のフル解像度のままトリミングする Mac アプリ）</p>
+    <noscript><p class="fine">この計算ツールには JavaScript が必要です。</p></noscript>
+
+    <h2>計算の方法</h2>
+    <p>薄肉レンズの式を使っています。センサー上の鳥の像の大きさは、鳥の全長 × 焦点距離 ÷（距離 − 焦点距離）で、焦点距離にはテレコンバーターの倍率を掛けます。鳥にかかるピクセル数は、この像の大きさにセンサー幅1ミリあたりの画素数を掛けたものです。カメラの数値は各メーカーの公表仕様、鳥の全長は主に日本野鳥の会「BIRD FAN」の値（幅があるものは中央値）です。</p>
+    <p>結果は最良の場合の目安です。鳥がこちらを向いている、近距離で焦点距離がわずかに短くなるレンズを使っている、ピントが甘いといった場合は、使えるピクセルは少なくなります。</p>
+
+    <h2>よくある質問</h2>
+    <h3>なぜ写真の鳥はこんなに小さく写るのですか？</h3>
+    <p>フレームが鳥よりずっと広いからです。600 mm で 20 m 先を撮ると、フルサイズのセンサーに写る範囲は幅約 1.2 m です。全長 25 cm の鳥はフレームの幅の約5分の1にしかならず、鳥を囲む枠はフレームの約4%です。それでも 4,500 万画素のカメラなら鳥の長さは約 1,760 ピクセルあるので、トリミングが生きてきます。</p>
+    <h3>テレコンバーターとトリミング、どちらがよいですか？</h3>
+    <p>テレコンバーターは焦点距離を伸ばすので、1.4x なら鳥にかかるピクセル数は約1.4倍（面積では約2倍）、2x なら約2倍（面積では4倍）になります。代わりに光を失います。1.4x で1段、2x で2段暗くなり、どちらも画質がわずかに落ち、AF が遅くなることもあります。トリミングはピクセルを増やさず、フレームの残りを捨てるだけです。シャープなレンズで光が十分なら、たいていテレコンバーターのほうが細部まで記録できます。暗い場面や陽炎が出ているとき、またはやや甘いレンズでは、テレコンなしで撮ってトリミングしても同じくらいになることがあります。</p>
+    <h3>APS-C のカメラのほうが「寄れる」のですか？</h3>
+    <p>鳥が大きく写るわけではありません。レンズがセンサーに結ぶ像の大きさは、どのセンサーでも同じです。変わるのは、その像にかかるピクセル数です。Canon EOS R7 は 22.3 mm のセンサー幅に 6,960 ピクセル（1ミリあたり約312）、Canon EOS R5 は 36 mm に 8,192 ピクセル（1ミリあたり約228）を並べています。そのため同じ焦点距離・同じ距離なら、R7 のほうが鳥にかかるピクセル数が約1.37倍になります。フルサイズ機の APS-C クロップはピクセルを増やしません。フレームの周りを切り落とし、小さくなった画面の中で鳥が大きく見えるだけです。</p>
+    <h3>どこまでトリミングしても、プリントできますか？</h3>
+    <p>近くで見るプリントをシャープに仕上げる目安は 300 ppi（1インチあたり300ピクセル）です。この場合、A4（21.0 × 29.7 cm）には 2,480 × 3,508 ピクセル（約870万画素）、L判（8.9 × 12.7 cm）には 1,051 × 1,500 ピクセル（約160万画素）が必要です。離れて見るプリントなら 200 ppi 以下でもきれいに見え、画面で見るならさらに少なくて済みます。幅 1,920 ピクセルあれば、フルHDの画面いっぱいに表示できます。計算ツールでは、鳥が幅の半分を占めるトリミングを 300 ppi でプリントしたときの大きさを表示します。</p>
+    <h3>距離を変えると、どうなりますか？</h3>
+    <p>鳥の像は距離に比例して小さくなります。距離を半分にすると、鳥にかかるピクセル数はほぼ2倍、面積では4倍になります。2x テレコンバーターとほぼ同じ効果で、しかも光を失いません。距離が2倍になれば、ピクセル数は半分です。新しいレンズよりも、フィールドでの工夫やブラインド、そして根気が効くのはこのためです。</p>
+    <h3>なぜ元のフルサイズの写真からトリミングするのですか？</h3>
+    <p>鳥にかかる1ピクセル1ピクセルが大切だからです。トリミングの前に写真を縮小すると、鳥も一緒に小さくなります。2,400 万画素の写真を幅 2,048 ピクセルに縮小すると、残るピクセルは約12%。長さ 1,000 ピクセルだった鳥は、約340 ピクセルになってしまいます。まず元の写真からトリミングし、必要ならそのあとでトリミングした画像を縮小しましょう。</p>
+
+    <details class="embed-box" id="embed">
+      <summary>この計算ツールをあなたのサイトに追加する</summary>
+      <p class="fine">どのページでも無料でお使いいただけます。計算ツールを置きたい場所に下のコードを貼り付け、その下のリンクは残してください。</p>
+      <textarea id="embedCode" readonly rows="5" aria-label="計算ツールを埋め込むコード">&lt;iframe src="https://getbirdframe.com/ja/bird-reach-calculator/?embed=1&amp;amp;ref=embed-ja" title="野鳥撮影のリーチ計算ツール" width="100%" height="2050" style="border:0;max-width:720px" loading="lazy" allow="clipboard-write"&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://getbirdframe.com/ja/bird-reach-calculator/"&gt;野鳥撮影のリーチ計算ツール&lt;/a&gt;（BirdFrame）&lt;/p&gt;</textarea>
+      <button type="button" class="btn ghost" id="copyEmbed">コードをコピー</button> <span class="fine" id="embedCopied" role="status"></span>
+    </details>
+
+    <div class="cta-box">
+      <p><b>何千枚もの野鳥写真を、一度にトリミング。元のフル解像度のまま。</b>BirdFrame は、フォルダや Apple の「写真」のアルバムから鳥を見つけ、一羽ずつ Tight・Balanced・Wide（きつめ・標準・ゆったり）でトリミングする Mac アプリです。トリミングはすべて元のフルサイズの画像から切り出すので、縮小も生成もありません。1回50枚まで無料、それ以上は1回限りの購入（買い切り）です。Mac App Store、macOS 15 以降。※ アプリの画面は英語表記です。</p>
+      <div class="ctas"><a class="btn" href="https://apps.apple.com/jp/app/birdframe/id6754513569?pt=127908484&ct=ja-calc&mt=8">Mac App Store で無料ダウンロード</a><a class="btn ghost" href="../../demo/">写真1枚で試す</a></div>
+    </div>
+  </main>
+
+  <footer>
+    <span>個人で開発しています。お問い合わせ：<a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
+    <span><a href="../">BirdFrame（日本語）</a> · <a href="../../bird-reach-calculator/" hreflang="en" lang="en">English</a> · <a href="../../privacy/">プライバシー</a></span>
+  </footer>
+</div>
+<script>
+(() => {
+  'use strict';
+  // Camera bodies: [id, group, name, sensor width mm, sensor height mm, pixel width, pixel height,
+  // APS-C crop-mode factor (0 = none), 35mm-equivalent factor for fixed-lens cameras (0 = interchangeable lens)].
+  // Same table as the English page (site/bird-reach-calculator/); sources: marketing/reach-calculator-2026-10-30/SPECS.md
+  const CAMS = [
+    ["canon-r5","Canon","Canon EOS R5",36.0,24.0,8192,5464,1.6,0],
+    ["canon-r5-ii","Canon","Canon EOS R5 Mark II",36.0,24.0,8192,5464,1.6,0],
+    ["canon-r6-ii","Canon","Canon EOS R6 Mark II",35.9,23.9,6000,4000,1.6,0],
+    ["canon-r6-iii","Canon","Canon EOS R6 Mark III",35.9,23.9,6960,4640,1.6,0],
+    ["canon-r7","Canon","Canon EOS R7",22.3,14.8,6960,4640,0,0],
+    ["canon-r10","Canon","Canon EOS R10",22.3,14.9,6000,4000,0,0],
+    ["canon-r8","Canon","Canon EOS R8",35.9,23.9,6000,4000,1.6,0],
+    ["canon-r3","Canon","Canon EOS R3",36.0,24.0,6000,4000,1.6,0],
+    ["canon-r1","Canon","Canon EOS R1",36.0,24.0,6000,4000,1.6,0],
+    ["canon-90d","Canon","Canon EOS 90D",22.3,14.8,6960,4640,0,0],
+    ["canon-7d-ii","Canon","Canon EOS 7D Mark II",22.4,15.0,5472,3648,0,0],
+    ["canon-5d-iv","Canon","Canon EOS 5D Mark IV",36.0,24.0,6720,4480,0,0],
+    ["nikon-z8","Nikon","Nikon Z8",35.9,23.9,8256,5504,1.5,0],
+    ["nikon-z9","Nikon","Nikon Z9",35.9,23.9,8256,5504,1.5,0],
+    ["nikon-z6-iii","Nikon","Nikon Z6III",35.9,23.9,6048,4032,1.5,0],
+    ["nikon-z5-ii","Nikon","Nikon Z5II",35.9,23.9,6048,4032,1.5,0],
+    ["nikon-z50-ii","Nikon","Nikon Z50II",23.5,15.7,5568,3712,0,0],
+    ["nikon-zf","Nikon","Nikon Zf",35.9,23.9,6048,4032,1.5,0],
+    ["nikon-d500","Nikon","Nikon D500",23.5,15.7,5568,3712,0,0],
+    ["nikon-d850","Nikon","Nikon D850",35.9,23.9,8256,5504,1.5,0],
+    ["sony-a1","Sony","Sony A1",35.9,24.0,8640,5760,1.5,0],
+    ["sony-a1-ii","Sony","Sony A1 II",35.9,24.0,8640,5760,1.5,0],
+    ["sony-a9-iii","Sony","Sony A9 III",35.6,23.8,6000,4000,1.5,0],
+    ["sony-a7r-v","Sony","Sony A7R V",35.7,23.8,9504,6336,1.5,0],
+    ["sony-a7r-vi","Sony","Sony A7R VI",35.9,24.0,9984,6656,1.5,0],
+    ["sony-a7-iv","Sony","Sony A7 IV",35.9,23.9,7008,4672,1.5,0],
+    ["sony-a7-v","Sony","Sony A7 V",35.9,23.9,7008,4672,1.5,0],
+    ["sony-a6700","Sony","Sony A6700",23.3,15.5,6192,4128,0,0],
+    ["sony-a6400","Sony","Sony A6400",23.5,15.6,6000,4000,0,0],
+    ["om-1","OM System","OM System OM-1",17.4,13.0,5184,3888,0,0],
+    ["om-1-ii","OM System","OM System OM-1 Mark II",17.4,13.0,5184,3888,0,0],
+    ["om-3","OM System","OM System OM-3",17.4,13.0,5184,3888,0,0],
+    ["om-5","OM System","OM System OM-5",17.4,13.0,5184,3888,0,0],
+    ["olympus-e-m1x","OM System","Olympus OM-D E-M1X",17.4,13.0,5184,3888,0,0],
+    ["olympus-e-m1-iii","OM System","Olympus OM-D E-M1 Mark III",17.4,13.0,5184,3888,0,0],
+    ["olympus-e-m1-ii","OM System","Olympus OM-D E-M1 Mark II",17.4,13.0,5184,3888,0,0],
+    ["panasonic-g9-ii","Panasonic","Panasonic Lumix G9 II",17.3,13.0,5776,4336,0,0],
+    ["panasonic-g9","Panasonic","Panasonic Lumix G9",17.3,13.0,5184,3888,0,0],
+    ["fujifilm-x-h2","Fujifilm","Fujifilm X-H2",23.5,15.7,7728,5152,0,0],
+    ["fujifilm-x-h2s","Fujifilm","Fujifilm X-H2S",23.5,15.7,6240,4160,0,0],
+    ["fujifilm-x-t5","Fujifilm","Fujifilm X-T5",23.5,15.7,7728,5152,0,0],
+    ["fujifilm-gfx100-ii","Fujifilm","Fujifilm GFX100 II",43.8,32.9,11648,8736,0,0],
+    ["fujifilm-gfx100s-ii","Fujifilm","Fujifilm GFX100S II",43.8,32.9,11648,8736,0,0],
+    ["fujifilm-gfx100s","Fujifilm","Fujifilm GFX100S",43.8,32.9,11648,8736,0,0],
+    ["fujifilm-gfx100","Fujifilm","Fujifilm GFX100",43.8,32.9,11648,8736,0,0],
+    ["nikon-p1000","Bridge cameras (fixed lens)","Nikon Coolpix P1000",6.17,4.55,4608,3456,0,5.566],
+    ["nikon-p950","Bridge cameras (fixed lens)","Nikon Coolpix P950",6.17,4.55,4608,3456,0,5.602],
+  ];
+  const BRIDGE_MAX = {"nikon-p1000": 3000, "nikon-p950": 2000}; // full zoom, 35mm equivalent
+  const GROUP_JA = {"Bridge cameras (fixed lens)": "レンズ一体型カメラ"};
+  // Birds: [id, 和名, 全長 cm (midpoint of the published range)]. Sources: SPECS.md, "Japanese birds"
+  const BIRDS = [
+    ["mejiro","メジロ",12],
+    ["kibitaki","キビタキ",14],
+    ["shijukara","シジュウカラ",14],
+    ["shimaenaga","シマエナガ",14],
+    ["ruribitaki","ルリビタキ",14],
+    ["suzume","スズメ",14.5],
+    ["jobitaki","ジョウビタキ",15],
+    ["kogera","コゲラ",15],
+    ["oruri","オオルリ",16],
+    ["kawasemi","カワセミ",17],
+    ["hakusekirei","ハクセキレイ",21],
+    ["hiyodori","ヒヨドリ",27],
+    ["yamasemi","ヤマセミ",38],
+    ["hayabusa","ハヤブサ",45.5],
+    ["misago","ミサゴ",59],
+    ["magamo","マガモ",59],
+    ["tobi","トビ",64],
+    ["daisagi","ダイサギ",89],
+    ["owashi","オオワシ",95],
+    ["aosagi","アオサギ",95],
+    ["tancho","タンチョウ",135],
+  ];
+  // The shared 3D preview (scene.js) knows the English page's birds: lend each Japanese bird the closest shape and colours.
+  const SCENE_BIRD = {kawasemi: 'common-kingfisher', mejiro: 'japanese-white-eye', shijukara: 'black-capped-chickadee', shimaenaga: 'black-capped-chickadee',
+    kibitaki: 'blue-tit', oruri: 'blue-jay', jobitaki: 'european-robin', ruribitaki: 'blue-jay', kogera: 'downy-woodpecker', suzume: 'house-sparrow',
+    hakusekirei: 'black-capped-chickadee', hiyodori: 'tui', yamasemi: 'belted-kingfisher', hayabusa: 'osprey', misago: 'osprey', tobi: 'red-tailed-hawk',
+    magamo: 'mallard', daisagi: 'great-egret', aosagi: 'grey-heron', owashi: 'bald-eagle', tancho: 'great-egret'};
+  const MEDIAN_AREA = 6.6; // % of the frame covered by the main bird's box in the median photo (/how-small-is-the-bird/)
+
+  /* MATH START: mirrored in marketing/reach-calculator-2026-10-30/test_math.py */
+  const BOX_RATIO = 0.6; // assumed box height / bird length
+  function reach(o) {
+    // o: sw (sensor width mm), pw, ph (pixels), crop (crop-mode factor or 0), eq (35mm-equivalent factor or 0),
+    //    f (focal length typed, mm), tc (teleconverter), dmm (distance mm), lmm (bird length mm)
+    const k = o.crop > 1 ? o.crop : 1;
+    const fw = Math.round(o.pw / k), fh = Math.round(o.ph / k); // frame size in pixels
+    const fe = o.eq ? o.f / o.eq : o.f * o.tc; // real focal length at the sensor, mm
+    if (!(o.dmm > fe)) return null;
+    const img = o.lmm * fe / (o.dmm - fe); // bird's image on the sensor, mm
+    const px = img * o.pw / o.sw; // pixels across the bird
+    const pct = px / fw * 100;
+    const area = Math.min(px, fw) * Math.min(px * BOX_RATIO, fh) / (fw * fh) * 100;
+    const cw = Math.round(2 * px), ch = Math.round(2 * px * fh / fw); // crop where the bird spans half the width
+    return {fe, img, px, pct, area, fw, fh, cw, ch, fits: cw < fw, mp: cw * ch / 1e6, inW: cw / 300, inH: ch / 300};
+  }
+  /* MATH END */
+
+  const KEYS = ['cam', 'f', 'tc', 'crop', 'd', 'u', 'bird', 'len', 'lu', 'sw', 'pw', 'ar'];
+  const DEF = {cam: 'canon-r7', f: '500', tc: '1', crop: '', d: '10', u: 'm', bird: 'kawasemi', len: '25', lu: 'cm', sw: '23.5', pw: '6000', ar: '1.5'};
+  const camById = Object.fromEntries(CAMS.map(c => [c[0], c]));
+  const birdById = Object.fromEntries(BIRDS.map(b => [b[0], b]));
+  const calc = document.getElementById('calc');
+  const cmpBtn = document.getElementById('compare');
+  const copyBtn = document.getElementById('copy');
+  const copied = document.getElementById('copied');
+  const panelA = calc.querySelector('.setup');
+  let panelB = null;
+
+  const nf = (n, d = 0) => n.toLocaleString('ja-JP', {minimumFractionDigits: d, maximumFractionDigits: d});
+  const pctf = p => p < 0.1 ? String(+p.toPrecision(2)) : p < 1 ? nf(p, 2) : p < 100 ? nf(p, 1) : nf(p, 0);
+  const num = v => v !== null && v !== '' && isFinite(+v) && +v > 0;
+  const el = (panel, k) => panel.querySelector('[data-k="' + k + '"]');
+  const o = (panel, k) => panel.querySelector('[data-o="' + k + '"]');
+
+  function fill(panel) {
+    const groups = {};
+    CAMS.forEach(c => { (groups[c[1]] = groups[c[1]] || []).push(c); });
+    el(panel, 'cam').innerHTML = Object.keys(groups).map(g => '<optgroup label="' + (GROUP_JA[g] || g) + '">' +
+      groups[g].map(c => '<option value="' + c[0] + '">' + c[2] + '</option>').join('') + '</optgroup>').join('') +
+      '<option value="other">その他のカメラ</option>';
+    const bands = [[15, '15 cm 未満'], [25, '15〜25 cm'], [40, '25〜40 cm'], [70, '40〜70 cm'], [1e9, '70 cm 以上']];
+    let html = '', lo = 0;
+    bands.forEach(([hi, label]) => {
+      const list = BIRDS.filter(b => b[2] >= lo && b[2] < hi);
+      lo = hi;
+      if (list.length) html += '<optgroup label="' + label + '">' + list.map(b =>
+        '<option value="' + b[0] + '">' + b[1] + '（' + nf(b[2], b[2] % 1 ? 1 : 0) + ' cm）</option>').join('') + '</optgroup>';
+    });
+    el(panel, 'bird').innerHTML = html + '<option value="custom">サイズを指定</option>';
+  }
+
+  function getState(panel) {
+    const s = {};
+    KEYS.forEach(k => { const e = el(panel, k); s[k] = e.type === 'checkbox' ? (e.checked ? '1' : '') : e.value.trim(); });
+    return s;
+  }
+  function setState(panel, s) {
+    KEYS.forEach(k => { const e = el(panel, k); if (e.type === 'checkbox') e.checked = s[k] === '1'; else e.value = s[k]; });
+    panel.dataset.cam = s.cam; panel.dataset.u = s.u; panel.dataset.lu = s.lu;
+  }
+  function fromQuery(p, suf) {
+    const s = Object.assign({}, DEF);
+    const g = k => p.get(k + suf);
+    if (camById[g('cam')] || g('cam') === 'other') s.cam = g('cam');
+    ['f', 'd', 'len', 'sw', 'pw'].forEach(k => { if (num(g(k))) s[k] = String(+g(k)); });
+    if (['1', '1.4', '2'].includes(g('tc'))) s.tc = g('tc');
+    if (g('crop') === '1') s.crop = '1';
+    if (['m', 'ft'].includes(g('u'))) s.u = g('u');
+    if (birdById[g('bird')] || g('bird') === 'custom') s.bird = g('bird');
+    if (['cm', 'in'].includes(g('lu'))) s.lu = g('lu');
+    if (['1.5', '1.333'].includes(g('ar'))) s.ar = g('ar');
+    if (BRIDGE_MAX[s.cam] && !num(g('f'))) s.f = String(BRIDGE_MAX[s.cam]);
+    return s;
+  }
+  function camOf(s) {
+    if (s.cam === 'other') {
+      const ar = +s.ar || 1.5, pw = Math.round(+s.pw);
+      return {sw: +s.sw, pw, ph: Math.round(pw / ar), crop: 0, eq: 0};
+    }
+    const c = camById[s.cam] || camById[DEF.cam];
+    return {sw: c[3], pw: c[5], ph: c[6], crop: c[7], eq: c[8]};
+  }
+  function writeQuery(p, s, suf) {
+    const c = camOf(s);
+    const set = (k, v) => { if (v) p.set(k + suf, v); else p.delete(k + suf); };
+    set('cam', s.cam); set('f', s.f); set('tc', c.eq ? '' : s.tc); set('crop', c.crop && s.crop ? '1' : '');
+    set('d', s.d); set('u', s.u); set('bird', s.bird);
+    set('len', s.bird === 'custom' ? s.len : ''); set('lu', s.bird === 'custom' ? s.lu : '');
+    set('sw', s.cam === 'other' ? s.sw : ''); set('pw', s.cam === 'other' ? s.pw : ''); set('ar', s.cam === 'other' ? s.ar : '');
+  }
+  function urlFor() {
+    const p = new URLSearchParams(location.search); // keeps ref and any other parameters
+    writeQuery(p, getState(panelA), '');
+    if (panelB) writeQuery(p, getState(panelB), '2'); else KEYS.forEach(k => p.delete(k + '2'));
+    const qs = p.toString();
+    return location.pathname + (qs ? '?' + qs : '') + location.hash;
+  }
+
+  function takeaway(r) {
+    if (r.pct >= 100) return '鳥がフレームの幅より大きく写ります。少し下がるか、ズームを引いてください。';
+    if (!r.fits) return '鳥はすでにフレームいっぱいに写っています。トリミングはほとんど必要ありません。';
+    if (r.px >= 1500) return '鳥は十分な大きさです。トリミングしても、きれいにプリントできます。';
+    if (r.px >= 800) return 'よいトリミングができます。画面で見るには十分で、小さめのプリントにも使えます。';
+    if (r.px >= 300) return 'フレームの中では小さめです。画面表示や記録には足りますが、大きなプリントには向きません。';
+    return '鳥は点のようにしか写りません。フレームのほとんどが鳥以外です。できれば近づきましょう。';
+  }
+
+  function render(panel) {
+    const s = getState(panel), c = camOf(s);
+    const show = (key, on) => panel.querySelectorAll('[data-show="' + key + '"]').forEach(e => { e.hidden = !on; });
+    show('other', s.cam === 'other'); show('bridge', !!c.eq); show('chips', !c.eq); show('tc', !c.eq);
+    show('crop', c.crop > 0); show('custom', s.bird === 'custom');
+    panel.querySelector('[data-t="flab"]').textContent = c.eq ? '焦点距離（35mm判換算）' : '焦点距離（mm）';
+    panel.querySelector('[data-t="crop"]').textContent = 'APS-C クロップ（' + c.crop + 'x）';
+    panel.querySelectorAll('[data-f]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === s.f)));
+    const dmm = s.u === 'ft' ? +s.d * 304.8 : +s.d * 1000;
+    const lmm = s.bird === 'custom' ? (s.lu === 'in' ? +s.len * 25.4 : +s.len * 10) : (birdById[s.bird] || birdById[DEF.bird])[2] * 10;
+    const ok = [+s.f, dmm, lmm, c.sw, c.pw].every(num);
+    const r = ok ? reach({sw: c.sw, pw: c.pw, ph: c.ph, crop: s.crop === '1' ? c.crop : 0, eq: c.eq, f: +s.f, tc: +s.tc || 1, dmm, lmm}) : null;
+    const svg = panel.querySelector('svg');
+    const bird = svg.querySelector('.pv-bird'), crop = svg.querySelector('.pv-crop'), ring = svg.querySelector('.pv-ring');
+    if (!r) {
+      o(panel, 'px').textContent = '–';
+      o(panel, 'pct').textContent = ok ? '距離が近すぎて計算できません。距離を長くしてください。' : 'すべての項目を入力すると、結果が表示されます。';
+      ['take', 'area', 'crop'].forEach(k => { o(panel, k).textContent = ''; });
+      [bird, crop, ring].forEach(e => e.setAttribute('visibility', 'hidden'));
+      announce(panel, null);
+      return;
+    }
+    o(panel, 'px').textContent = nf(Math.round(r.px));
+    o(panel, 'pct').textContent = r.pct >= 100 ? '鳥がフレームの幅より大きく写ります（幅の ' + pctf(r.pct) + '%）。'
+      : 'フレームの幅の ' + pctf(r.pct) + '% です。';
+    o(panel, 'take').textContent = takeaway(r);
+    const ratio = r.area / MEDIAN_AREA;
+    const rel = ratio >= 1.25 ? 'より大きく写ります。' : ratio <= 0.8 ? 'より小さく写ります。' : 'とほぼ同じです。';
+    o(panel, 'area').innerHTML = 'フレームの約 ' + pctf(r.area) + '%。<a href="../../how-small-is-the-bird/" hreflang="en">典型的な野鳥写真</a>（主役の鳥の枠がフレームの ' +
+      MEDIAN_AREA + '%）' + rel;
+    o(panel, 'crop').textContent = r.fits
+      ? nf(r.cw) + ' × ' + nf(r.ch) + ' px（' + nf(r.mp, r.mp < 0.1 ? 3 : r.mp < 1 ? 2 : 1) + ' MP）。300 ppi なら約 ' + nf(r.inW * 2.54, 1) + ' × ' + nf(r.inH * 2.54, 1) + ' cm のプリントになります。'
+      : '不要です。鳥はすでにフレームの幅の半分以上を占めています。';
+    // Preview, drawn to scale: 300 units = the frame's width.
+    const W = 300, H = Math.round(W * r.fh / r.fw * 10) / 10, L = W * r.px / r.fw, sc = L / 100;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.querySelector('.pv-frame').setAttribute('height', H - 1.5);
+    bird.setAttribute('transform', 'translate(' + (W / 2 - 50 * sc).toFixed(2) + ' ' + (H / 2 - 31 * sc).toFixed(2) + ') scale(' + sc.toFixed(4) + ')');
+    bird.setAttribute('visibility', 'visible');
+    if (r.fits) {
+      const cw = 2 * L, ch = cw * H / W;
+      crop.setAttribute('x', (W / 2 - cw / 2).toFixed(2)); crop.setAttribute('y', (H / 2 - ch / 2).toFixed(2));
+      crop.setAttribute('width', cw.toFixed(2)); crop.setAttribute('height', ch.toFixed(2));
+    }
+    crop.setAttribute('visibility', r.fits ? 'visible' : 'hidden');
+    ring.setAttribute('cy', H / 2);
+    ring.setAttribute('visibility', L < 10 ? 'visible' : 'hidden');
+    svg.setAttribute('aria-label', '縮尺どおりのプレビュー：鳥はフレームの幅の ' + pctf(r.pct) + '%' +
+      (r.fits ? '。点線の枠は、鳥が幅の半分を占めるトリミング範囲です。' : '。'));
+    announce(panel, {px: r.px, fw: r.fw, fh: r.fh, fe: r.fe, fits: r.fits, dmm, lmm, sensorW: c.sw * r.fw / c.pw, bird: SCENE_BIRD[s.bird] || s.bird});
+  }
+  // The 3D preview (scene.js) listens for this; the SVG above is its fallback.
+  function announce(panel, reach) {
+    panel.reach = reach;
+    panel.dispatchEvent(new Event('reach'));
+  }
+
+  function update(fromUser) {
+    render(panelA);
+    if (panelB) render(panelB);
+    if (fromUser) history.replaceState(null, '', urlFor());
+  }
+
+  function onInput(panel, e) {
+    const k = e.target.dataset && e.target.dataset.k;
+    const s = getState(panel);
+    if (k === 'cam' && panel.dataset.cam !== s.cam) {
+      const fEl = el(panel, 'f'), wasBridge = !!BRIDGE_MAX[panel.dataset.cam], max = BRIDGE_MAX[s.cam];
+      if (max && !wasBridge) fEl.value = max;
+      else if (max) fEl.value = Math.min(+fEl.value || max, max);
+      else if (wasBridge) fEl.value = DEF.f;
+      if (!camOf(s).crop) el(panel, 'crop').checked = false; // crop mode is per body
+      panel.dataset.cam = s.cam;
+    }
+    if (k === 'u' && panel.dataset.u !== s.u && num(s.d)) { // keep the same distance in the new unit
+      const v = s.u === 'ft' ? +s.d / 0.3048 : +s.d * 0.3048;
+      el(panel, 'd').value = +v.toFixed(v < 100 ? 1 : 0);
+    }
+    if (k === 'lu' && panel.dataset.lu !== s.lu && num(s.len)) {
+      el(panel, 'len').value = +(s.lu === 'in' ? +s.len / 2.54 : +s.len * 2.54).toFixed(1);
+    }
+    panel.dataset.u = el(panel, 'u').value; panel.dataset.lu = el(panel, 'lu').value;
+    update(true);
+  }
+  function wire(panel) {
+    panel.addEventListener('input', e => onInput(panel, e));
+    panel.addEventListener('change', e => onInput(panel, e));
+    panel.addEventListener('click', e => {
+      const b = e.target.closest && e.target.closest('[data-f]');
+      if (!b) return;
+      el(panel, 'f').value = b.dataset.f;
+      update(true);
+    });
+  }
+
+  function setCompare(on, state) {
+    if (on && !panelB) {
+      panelB = panelA.cloneNode(true);
+      panelB.setAttribute('aria-label', '機材 B');
+      calc.appendChild(panelB);
+      setState(panelB, state || getState(panelA));
+      wire(panelB);
+    } else if (!on && panelB) {
+      panelB.remove();
+      panelB = null;
+    }
+    calc.classList.toggle('two', !!panelB);
+    panelA.querySelector('.setup-h').textContent = panelB ? '機材 A' : 'あなたの機材';
+    if (panelB) panelB.querySelector('.setup-h').textContent = '機材 B';
+    cmpBtn.textContent = panelB ? '機材 B を外す' : '別の機材と比べる';
+    cmpBtn.setAttribute('aria-expanded', String(!!panelB));
+  }
+  cmpBtn.addEventListener('click', () => {
+    const on = !panelB;
+    setCompare(on);
+    update(true);
+    if (on) el(panelB, 'cam').focus();
+  });
+  copyBtn.addEventListener('click', () => {
+    const path = urlFor();
+    history.replaceState(null, '', path);
+    const link = new URL(location.origin + path);
+    link.searchParams.delete('embed'); // a link copied inside an embed opens the full page
+    const url = link.toString();
+    const done = () => { copied.textContent = 'リンクをコピーしました。'; setTimeout(() => { copied.textContent = ''; }, 2500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, () => window.prompt('このリンクをコピーしてください：', url));
+    else window.prompt('このリンクをコピーしてください：', url);
+  });
+
+  // Outreach links carry ?ref=: credit the App Store campaign to it, as track.js does on other pages; ct=ja-calc otherwise.
+  const params = new URLSearchParams(location.search);
+  const ref = params.get('ref') || '';
+  if (/^[a-z0-9][a-z0-9-]{0,39}$/i.test(ref)) document.querySelectorAll('a[href*="ct=ja-calc"]').forEach(a => {
+    const u = new URL(a.href); u.searchParams.set('ct', ref.toLowerCase()); a.href = u.toString();
+  });
+
+  const embedCode = document.getElementById('embedCode');
+  const embedCopied = document.getElementById('embedCopied');
+  if (location.hash === '#embed') document.getElementById('embed').open = true; // follow-up notes link straight to the embed code
+  const copyEmbed = document.getElementById('copyEmbed');
+  if (copyEmbed) copyEmbed.addEventListener('click', () => {
+    const done = () => { embedCopied.textContent = 'コードをコピーしました。'; setTimeout(() => { embedCopied.textContent = ''; }, 2500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(embedCode.value).then(done, () => embedCode.select());
+    else embedCode.select();
+  });
+
+  // scene.js writes its two view labels and an aria-label suffix in English: show them in Japanese.
+  const SCENE_TXT = {'Through the lens': 'レンズ越し', 'The scene': '横から見た様子'};
+  const SCENE_ARIA = [' Animated 3D view: through the lens, and the scene from the side.', ' 3D アニメーション：レンズ越しの見え方と、横から見た様子。'];
+  function localize3d() {
+    calc.querySelectorAll('.pv3').forEach(box => {
+      box.querySelectorAll('span').forEach(sp => { if (SCENE_TXT[sp.textContent]) sp.textContent = SCENE_TXT[sp.textContent]; });
+      const a = box.getAttribute('aria-label');
+      if (a && a.indexOf(SCENE_ARIA[0]) >= 0) box.setAttribute('aria-label', a.replace(SCENE_ARIA[0], SCENE_ARIA[1]));
+    });
+  }
+  if (window.MutationObserver) new MutationObserver(localize3d).observe(calc, {childList: true, subtree: true, attributes: true, attributeFilter: ['aria-label']});
+
+  fill(panelA);
+  setState(panelA, fromQuery(params, ''));
+  wire(panelA);
+  if (params.get('cam2')) setCompare(true, fromQuery(params, '2'));
+  update(false);
+})();
+</script>
+</body>
+</html>
