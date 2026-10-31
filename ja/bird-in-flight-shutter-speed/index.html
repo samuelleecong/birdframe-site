@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>飛ぶ鳥を止めるシャッター速度は？羽先のブレ計算ツール｜BirdFrame</title>
+<meta name="description" content="無料の飛翔写真計算ツール。カメラ、レンズ、距離、鳥を選ぶと、そのシャッター速度で羽先と鳥全体が何ピクセルぶれるか、ブレを止めるシャッター速度、連写で羽がシャープに写る頻度がわかります。">
+<link rel="canonical" href="https://getbirdframe.com/ja/bird-in-flight-shutter-speed/">
+<link rel="alternate" hreflang="en" href="https://getbirdframe.com/bird-in-flight-shutter-speed/">
+<link rel="alternate" hreflang="ja" href="https://getbirdframe.com/ja/bird-in-flight-shutter-speed/">
+<link rel="alternate" hreflang="x-default" href="https://getbirdframe.com/bird-in-flight-shutter-speed/">
+<meta property="og:title" content="飛ぶ鳥を止めるシャッター速度は？">
+<meta property="og:description" content="無料の飛翔写真計算ツール。カメラ、レンズ、距離、鳥を選ぶと、そのシャッター速度で羽先と鳥全体が何ピクセルぶれるか、ブレを止めるシャッター速度、連写で羽がシャープに写る頻度がわかります。">
+<meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
+<meta property="og:url" content="https://getbirdframe.com/ja/bird-in-flight-shutter-speed/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="BirdFrame">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../guides/guide.css">
+<script src="../../track.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "飛翔写真のシャッター速度計算ツール", "url": "https://getbirdframe.com/ja/bird-in-flight-shutter-speed/", "description": "カメラ、レンズ、距離、鳥を選ぶと、そのシャッター速度で羽先と鳥全体が何ピクセルぶれるか、ブレを 1 ピクセルまたは 3 ピクセル以内に止めるシャッター速度、連写で羽がシャープに写るコマの頻度を計算します。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": "ja", "datePublished": "2026-11-01", "dateModified": "2026-11-01", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "author": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/ja/"}, {"@type": "ListItem", "position": 2, "name": "飛ぶ鳥を止めるシャッター速度は？", "item": "https://getbirdframe.com/ja/bird-in-flight-shutter-speed/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "飛んでいる鳥には、どのくらいのシャッター速度が必要ですか？", "acceptedAnswer": {"@type": "Answer", "text": "何をシャープに写したいかによります。流し撮りで鳥の体を止めるなら、1/2000秒前後から始める野鳥カメラマンが多いです。羽ばたきの途中の羽先まで止めるには、ずっと速いシャッターが必要になることがあります。長さ 0.9 m の翼が 100° の振り幅で毎秒2.5回羽ばたくと、羽先は最大で秒速約 12 m に達し、近距離では 1/8000秒以上が必要になることもあります。上でカメラ、レンズ、距離、鳥を設定すると、その撮影に必要なシャッター速度がわかります。"}}, {"@type": "Question", "name": "目はシャープなのに、なぜ羽先がぶれるのですか？", "acceptedAnswer": {"@type": "Answer", "text": "流し撮りで打ち消せるのは鳥が飛ぶ動きで、羽ばたきは打ち消せません。羽ばたきの途中、羽先は体の横を秒速数メートルで上下しますが、頭はレンズに対してほとんど動きません。そのため、目はシャープで羽先だけがぶれたコマができます。動きが伝わるので、羽先の少しのブレをあえて好む人も多くいます。"}}, {"@type": "Question", "name": "連写速度を上げると効果がありますか？", "acceptedAnswer": {"@type": "Answer", "text": "あります。羽ばたき1回につき2回、打ち上げの上端と打ち下ろしの下端で、翼は向きを変えるために一瞬止まります。1コマごとにその瞬間の近くを捉えるチャンスがあるので、毎秒のコマ数が多いほど、羽がシャープに写ったコマが増えます。難しいのは、ほとんど同じに見える何百枚の中からそのコマを探すことです。無料の連写ピッカーなら、連写ごとに鳥がいちばんシャープな1枚を見つけられます。"}}, {"@type": "Question", "name": "なぜ距離と焦点距離が関係するのですか？", "acceptedAnswer": {"@type": "Answer", "text": "ブレはピクセル数で数えるので、フレームの中で鳥が大きいほど、翼が 1 cm 動くあいだに横切るピクセルも多くなります。距離を半分にするか焦点距離を2倍にすると、鳥の大きさと一緒に、同じシャッター速度でのブレもほぼ2倍になります。同じ理由で、ピクセルの小さいカメラほどピクセル単位のブレは大きくなります。フルサイズ機の APS-C クロップはフレームの周りを切り落とすだけなので、ブレは変わりません。"}}, {"@type": "Question", "name": "1 px と 3 px のブレとは、どういう意味ですか？", "acceptedAnswer": {"@type": "Answer", "text": "シャッターが開いているあいだに鳥の一点が写真の上でどれだけ流れるかを、写真のピクセル数で数えたものです。100%（写真の1ピクセルを画面の1ピクセル）で見たときの値です。1 ピクセル以下なら、センサーが写せる限りシャープな「ピクセル単位でシャープ」な状態です。3 ピクセルくらいまでなら、拡大しないとほとんどわからず、画面や Web 用に縮小すればたいてい消えます。どちらも目安で、厳密な境界ではありません。"}}]}]}</script>
+<style>
+[hidden]{display:none!important}
+.article.calc-page{max-width:none}
+.calc-page>:not(.calc){max-width:44em}
+.calc{margin-top:28px;max-width:44em}
+.setup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+.article .setup-h{font-size:22px;margin:0 0 14px}
+.fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 16px}
+.fields .wide{grid-column:1/-1}
+.fld{display:flex;flex-direction:column;gap:8px;min-width:0}
+.lab{display:flex;flex-direction:column;gap:6px;font-size:15px;font-weight:500;color:var(--ink);min-width:0}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 7em;gap:10px;align-items:end;min-width:0}
+.other{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:end;min-width:0}
+.setup select,.setup input[type=number]{font:inherit;font-size:16px;font-weight:400;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);width:100%;min-width:0;min-height:44px}
+.setup select{appearance:none;-webkit-appearance:none;padding-right:36px;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 19px) 52%,calc(100% - 14px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+.setup select:focus-visible,.setup input:focus-visible,.setup button:focus-visible,.calc-bar button:focus-visible{outline:3px solid var(--mark);outline-offset:1px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips button{font:inherit;font-size:14px;padding:4px 12px;min-height:32px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--muted);cursor:pointer}
+.chips button[aria-pressed=true]{border-color:var(--spruce);color:var(--ink);font-weight:600}
+.chk{display:flex;gap:10px;align-items:center;font-size:15px;color:var(--ink);cursor:pointer}
+.chk input{width:20px;height:20px;margin:0;accent-color:var(--spruce)}
+.article .hint{font-size:14px;line-height:1.45;margin:0}
+.out{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.article .out .fit{margin:0 0 18px;color:var(--ink)}
+.article .out .warn{margin:-10px 0 18px;color:var(--ink);font-weight:500}
+.warn::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mark);margin-right:8px;vertical-align:1px}
+.res+.res{margin-top:20px}
+.article .res-h{margin:0;font-size:15px;font-weight:600;color:var(--ink)}
+.article .big{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;color:var(--ink);margin-top:4px}
+.big b{font-family:var(--display);font-size:clamp(40px,7vw,56px);line-height:1;font-weight:600}
+.article .res .verdict{margin-top:6px;color:var(--ink)}
+.nums{margin:22px 0 0;display:grid;gap:12px}
+.nums dt{font-weight:600;color:var(--ink);font-size:15px}
+.nums dd{margin:2px 0 0;color:var(--muted);font-size:16px}
+.article .out .take{margin-top:18px;color:var(--ink);font-weight:500}
+.article .out .fine{margin-top:8px}
+.calc-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.calc-bar button{cursor:pointer;font-family:inherit}
+.src{margin-top:22px}
+.src summary{cursor:pointer;font-weight:500;color:var(--ink)}
+.article .src .fine{margin-top:10px}
+.article .src li{font-size:15px}
+@media (max-width:560px){.fields,.other{grid-template-columns:1fr}.setup{padding:16px}.pair{grid-template-columns:minmax(0,1fr) 6.5em}}
+</style>
+<style>h1,h2,h3,.res-h,.nums dt{word-break:keep-all;overflow-wrap:anywhere}</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../"><img src="../../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links"><a class="btn" data-windows-swap="Windows 版の通知" href="https://apps.apple.com/jp/app/apple-store/id6754513569?pt=127908484&amp;ct=ja-bif&amp;mt=8">Mac App Store で入手</a></div>
+  </nav>
+
+  <main class="article calc-page">
+    <p class="crumb"><a href="../">BirdFrame</a> · 無料ツール</p>
+    <h1>飛ぶ鳥を<wbr>止める<wbr>シャッター速度は？</h1>
+    <p class="lede">カメラ、レンズ、鳥までの距離、鳥の種類を選ぶと、そのシャッター速度で羽先と鳥全体がどれだけぶれるか、ブレを止めるのに必要なシャッター速度、そして連写で羽がシャープに写るコマの頻度がわかります。</p>
+
+    <div class="calc" id="calc">
+      <section class="setup" aria-label="撮影の設定">
+        <h2 class="setup-h">撮影の設定</h2>
+        <div class="fields">
+          <label class="lab wide">カメラ<select data-k="cam"><option value="canon-r7">Canon EOS R7</option></select></label>
+          <div class="other wide" data-show="other" hidden>
+            <label class="lab">センサーの幅（mm）<input data-k="sw" type="number" inputmode="decimal" min="1" max="100" step="any"></label>
+            <label class="lab">画像の幅（ピクセル）<input data-k="pw" type="number" inputmode="numeric" min="100" max="30000" step="1"></label>
+          </div>
+          <div class="fld">
+            <label class="lab"><span data-t="flab">焦点距離（mm）</span><input data-k="f" type="number" inputmode="decimal" min="1" max="5000" step="any"></label>
+            <div class="chips" data-show="chips" role="group" aria-label="よく使う焦点距離"><button type="button" data-f="400" aria-label="400 mm">400</button><button type="button" data-f="500" aria-label="500 mm">500</button><button type="button" data-f="600" aria-label="600 mm">600</button><button type="button" data-f="800" aria-label="800 mm">800</button></div>
+            <p class="hint" data-show="bridge" hidden>レンズ一体型カメラ：35mm 判換算の焦点距離を入力してください（望遠端で P1000 は 3000、P950 は 2000）。</p>
+          </div>
+          <label class="lab" data-show="tc">テレコンバーター<select data-k="tc"><option value="1">なし</option><option value="1.4">1.4x</option><option value="2">2x</option></select></label>
+          <div class="fld wide" data-show="crop" hidden>
+            <label class="chk"><input type="checkbox" data-k="crop"><span data-t="crop">APS-C クロップ</span></label>
+            <p class="hint" data-show="cropnote" hidden>クロップはフレームの周りを切り落とすだけです。ピクセルの大きさは変わらないので、ブレも変わりません。</p>
+          </div>
+          <div class="pair wide">
+            <label class="lab">鳥までの距離<input data-k="d" type="number" inputmode="decimal" min="0.1" max="100000" step="any"></label>
+            <label class="lab">単位<select data-k="u" aria-label="距離の単位"><option value="m">メートル</option><option value="ft">フィート</option></select></label>
+          </div>
+          <div class="fld wide">
+            <label class="lab">鳥の種類<select data-k="bird"><option value="osprey">ミサゴ</option></select></label>
+            <p class="hint" data-o="birdinfo"></p>
+          </div>
+          <div class="fld wide">
+            <label class="lab">シャッター速度（1/○秒）<input data-k="s" type="number" inputmode="numeric" min="1" max="64000" step="any"></label>
+            <div class="chips" role="group" aria-label="よく使うシャッター速度"><button type="button" data-s="500" aria-label="1/500秒">1/500</button><button type="button" data-s="1000" aria-label="1/1000秒">1/1000</button><button type="button" data-s="2000" aria-label="1/2000秒">1/2000</button><button type="button" data-s="3200" aria-label="1/3200秒">1/3200</button><button type="button" data-s="4000" aria-label="1/4000秒">1/4000</button><button type="button" data-s="8000" aria-label="1/8000秒">1/8000</button></div>
+          </div>
+          <div class="fld wide">
+            <label class="lab">連写速度（コマ/秒）<input data-k="fps" type="number" inputmode="decimal" min="1" max="120" step="any"></label>
+            <div class="chips" role="group" aria-label="よく使う連写速度"><button type="button" data-fps="10" aria-label="毎秒10コマ">10</button><button type="button" data-fps="15" aria-label="毎秒15コマ">15</button><button type="button" data-fps="20" aria-label="毎秒20コマ">20</button><button type="button" data-fps="30" aria-label="毎秒30コマ">30</button></div>
+          </div>
+        </div>
+        <div class="out" aria-live="polite">
+          <p class="fit" data-o="fit"></p>
+          <p class="warn" data-o="warn" hidden></p>
+          <div class="res">
+            <p class="res-h">羽ばたきの途中の羽先<wbr>（鳥に合わせて<wbr>流し撮り）</p>
+            <p class="big"><b data-o="wing">–</b><span data-o="wingctx">のブレ</span></p>
+            <p class="verdict" data-o="wingv"></p>
+          </div>
+          <div class="res">
+            <p class="res-h">鳥全体が横切る<wbr>（カメラは固定）</p>
+            <p class="big"><b data-o="body">–</b><span>のブレ</span></p>
+            <p class="verdict" data-o="bodyv"></p>
+          </div>
+          <dl class="nums">
+            <div><dt>羽先を<wbr>ピクセル単位で<wbr>シャープに写す<wbr>シャッター速度<wbr>（1 px）</dt><dd data-o="n1"></dd></div>
+            <div><dt>羽先を<wbr>画面で見て<wbr>シャープに写す<wbr>シャッター速度<wbr>（3 px）</dt><dd data-o="n3"></dd></div>
+          </dl>
+          <p class="take" data-o="burst"></p>
+          <p class="fine">推定値です。100%（写真の1ピクセル＝画面の1ピクセル）で見たときのブレを表します。</p>
+        </div>
+      </section>
+    </div>
+    <div class="calc-bar">
+      <button type="button" class="btn ghost" id="copy">この設定のリンクをコピー</button>
+      <span class="fine" id="copied" role="status"></span>
+    </div>
+    <noscript><p class="fine">計算ツールを使うには JavaScript が必要です。</p></noscript>
+
+    <h2>計算のしくみ</h2>
+    <p>鳥に合わせて流し撮りすると、鳥の体はフレームの中でほぼ止まり、残るブレは羽ばたく翼から生まれます。ここでは、どの鳥も翼が <span data-o="stroke">100</span>° の弧を描き、その鳥の羽ばたきの回数で上下するものとして計算します。羽先がいちばん速いのは打ち下ろし・打ち上げの途中で、上端と下端では一瞬止まります。この羽先の速さを、距離から求めたレンズの撮影倍率とカメラのピクセルの大きさでセンサー上のピクセル数に換算し、100% 表示でのブレとして示します。「カメラは固定」の行は、羽ばたきの代わりに鳥の巡航速度を使い、動かないカメラの前を鳥が横切る場合を計算します。実際の鳥は加速し、滑空し、旋回し、飛び立つときにはもっと強く羽ばたくので、どの数字も目安として見てください。</p>
+
+    <details class="src" id="sources">
+      <summary>数値の出典</summary>
+<!-- SOURCES START: written by marketing/bif-shutter-2026-11-01/ja/build_ja.py from the English page; don't edit by hand -->
+      <p class="fine">カメラのセンサーサイズと画素数は、各メーカーが公表している仕様です。翼の振り幅は、どの鳥も 100° としています（推定。速度によって 80〜130°、<a href="https://lup.lub.lu.se/search/files/2984168/624229.pdf" rel="nofollow noopener">Park et al. 2001</a>）。「推定」とある値は推定値です。出典の多くは英語です。</p>
+      <ul class="src-list">
+        <li><b>アオサギ</b>：翼開長 1.85 m（<a href="https://www.rspb.org.uk/birds-and-wildlife/grey-heron" rel="nofollow noopener">RSPB</a>）、巡航速度 11 m/s（<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001、レーダー観測</a>）、羽ばたき 毎秒 2.7 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>アカオノスリ</b>：翼開長 1.24 m（<a href="https://web.archive.org/web/20260102064137/https://www.allaboutbirds.org/guide/red-tailed_hawk/id/" rel="nofollow noopener">All About Birds</a>）、巡航速度 13 m/s（ノスリの値から推定、<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001、レーダー観測</a>）、羽ばたき 毎秒 3.5 回（ノスリの大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>アカトビ</b>：翼開長 1.85 m（<a href="https://www.rspb.org.uk/birds-and-wildlife/red-kite" rel="nofollow noopener">RSPB</a>）、巡航速度 12 m/s（<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007、レーダー観測</a>）、羽ばたき 毎秒 2.6 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>アジサシ</b>：翼開長 0.78 m（<a href="https://web.archive.org/web/20260121045731/https://www.allaboutbirds.org/guide/Common_Tern/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 11 m/s（<a href="https://doi.org/10.1098/rsif.2013.0419" rel="nofollow noopener">Pennycuick et al. 2013</a>）、羽ばたき 毎秒 4.6 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>アメリカチョウゲンボウ</b>：翼開長 0.56 m（<a href="https://web.archive.org/web/20260111205828/https://www.allaboutbirds.org/guide/American_Kestrel/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 11 m/s（ヒメチョウゲンボウの値から推定、<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001、レーダー観測</a>）、羽ばたき 毎秒 5.5 回（ヒメチョウゲンボウの大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>アメリカハイイロチュウヒ</b>：翼開長 1.1 m（<a href="https://web.archive.org/web/20260425031718/https://www.allaboutbirds.org/guide/northern_harrier/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 9.1 m/s（ハイイロチュウヒの値から推定、<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007、レーダー観測</a>）、羽ばたき 毎秒 3.6 回（ハイイロチュウヒの大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>オオアオサギ</b>：翼開長 1.84 m（<a href="https://web.archive.org/web/20251226100908/https://www.allaboutbirds.org/guide/Great_Blue_Heron/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 11 m/s（アオサギの値から推定、<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001、レーダー観測</a>）、羽ばたき 毎秒 2.7 回（アオサギの大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>オジロワシ</b>：翼開長 2.2 m（<a href="https://www.rspb.org.uk/birds-and-wildlife/white-tailed-eagle" rel="nofollow noopener">RSPB</a>）、巡航速度 14 m/s（<a href="https://doi.org/10.1098/rsif.2013.0419" rel="nofollow noopener">Pennycuick et al. 2013</a>）、羽ばたき 毎秒 2.6 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>カナダガン</b>：翼開長 1.49 m（<a href="https://web.archive.org/web/20260116045557/https://www.allaboutbirds.org/guide/Canada_Goose/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 17 m/s（<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007、レーダー観測</a>）、羽ばたき 毎秒 4 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>カナダヅル</b>：翼開長 2 m（<a href="https://web.archive.org/web/20260116180226/https://www.allaboutbirds.org/guide/sandhill_crane/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 15 m/s（クロヅルの値から推定、<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007、レーダー観測</a>）、羽ばたき 毎秒 3.1 回（クロヅルの大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>コブハクチョウ</b>：翼開長 2.23 m（<a href="https://web.archive.org/web/20250514072031/https://www.allaboutbirds.org/guide/Mute_Swan/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 16 m/s（<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007、レーダー観測</a>）、羽ばたき 毎秒 3.7 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>シロカツオドリ</b>：翼開長 1.82 m（<a href="https://web.archive.org/web/20260115181005/https://www.allaboutbirds.org/guide/Northern_Gannet/id/" rel="nofollow noopener">All About Birds</a>）、巡航速度 18 m/s（大きさと体重から推定、<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007</a>）、羽ばたき 毎秒 3.9 回（<a href="https://doi.org/10.1098/rsif.2022.0168" rel="nofollow noopener">Krishnan et al. 2022</a>）。</li>
+        <li><b>セグロカモメ</b>：翼開長 1.4 m（<a href="https://www.rspb.org.uk/birds-and-wildlife/herring-gull" rel="nofollow noopener">RSPB</a>）、巡航速度 13 m/s（<a href="https://doi.org/10.1098/rsif.2013.0419" rel="nofollow noopener">Pennycuick et al. 2013</a>）、羽ばたき 毎秒 4 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>ダイサギ</b>：翼開長 1.38 m（<a href="https://web.archive.org/web/20260101090441/https://www.allaboutbirds.org/guide/Great_Egret/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 10 m/s（<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001、レーダー観測</a>）、羽ばたき 毎秒 3.1 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>チョウゲンボウ</b>：翼開長 0.76 m（<a href="https://www.rspb.org.uk/birds-and-wildlife/kestrel" rel="nofollow noopener">RSPB</a>）、巡航速度 13 m/s（<a href="https://doi.org/10.1098/rsif.2013.0419" rel="nofollow noopener">Pennycuick et al. 2013</a>）、羽ばたき 毎秒 5.2 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>ツバメ</b>：翼開長 0.31 m（<a href="https://web.archive.org/web/20260104200746/https://www.allaboutbirds.org/guide/Barn_Swallow/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 11 m/s（<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001、レーダー観測</a>）、羽ばたき 毎秒 8 回（<a href="https://lup.lub.lu.se/search/files/2984168/624229.pdf" rel="nofollow noopener">Park et al. 2001</a>）。</li>
+        <li><b>トビ</b>：翼開長 1.45 m（<a href="https://birds-europe.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=130467" rel="nofollow noopener">Naturalis</a>）、巡航速度 12 m/s（<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001、レーダー観測</a>）、羽ばたき 毎秒 2.7 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>ノドアカハチドリ</b>：翼開長 0.1 m（<a href="https://web.archive.org/web/20250627175738/https://www.allaboutbirds.org/guide/Ruby-throated_Hummingbird/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 7.8 m/s（大きさと体重から推定、<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007</a>）、羽ばたき 毎秒 53 回（<a href="https://www.allaboutbirds.org/guide/Ruby-throated_Hummingbird/overview" rel="nofollow noopener">All About Birds</a>）。</li>
+        <li><b>ハクトウワシ</b>：翼開長 2.04 m（<a href="https://web.archive.org/web/20260113032050/https://www.allaboutbirds.org/guide/Bald_Eagle/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 14 m/s（オジロワシの値から推定、<a href="https://doi.org/10.1098/rsif.2013.0419" rel="nofollow noopener">Pennycuick et al. 2013</a>）、羽ばたき 毎秒 2.6 回（オジロワシの大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>ハヤブサ</b>：翼開長 1.05 m（<a href="https://web.archive.org/web/20260121074601/https://www.allaboutbirds.org/guide/peregrine_falcon/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 12 m/s（<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001、レーダー観測</a>）、羽ばたき 毎秒 5.2 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>マガモ</b>：翼開長 0.89 m（<a href="https://web.archive.org/web/20260101150710/https://www.allaboutbirds.org/guide/Mallard/id" rel="nofollow noopener">All About Birds</a>）、巡航速度 19 m/s（<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007、レーダー観測</a>）、羽ばたき 毎秒 7.1 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>ミサゴ</b>：翼開長 1.65 m（<a href="https://web.archive.org/web/20251220154950/https://www.allaboutbirds.org/guide/osprey/id/" rel="nofollow noopener">All About Birds</a>）、巡航速度 11 m/s（<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001、レーダー観測</a>）、羽ばたき 毎秒 3.2 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+        <li><b>メンフクロウ</b>：翼開長 0.88 m（<a href="https://www.rspb.org.uk/birds-and-wildlife/barn-owl" rel="nofollow noopener">RSPB</a>）、巡航速度 11 m/s（大きさと体重から推定、<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Alerstam et al. 2007</a>）、羽ばたき 毎秒 4.4 回（<a href="https://doi.org/10.1098/rsif.2022.0168" rel="nofollow noopener">Krishnan et al. 2022</a>）。</li>
+        <li><b>ヨーロッパアマツバメ</b>：翼開長 0.45 m（<a href="https://www.rspb.org.uk/birds-and-wildlife/swift" rel="nofollow noopener">RSPB</a>）、巡航速度 11 m/s（<a href="https://doi.org/10.1371/journal.pbio.0050197" rel="nofollow noopener">Bruderer &amp; Boldt 2001、レーダー観測</a>）、羽ばたき 毎秒 8 回（大きさと体重から推定、<a href="https://doi.org/10.1242/jeb.199.7.1613" rel="nofollow noopener">Pennycuick 1996</a>）。</li>
+      </ul>
+<!-- SOURCES END -->
+    </details>
+
+    <div class="cta-box">
+      <p><b>連写して、いちばんシャープな1枚を残す。</b>無料の<a data-bp href="../burst-picker/?ref=ja-bif-tool">連写ピッカー</a>を使えば、連写の中で鳥がいちばんシャープなコマがわかります。Mac アプリの BirdFrame は、何千枚もの野鳥写真の鳥を一度にトリミングするので、手作業でトリミングする必要はありません。どのトリミングも元のフルサイズの画像から、フル解像度のまま切り出します。連写は1つの Moment にまとまり、いちばんはっきり写った鳥が表示されます。1回50枚まで無料、それ以上は1回限りの購入（買い切り）です。Mac App Store、macOS 15 以降。※ アプリの画面は英語表記です。</p>
+      <div class="ctas"><a class="btn" data-windows-swap="Windows 版の通知を受け取る" href="https://apps.apple.com/jp/app/apple-store/id6754513569?pt=127908484&amp;ct=ja-bif&amp;mt=8">Mac App Store で無料ダウンロード</a><a class="btn ghost" data-bp href="../burst-picker/?ref=ja-bif-tool">連写ピッカーを試す</a></div>
+    </div>
+
+    <h2>よくある質問</h2>
+    <h3>飛んでいる鳥には、<wbr>どのくらいの<wbr>シャッター速度が<wbr>必要ですか？</h3>
+    <p>何をシャープに写したいかによります。流し撮りで鳥の体を止めるなら、1/2000秒前後から始める野鳥カメラマンが多いです。羽ばたきの途中の羽先まで止めるには、ずっと速いシャッターが必要になることがあります。長さ 0.9 m の翼が 100° の振り幅で毎秒2.5回羽ばたくと、羽先は最大で秒速約 12 m に達し、近距離では 1/8000秒以上が必要になることもあります。上でカメラ、レンズ、距離、鳥を設定すると、その撮影に必要なシャッター速度がわかります。</p>
+    <h3>目はシャープなのに、<wbr>なぜ羽先が<wbr>ぶれるのですか？</h3>
+    <p>流し撮りで打ち消せるのは鳥が飛ぶ動きで、羽ばたきは打ち消せません。羽ばたきの途中、羽先は体の横を秒速数メートルで上下しますが、頭はレンズに対してほとんど動きません。そのため、目はシャープで羽先だけがぶれたコマができます。動きが伝わるので、羽先の少しのブレをあえて好む人も多くいます。</p>
+    <h3>連写速度を<wbr>上げると<wbr>効果がありますか？</h3>
+    <p>あります。羽ばたき1回につき2回、打ち上げの上端と打ち下ろしの下端で、翼は向きを変えるために一瞬止まります。1コマごとにその瞬間の近くを捉えるチャンスがあるので、毎秒のコマ数が多いほど、羽がシャープに写ったコマが増えます。難しいのは、ほとんど同じに見える何百枚の中からそのコマを探すことです。無料の<a data-bp href="../burst-picker/?ref=ja-bif-tool">連写ピッカー</a>なら、連写ごとに鳥がいちばんシャープな1枚を見つけられます。</p>
+    <h3>なぜ距離と<wbr>焦点距離が<wbr>関係するのですか？</h3>
+    <p>ブレはピクセル数で数えるので、フレームの中で鳥が大きいほど、翼が 1 cm 動くあいだに横切るピクセルも多くなります。距離を半分にするか焦点距離を2倍にすると、鳥の大きさと一緒に、同じシャッター速度でのブレもほぼ2倍になります。同じ理由で、ピクセルの小さいカメラほどピクセル単位のブレは大きくなります。フルサイズ機の APS-C クロップはフレームの周りを切り落とすだけなので、ブレは変わりません。</p>
+    <h3>1 px と 3 px の<wbr>ブレとは、<wbr>どういう<wbr>意味ですか？</h3>
+    <p>シャッターが開いているあいだに鳥の一点が写真の上でどれだけ流れるかを、写真のピクセル数で数えたものです。100%（写真の1ピクセルを画面の1ピクセル）で見たときの値です。1 ピクセル以下なら、センサーが写せる限りシャープな「ピクセル単位でシャープ」な状態です。3 ピクセルくらいまでなら、拡大しないとほとんどわからず、画面や Web 用に縮小すればたいてい消えます。どちらも目安で、厳密な境界ではありません。</p>
+
+    <p class="fine">こちらも無料：<a href="../bird-reach-calculator/">リーチ計算ツール</a>で、カメラ、レンズ、距離から鳥にかかるピクセル数がわかります。</p>
+  </main>
+
+  <footer>
+    <span>個人で開発しています。お問い合わせ：<a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
+    <span><a href="../">BirdFrame（日本語）</a> · <a href="../bird-reach-calculator/">リーチ計算ツール</a> · <a href="../burst-picker/">連写ピッカー</a> · <a href="../../bird-in-flight-shutter-speed/" hreflang="en" lang="en">English</a> · <a href="../../privacy/">プライバシー</a></span>
+  </footer>
+</div>
+<script>
+(() => {
+  'use strict';
+  // Camera bodies, copied from the reach calculator: [id, group, name, sensor width mm, sensor height mm, pixel width,
+  // pixel height, APS-C crop-mode factor (0 = none), 35mm-equivalent factor for fixed-lens cameras (0 = interchangeable lens)].
+  // Sources: marketing/reach-calculator-2026-10-30/SPECS.md
+  const CAMS = [
+    ["canon-r5","Canon","Canon EOS R5",36.0,24.0,8192,5464,1.6,0],
+    ["canon-r5-ii","Canon","Canon EOS R5 Mark II",36.0,24.0,8192,5464,1.6,0],
+    ["canon-r6-ii","Canon","Canon EOS R6 Mark II",35.9,23.9,6000,4000,1.6,0],
+    ["canon-r6-iii","Canon","Canon EOS R6 Mark III",35.9,23.9,6960,4640,1.6,0],
+    ["canon-r7","Canon","Canon EOS R7",22.3,14.8,6960,4640,0,0],
+    ["canon-r10","Canon","Canon EOS R10",22.3,14.9,6000,4000,0,0],
+    ["canon-r8","Canon","Canon EOS R8",35.9,23.9,6000,4000,1.6,0],
+    ["canon-r3","Canon","Canon EOS R3",36.0,24.0,6000,4000,1.6,0],
+    ["canon-r1","Canon","Canon EOS R1",36.0,24.0,6000,4000,1.6,0],
+    ["canon-90d","Canon","Canon EOS 90D",22.3,14.8,6960,4640,0,0],
+    ["canon-7d-ii","Canon","Canon EOS 7D Mark II",22.4,15.0,5472,3648,0,0],
+    ["canon-5d-iv","Canon","Canon EOS 5D Mark IV",36.0,24.0,6720,4480,0,0],
+    ["nikon-z8","Nikon","Nikon Z8",35.9,23.9,8256,5504,1.5,0],
+    ["nikon-z9","Nikon","Nikon Z9",35.9,23.9,8256,5504,1.5,0],
+    ["nikon-z6-iii","Nikon","Nikon Z6III",35.9,23.9,6048,4032,1.5,0],
+    ["nikon-z5-ii","Nikon","Nikon Z5II",35.9,23.9,6048,4032,1.5,0],
+    ["nikon-z50-ii","Nikon","Nikon Z50II",23.5,15.7,5568,3712,0,0],
+    ["nikon-zf","Nikon","Nikon Zf",35.9,23.9,6048,4032,1.5,0],
+    ["nikon-d500","Nikon","Nikon D500",23.5,15.7,5568,3712,0,0],
+    ["nikon-d850","Nikon","Nikon D850",35.9,23.9,8256,5504,1.5,0],
+    ["sony-a1","Sony","Sony A1",35.9,24.0,8640,5760,1.5,0],
+    ["sony-a1-ii","Sony","Sony A1 II",35.9,24.0,8640,5760,1.5,0],
+    ["sony-a9-iii","Sony","Sony A9 III",35.6,23.8,6000,4000,1.5,0],
+    ["sony-a7r-v","Sony","Sony A7R V",35.7,23.8,9504,6336,1.5,0],
+    ["sony-a7r-vi","Sony","Sony A7R VI",35.9,24.0,9984,6656,1.5,0],
+    ["sony-a7-iv","Sony","Sony A7 IV",35.9,23.9,7008,4672,1.5,0],
+    ["sony-a7-v","Sony","Sony A7 V",35.9,23.9,7008,4672,1.5,0],
+    ["sony-a6700","Sony","Sony A6700",23.3,15.5,6192,4128,0,0],
+    ["sony-a6400","Sony","Sony A6400",23.5,15.6,6000,4000,0,0],
+    ["om-1","OM System","OM System OM-1",17.4,13.0,5184,3888,0,0],
+    ["om-1-ii","OM System","OM System OM-1 Mark II",17.4,13.0,5184,3888,0,0],
+    ["om-3","OM System","OM System OM-3",17.4,13.0,5184,3888,0,0],
+    ["om-5","OM System","OM System OM-5",17.4,13.0,5184,3888,0,0],
+    ["olympus-e-m1x","OM System","Olympus OM-D E-M1X",17.4,13.0,5184,3888,0,0],
+    ["olympus-e-m1-iii","OM System","Olympus OM-D E-M1 Mark III",17.4,13.0,5184,3888,0,0],
+    ["olympus-e-m1-ii","OM System","Olympus OM-D E-M1 Mark II",17.4,13.0,5184,3888,0,0],
+    ["panasonic-g9-ii","Panasonic","Panasonic Lumix G9 II",17.3,13.0,5776,4336,0,0],
+    ["panasonic-g9","Panasonic","Panasonic Lumix G9",17.3,13.0,5184,3888,0,0],
+    ["fujifilm-x-h2","Fujifilm","Fujifilm X-H2",23.5,15.7,7728,5152,0,0],
+    ["fujifilm-x-h2s","Fujifilm","Fujifilm X-H2S",23.5,15.7,6240,4160,0,0],
+    ["fujifilm-x-t5","Fujifilm","Fujifilm X-T5",23.5,15.7,7728,5152,0,0],
+    ["fujifilm-gfx100-ii","Fujifilm","Fujifilm GFX100 II",43.8,32.9,11648,8736,0,0],
+    ["fujifilm-gfx100s-ii","Fujifilm","Fujifilm GFX100S II",43.8,32.9,11648,8736,0,0],
+    ["fujifilm-gfx100s","Fujifilm","Fujifilm GFX100S",43.8,32.9,11648,8736,0,0],
+    ["fujifilm-gfx100","Fujifilm","Fujifilm GFX100",43.8,32.9,11648,8736,0,0],
+    ["nikon-p1000","Bridge cameras (fixed lens)","Nikon Coolpix P1000",6.17,4.55,4608,3456,0,5.566],
+    ["nikon-p950","Bridge cameras (fixed lens)","Nikon Coolpix P950",6.17,4.55,4608,3456,0,5.602],
+  ];
+  const BRIDGE_MAX = {"nikon-p1000": 3000, "nikon-p950": 2000}; // full zoom, 35mm equivalent
+
+  /* SPECIES START: written by marketing/bif-shutter-2026-11-01/inline_species.py from species.json; don't edit by hand */
+  const STROKE_DEG = 100;
+  const SPECIES = [
+    {"id": "barn-swallow", "name": "Barn Swallow", "span": 0.31, "v": 11.0, "hz": 8.0, "est": []},
+    {"id": "common-swift", "name": "Common Swift", "span": 0.45, "v": 11.0, "hz": 8.0, "est": ["hz"]},
+    {"id": "ruby-throated-hummingbird", "name": "Ruby-throated Hummingbird", "span": 0.1, "v": 7.8, "hz": 53.0, "est": ["v"]},
+    {"id": "american-kestrel", "name": "American Kestrel", "span": 0.56, "v": 11.0, "hz": 5.5, "est": ["hz", "v"]},
+    {"id": "common-kestrel", "name": "Common Kestrel", "span": 0.76, "v": 13.0, "hz": 5.2, "est": ["hz"]},
+    {"id": "peregrine-falcon", "name": "Peregrine Falcon", "span": 1.05, "v": 12.0, "hz": 5.2, "est": ["hz"]},
+    {"id": "osprey", "name": "Osprey", "span": 1.65, "v": 11.0, "hz": 3.2, "est": ["hz"]},
+    {"id": "bald-eagle", "name": "Bald Eagle", "span": 2.04, "v": 14.0, "hz": 2.6, "est": ["hz", "v"]},
+    {"id": "white-tailed-eagle", "name": "White-tailed Eagle", "span": 2.2, "v": 14.0, "hz": 2.6, "est": ["hz"]},
+    {"id": "red-tailed-hawk", "name": "Red-tailed Hawk", "span": 1.24, "v": 13.0, "hz": 3.5, "est": ["hz", "v"]},
+    {"id": "red-kite", "name": "Red Kite", "span": 1.85, "v": 12.0, "hz": 2.6, "est": ["hz"]},
+    {"id": "black-kite", "name": "Black Kite", "span": 1.45, "v": 12.0, "hz": 2.7, "est": ["hz"]},
+    {"id": "northern-harrier", "name": "Northern Harrier", "span": 1.1, "v": 9.1, "hz": 3.6, "est": ["hz", "v"]},
+    {"id": "barn-owl", "name": "Barn Owl", "span": 0.88, "v": 11.0, "hz": 4.4, "est": ["v"]},
+    {"id": "great-blue-heron", "name": "Great Blue Heron", "span": 1.84, "v": 11.0, "hz": 2.7, "est": ["hz", "v"]},
+    {"id": "grey-heron", "name": "Grey Heron", "span": 1.85, "v": 11.0, "hz": 2.7, "est": ["hz"]},
+    {"id": "great-egret", "name": "Great Egret", "span": 1.38, "v": 10.0, "hz": 3.1, "est": ["hz"]},
+    {"id": "sandhill-crane", "name": "Sandhill Crane", "span": 2.0, "v": 15.0, "hz": 3.1, "est": ["hz", "v"]},
+    {"id": "mallard", "name": "Mallard", "span": 0.89, "v": 19.0, "hz": 7.1, "est": ["hz"]},
+    {"id": "canada-goose", "name": "Canada Goose", "span": 1.49, "v": 17.0, "hz": 4.0, "est": ["hz"]},
+    {"id": "mute-swan", "name": "Mute Swan", "span": 2.23, "v": 16.0, "hz": 3.7, "est": ["hz"]},
+    {"id": "northern-gannet", "name": "Northern Gannet", "span": 1.82, "v": 18.0, "hz": 3.9, "est": ["v"]},
+    {"id": "herring-gull", "name": "Herring Gull", "span": 1.4, "v": 13.0, "hz": 4.0, "est": ["hz"]},
+    {"id": "common-tern", "name": "Common Tern", "span": 0.78, "v": 11.0, "hz": 4.6, "est": ["hz"]},
+  ];
+  /* SPECIES END */
+  // Japanese display names; the data above is the English page's, byte for byte (marketing/bif-shutter-2026-11-01/test_ja.py).
+  const JA = {"barn-swallow": "ツバメ", "common-swift": "ヨーロッパアマツバメ", "ruby-throated-hummingbird": "ノドアカハチドリ", "american-kestrel": "アメリカチョウゲンボウ", "common-kestrel": "チョウゲンボウ", "peregrine-falcon": "ハヤブサ", "osprey": "ミサゴ", "bald-eagle": "ハクトウワシ", "white-tailed-eagle": "オジロワシ", "red-tailed-hawk": "アカオノスリ", "red-kite": "アカトビ", "black-kite": "トビ", "northern-harrier": "アメリカハイイロチュウヒ", "barn-owl": "メンフクロウ", "great-blue-heron": "オオアオサギ", "grey-heron": "アオサギ", "great-egret": "ダイサギ", "sandhill-crane": "カナダヅル", "mallard": "マガモ", "canada-goose": "カナダガン", "mute-swan": "コブハクチョウ", "northern-gannet": "シロカツオドリ", "herring-gull": "セグロカモメ", "common-tern": "アジサシ"};
+  const GROUP_JA = {'Bridge cameras (fixed lens)': 'レンズ一体型カメラ'};
+  const jaName = b => JA[b.id] || b.name;
+
+  /* MATH START: mirrored in marketing/bif-shutter-2026-11-01/test_math.py */
+  const STEPS = [250, 320, 400, 500, 640, 800, 1000, 1250, 1600, 2000, 2500, 3200, 4000, 5000, 6400, 8000,
+    10000, 12800, 16000, 20000, 25600, 32000]; // standard shutter speeds (1/x), in third stops
+  const SHARP = 1, SCREEN = 3; // blur targets in pixels: "pixel-sharp" and "sharp on screen"
+  function stepUp(den) { // the nearest standard shutter speed at or above 1/den; 0 = faster than 1/32000
+    for (const s of STEPS) if (s >= den * (1 - 1e-9)) return s;
+    return 0;
+  }
+  function bif(o) {
+    // o: sw (sensor width mm), pw (image width px), eq (35mm-equivalent factor or 0), crop (crop-mode factor or 0),
+    //    f (focal length typed, mm), tc (teleconverter), dmm (distance mm), span (wingspan m),
+    //    v (cruising airspeed m/s, or null when no figure is published: no camera-still result),
+    //    hz (wingbeats a second), amp (wing stroke, degrees), s (shutter speed 1/s), fps (frames a second)
+    const pos = x => typeof x === 'number' && isFinite(x) && x > 0;
+    if (![o.sw, o.pw, o.f, o.tc, o.dmm, o.span, o.hz, o.amp, o.s, o.fps].every(pos)) return null;
+    if (!(o.eq >= 0) || !(o.crop >= 0)) return null;
+    const fe = o.eq ? o.f / o.eq : o.f * o.tc; // real focal length at the sensor, mm
+    if (!(o.dmm > fe)) return null;
+    const p = o.sw / o.pw; // pixel pitch, mm
+    const m = fe / (o.dmm - fe); // magnification
+    const k = 1000 * m / p; // pixels per metre at the bird
+    const t = 1 / o.s; // exposure, s
+    const R = o.span / 2, phi = o.amp * Math.PI / 180;
+    const vTip = Math.PI * phi * R * o.hz; // peak wingtip speed against the body (mid-stroke), m/s
+    const wing = vTip * t * k; // wingtip blur mid-stroke when panning, px
+    const hasV = pos(o.v);
+    const body = hasV ? o.v * t * k : null; // whole-bird blur, camera still, px
+    const need = (v, B) => v * k / B; // shutter denominator that keeps the blur to B px
+    const frac = 2 / Math.PI * Math.asin(Math.min(1, SCREEN / wing)); // share of frames with wingtips within 3 px
+    const fw = Math.round(o.pw / (o.crop > 1 ? o.crop : 1)); // frame width, px (crop mode trims it)
+    const spanPx = o.span * k; // wingspan on the sensor, px
+    return {fe, p, m, k, t, vTip, wing, body, w1: need(vTip, SHARP), w3: need(vTip, SCREEN), b1: hasV ? need(o.v, SHARP) : null,
+      b3: hasV ? need(o.v, SCREEN) : null, frac, perSec: o.fps * frac, perBeat: o.fps / o.hz, fw, spanPx, spanPct: spanPx / fw * 100};
+  }
+  /* MATH END */
+
+  const KEYS = ['cam', 'f', 'tc', 'crop', 'd', 'u', 'bird', 's', 'fps', 'sw', 'pw'];
+  const birdById = Object.fromEntries(SPECIES.map(b => [b.id, b]));
+  const DEF = {cam: 'canon-r7', f: '600', tc: '1', crop: '', d: '50', u: 'm', bird: birdById.osprey ? 'osprey' : (SPECIES[0] || {}).id,
+    s: '2000', fps: '20', sw: '23.5', pw: '6000'};
+  const camById = Object.fromEntries(CAMS.map(c => [c[0], c]));
+  const panel = document.querySelector('#calc .setup');
+  const copyBtn = document.getElementById('copy');
+  const copied = document.getElementById('copied');
+
+  const nf = (n, d = 0) => n.toLocaleString('ja-JP', {minimumFractionDigits: d, maximumFractionDigits: d});
+  const num = v => v !== null && v !== '' && isFinite(+v) && +v > 0;
+  const el = k => panel.querySelector('[data-k="' + k + '"]');
+  const out = k => panel.querySelector('[data-o="' + k + '"]');
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const pxf = b => (b < 10 ? nf(b, 1) : nf(Math.round(b))) + ' px';
+  const one = n => n < 10 ? nf(n, Math.abs(n - Math.round(n)) < 0.05 ? 0 : 1) : nf(Math.round(n));
+
+  function fill() {
+    const groups = {};
+    CAMS.forEach(c => { (groups[c[1]] = groups[c[1]] || []).push(c); });
+    el('cam').innerHTML = Object.keys(groups).map(g => '<optgroup label="' + (GROUP_JA[g] || g) + '">' +
+      groups[g].map(c => '<option value="' + c[0] + '">' + c[2] + '</option>').join('') + '</optgroup>').join('') +
+      '<option value="other">その他のカメラ</option>';
+    el('bird').innerHTML = SPECIES.slice().sort((a, b) => jaName(a).localeCompare(jaName(b), 'ja'))
+      .map(b => '<option value="' + esc(b.id) + '">' + esc(jaName(b)) + '</option>').join('');
+    document.querySelectorAll('[data-o="stroke"]').forEach(e => { e.textContent = nf(STROKE_DEG); });
+  }
+
+  function getState() {
+    const s = {};
+    KEYS.forEach(k => { const e = el(k); s[k] = e.type === 'checkbox' ? (e.checked ? '1' : '') : e.value.trim(); });
+    return s;
+  }
+  function setState(s) {
+    KEYS.forEach(k => { const e = el(k); if (e.type === 'checkbox') e.checked = s[k] === '1'; else e.value = s[k]; });
+    panel.dataset.cam = s.cam; panel.dataset.u = s.u;
+  }
+  function fromQuery(p) {
+    const s = Object.assign({}, DEF);
+    if (camById[p.get('cam')] || p.get('cam') === 'other') s.cam = p.get('cam');
+    ['f', 'd', 's', 'fps', 'sw', 'pw'].forEach(k => { if (num(p.get(k))) s[k] = String(+p.get(k)); });
+    if (['1', '1.4', '2'].includes(p.get('tc'))) s.tc = p.get('tc');
+    if (p.get('crop') === '1') s.crop = '1';
+    if (['m', 'ft'].includes(p.get('u'))) s.u = p.get('u');
+    if (birdById[p.get('bird')]) s.bird = p.get('bird');
+    if (s.u === 'ft' && !num(p.get('d'))) s.d = '164';
+    if (BRIDGE_MAX[s.cam] && !num(p.get('f'))) s.f = String(BRIDGE_MAX[s.cam]);
+    return s;
+  }
+  function camOf(s) {
+    if (s.cam === 'other') return {sw: +s.sw, pw: Math.round(+s.pw), crop: 0, eq: 0};
+    const c = camById[s.cam] || camById[DEF.cam];
+    return {sw: c[3], pw: c[5], crop: c[7], eq: c[8]};
+  }
+  function urlFor() {
+    const p = new URLSearchParams(location.search); // keeps ref and any other parameters
+    const s = getState(), c = camOf(s);
+    const set = (k, v) => { if (v) p.set(k, v); else p.delete(k); };
+    set('cam', s.cam); set('f', s.f); set('tc', c.eq ? '' : s.tc); set('crop', c.crop && s.crop ? '1' : '');
+    set('d', s.d); set('u', s.u); set('bird', s.bird); set('s', s.s); set('fps', s.fps);
+    set('sw', s.cam === 'other' ? s.sw : ''); set('pw', s.cam === 'other' ? s.pw : '');
+    const qs = p.toString();
+    return location.pathname + (qs ? '?' + qs : '') + location.hash;
+  }
+  function wingVerdict(b) {
+    if (b <= SHARP) return 'ピクセル単位でシャープ：100% で見ても羽先が止まっています。';
+    if (b <= SCREEN) return '画面で見てシャープ：100% でわずかにブレが見える程度です。';
+    if (b <= 8) return '100% では羽先がやや甘くなりますが、Web 用に縮小すれば気になりません。';
+    if (b <= 25) return '羽ばたきの途中では羽先がぶれます。それでも目はシャープに写せます。';
+    return '羽ばたきの途中では羽先が大きくぶれます。動きは伝わりますが、シャープには見えません。';
+  }
+  function speed(den, short) { // a shutter-speed requirement in plain words
+    if (den <= STEPS[0]) return '1/' + STEPS[0] + '秒、またはそれより遅くても大丈夫です。';
+    const s = stepUp(den);
+    if (s && s <= 8000) return '1/' + s + '秒。';
+    const burst = 'シャープなコマは連写で狙いましょう。';
+    if (!s) return '1/32000秒より速く、どのシャッターでも届きません。' + (short ? '' : burst);
+    return '約 1/' + s + '秒：多くのカメラの最速 1/8000秒を超えます。' + (short ? '' : 'シャッターでは止めきれません。' + burst);
+  }
+  function bodyVerdict(r) {
+    if (r.body === null) return 'この鳥は巡航速度のデータが公表されていないため、カメラ固定の数値は出せません。';
+    if (r.body <= SHARP) return '流し撮りしなくても、ピクセル単位でシャープです。';
+    if (r.body <= SCREEN) return '流し撮りしなくても、画面で見てシャープです。';
+    const s = stepUp(r.b3);
+    return '鳥に合わせて流し撮りしましょう。カメラを固定したままだと、' + (s && s <= 8000 ? '3 px 以内に収めるには約 1/' + s + '秒が必要です。'
+      : '1/8000秒までのどのシャッター速度でも 3 px 以内に収まりません。');
+  }
+  function burstLine(r, fps) {
+    const at = '毎秒 ' + one(fps) + ' コマなら、';
+    if (r.frac >= 1) return at + 'すべてのコマで羽先のブレが 3 px 以内に収まります。';
+    const beat = r.perBeat >= 1 ? '羽ばたき1回につき約 ' + one(r.perBeat) + ' コマ撮れます。'
+      : 'コマとコマのあいだに、翼は約 ' + one(1 / r.perBeat) + ' 回羽ばたきます。';
+    if (r.perSec >= 1) return at + '羽ばたきの上端か下端の近くで、羽先のブレが 3 px 以内のコマが毎秒約 ' + one(r.perSec) + ' コマ撮れます。' + beat;
+    return at + '羽先のブレが 3 px 以内のコマは、羽ばたきの上端か下端の近くで約 ' + one(1 / r.perSec) + ' 秒に1コマです。' + beat;
+  }
+  function birdInfo(b) {
+    const est = f => (b.est || []).includes(f);
+    const speed = b.v ? '巡航速度 ' + one(b.v) + ' m/s（時速約 ' + nf(b.v * 3.6) + ' km' + (est('v') ? '、推定' : '') + '）' : '巡航速度のデータなし';
+    return '翼開長 ' + String(+b.span.toFixed(2)) + ' m' + (est('span') ? '（推定）' : '') + ' · ' + speed + ' · 羽ばたき 毎秒 ' +
+      one(b.hz) + ' 回' + (est('hz') ? '（推定）' : '') + '。';
+  }
+
+  function render() {
+    const s = getState(), c = camOf(s);
+    const show = (key, on) => panel.querySelectorAll('[data-show="' + key + '"]').forEach(e => { e.hidden = !on; });
+    show('other', s.cam === 'other'); show('bridge', !!c.eq); show('chips', !c.eq); show('tc', !c.eq);
+    show('crop', c.crop > 0); show('cropnote', c.crop > 0 && s.crop === '1');
+    panel.querySelector('[data-t="flab"]').textContent = c.eq ? '焦点距離（35mm 判換算）' : '焦点距離（mm）';
+    panel.querySelector('[data-t="crop"]').textContent = 'APS-C クロップ（' + c.crop + 'x）';
+    panel.querySelectorAll('[data-f]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === s.f)));
+    panel.querySelectorAll('[data-s]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.s === s.s)));
+    panel.querySelectorAll('[data-fps]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.fps === s.fps)));
+    const b = birdById[s.bird] || birdById[DEF.bird];
+    out('birdinfo').textContent = b ? birdInfo(b) : '';
+    const dmm = s.u === 'ft' ? +s.d * 304.8 : +s.d * 1000;
+    const ok = !!b && [+s.f, dmm, +s.s, +s.fps, c.sw, c.pw].every(num);
+    const r = ok ? bif({sw: c.sw, pw: c.pw, eq: c.eq, crop: s.crop === '1' ? c.crop : 0, f: +s.f, tc: +s.tc || 1, dmm,
+      span: b.span, v: b.v, hz: b.hz, amp: STROKE_DEG, s: +s.s, fps: +s.fps}) : null;
+    const warn = out('warn');
+    if (!r) {
+      ['wing', 'body'].forEach(k => { out(k).textContent = '–'; });
+      out('wingctx').textContent = 'のブレ';
+      out('fit').textContent = ok ? '鳥がレンズに近すぎて計算できません。距離を長くしてください。' : 'すべての項目を入力すると、結果が表示されます。';
+      ['wingv', 'bodyv', 'n1', 'n3', 'burst'].forEach(k => { out(k).textContent = ''; });
+      warn.hidden = true;
+      return;
+    }
+    out('fit').textContent = 'センサー上の翼開長：' + nf(Math.round(r.spanPx)) + ' px（フレーム幅の ' + nf(r.spanPct, r.spanPct < 10 ? 1 : 0) + '%）。';
+    warn.textContent = 'この距離では鳥がフレームからはみ出します。下がるか、ズームを引いてください。';
+    warn.hidden = !(r.spanPct > 100);
+    out('wing').textContent = pxf(r.wing);
+    out('wingctx').textContent = 'のブレ（翼開長 ' + nf(Math.round(r.spanPx)) + ' px に対して）';
+    out('wingv').textContent = wingVerdict(r.wing);
+    out('body').textContent = r.body === null ? '–' : pxf(r.body);
+    out('bodyv').textContent = bodyVerdict(r);
+    out('n1').textContent = speed(r.w1, stepUp(r.w3) === 0 || stepUp(r.w3) > 8000);
+    out('n3').textContent = speed(r.w3);
+    out('burst').textContent = burstLine(r, +s.fps);
+  }
+
+  function update(fromUser) {
+    render();
+    if (fromUser) history.replaceState(null, '', urlFor());
+  }
+  function onInput(e) {
+    const k = e.target.dataset && e.target.dataset.k;
+    const s = getState();
+    if (k === 'cam' && panel.dataset.cam !== s.cam) {
+      const fEl = el('f'), wasBridge = !!BRIDGE_MAX[panel.dataset.cam], max = BRIDGE_MAX[s.cam];
+      if (max && !wasBridge) fEl.value = max;
+      else if (max) fEl.value = Math.min(+fEl.value || max, max);
+      else if (wasBridge) fEl.value = DEF.f;
+      if (!camOf(s).crop) el('crop').checked = false; // crop mode is per body
+      panel.dataset.cam = s.cam;
+    }
+    if (k === 'u' && panel.dataset.u !== s.u && num(s.d)) { // keep the same distance in the new unit
+      const v = s.u === 'ft' ? +s.d / 0.3048 : +s.d * 0.3048;
+      el('d').value = +v.toFixed(v < 100 ? 1 : 0);
+    }
+    panel.dataset.u = el('u').value;
+    update(true);
+  }
+  panel.addEventListener('input', onInput);
+  panel.addEventListener('change', onInput);
+  panel.addEventListener('click', e => {
+    const b = e.target.closest && e.target.closest('[data-f],[data-s],[data-fps]');
+    if (!b) return;
+    if (b.dataset.f) el('f').value = b.dataset.f;
+    if (b.dataset.s) el('s').value = b.dataset.s;
+    if (b.dataset.fps) el('fps').value = b.dataset.fps;
+    update(true);
+  });
+  copyBtn.addEventListener('click', () => {
+    const path = urlFor();
+    history.replaceState(null, '', path);
+    const url = location.origin + path;
+    const done = () => { copied.textContent = 'リンクをコピーしました。'; setTimeout(() => { copied.textContent = ''; }, 2500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, () => window.prompt('このリンクをコピーしてください：', url));
+    else window.prompt('このリンクをコピーしてください：', url);
+  });
+
+  // Outreach links carry ?ref=: credit the App Store campaign to it, as track.js does on other pages; ct=ja-bif otherwise.
+  // The Burst Picker links carry the same ref (else ref=ja-bif-tool).
+  const params = new URLSearchParams(location.search);
+  const ref = params.get('ref') || '';
+  if (/^[a-z0-9][a-z0-9-]{0,39}$/i.test(ref)) {
+    document.querySelectorAll('a[href*="ct=ja-bif"]').forEach(a => {
+      const u = new URL(a.href); u.searchParams.set('ct', ref.toLowerCase()); a.href = u.toString();
+    });
+    document.querySelectorAll('a[data-bp]').forEach(a => {
+      const u = new URL(a.href); u.searchParams.set('ref', ref.toLowerCase()); a.href = u.toString();
+    });
+  }
+
+  fill();
+  setState(fromQuery(params));
+  update(false);
+})();
+</script>
+</body>
+</html>
