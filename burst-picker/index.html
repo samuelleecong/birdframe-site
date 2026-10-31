@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burst Picker: find the sharpest bird in a burst (free)</title>
+<meta name="description" content="Free tool for bird photographers: drop in a burst and see which frame has the sharpest bird. JPEG and RAW, all in your browser; nothing is uploaded.">
+<link rel="canonical" href="https://getbirdframe.com/burst-picker/">
+<meta property="og:title" content="Burst Picker: find the sharpest bird in a burst">
+<meta property="og:description" content="Free tool for bird photographers: drop in a burst and see which frame has the sharpest bird. JPEG and RAW, all in your browser; nothing is uploaded.">
+<meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
+<meta property="og:url" content="https://getbirdframe.com/burst-picker/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guides/guide.css">
+<script src="../track.js" defer></script>
+<script type="module" src="app.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Burst Picker", "url": "https://getbirdframe.com/burst-picker/", "description": "Drop in a burst of bird photos to see which frame has the sharpest bird, with the keeper cropped. Reads JPEG, PNG, WebP, HEIC and the previews inside RAW files. Runs in the browser; nothing is uploaded.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": "en", "datePublished": "2026-11-01", "dateModified": "2026-11-01", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getbirdframe.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Burst Picker", "item": "https://getbirdframe.com/burst-picker/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are my photos uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs in this browser tab: your photos are opened, searched and measured on your own computer, and the keeper crops are made here too. The page downloads the bird finder once (about 40 MB) and your browser keeps it for next time. No photo leaves your computer."}}, {"@type": "Question", "name": "Does it read RAW files?", "acceptedAnswer": {"@type": "Answer", "text": "Yes: CR2, CR3, NEF, ARW, ORF, RAF, RW2 and DNG. Browsers can't develop RAW files, so Burst Picker reads the JPEG preview your camera stores inside each one. On many recent cameras that preview is full size; on others it's smaller, which still shows which frame is sharpest. If a file has no preview it can read, it tells you."}}, {"@type": "Question", "name": "How many photos can I check at once?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 60 per run, which covers a few bursts. Photos are checked one at a time, so it doesn't fill your computer's memory; most take a few seconds each, and the first run also downloads the bird finder. For thousands of photos, BirdFrame for Mac does a whole album or folder in one go."}}, {"@type": "Question", "name": "Why not just use the camera's focus points?", "acceptedAnswer": {"@type": "Answer", "text": "A focus point shows where the camera tried to focus, not whether the bird came out sharp. A bird that moved, a shutter speed that was a little slow, or a twig in front can all leave a frame soft with the focus point right on the bird. Burst Picker checks the result: how crisp the bird itself is in each frame. Not every camera or editor shows focus points, either."}}, {"@type": "Question", "name": "What does the score mean?", "acceptedAnswer": {"@type": "Answer", "text": "It's relative to the sharpest frame in the same burst, which scores 100. A frame at 70 has noticeably less fine detail on the bird; one under 30 is usually clearly soft. Scores don't compare across bursts, because each burst has its own light, distance and bird."}}, {"@type": "Question", "name": "Is there a Windows version?", "acceptedAnswer": {"@type": "Answer", "text": "Burst Picker works in any recent browser on Windows, Mac or Linux. The BirdFrame app is for Mac today; a Windows version is coming soon, and you can join the waitlist from the download button on this page."}}]}]}</script>
+<style>
+[hidden]{display:none!important}
+.article.bp-page{max-width:none}
+.bp-page>:not(.tool){max-width:44em}
+.tool{margin-top:28px;max-width:60em;padding:0;border:0}
+.drop{background:var(--card);border:2px dashed var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;transition:border-color .15s,background-color .15s}
+.drop.over{border-color:var(--spruce);background:color-mix(in srgb,var(--spruce) 7%,var(--card))}
+.article .drop .drop-h{font-family:var(--display);font-size:24px;line-height:1.2;color:var(--ink);font-weight:600}
+.drop .btn{cursor:pointer;font-family:inherit;min-height:44px}
+.article .drop .fine{margin:0}
+.article .drop .privacy{color:var(--ink);font-size:15px}
+.privacy::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--spruce);margin-right:8px;vertical-align:1px}
+@media (hover:none){.drop-hint{display:none}}
+.btn.small{padding:9px 14px;font-size:15px;min-height:44px}
+button.btn{cursor:pointer;font-family:inherit}
+.work{margin-top:18px}
+.article .work .status{color:var(--ink);font-size:16px;overflow-wrap:anywhere}
+.meter{margin-top:10px;max-width:520px}
+.meter progress{width:100%;height:10px;appearance:none;-webkit-appearance:none;border:0;border-radius:6px;background:var(--line);overflow:hidden;accent-color:var(--spruce)}
+.meter progress::-webkit-progress-bar{background:var(--line);border-radius:6px}
+.meter progress::-webkit-progress-value{background:var(--spruce);border-radius:6px}
+.meter progress::-moz-progress-bar{background:var(--spruce);border-radius:6px}
+.problem{margin-top:14px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--mark);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.results-head{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.article .results-h{margin:0;font-size:clamp(26px,3.4vw,34px)}
+.results-h:focus{outline:none}
+.burst{margin-top:26px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+.article .burst h3{margin:0 0 14px;font-size:22px}
+.article .burst h3 .fine{font-family:var(--body);font-weight:400}
+.keeper{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:22px;align-items:start}
+.article .keeper figure{margin:0}
+.article .keeper figure img{width:auto;height:auto;max-width:100%;max-height:440px;border-radius:10px;border:1px solid var(--line)}
+.keeper-meta{display:flex;flex-direction:column;gap:10px;align-items:flex-start;min-width:0}
+.article .keeper-meta p{margin:0;overflow-wrap:anywhere}
+.article .keeper-meta .kname{color:var(--ink)}
+.article .nokeeper{color:var(--ink)}
+.keeper:has(.nokeeper),.keeper:has(> p.fine:only-child){display:block}
+.article .frames{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.article .frames li+li{margin-top:0}
+.frame{display:grid;grid-template-columns:96px minmax(0,1fr) auto;grid-template-rows:auto auto;column-gap:14px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+.frame img,.frame .nothumb{grid-column:1;grid-row:1/3;width:96px;height:96px;object-fit:cover;border-radius:6px;background:var(--line)}
+.frame .fname{grid-column:2;grid-row:1;font-weight:600;color:var(--ink);font-size:15px;overflow-wrap:anywhere;align-self:end}
+.frame .fmeta{grid-column:2;grid-row:2;color:var(--muted);font-size:14px;align-self:start}
+.frame .score{grid-row:1/3;grid-column:3;font-family:var(--display);font-size:26px;font-weight:600;color:var(--ink);min-width:2.2em;text-align:right}
+.frame.best{border-color:var(--spruce);box-shadow:inset 3px 0 0 var(--spruce)}
+.frame.flagged .fmeta{color:var(--ink)}
+.frame.flagged .fmeta span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mark);margin-right:7px;vertical-align:1px}
+.frame.flagged .score{color:var(--muted)}
+.how-list{margin-top:12px}
+@media (max-width:700px){.keeper{grid-template-columns:1fr}.burst{padding:14px}.frame{grid-template-columns:72px minmax(0,1fr) auto;column-gap:10px}.frame img,.frame .nothumb{width:72px;height:72px}.drop{padding:18px}}
+@media (prefers-reduced-motion:reduce){.drop{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../"><img src="../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links"><a href="../guides/">Guides</a><a class="btn" data-windows-swap="Windows waitlist" href="https://apps.apple.com/app/apple-store/id6754513569?pt=127908484&ct=burst&mt=8">Get it on the Mac App Store</a></div>
+  </nav>
+
+  <main class="article bp-page">
+    <p class="crumb"><a href="../guides/">Guides</a> · Free tool</p>
+    <h1>Burst Picker: find the sharpest bird in a burst</h1>
+    <p class="lede">Drop in a burst of bird photos and Burst Picker shows which frame has the sharpest bird, burst by burst, with the keeper cropped and ready to look at. It's for bird photographers who come home with hundreds of near-identical frames and would rather not zoom into every one to choose.</p>
+
+    <section class="tool" aria-label="Burst Picker">
+      <div class="drop" id="drop">
+        <p class="drop-h">Drop a burst of photos here</p>
+        <button type="button" class="btn" id="choose">Choose photos</button>
+        <input type="file" id="file" multiple accept="image/*,.jpg,.jpeg,.png,.webp,.heic,.heif,.cr2,.cr3,.nef,.arw,.orf,.raf,.rw2,.dng" hidden>
+        <p class="fine">Up to 60 photos at a time: JPEG, PNG, WebP, HEIC (in Safari) and RAW (CR2, CR3, NEF, ARW, ORF, RAF, RW2, DNG). <span class="drop-hint">Select a whole burst in Finder or Explorer and drag it in.</span></p>
+        <p class="fine privacy">Everything runs in this tab. Your photos are never uploaded.</p>
+      </div>
+      <div class="work" id="work" hidden>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+        <div class="meter" id="meter" hidden><progress id="progress" max="100" value="0" aria-label="Progress"></progress></div>
+        <div class="problem" id="problem" role="alert" hidden></div>
+      </div>
+      <div id="results"></div>
+      <div class="cta-box" id="cta-results" hidden>
+        <p><b>Thousands of photos, no cropping by hand.</b> BirdFrame for Mac does this for a whole album or folder: each burst becomes one Moment with its clearest bird, and every bird is cropped at full resolution, straight from the full-size original. Free for up to 50 photos per run.</p>
+        <div class="ctas"><a class="btn" data-windows-swap="Join the Windows waitlist" href="https://apps.apple.com/app/apple-store/id6754513569?pt=127908484&ct=burst&mt=8">Download free on the Mac App Store</a></div>
+      </div>
+      <noscript><p class="fine">Burst Picker needs JavaScript.</p></noscript>
+    </section>
+
+    <h2>How it decides</h2>
+    <p>Burst Picker looks at each photo on its own. First it finds the birds, the same way BirdFrame does, and takes the main one: the biggest bird in the frame. Then it checks how crisp that bird is, not the background. It looks at the fine detail inside the bird's outline, at the same size in every frame, so a bird that came a little closer doesn't win just for being bigger, and a sharp branch behind a soft bird doesn't count.</p>
+    <p>Photos taken within two seconds of each other count as one burst, using the capture time your camera writes into every file. The sharpest bird in each burst scores 100, and the other frames are scored against it. Photos where no bird turns up are flagged rather than ranked, so a frame where the bird flew off doesn't sink quietly to the bottom.</p>
+    <p>It's a fast first pass, not a judge of your art. It can't tell a closed eye from an open one, or a turned head from a good pose. When the top scores are close, open the top two or three frames and choose with your own eye.</p>
+
+    <h2>Questions</h2>
+    <h3>Are my photos uploaded?</h3>
+    <p>No. Everything runs in this browser tab: your photos are opened, searched and measured on your own computer, and the keeper crops are made here too. The page downloads the bird finder once (about 40 MB) and your browser keeps it for next time. No photo leaves your computer.</p>
+    <h3>Does it read RAW files?</h3>
+    <p>Yes: CR2, CR3, NEF, ARW, ORF, RAF, RW2 and DNG. Browsers can't develop RAW files, so Burst Picker reads the JPEG preview your camera stores inside each one. On many recent cameras that preview is full size; on others it's smaller, which still shows which frame is sharpest. If a file has no preview it can read, it tells you.</p>
+    <h3>How many photos can I check at once?</h3>
+    <p>Up to 60 per run, which covers a few bursts. Photos are checked one at a time, so it doesn't fill your computer's memory; most take a few seconds each, and the first run also downloads the bird finder. For thousands of photos, BirdFrame for Mac does a whole album or folder in one go.</p>
+    <h3>Why not just use the camera's focus points?</h3>
+    <p>A focus point shows where the camera tried to focus, not whether the bird came out sharp. A bird that moved, a shutter speed that was a little slow, or a twig in front can all leave a frame soft with the focus point right on the bird. Burst Picker checks the result: how crisp the bird itself is in each frame. Not every camera or editor shows focus points, either.</p>
+    <h3>What does the score mean?</h3>
+    <p>It's relative to the sharpest frame in the same burst, which scores 100. A frame at 70 has noticeably less fine detail on the bird; one under 30 is usually clearly soft. Scores don't compare across bursts, because each burst has its own light, distance and bird.</p>
+    <h3>Is there a Windows version?</h3>
+    <p>Burst Picker works in any recent browser on Windows, Mac or Linux. The BirdFrame app is for Mac today; a Windows version is coming soon, and you can join the waitlist from the download button on this page.</p>
+
+    <div class="cta-box">
+      <p><b>The clearest bird of every burst, and every bird cropped.</b> BirdFrame for Mac finds and crops every bird in thousands of photos in one go, so there's no cropping by hand, and every crop comes from the full-size original: nothing downscaled, nothing generated. Each burst becomes one Moment showing its clearest bird. Free for up to 50 photos per run, then $29.99 once. Mac App Store, macOS 15 or later.</p>
+      <div class="ctas"><a class="btn" data-windows-swap="Join the Windows waitlist" href="https://apps.apple.com/app/apple-store/id6754513569?pt=127908484&ct=burst&mt=8">Download free on the Mac App Store</a><a class="btn ghost" href="../demo/">Try it on a photo</a></div>
+    </div>
+  </main>
+
+  <footer>
+    <span>Made by a one-person studio. Questions: <a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
+    <span><a href="../">Home</a> · <a href="../guides/">Guides</a> · <a href="../press.html">Press</a> · <a href="../privacy/">Privacy</a></span>
+  </footer>
+</div>
+</body>
+</html>

@@ -18,6 +18,7 @@
 - [Press kit](https://getbirdframe.com/press.html)
 - [How small is the bird? (data)](https://getbirdframe.com/how-small-is-the-bird/): 4,511 birds measured in 1,995 public-domain bird photos; in the typical photo the bird fills 6.6% of the frame. Charts and a free CSV (CC0).
 - [Bird photography reach calculator](https://getbirdframe.com/bird-reach-calculator/): free tool: pick a camera body, lens, teleconverter and distance to see how many pixels land on the bird, how much of the frame it fills, and the crop left at full resolution.
+- [Burst Picker](https://getbirdframe.com/burst-picker/): free tool: drop in a burst of bird photos (JPEG, PNG, WebP, HEIC, or the previews inside RAW files) to see which frame has the sharpest bird, burst by burst, with the keeper cropped. Runs in the browser; nothing is uploaded.
 
 ## Guides
 - [How to crop bird photos](https://getbirdframe.com/how-to-crop-bird-photos/): How much space to leave, where to place the bird, which shape to pick, and how far you can crop.
