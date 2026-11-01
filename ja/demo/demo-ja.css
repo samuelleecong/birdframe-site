@@ -1,0 +1,10 @@
+/* Japanese demo page: Japanese font fallbacks and line breaks, as on the other /ja/ pages
+   (a file rather than an inline <style>, because the page's Content-Security-Policy blocks inline styles). */
+:root{--display:"Newsreader","Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;--body:"Public Sans","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+body{line-height:1.8}
+h1,h2,h3{line-height:1.35;letter-spacing:.01em}
+h1,h2{word-break:keep-all;overflow-wrap:anywhere}
+.demo-hero h1{font-size:clamp(30px,5vw,54px)}
+.status,#result-note,#photo-caption{overflow-wrap:anywhere}
+.btn{word-break:keep-all}
+@media (max-width:560px){.cta .btn.big{font-size:16px;padding-inline:16px}}

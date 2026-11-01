@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鳥の写真を無料でトリミング｜鳥を自動で見つけて切り抜くオンラインツール｜BirdFrame</title>
+<meta name="description" content="鳥の写真を無料でトリミング。写真を選ぶと、BirdFrame が写真の中の鳥をすべて自動で見つけ、一羽ずつ「きつめ・標準・ゆったり」の構図で切り抜きます。処理はすべてブラウザの中で行い、写真はアップロードされません。">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'wasm-unsafe-eval'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' blob: data:; connect-src 'self' https://cdn.jsdelivr.net https://huggingface.co https://*.hf.co; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta property="og:title" content="写真の鳥を見つけて、好きな構図でトリミング">
+<meta property="og:description" content="Mac アプリ BirdFrame の無料ブラウザ版。写真の鳥を自動で見つけて、一羽ずつトリミングします。写真がお使いの端末から外に出ることはありません。">
+<meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getbirdframe.com/ja/demo/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="BirdFrame">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://getbirdframe.com/ja/demo/">
+<link rel="alternate" hreflang="en" href="https://getbirdframe.com/demo/">
+<link rel="alternate" hreflang="ja" href="https://getbirdframe.com/ja/demo/">
+<link rel="alternate" hreflang="x-default" href="https://getbirdframe.com/demo/">
+<link rel="icon" href="../../assets/favicon.png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../demo/demo.css">
+<link rel="stylesheet" href="demo-ja.css">
+<noscript><link rel="stylesheet" href="../../demo/noscript.css"></noscript>
+<script type="module" src="app.js?v=1"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "BirdFrame ブラウザ版：鳥の写真を無料でトリミング", "url": "https://getbirdframe.com/ja/demo/", "description": "写真を選ぶと、写真の中の鳥をすべて自動で見つけ、一羽ずつ「きつめ・標準・ゆったり」（Tight・Balanced・Wide）の構図でトリミングします。JPEG、PNG、WebP、HEIC（Safari）に対応。ブラウザの中で動き、写真はアップロードされません。", "applicationCategory": "PhotographyApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": "ja", "datePublished": "2026-11-02", "dateModified": "2026-11-02", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "author": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/ja/"}, {"@type": "ListItem", "position": 2, "name": "鳥の写真を無料でトリミング", "item": "https://getbirdframe.com/ja/demo/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "写真はアップロードされますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。すべてお使いの端末の中で行います。Cookie もトラッキングも使いません。"}}, {"@type": "Question", "name": "どんな写真に対応していますか？", "acceptedAnswer": {"@type": "Answer", "text": "JPEG、PNG、WebP に対応しています。HEIC は Safari で開けます。カメラの RAW ファイルは、先に JPEG で書き出してください（Mac 版の BirdFrame は、フォルダの RAW ファイルをそのまま読み込めます）。"}}, {"@type": "Question", "name": "Mac 版の BirdFrame とどう違いますか？", "acceptedAnswer": {"@type": "Answer", "text": "このページでは写真を1枚ずつ試せて、ダウンロードできる画像は最大 1,000 px です。Mac 版は、Apple の「写真」のアルバムやフォルダ全体の鳥を、何千枚でも一度に、手作業なしでトリミングします。どのトリミングも元のフル解像度の写真から切り出します（縮小も生成もなし）。1回50枚まで無料です。"}}, {"@type": "Question", "name": "Windows でも使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "このページは Windows でも、最新の Chrome、Edge、Firefox などのブラウザで使えます。BirdFrame のアプリは今のところ Mac 版のみで、Windows 版を準備中です。"}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#try">デモへ移動</a>
+<div class="wrap">
+  <nav aria-label="メイン">
+    <a class="brand" href="../"><img src="../../assets/icon-128.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links">
+      <a href="../#features">特長</a><a href="../#pricing">料金</a>
+      <a class="btn" data-windows-swap="Windows 版の通知" href="https://apps.apple.com/jp/app/birdframe/id6754513569">Mac App Store で入手</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="demo-hero">
+      <h1>写真の鳥を<wbr>見つけて、<wbr>トリミング</h1>
+      <p class="lede">写真を選ぶと、BirdFrame が鳥を一羽ずつ見つけて、好きな構図でトリミングします。</p>
+      <p class="privacy"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 13.6-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6Z" fill="currentColor"/></svg><span>写真がお使いの端末から外に出ることはありません。</span></p>
+    </header>
+
+    <section id="try" class="try" aria-labelledby="try-title">
+      <h2 id="try-title" class="visually-hidden">試してみる</h2>
+      <div class="drop" id="drop">
+        <noscript><p class="noscript-msg">このデモには JavaScript が必要です。Mac 版の BirdFrame は JavaScript なしで動きます：<a href="https://apps.apple.com/jp/app/birdframe/id6754513569">Mac App Store で入手</a></p></noscript>
+        <div class="choose-row">
+          <button type="button" class="btn big" id="choose">写真を選ぶ</button>
+          <input type="file" id="file" accept="image/*" hidden>
+        </div>
+        <p class="drop-hint" aria-hidden="true">または、ここに写真をドロップ</p>
+      </div>
+      <h3 class="samples-title" id="samples-title">サンプル写真で試す</h3>
+      <ul class="samples" id="samples" aria-labelledby="samples-title"></ul>
+      <p class="fine first-run">初回だけ、鳥を見つけるためのデータ（約 40 MB）をダウンロードします。次からはブラウザに保存されたものを使います。</p>
+    </section>
+
+    <section id="work" class="work" hidden aria-labelledby="work-title">
+      <h2 id="work-title" tabindex="-1">鳥を探しています…</h2>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+      <div class="meter" id="meter" hidden>
+        <progress id="progress" max="100" value="0" aria-labelledby="status"></progress>
+      </div>
+      <div class="problem" id="problem" hidden></div>
+
+      <div class="result" id="result" hidden>
+        <figure class="photo" id="photo">
+          <div class="photo-frame" id="photo-frame"><img id="photo-img" alt=""><div class="boxes" id="boxes" aria-hidden="true"></div></div>
+          <figcaption class="fine" id="photo-caption"></figcaption>
+        </figure>
+
+        <div class="crops-panel" id="crops-panel">
+          <fieldset class="framing" id="framing">
+            <legend>構図</legend>
+            <div class="segmented">
+              <input type="radio" name="framing" id="f-tight" value="tight"><label for="f-tight">きつめ<span>鳥が½を占める</span></label>
+              <input type="radio" name="framing" id="f-balanced" value="balanced" checked><label for="f-balanced">標準<span>鳥が⅓を占める</span></label>
+              <input type="radio" name="framing" id="f-wide" value="wide"><label for="f-wide">ゆったり<span>鳥が⅕を占める</span></label>
+            </div>
+          </fieldset>
+          <ul class="crops" id="crops" aria-label="トリミングした鳥"></ul>
+          <p class="fine" id="result-note"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div>
+        <h2 id="cta-title">アルバムやフォルダ全体を、<wbr>Mac でまとめて<wbr>トリミング</h2>
+        <p>Mac 版の BirdFrame は、Apple の「写真」のアルバムやフォルダにある鳥を、何千枚でも一度に、手作業なしでトリミングします。どのトリミングも元のフル解像度の写真から切り出し、元の写真はそのまま残ります。構図は Tight・Balanced・Wide（きつめ・標準・ゆったり）から選べます。</p>
+      </div>
+      <div class="cta-buy">
+        <a class="btn big" data-windows-swap="Windows 版の通知を受け取る" href="https://apps.apple.com/jp/app/birdframe/id6754513569">Mac App Store で<wbr>無料ダウンロード</a>
+        <p class="fine">1回50枚まで無料 · 買い切り（サブスクなし） · macOS 15 以降 · ※ アプリの画面は英語表記です · Windows 版も準備中：<a href="mailto:birdframe.app@gmail.com?subject=Tell%20me%20when%20BirdFrame%20is%20on%20Windows">公開時にお知らせを受け取る</a></p>
+      </div>
+    </section>
+
+    <section class="faq-demo" aria-labelledby="faq-title">
+      <h2 id="faq-title">よくある質問</h2>
+      <div class="faq">
+        <div><h3>写真はアップロードされますか？</h3><p>いいえ。すべてお使いの端末の中で行います。Cookie もトラッキングも使いません。</p></div>
+        <div><h3>どんな写真に対応していますか？</h3><p>JPEG、PNG、WebP に対応しています。HEIC は Safari で開けます。カメラの RAW ファイルは、先に JPEG で書き出してください（Mac 版の BirdFrame は、フォルダの RAW ファイルをそのまま読み込めます）。</p></div>
+        <div><h3>Mac 版の BirdFrame とどう違いますか？</h3><p>このページでは写真を1枚ずつ試せて、ダウンロードできる画像は最大 1,000 px です。Mac 版は、Apple の「写真」のアルバムやフォルダ全体の鳥を、何千枚でも一度に、手作業なしでトリミングします。どのトリミングも元のフル解像度の写真から切り出します（縮小も生成もなし）。1回50枚まで無料です。</p></div>
+        <div><h3>Windows でも使えますか？</h3><p>このページは Windows でも、最新の Chrome、Edge、Firefox などのブラウザで使えます。BirdFrame のアプリは今のところ Mac 版のみで、Windows 版を準備中です。<a href="mailto:birdframe.app@gmail.com?subject=Tell%20me%20when%20BirdFrame%20is%20on%20Windows">公開時にお知らせを受け取る</a></p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>個人で開発しています。お問い合わせ：<a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
+    <span><a href="../">BirdFrame（日本語）</a> · <a href="../../demo/" hreflang="en" lang="en">English</a> · <a href="../../demo/NOTICE.txt">ライセンス</a> · <a href="../../privacy/">プライバシー</a></span>
+  </footer>
+</div>
+</body>
+</html>
