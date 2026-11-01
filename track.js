@@ -185,12 +185,16 @@
       wire(f, list);
     });
     // Windows visitors can't use the Mac app yet: lead with the Windows list.
-    if (device === 'windows') document.querySelectorAll('[data-windows-swap]').forEach(a => {
-      a.removeAttribute('href');
-      a.setAttribute('role', 'button');
-      a.dataset.waitlist = 'windows';
-      a.textContent = a.dataset.windowsSwap;
-    });
+    if (device === 'windows') {
+      document.querySelectorAll('[data-windows-swap]').forEach(a => {
+        a.removeAttribute('href');
+        a.setAttribute('role', 'button');
+        a.dataset.waitlist = 'windows';
+        a.textContent = a.dataset.windowsSwap;
+      });
+      // Blocks marked data-windows-show (hidden by default) appear only here, e.g. the tool pages' inline Windows sign-up.
+      document.querySelectorAll('[data-windows-show]').forEach(el => { el.hidden = false; });
+    }
     if (q.get('waitlist') && COPY[q.get('waitlist')]) open(q.get('waitlist'));
   });
 })();

@@ -75,6 +75,9 @@
 .pv3-ring{position:absolute;left:0;top:0;width:28px;height:28px;border:1.5px solid var(--mark);border-radius:50%;pointer-events:none;display:none}
 .calc-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
 .calc-bar button{cursor:pointer;font-family:inherit}
+.cta-box.wl-box{margin-top:24px}
+.article .wl-box h2{font-size:22px;margin:0 0 6px}
+.wl-box .wl-form{margin-top:14px}
 @media (max-width:900px){.calc.two{grid-template-columns:1fr;max-width:44em}}
 @media (max-width:560px){.fields,.other{grid-template-columns:1fr}.setup{padding:16px}.pair{grid-template-columns:minmax(0,1fr) 6.5em}}
 .embed-box{margin-top:28px;max-width:44em}
@@ -148,6 +151,11 @@
       <button type="button" class="btn ghost" id="compare" aria-expanded="false">Compare with another setup</button>
       <button type="button" class="btn ghost" id="copy">Copy link to this setup</button>
       <span class="fine" id="copied" role="status"></span>
+    </div>
+    <div class="cta-box wl-box" data-windows-show hidden>
+      <h2>Using Windows?</h2>
+      <p>BirdFrame for Windows is coming soon. Leave your email and we'll tell you when it's out. One email, nothing else.</p>
+      <form class="wl-form" data-waitlist-form="windows"></form>
     </div>
     <p class="fine embed-credit">Free calculator by <a href="https://getbirdframe.com/?ref=embed">BirdFrame</a>, the Mac app that crops thousands of bird photos in one go, from the full-size original.</p>
     <noscript><p class="fine">The calculator needs JavaScript.</p></noscript>

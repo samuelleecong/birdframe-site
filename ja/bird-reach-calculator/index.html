@@ -78,6 +78,9 @@ h1,h2{word-break:keep-all;overflow-wrap:anywhere}
 .pv3-ring{position:absolute;left:0;top:0;width:28px;height:28px;border:1.5px solid var(--mark);border-radius:50%;pointer-events:none;display:none}
 .calc-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
 .calc-bar button{cursor:pointer;font-family:inherit}
+.cta-box.wl-box{margin-top:24px}
+.article .wl-box h2{font-size:22px;margin:0 0 6px}
+.wl-box .wl-form{margin-top:14px}
 @media (max-width:900px){.calc.two{grid-template-columns:1fr;max-width:44em}}
 @media (max-width:560px){.fields,.other{grid-template-columns:1fr}.setup{padding:16px}.pair{grid-template-columns:minmax(0,1fr) 6.5em}}
 .embed-box{margin-top:28px;max-width:44em}
@@ -151,6 +154,11 @@ h1,h2{word-break:keep-all;overflow-wrap:anywhere}
       <button type="button" class="btn ghost" id="compare" aria-expanded="false">別の機材と比べる</button>
       <button type="button" class="btn ghost" id="copy">この設定のリンクをコピー</button>
       <span class="fine" id="copied" role="status"></span>
+    </div>
+    <div class="cta-box wl-box" data-windows-show hidden>
+      <h2>Windows をお使いですか？</h2>
+      <p>BirdFrame の Windows 版は準備中です。メールアドレスを登録すると、公開したときにお知らせします。お送りするのはその1通だけです。</p>
+      <form class="wl-form" data-waitlist-form="windows"></form>
     </div>
     <p class="fine embed-credit">無料の計算ツール：<a href="https://getbirdframe.com/ja/?ref=embed-ja">BirdFrame</a>（何千枚もの野鳥写真を一度に、元のフル解像度のままトリミングする Mac アプリ）</p>
     <noscript><p class="fine">この計算ツールには JavaScript が必要です。</p></noscript>

@@ -84,6 +84,9 @@ button.btn{cursor:pointer;font-family:inherit}
 .frame.flagged .fmeta span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mark);margin-right:7px;vertical-align:1px}
 .frame.flagged .score{color:var(--muted)}
 .how-list{margin-top:12px}
+.cta-box.wl-box{margin-top:24px}
+.article .wl-box h2{font-size:22px;margin:0 0 6px}
+.wl-box .wl-form{margin-top:14px}
 @media (max-width:700px){.keeper{grid-template-columns:1fr}.burst{padding:14px}.frame{grid-template-columns:72px minmax(0,1fr) auto;column-gap:10px}.frame img,.frame .nothumb{width:72px;height:72px}.drop{padding:18px}}
 @media (prefers-reduced-motion:reduce){.drop{transition:none}}
 </style>
@@ -120,6 +123,11 @@ button.btn{cursor:pointer;font-family:inherit}
       </div>
       <noscript><p class="fine">連写ピッカーには JavaScript が必要です。</p></noscript>
     </section>
+    <div class="cta-box wl-box" data-windows-show hidden>
+      <h2>Windows をお使いですか？</h2>
+      <p>BirdFrame の Windows 版は準備中です。メールアドレスを登録すると、公開したときにお知らせします。お送りするのはその1通だけです。</p>
+      <form class="wl-form" data-waitlist-form="windows"></form>
+    </div>
 
     <h2>選び方のしくみ</h2>
     <p>連写ピッカーは写真を1枚ずつ見ていきます。まず BirdFrame と同じ方法で鳥を見つけ、フレームでいちばん大きく写っている鳥を主役とします。次に、その鳥がどれだけくっきり写っているかを確かめます。見るのは背景ではなく、鳥の輪郭の内側にある細かいディテールです。どのフレームでも同じ大きさにそろえて比べるので、少し近づいた鳥が大きいというだけで選ばれることはなく、ピントの甘い鳥の後ろにあるシャープな枝も数えません。</p>

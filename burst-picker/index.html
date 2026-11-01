@@ -78,6 +78,9 @@ button.btn{cursor:pointer;font-family:inherit}
 .frame.flagged .fmeta span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mark);margin-right:7px;vertical-align:1px}
 .frame.flagged .score{color:var(--muted)}
 .how-list{margin-top:12px}
+.cta-box.wl-box{margin-top:24px}
+.article .wl-box h2{font-size:22px;margin:0 0 6px}
+.wl-box .wl-form{margin-top:14px}
 @media (max-width:700px){.keeper{grid-template-columns:1fr}.burst{padding:14px}.frame{grid-template-columns:72px minmax(0,1fr) auto;column-gap:10px}.frame img,.frame .nothumb{width:72px;height:72px}.drop{padding:18px}}
 @media (prefers-reduced-motion:reduce){.drop{transition:none}}
 </style>
@@ -114,6 +117,11 @@ button.btn{cursor:pointer;font-family:inherit}
       </div>
       <noscript><p class="fine">Burst Picker needs JavaScript.</p></noscript>
     </section>
+    <div class="cta-box wl-box" data-windows-show hidden>
+      <h2>Using Windows?</h2>
+      <p>BirdFrame for Windows is coming soon. Leave your email and we'll tell you when it's out. One email, nothing else.</p>
+      <form class="wl-form" data-waitlist-form="windows"></form>
+    </div>
 
     <h2>How it decides</h2>
     <p>Burst Picker looks at each photo on its own. First it finds the birds, the same way BirdFrame does, and takes the main one: the biggest bird in the frame. Then it checks how crisp that bird is, not the background. It looks at the fine detail inside the bird's outline, at the same size in every frame, so a bird that came a little closer doesn't win just for being bigger, and a sharp branch behind a soft bird doesn't count.</p>
