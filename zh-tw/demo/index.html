@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>免費線上鳥類照片裁切：自動找出照片裡的鳥｜BirdFrame</title>
+<meta name="description" content="免費線上裁切鳥類照片。選一張照片，BirdFrame 會自動找出照片裡的每一隻鳥，並以「緊湊、標準、寬鬆」三種構圖逐一裁切。全部在瀏覽器中處理，照片不會上傳。">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'wasm-unsafe-eval'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' blob: data:; connect-src 'self' https://cdn.jsdelivr.net https://huggingface.co https://*.hf.co; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta property="og:title" content="找出照片裡的鳥，用喜歡的構圖裁切">
+<meta property="og:description" content="Mac App「BirdFrame」的免費網頁版：自動找出照片裡的鳥，逐一裁切。照片不會離開您的裝置。">
+<meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getbirdframe.com/zh-tw/demo/">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="BirdFrame">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://getbirdframe.com/zh-tw/demo/">
+<link rel="alternate" hreflang="en" href="https://getbirdframe.com/demo/">
+<link rel="alternate" hreflang="ja" href="https://getbirdframe.com/ja/demo/">
+<link rel="alternate" hreflang="zh-Hant" href="https://getbirdframe.com/zh-tw/demo/">
+<link rel="alternate" hreflang="x-default" href="https://getbirdframe.com/demo/">
+<link rel="icon" href="../../assets/favicon.png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../demo/demo.css">
+<link rel="stylesheet" href="demo-zh.css">
+<noscript><link rel="stylesheet" href="../../demo/noscript.css"></noscript>
+<script type="module" src="app.js?v=1"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "BirdFrame 網頁版：免費線上裁切鳥類照片", "url": "https://getbirdframe.com/zh-tw/demo/", "description": "選一張照片，自動找出照片裡的每一隻鳥，並以「緊湊、標準、寬鬆」（Tight、Balanced、Wide）三種構圖逐一裁切。支援 JPEG、PNG、WebP、HEIC（Safari）。在瀏覽器中執行，照片不會上傳。", "applicationCategory": "PhotographyApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": "zh-Hant-TW", "datePublished": "2026-11-03", "dateModified": "2026-11-03", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}, "author": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/"}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/"}, {"@type": "ListItem", "position": 2, "name": "免費線上裁切鳥類照片", "item": "https://getbirdframe.com/zh-tw/demo/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "照片會上傳嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。所有處理都在您的裝置上進行，也不使用 Cookie 或任何追蹤。"}}, {"@type": "Question", "name": "支援哪些照片格式？", "acceptedAnswer": {"@type": "Answer", "text": "支援 JPEG、PNG、WebP。HEIC 可在 Safari 開啟。相機的 RAW 檔請先匯出成 JPEG（Mac 版 BirdFrame 可以直接讀取資料夾裡的 RAW 檔）。"}}, {"@type": "Question", "name": "和 Mac 版 BirdFrame 有什麼不同？", "acceptedAnswer": {"@type": "Answer", "text": "這個網頁一次處理一張照片，可下載的圖片最大為 1,000 px。Mac 版能一次處理 Apple「照片」App 的整本相簿或整個資料夾，幾千張照片裡的鳥都會自動裁切，不用手動處理。每張裁切都取自原始的完整解析度照片（不縮小、不生成）。每次最多 50 張免費。"}}, {"@type": "Question", "name": "Windows 也能用嗎？", "acceptedAnswer": {"@type": "Answer", "text": "這個網頁在 Windows 上也能用，請使用最新版的 Chrome、Edge 或 Firefox 等瀏覽器。BirdFrame App 目前只有 Mac 版，Windows 版正在準備中。"}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#try">跳到試用區</a>
+<div class="wrap">
+  <nav aria-label="主選單">
+    <a class="brand" href="../../"><img src="../../assets/icon-128.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links">
+      <a class="btn" data-windows-swap="Windows 版上架通知" href="https://apps.apple.com/tw/app/birdframe/id6754513569">在 Mac App Store 下載</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="demo-hero">
+      <h1>找出照片裡的鳥，<wbr>自動裁切</h1>
+      <p class="lede">選一張照片，BirdFrame 會逐一找出照片裡的鳥，並以您喜歡的構圖裁切。</p>
+      <p class="privacy"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 13.6-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6Z" fill="currentColor"/></svg><span>照片不會離開您的裝置。</span></p>
+    </header>
+
+    <section id="try" class="try" aria-labelledby="try-title">
+      <h2 id="try-title" class="visually-hidden">試試看</h2>
+      <div class="drop" id="drop">
+        <noscript><p class="noscript-msg">這項試用需要 JavaScript。Mac 版 BirdFrame 不需要 JavaScript 也能使用：<a href="https://apps.apple.com/tw/app/birdframe/id6754513569">在 Mac App Store 下載</a></p></noscript>
+        <div class="choose-row">
+          <button type="button" class="btn big" id="choose">選擇照片</button>
+          <input type="file" id="file" accept="image/*" hidden>
+        </div>
+        <p class="drop-hint" aria-hidden="true">或把照片拖放到這裡</p>
+      </div>
+      <h3 class="samples-title" id="samples-title">用範例照片試試</h3>
+      <ul class="samples" id="samples" aria-labelledby="samples-title"></ul>
+      <p class="fine first-run">第一次使用時，會先下載找鳥所需的資料（約 40 MB），之後會使用瀏覽器裡已存好的資料。</p>
+    </section>
+
+    <section id="work" class="work" hidden aria-labelledby="work-title">
+      <h2 id="work-title" tabindex="-1">正在找鳥…</h2>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+      <div class="meter" id="meter" hidden>
+        <progress id="progress" max="100" value="0" aria-labelledby="status"></progress>
+      </div>
+      <div class="problem" id="problem" hidden></div>
+
+      <div class="result" id="result" hidden>
+        <figure class="photo" id="photo">
+          <div class="photo-frame" id="photo-frame"><img id="photo-img" alt=""><div class="boxes" id="boxes" aria-hidden="true"></div></div>
+          <figcaption class="fine" id="photo-caption"></figcaption>
+        </figure>
+
+        <div class="crops-panel" id="crops-panel">
+          <fieldset class="framing" id="framing">
+            <legend>構圖</legend>
+            <div class="segmented">
+              <input type="radio" name="framing" id="f-tight" value="tight"><label for="f-tight">緊湊<span>鳥占畫面 ½</span></label>
+              <input type="radio" name="framing" id="f-balanced" value="balanced" checked><label for="f-balanced">標準<span>鳥占畫面 ⅓</span></label>
+              <input type="radio" name="framing" id="f-wide" value="wide"><label for="f-wide">寬鬆<span>鳥占畫面 ⅕</span></label>
+            </div>
+          </fieldset>
+          <ul class="crops" id="crops" aria-label="裁切好的鳥"></ul>
+          <p class="fine" id="result-note"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div>
+        <h2 id="cta-title">整本相簿、整個資料夾，<wbr>在 Mac 上<wbr>一次裁切</h2>
+        <p>Mac 版 BirdFrame 能一次處理 Apple「照片」App 的相簿或資料夾裡的鳥，幾千張也不用手動裁切。每張裁切都取自原始的完整解析度照片，原始照片保持不變。構圖可選 Tight、Balanced、Wide（緊湊、標準、寬鬆）。</p>
+      </div>
+      <div class="cta-buy">
+        <a class="btn big" data-windows-swap="Windows 版上架時通知我" href="https://apps.apple.com/tw/app/birdframe/id6754513569">在 Mac App Store<wbr>免費下載</a>
+        <p class="fine">每次最多 50 張免費 · 更多張數只需一次買斷 NT$990（台灣）／HK$228（香港），不需訂閱 · macOS 15 以上 · ※ App 介面為英文 · Windows 版準備中：<a href="mailto:birdframe.app@gmail.com?subject=Tell%20me%20when%20BirdFrame%20is%20on%20Windows">上架時通知我</a></p>
+      </div>
+    </section>
+
+    <section class="faq-demo" aria-labelledby="faq-title">
+      <h2 id="faq-title">常見問題</h2>
+      <div class="faq">
+        <div><h3>照片會上傳嗎？</h3><p>不會。所有處理都在您的裝置上進行，也不使用 Cookie 或任何追蹤。</p></div>
+        <div><h3>支援哪些照片格式？</h3><p>支援 JPEG、PNG、WebP。HEIC 可在 Safari 開啟。相機的 RAW 檔請先匯出成 JPEG（Mac 版 BirdFrame 可以直接讀取資料夾裡的 RAW 檔）。</p></div>
+        <div><h3>和 Mac 版 BirdFrame 有什麼不同？</h3><p>這個網頁一次處理一張照片，可下載的圖片最大為 1,000 px。Mac 版能一次處理 Apple「照片」App 的整本相簿或整個資料夾，幾千張照片裡的鳥都會自動裁切，不用手動處理。每張裁切都取自原始的完整解析度照片（不縮小、不生成）。每次最多 50 張免費。</p></div>
+        <div><h3>Windows 也能用嗎？</h3><p>這個網頁在 Windows 上也能用，請使用最新版的 Chrome、Edge 或 Firefox 等瀏覽器。BirdFrame App 目前只有 Mac 版，Windows 版正在準備中。<a href="mailto:birdframe.app@gmail.com?subject=Tell%20me%20when%20BirdFrame%20is%20on%20Windows">上架時通知我</a></p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>個人開發。歡迎來信：<a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
+    <span><a href="../../demo/" hreflang="en" lang="en">English</a> · <a href="../../demo/NOTICE.txt">授權</a> · <a href="../../privacy/">隱私權</a></span>
+  </footer>
+</div>
+</body>
+</html>

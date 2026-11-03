@@ -17,6 +17,7 @@
 - [連写ピッカー (Japanese Burst Picker)](https://getbirdframe.com/ja/burst-picker/): the Burst Picker in Japanese: drop in a burst of bird photos to see which frame has the sharpest bird; runs in the browser, nothing is uploaded
 - [飛ぶ鳥を止めるシャッター速度は？ (Japanese bird-in-flight shutter speed calculator)](https://getbirdframe.com/ja/bird-in-flight-shutter-speed/): the bird-in-flight shutter speed calculator in Japanese: wingtip and body blur in pixels, the shutter speed that freezes them, and how often a burst catches the wings sharp
 - [鳥の写真を無料でトリミング (Japanese in-browser demo)](https://getbirdframe.com/ja/demo/): the in-browser demo in Japanese: find and crop the birds in one photo (Tight, Balanced or Wide); runs in the browser, nothing is uploaded
+- [免費線上鳥類照片裁切 (Traditional Chinese in-browser demo)](https://getbirdframe.com/zh-tw/demo/): the in-browser demo in Traditional Chinese (Taiwan, Hong Kong): find and crop the birds in one photo (緊湊・標準・寬鬆: Tight, Balanced or Wide); runs in the browser, nothing is uploaded
 - [Try it in your browser](https://getbirdframe.com/demo/): find and crop the birds in one photo
 - [Press kit](https://getbirdframe.com/press.html)
 - [How small is the bird? (data)](https://getbirdframe.com/how-small-is-the-bird/): 4,511 birds measured in 1,995 public-domain bird photos; in the typical photo the bird fills 6.6% of the frame. Charts and a free CSV (CC0).

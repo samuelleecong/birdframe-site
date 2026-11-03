@@ -1,0 +1,10 @@
+/* Traditional Chinese demo page (Taiwan, Hong Kong): Chinese font fallbacks and line breaks, as on /ja/demo/
+   (a file rather than an inline <style>, because the page's Content-Security-Policy blocks inline styles). */
+:root{--display:"Newsreader","Songti TC","Noto Serif TC","PingFang TC","Microsoft JhengHei",serif;--body:"Public Sans","PingFang TC","PingFang HK","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}
+body{line-height:1.8}
+h1,h2,h3{line-height:1.35;letter-spacing:.02em}
+h1,h2{word-break:keep-all;overflow-wrap:anywhere}
+.demo-hero h1{font-size:clamp(30px,5vw,54px)}
+.status,#result-note,#photo-caption{overflow-wrap:anywhere}
+.btn{word-break:keep-all}
+@media (max-width:560px){.cta .btn.big{font-size:16px;padding-inline:16px}}
