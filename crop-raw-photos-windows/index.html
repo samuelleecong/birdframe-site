@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open and crop RAW photos on Windows 11: CR3, NEF, ARW and more</title>
+<meta name="description" content="How to open CR3, NEF, ARW and other RAW files on Windows 11 and 10 with Microsoft&#x27;s free Raw Image Extension, and crop a whole folder of RAW bird photos in one go.">
+<link rel="canonical" href="https://getbirdframe.com/crop-raw-photos-windows/">
+<meta property="og:title" content="Open and crop RAW bird photos on Windows">
+<meta property="og:description" content="How to open CR3, NEF, ARW and other RAW files on Windows 11 and 10 with Microsoft&#x27;s free Raw Image Extension, and crop a whole folder of RAW bird photos in one go.">
+<meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
+<meta property="og:url" content="https://getbirdframe.com/crop-raw-photos-windows/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guides/guide.css">
+<script src="../track.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BirdFrame", "item": "https://getbirdframe.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getbirdframe.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Open and crop RAW bird photos on Windows", "item": "https://getbirdframe.com/crop-raw-photos-windows/"}]}, {"@type": "Article", "headline": "Open and crop RAW bird photos on Windows", "description": "How to open CR3, NEF, ARW and other RAW files on Windows 11 and 10 with Microsoft's free Raw Image Extension, and crop a whole folder of RAW bird photos in one go.", "url": "https://getbirdframe.com/crop-raw-photos-windows/", "datePublished": "2026-11-04", "dateModified": "2026-11-04", "author": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png", "sameAs": ["https://apps.apple.com/app/birdframe/id6754513569", "https://www.youtube.com/@birdframeapp", "https://www.instagram.com/birdframe.app/"]}, "publisher": {"@type": "Organization", "name": "BirdFrame", "url": "https://getbirdframe.com/", "logo": "https://getbirdframe.com/assets/icon-512.png", "sameAs": ["https://apps.apple.com/app/birdframe/id6754513569", "https://www.youtube.com/@birdframeapp", "https://www.instagram.com/birdframe.app/"]}, "image": "https://getbirdframe.com/assets/og.jpg", "about": {"@type": "SoftwareApplication", "name": "BirdFrame", "operatingSystem": "macOS 15 or later", "applicationCategory": "PhotographyApplication", "url": "https://apps.apple.com/app/birdframe/id6754513569", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I open RAW files on Windows 11?", "acceptedAnswer": {"@type": "Answer", "text": "Install Microsoft's free Raw Image Extension from the Microsoft Store. Its listing says it lets you \"view thumbnails and metadata of supported raw file formats right in Windows File Explorer or view images in the Photos app.\" It needs Windows 10 version 1903 or later."}}, {"@type": "Question", "name": "Does the Raw Image Extension open Canon CR3 files?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Microsoft's listing says the current version \"includes support for CR3 files\". For a particular camera, its listing points to LibRaw's list of supported cameras."}}, {"@type": "Question", "name": "Can BirdFrame edit RAW files?", "acceptedAnswer": {"@type": "Answer", "text": "No. It reads them and saves a full-resolution JPEG crop of each bird it finds. Your RAW files never change, so do your RAW editing in your usual editor."}}, {"@type": "Question", "name": "Which RAW formats does BirdFrame for Windows read?", "acceptedAnswer": {"@type": "Answer", "text": "Canon CR2 and CR3, Nikon NEF, Sony ARW, Fujifilm RAF, OM System and Olympus ORF, Panasonic RW2, and DNG, using Microsoft's free Raw Image Extension. A RAW+JPEG pair counts as one photo."}}]}]}</script>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../"><img src="../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links"><a href="../guides/">Guides</a><a class="btn" data-windows-swap="Windows waitlist" href="https://apps.apple.com/app/birdframe/id6754513569">Get it on the Mac App Store</a></div>
+  </nav>
+
+  <main class="article">
+    <p class="crumb"><a href="../guides/">Guides</a> · Updated 4 November 2026</p>
+    <h1>Open and crop RAW bird photos on Windows</h1>
+
+    <p class="lede">A fresh Windows PC often shows camera RAW files as blank icons: no thumbnails in File Explorer, and nothing in Photos. Microsoft's free Raw Image Extension fixes that in a minute. Cropping a few thousand RAW frames from a trip is the slower part, and that's where a batch tool earns its keep.</p>
+
+    <div class="tldr"><p><b>Short answer:</b> install Microsoft's free <a href="https://apps.microsoft.com/detail/9NCTDW2W1BH8">Raw Image Extension</a> from the Microsoft Store. It adds thumbnails and metadata for RAW files in File Explorer and opens them in Photos, including Canon CR3. Photos then crops one picture at a time. For bird photos, BirdFrame reads a whole folder of CR2, CR3, NEF, ARW, RAF, ORF, RW2 or DNG files, finds the birds and saves a JPEG crop of each one in one go, cut from the full-size original. Your RAW files never change. BirdFrame for Windows is coming soon.</p></div>
+    <p>On a Mac? See <a href="../crop-raw-photos-mac/">how to crop RAW bird photos on a Mac</a>.</p>
+
+    <h2>Step 1: let Windows open your RAW files</h2>
+    <p>Windows reads camera RAW through an extension from Microsoft, not through Photos itself. Many Windows 11 PCs already have it. If File Explorer shows your RAW files as plain icons, install it.</p>
+    <ol>
+      <li>Open the Microsoft Store and search for <i>Raw Image Extension</i>, or go straight to <a href="https://apps.microsoft.com/detail/9NCTDW2W1BH8">its Store page</a>. It's published by Microsoft and it's free.</li>
+      <li>Install it. It isn't an app you open: it works inside File Explorer and Photos.</li>
+      <li>Open a folder of RAW files. In Microsoft's words, you can now "view thumbnails and metadata of supported raw file formats right in Windows File Explorer or view images in the Photos app."</li>
+    </ol>
+    <p>What Microsoft's listing says about formats:</p>
+    <ul>
+      <li><b>CR3 works.</b> The current version "includes support for CR3 files", the RAW format of Canon's newer cameras.</li>
+      <li><b>Most cameras work.</b> It "supports a long list of cameras", based on the open-source LibRaw project; check yours on <a href="https://www.libraw.org/supported-cameras">LibRaw's supported cameras list</a>.</li>
+      <li><b>A few formats don't.</b> The listing names .GPR as not supported.</li>
+      <li><b>It needs Windows 10 version 1903 or later,</b> which any up-to-date Windows 10 or Windows 11 PC meets.</li>
+    </ul>
+
+    <h2>Step 2: crop one RAW photo</h2>
+    <p>With the extension installed, open a RAW file in Photos, select <i>Edit image</i> (Ctrl + E) and crop it by hand or to a preset aspect ratio (<a href="https://support.microsoft.com/en-us/windows/apps/photos/edit-photos-and-videos-in-windows">Microsoft Support: Edit photos and videos in Windows</a>). For careful work on a keeper, your RAW editor does the same with more control. Both are one photo at a time: fine for the best ten shots of the day, slow for the other two thousand.</p>
+
+    <h2>Step 3: crop a whole folder of RAW bird photos</h2>
+    <p>A morning at a wetland can leave you with hundreds of frames, and a week-long trip with thousands. In most of them the bird is a small shape, somewhere different in every frame, so a batch tool that pastes one fixed box onto every photo cuts it off. BirdFrame looks at each photo instead: it finds every bird, including small, distant and half-hidden ones, and crops around each one, a whole folder in one go. No cropping by hand.</p>
+    <ol>
+      <li><b>Choose the folder.</b> BirdFrame reads the formats in the table below, plus JPEG, PNG, TIFF and HEIC, in the same folder. Subfolders are included, and a RAW+JPEG pair counts as one photo.</li>
+      <li><b>Pick a framing.</b> Preview Tight, Balanced or Wide on your own photos and choose a square or rectangular shape.</li>
+      <li><b>Let it find the birds.</b> A burst taken seconds apart becomes one moment, a single card showing its clearest bird, so it's quick to see what you got.</li>
+      <li><b>Export Crops.</b> Every bird is saved as a new full-resolution JPEG in a folder you choose. Export for iNaturalist saves tight crops named by date.</li>
+    </ol>
+    <p><b>BirdFrame for Windows is coming soon.</b> <a data-waitlist="windows" href="mailto:birdframe.app@gmail.com?subject=Tell%20me%20when%20BirdFrame%20is%20on%20Windows">Join the waitlist</a> and we'll email you once when it's out. On a Mac, it's on the Mac App Store today, with the same RAW formats.</p>
+    <div class="ctas"><a class="btn" data-windows-swap="Join the Windows waitlist" href="https://apps.apple.com/app/apple-store/id6754513569?pt=127908484&ct=wp-crop-raw-photos-windows&mt=8">Download free on the Mac App Store</a></div>
+
+    <h2>RAW formats BirdFrame reads on Windows</h2>
+    <div class="scroll"><table>
+      <tr><th>Camera brand</th><th>RAW file</th></tr>
+      <tr><td>Canon</td><td>CR2 and CR3</td></tr>
+      <tr><td>Nikon</td><td>NEF</td></tr>
+      <tr><td>Sony</td><td>ARW</td></tr>
+      <tr><td>Fujifilm</td><td>RAF</td></tr>
+      <tr><td>OM System and Olympus</td><td>ORF</td></tr>
+      <tr><td>Panasonic</td><td>RW2</td></tr>
+      <tr><td>Others, and converted files</td><td>DNG</td></tr>
+    </table></div>
+    <p>RAW files need Microsoft's free Raw Image Extension from Step 1. HEIC photos, such as those from an iPhone, need Microsoft's HEIF and HEVC Video Extensions from the Microsoft Store; the HEVC one usually costs US$0.99. JPEG, PNG and TIFF work straight away.</p>
+
+    <h2>Full resolution, nothing generated</h2>
+    <p>Each crop is cut from the full-size original. Nothing is downscaled, and nothing is generated or added to your picture, so a crop holds all the detail the frame had around the bird. Crops keep the photo's date, camera and location; turn location off in Settings to protect a nest site. Finding and cropping happens on your PC, and your photos aren't uploaded.</p>
+
+    <h2>What to check in the crops</h2>
+    <ul>
+      <li><b>They're JPEGs, not RAW files.</b> A crop is a finished picture, ready to share, upload to eBird or iNaturalist, or print. Keep the RAW for heavy editing; BirdFrame doesn't edit RAW files.</li>
+      <li><b>Your edits from other software aren't in them.</b> BirdFrame works from the files in the folder. If you want your edits in the crops, export the edited keepers as full-size JPEGs first, then crop that folder.</li>
+      <li><b>The size is what the bird gave you.</b> A distant bird gives a small crop. Right-click a crop in File Explorer and open Properties, then Details, to see its size in pixels, and compare it with what you need (<a href="../how-much-can-you-crop-a-bird-photo/">how many pixels a print or a screen needs</a>).</li>
+      <li><b>Files that don't open.</b> If a RAW file shows no thumbnail in File Explorer after installing the extension, check that your camera is on LibRaw's list, or shoot RAW+JPEG.</li>
+    </ul>
+
+    <h2>What it costs</h2>
+    <p>BirdFrame is free for up to 50 photos per run, as many runs as you like, and a RAW+JPEG pair counts as one photo. A one-time US$29.99 Full Version unlocks bigger batches, so a whole trip crops in one go. No subscription.</p>
+
+    <h2>Questions</h2>
+    <h3>How do I open RAW files on Windows 11?</h3>
+    <p>Install Microsoft's free Raw Image Extension from the Microsoft Store. Its listing says it lets you "view thumbnails and metadata of supported raw file formats right in Windows File Explorer or view images in the Photos app." It needs Windows 10 version 1903 or later.</p>
+    <h3>Does the Raw Image Extension open Canon CR3 files?</h3>
+    <p>Yes. Microsoft's listing says the current version "includes support for CR3 files". For a particular camera, its listing points to LibRaw's list of supported cameras.</p>
+    <h3>Can BirdFrame edit RAW files?</h3>
+    <p>No. It reads them and saves a full-resolution JPEG crop of each bird it finds. Your RAW files never change, so do your RAW editing in your usual editor.</p>
+    <h3>Which RAW formats does BirdFrame for Windows read?</h3>
+    <p>Canon CR2 and CR3, Nikon NEF, Sony ARW, Fujifilm RAF, OM System and Olympus ORF, Panasonic RW2, and DNG, using Microsoft's free Raw Image Extension. A RAW+JPEG pair counts as one photo.</p>
+
+    <div class="cta-box">
+      <p><b>Crop every bird in one go, at full resolution.</b> BirdFrame finds the birds in a whole folder of RAW or JPEG photos and crops each one from the full-size original. Free for up to 50 photos per run. The Windows version is coming soon; on a Mac, it's on the Mac App Store.</p>
+      <div class="ctas"><a class="btn" data-windows-swap="Join the Windows waitlist" href="https://apps.apple.com/app/birdframe/id6754513569">Download free on the Mac App Store</a><a class="btn ghost" href="../demo/">Try it on a photo</a></div>
+    </div>
+    <aside class="related"><h2>Related guides</h2><ul><li><a href="../crop-multiple-photos-windows/">How to crop multiple photos at once on Windows</a></li><li><a href="../crop-raw-photos-mac/">Crop RAW bird photos on a Mac</a></li><li><a href="../how-much-can-you-crop-a-bird-photo/">How much can you crop a bird photo?</a></li></ul></aside>
+  </main>
+
+  <footer>
+    <span>Made by a one-person studio. Questions: <a href="mailto:birdframe.app@gmail.com">birdframe.app@gmail.com</a></span>
+    <span><a href="../">Home</a> · <a href="../guides/">Guides</a> · <a href="../press.html">Press</a> · <a href="../privacy/">Privacy</a></span>
+  </footer>
+</div>
+</body>
+</html>
