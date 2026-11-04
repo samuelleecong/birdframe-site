@@ -420,9 +420,9 @@
     if (den <= STEPS[0]) return '1/' + STEPS[0] + '秒、またはそれより遅くても大丈夫です。';
     const s = stepUp(den);
     if (s && s <= 8000) return '1/' + s + '秒。';
-    const burst = 'シャープなコマは連写で狙いましょう。';
-    if (!s) return '1/32000秒より速く、どのシャッターでも届きません。' + (short ? '' : burst);
-    return '約 1/' + s + '秒：多くのカメラの最速 1/8000秒を超えます。' + (short ? '' : 'シャッターでは止めきれません。' + burst);
+    const raw = Number(den.toPrecision(2)); // 1/32000秒より速いときは、必要な速度を有効数字2桁で
+    return '約 1/' + (s || nf(raw)) + ((s || raw) > 80000 ? '秒：最速のカメラのシャッターでも届きません。'
+      : '秒：多くのカメラのメカシャッターの最速 1/8000秒を超えます。') + (short ? '' : 'シャープなコマは連写で狙いましょう。');
   }
   function bodyVerdict(r) {
     if (r.body === null) return 'この鳥は巡航速度のデータが公表されていないため、カメラ固定の数値は出せません。';
