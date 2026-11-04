@@ -95,6 +95,13 @@ h1{font-size:clamp(28px,4.6vw,52px)}
 
   <section id="pricing">
     <h2>料金</h2>
+    <p class="deal" id="black-friday">11月20日〜12月1日の年末セール：アンロック（買い切り）が3,000円（通常5,000円）。コードは不要です。</p>
+    <script>/* Sale line, same switch as the English home page: Apple's price change at 00:00 Pacific = 08:00 UTC (17:00 JST), 20 Nov to 2 Dec 2026, then hides. Without JS the line above stays. */
+    (function (el, now) {
+      if (!el) return;
+      if (now >= Date.UTC(2026, 11, 2, 8)) el.style.display = 'none';
+      else if (now >= Date.UTC(2026, 10, 20, 8)) el.innerHTML = '年末セール中（12月1日まで）：アンロック（買い切り）が3,000円（通常5,000円）。コードは不要で、App Store の価格はすでに下がっています。';
+    })(document.getElementById('black-friday'), Date.now());</script>
     <div class="buy">
       <p>1回の処理につき50枚まで、何回でも無料で使えます。1回限りのアプリ内課金（買い切り）で、より多くの写真をまとめて処理できます。サブスクリプションではありません。</p>
       <p class="fine">macOS 15 以降が必要です。Apple シリコン搭載の Mac で最も速く動作します。<br>※ アプリの画面とヘルプは英語表記です。</p>
