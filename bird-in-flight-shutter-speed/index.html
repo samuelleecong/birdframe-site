@@ -522,9 +522,12 @@
   });
 
   // Outreach links carry ?ref=: credit the App Store campaign to it, as track.js does on other pages; ct=bif otherwise.
+  // Untagged visits from Hacker News or Reddit count as hn or reddit (HN sends only its origin as the referrer).
   // The Burst Picker links carry the same ref (else ref=bif-tool).
   const params = new URLSearchParams(location.search);
-  const ref = params.get('ref') || '';
+  let refHost = '';
+  try { refHost = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) {}
+  const ref = params.get('ref') || (refHost === 'news.ycombinator.com' ? 'hn' : /(^|\.)reddit\.com$/.test(refHost) ? 'reddit' : '');
   if (/^[a-z0-9][a-z0-9-]{0,39}$/i.test(ref)) {
     document.querySelectorAll('a[href*="ct=bif"]').forEach(a => {
       const u = new URL(a.href); u.searchParams.set('ct', ref.toLowerCase()); a.href = u.toString();
