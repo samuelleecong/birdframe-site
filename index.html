@@ -84,7 +84,13 @@
 
   <section id="pricing">
     <h2>Try it on your own photos first</h2>
-    <p class="deal" id="black-friday"><b>Black Friday:</b> from Nov 20 to Dec 1, the one-time unlock is $19.99 instead of $29.99 (33% off, or the same in your currency). No code needed.</p>
+    <p class="deal" id="black-friday"><b>Black Friday:</b> from Nov 20 to Dec 1, the one-time unlock is $19.99 instead of $29.99 (sale prices in other currencies too). No code needed.</p>
+    <script>/* Black Friday line: switches with Apple's price change (00:00 Pacific = 08:00 UTC, 20 Nov to 2 Dec 2026), then hides (the #black-friday anchor stays for the deal lists). Without JS the line above stays. */
+    (function (el, now) {
+      if (!el) return;
+      if (now >= Date.UTC(2026, 11, 2, 8)) el.style.display = 'none';
+      else if (now >= Date.UTC(2026, 10, 20, 8)) el.innerHTML = '<b>Black Friday:</b> until Dec 1, the one-time unlock is $19.99 instead of $29.99 (sale prices in other currencies too). No code needed; the lower price is already in the app.';
+    })(document.getElementById('black-friday'), Date.now());</script>
     <div class="price">
       <div class="plan"><span>Free</span><div class="amt">$0</div><p>Up to 50 photos per run, as many runs as you like. Every feature included.</p></div>
       <div class="plan full"><span>Full version</span><div class="amt">$29.99 once</div><p>No limit on batch size. One purchase, no subscription. Restore it any time from Settings.</p>
