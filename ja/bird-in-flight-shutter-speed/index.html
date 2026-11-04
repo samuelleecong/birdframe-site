@@ -335,11 +335,13 @@
     const hasV = pos(o.v);
     const body = hasV ? o.v * t * k : null; // whole-bird blur, camera still, px
     const need = (v, B) => v * k / B; // shutter denominator that keeps the blur to B px
-    const frac = 2 / Math.PI * Math.asin(Math.min(1, SCREEN / wing)); // share of frames with wingtips within 3 px
+    const wt = 2 * Math.PI * o.hz * t; // wingbeat phase swept during one exposure, rad
+    const turn = wing / wt * (1 - Math.cos(wt / 2)); // blur of a frame centred on the turn of the stroke, px
+    const frac = turn > SCREEN ? 0 : 2 / Math.PI * Math.asin(Math.min(1, SCREEN / wing)); // share of frames with wingtips within 3 px
     const fw = Math.round(o.pw / (o.crop > 1 ? o.crop : 1)); // frame width, px (crop mode trims it)
     const spanPx = o.span * k; // wingspan on the sensor, px
     return {fe, p, m, k, t, vTip, wing, body, w1: need(vTip, SHARP), w3: need(vTip, SCREEN), b1: hasV ? need(o.v, SHARP) : null,
-      b3: hasV ? need(o.v, SCREEN) : null, frac, perSec: o.fps * frac, perBeat: o.fps / o.hz, fw, spanPx, spanPct: spanPx / fw * 100};
+      b3: hasV ? need(o.v, SCREEN) : null, turn, frac, perSec: o.fps * frac, perBeat: o.fps / o.hz, fw, spanPx, spanPct: spanPx / fw * 100};
   }
   /* MATH END */
 
@@ -432,6 +434,7 @@
   }
   function burstLine(r, fps) {
     const at = '毎秒 ' + one(fps) + ' コマなら、';
+    if (r.frac === 0) return at + '羽先のブレが 3 px 以内のコマはありません。このシャッター速度では、羽ばたきの折り返しの瞬間でも羽先が約 ' + one(r.turn) + ' px ぶれます。';
     if (r.frac >= 1) return at + 'すべてのコマで羽先のブレが 3 px 以内に収まります。';
     const beat = r.perBeat >= 1 ? '羽ばたき1回につき約 ' + one(r.perBeat) + ' コマ撮れます。'
       : 'コマとコマのあいだに、翼は約 ' + one(1 / r.perBeat) + ' 回羽ばたきます。';
@@ -479,7 +482,7 @@
     out('body').textContent = r.body === null ? '–' : pxf(r.body);
     out('bodyv').textContent = bodyVerdict(r);
     out('n1').textContent = speed(r.w1, stepUp(r.w3) === 0 || stepUp(r.w3) > 8000);
-    out('n3').textContent = speed(r.w3);
+    out('n3').textContent = speed(r.w3, r.frac === 0); // 連写で狙えるコマがないときは「連写で狙いましょう」を出さない
     out('burst').textContent = burstLine(r, +s.fps);
   }
 

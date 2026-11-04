@@ -330,11 +330,13 @@
     const hasV = pos(o.v);
     const body = hasV ? o.v * t * k : null; // whole-bird blur, camera still, px
     const need = (v, B) => v * k / B; // shutter denominator that keeps the blur to B px
-    const frac = 2 / Math.PI * Math.asin(Math.min(1, SCREEN / wing)); // share of frames with wingtips within 3 px
+    const wt = 2 * Math.PI * o.hz * t; // wingbeat phase swept during one exposure, rad
+    const turn = wing / wt * (1 - Math.cos(wt / 2)); // blur of a frame centred on the turn of the stroke, px
+    const frac = turn > SCREEN ? 0 : 2 / Math.PI * Math.asin(Math.min(1, SCREEN / wing)); // share of frames with wingtips within 3 px
     const fw = Math.round(o.pw / (o.crop > 1 ? o.crop : 1)); // frame width, px (crop mode trims it)
     const spanPx = o.span * k; // wingspan on the sensor, px
     return {fe, p, m, k, t, vTip, wing, body, w1: need(vTip, SHARP), w3: need(vTip, SCREEN), b1: hasV ? need(o.v, SHARP) : null,
-      b3: hasV ? need(o.v, SCREEN) : null, frac, perSec: o.fps * frac, perBeat: o.fps / o.hz, fw, spanPx, spanPct: spanPx / fw * 100};
+      b3: hasV ? need(o.v, SCREEN) : null, turn, frac, perSec: o.fps * frac, perBeat: o.fps / o.hz, fw, spanPx, spanPct: spanPx / fw * 100};
   }
   /* MATH END */
 
@@ -428,6 +430,7 @@
   }
   function burstLine(r, fps) {
     const at = 'At ' + one(fps) + ' fps ';
+    if (r.frac === 0) return at + 'no frame keeps the wingtips within 3 px: even at the turn of the stroke they blur about ' + one(r.turn) + ' px at this shutter speed.';
     if (r.frac >= 1) return at + 'every frame keeps the wingtips within 3 px.';
     const beat = r.perBeat >= 1 ? ' Each wingbeat gets about ' + one(r.perBeat) + ' frames.'
       : ' The wings beat about ' + one(1 / r.perBeat) + ' times between frames.';
@@ -441,6 +444,8 @@
     return 'Wingspan ' + String(+b.span.toFixed(2)) + ' m (' + ftIn(b.span) + est('span') + ') · ' + speed + ' · ' +
       one(b.hz) + ' wingbeats a second' + (est('hz') ? ' (est.)' : '') + '.';
   }
+  // Species guides (marketing/species-pages-2026-11-04/make_species.py PAGES): bird id -> [folder, plural name]
+  const GUIDES = {"ruby-throated-hummingbird": ["hummingbird-photography", "hummingbirds"], "bald-eagle": ["bald-eagle-photography", "bald eagles"], "osprey": ["osprey-photography", "ospreys"], "barn-owl": ["barn-owl-photography", "barn owls"], "red-kite": ["red-kite-photography", "red kites"], "american-kestrel": ["kestrel-photography", "kestrels"], "common-kestrel": ["kestrel-photography", "kestrels"], "peregrine-falcon": ["peregrine-falcon-photography", "peregrine falcons"], "great-blue-heron": ["great-blue-heron-photography", "great blue herons"], "northern-gannet": ["gannet-photography", "gannets"], "barn-swallow": ["barn-swallow-photography", "barn swallows"], "red-tailed-hawk": ["red-tailed-hawk-photography", "red-tailed hawks"], "sandhill-crane": ["sandhill-crane-photography", "sandhill cranes"], "grey-heron": ["grey-heron-photography", "grey herons"], "white-tailed-eagle": ["white-tailed-eagle-photography", "white-tailed eagles"], "great-egret": ["great-egret-photography", "great egrets"], "common-swift": ["common-swift-photography", "swifts"], "black-kite": ["black-kite-photography", "black kites"], "northern-harrier": ["northern-harrier-photography", "northern harriers"], "mallard": ["mallard-photography", "mallards"], "canada-goose": ["canada-goose-photography", "Canada geese"], "mute-swan": ["mute-swan-photography", "mute swans"], "herring-gull": ["herring-gull-photography", "herring gulls"], "common-tern": ["common-tern-photography", "common terns"]};
 
   function render() {
     const s = getState(), c = camOf(s);
@@ -453,7 +458,14 @@
     panel.querySelectorAll('[data-s]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.s === s.s)));
     panel.querySelectorAll('[data-fps]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.fps === s.fps)));
     const b = birdById[s.bird] || birdById[DEF.bird];
-    out('birdinfo').textContent = b ? birdInfo(b) : '';
+    const info = out('birdinfo'), g = b && GUIDES[b.id];
+    info.textContent = b ? birdInfo(b) : '';
+    if (g) {
+      const a = document.createElement('a');
+      a.href = '../' + g[0] + '/';
+      a.textContent = 'Photographing ' + g[1] + ' →';
+      info.append(' ', a);
+    }
     const dmm = s.u === 'ft' ? +s.d * 304.8 : +s.d * 1000;
     const ok = !!b && [+s.f, dmm, +s.s, +s.fps, c.sw, c.pw].every(num);
     const r = ok ? bif({sw: c.sw, pw: c.pw, eq: c.eq, crop: s.crop === '1' ? c.crop : 0, f: +s.f, tc: +s.tc || 1, dmm,
@@ -476,7 +488,7 @@
     out('body').textContent = r.body === null ? '–' : pxf(r.body);
     out('bodyv').textContent = bodyVerdict(r);
     out('n1').textContent = speed(r.w1, stepUp(r.w3) === 0 || stepUp(r.w3) > 8000);
-    out('n3').textContent = speed(r.w3);
+    out('n3').textContent = speed(r.w3, r.frac === 0); // no "the burst is how you get the sharp frame" when no frame can be
     out('burst').textContent = burstLine(r, +s.fps);
   }
 
