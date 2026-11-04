@@ -97,7 +97,7 @@
           <div class="fld">
             <label class="lab"><span data-t="flab">焦点距離（mm）</span><input data-k="f" type="number" inputmode="decimal" min="1" max="5000" step="any"></label>
             <div class="chips" data-show="chips" role="group" aria-label="よく使う焦点距離"><button type="button" data-f="400" aria-label="400 mm">400</button><button type="button" data-f="500" aria-label="500 mm">500</button><button type="button" data-f="600" aria-label="600 mm">600</button><button type="button" data-f="800" aria-label="800 mm">800</button></div>
-            <p class="hint" data-show="bridge" hidden>レンズ一体型カメラ：35mm 判換算の焦点距離を入力してください（望遠端で P1000 は 3000、P950 は 2000）。</p>
+            <p class="hint" data-show="bridge" hidden>レンズ一体型カメラ：35mm 判換算の焦点距離を入力してください（望遠端で P1000 は 3000、P950 は 2000、RX10 IV は 600）。</p>
           </div>
           <label class="lab" data-show="tc">テレコンバーター<select data-k="tc"><option value="1">なし</option><option value="1.4">1.4x</option><option value="2">2x</option></select></label>
           <div class="fld wide" data-show="crop" hidden>
@@ -235,6 +235,7 @@
     ["canon-90d","Canon","Canon EOS 90D",22.3,14.8,6960,4640,0,0],
     ["canon-7d-ii","Canon","Canon EOS 7D Mark II",22.4,15.0,5472,3648,0,0],
     ["canon-5d-iv","Canon","Canon EOS 5D Mark IV",36.0,24.0,6720,4480,0,0],
+    ["canon-r50","Canon","Canon EOS R50",22.3,14.9,6000,4000,0,0],
     ["nikon-z8","Nikon","Nikon Z8",35.9,23.9,8256,5504,1.5,0],
     ["nikon-z9","Nikon","Nikon Z9",35.9,23.9,8256,5504,1.5,0],
     ["nikon-z6-iii","Nikon","Nikon Z6III",35.9,23.9,6048,4032,1.5,0],
@@ -243,6 +244,7 @@
     ["nikon-zf","Nikon","Nikon Zf",35.9,23.9,6048,4032,1.5,0],
     ["nikon-d500","Nikon","Nikon D500",23.5,15.7,5568,3712,0,0],
     ["nikon-d850","Nikon","Nikon D850",35.9,23.9,8256,5504,1.5,0],
+    ["nikon-d7500","Nikon","Nikon D7500",23.5,15.7,5568,3712,0,0],
     ["sony-a1","Sony","Sony A1",35.9,24.0,8640,5760,1.5,0],
     ["sony-a1-ii","Sony","Sony A1 II",35.9,24.0,8640,5760,1.5,0],
     ["sony-a9-iii","Sony","Sony A9 III",35.6,23.8,6000,4000,1.5,0],
@@ -252,6 +254,7 @@
     ["sony-a7-v","Sony","Sony A7 V",35.9,23.9,7008,4672,1.5,0],
     ["sony-a6700","Sony","Sony A6700",23.3,15.5,6192,4128,0,0],
     ["sony-a6400","Sony","Sony A6400",23.5,15.6,6000,4000,0,0],
+    ["sony-a6600","Sony","Sony A6600",23.5,15.6,6000,4000,0,0],
     ["om-1","OM System","OM System OM-1",17.4,13.0,5184,3888,0,0],
     ["om-1-ii","OM System","OM System OM-1 Mark II",17.4,13.0,5184,3888,0,0],
     ["om-3","OM System","OM System OM-3",17.4,13.0,5184,3888,0,0],
@@ -270,8 +273,9 @@
     ["fujifilm-gfx100","Fujifilm","Fujifilm GFX100",43.8,32.9,11648,8736,0,0],
     ["nikon-p1000","Bridge cameras (fixed lens)","Nikon Coolpix P1000",6.17,4.55,4608,3456,0,5.566],
     ["nikon-p950","Bridge cameras (fixed lens)","Nikon Coolpix P950",6.17,4.55,4608,3456,0,5.602],
+    ["sony-rx10-iv","Bridge cameras (fixed lens)","Sony RX10 IV",13.2,8.8,5472,3648,0,2.727],
   ];
-  const BRIDGE_MAX = {"nikon-p1000": 3000, "nikon-p950": 2000}; // full zoom, 35mm equivalent
+  const BRIDGE_MAX = {"nikon-p1000": 3000, "nikon-p950": 2000, "sony-rx10-iv": 600}; // full zoom, 35mm equivalent
 
   /* SPECIES START: written by marketing/bif-shutter-2026-11-01/inline_species.py from species.json; don't edit by hand */
   const STROKE_DEG = 100;
