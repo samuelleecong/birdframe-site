@@ -1,0 +1,181 @@
+# From thousands of frames to the keepers
+
+Recorded workshop · BirdFrame · 21 November 2026. Synthetic narration, not the developer's voice. Each numbered heading is a chapter. Bracketed pauses are intentional exercises, not spoken text.
+
+## 1. A practical workshop
+
+Welcome. This recorded workshop is about getting more from the bird photographs you already have. We will look at how much you can crop, what makes a crop suitable for a print, why a sharp eye can come with blurred wingtips, and how to choose between similar frames.
+
+The workshop is made by BirdFrame, so there is a short demonstration of the app near the end. Most of the session is about decisions you can use with any photo editor. The voice is synthetic narration. You can pause whenever you want, and the page below the video has the slides, a transcript and the free tools used in the examples.
+
+BirdFrame began with a friend who spent hours cropping and looking closely through thousands of bird photographs after trips. Batch cropping made the birds easier to see and the pictures easier to review. That is the practical problem behind this workshop: how do we spend less time repeating the same steps, while keeping control of the pictures we choose?
+
+## 2. The plan
+
+There are three decisions to keep in mind. First, what do you want the finished photograph to show? A close portrait, the bird's behaviour, or its place in the habitat? Second, where will the picture be used? A phone screen, a club projector, a print and a competition can need different dimensions. Third, which original frame gives you the best starting point?
+
+We will start with a picture containing two birds, then work through crop size and reach. After that come movement, selecting a frame from a burst, and a checklist for competition entries. Finally, we will see how batch cropping works and how to try it on Mac or Windows.
+
+If you have a recent bird photograph nearby, keep it in mind as we go. You do not need to install anything to follow the workshop. A useful outcome is simply to leave knowing which crop to make, why it has enough pixels for its purpose, and which original to preserve.
+
+## 3. Look before you crop
+
+Here is an original bird photograph. There are two birds in the branches. Before looking at the next slide, try finding both of them. Think about whether you would keep the two birds together or make a separate photograph of each one.
+
+There is no single right composition. A wider frame may tell you more about the setting, while a tighter frame can make the subject easier to see. Take a few seconds to decide what you want this picture to say.
+
+[Pause 12 seconds.]
+
+## 4. Two different pictures from one original
+
+Here are the same two birds marked in the original, alongside the separate crops. The second bird is partly hidden. These are real BirdFrame detections and crops from the original photograph, not invented birds or filled-in detail.
+
+Notice the distinction between finding the subject and deciding the final composition. A tool can give you a useful first crop. You still decide whether the branch matters, whether the bird needs more space in the direction it faces, and whether two birds belong together in the story.
+
+That is why it helps to retain the original. A close crop is one interpretation of the photograph, not a replacement for everything outside it. If you later want a different shape, a wider view, or two birds together, you can return to the source.
+
+For your own picture, ask two questions before moving any crop handles. What is the subject? And what part of the surroundings helps explain it? Removing everything else is often a good starting point, but the surroundings are not automatically clutter.
+
+## 5. What cropping does to detail
+
+Cropping removes pixels around the subject. It does not, by itself, make the pixels you keep less sharp. A small bird that is a little soft in the original will still be a little soft in the crop; it will simply be easier to see that softness when the bird fills more of the screen.
+
+The important habit is to crop from the full-size original. Suppose your original is six thousand pixels wide and four thousand high. If you first export a copy that is only two thousand and forty-eight pixels wide, then crop that copy, you have already thrown away most of the available pixels before you start framing the bird.
+
+Enlarging the finished crop changes its output dimensions but does not recover the original captured detail. Tools that synthesize new detail are a different kind of edit and may not suit documentary or competition uses. Check the rules for the destination before relying on them.
+
+Also avoid repeatedly opening and saving the same JPEG at a lossy setting. Keep the camera original, do your editing from that source, and make a delivery copy for the place you are sharing it. A full-resolution crop means the retained area is not downscaled. It does not mean a small crop still contains the original photograph's full pixel count.
+
+## 6. Pixels into print size
+
+Print size is a useful calculation rather than a mystery. Divide the pixel dimensions by the intended pixels per inch. A crop that is three thousand pixels wide and two thousand high makes a ten by six point seven inch print at three hundred pixels per inch.
+
+The table gives several examples. These are dimensions, not a guarantee that every file will look equally sharp. Focus, motion, noise, processing, paper and viewing distance still matter. A slightly softer photograph can work well as a modest print, while a large file can disappoint if the bird was out of focus.
+
+There is an easy trap in the phrase half a crop. Halving the width and halving the height retains one quarter of the pixels. A six thousand by four thousand photograph becomes three thousand by two thousand: six megapixels rather than twenty-four. That is still a useful image for many purposes.
+
+Try this calculation with a two thousand four hundred by three thousand pixel crop. At three hundred pixels per inch, what print dimensions do you get? Divide each side separately. The answer is eight by ten inches. If the print lab needs a different shape, allow for that additional crop before deciding whether the file is large enough.
+
+## 7. Reach means pixels on the bird
+
+This table compares a fourteen-centimetre bird with a four hundred millimetre lens on several cameras. Treat it as a geometric comparison with the same assumptions, not a ranking of overall camera quality. The numbers describe pixels across the bird, not autofocus, lens sharpness, low-light quality or the chance of getting the shot.
+
+Read across one row first. As distance increases, the bird occupies fewer pixels. Read down one column next. Cameras with different pixel densities put different numbers of pixels across the same subject at the same distance with the same lens.
+
+A crop mode by itself does not create extra detail on the bird. It changes the portion of the sensor you retain. Likewise, a higher megapixel number does not tell the whole story without knowing the sensor size. What matters for this comparison is how densely the pixels cover the image of the bird.
+
+The green cells mark one illustrative threshold, fifteen hundred pixels across the bird. That is not a universal pass or fail. A small web image and a large close-viewed print ask different things of the photograph. Use the reach calculator to compare a specific camera, lens, bird size and distance, then remember that the real photograph also depends on technique and conditions.
+
+## 8. Crop, converter or distance
+
+If the bird is too small, there are several choices. Cropping changes the framing without increasing the captured detail on the bird. A longer lens or a teleconverter can make the bird's image larger on the sensor. Moving closer can do that too, when it is safe and does not disturb the bird.
+
+A one point four times teleconverter increases the linear image size by roughly that factor and loses about one stop of light. A two times converter gives roughly twice the linear size and loses about two stops. Compatibility and optical quality matter. More pixels across a blurred subject are not the same as more useful detail.
+
+The table illustrates how moving from twenty metres to ten metres compares with adding focal length. It is a simplified example, not a reason to approach wildlife too closely. The bird's welfare comes first. Stay back from nests and sensitive behaviour, follow local access rules, and let the bird choose its distance. Waiting quietly in an appropriate place may be a better option than advancing.
+
+Sometimes the best answer is to keep the wider environmental photograph. A bird does not need to fill the frame for the picture to work. If the habitat, light or behaviour is the story, preserving that context can be more valuable than forcing a close portrait from too few pixels.
+
+## 9. A sharp eye and soft wings
+
+Now consider a flying bird. When you pan with it, you are trying to reduce the bird's movement across the frame. The wings are still moving relative to the body. That is why a photograph can have a sharp eye and visibly blurred wingtips.
+
+Wing movement also changes during a wingbeat. In a simplified picture of the motion, the wingtips move quickly through the middle of the stroke and more slowly near the turn at the top and bottom. Two pictures from the same burst can therefore show very different wingtip sharpness even though the camera settings did not change.
+
+A shutter speed around one two-thousandth of a second is a useful example starting point for some birds in flight, not a promise. Species, distance, direction, magnification and your intended output all affect how much motion you see. Check your own results at the size you plan to use them.
+
+Decide what you want before judging the picture. A little wing blur can communicate movement while the head remains clear. If your goal is a fully frozen wing, you may need brighter light, a faster shutter, a different moment in the wingbeat, or a different framing. Sharpness is one part of the photograph, not its entire purpose.
+
+## 10. Why the fastest frame is not always enough
+
+These examples estimate how fast a shutter would need to be to limit wingtip movement to a few pixels under a particular set of assumptions. The swallow example is far faster than the maximum mechanical shutter speed of many cameras. That helps explain why sharp bodies can still have soft wingtips.
+
+Do not read the numbers as exact settings for every swallow, osprey or heron. The calculation simplifies the wing path, and some wingbeat inputs are estimates. Real birds change speed, angle and wing shape. The useful lesson is the scale of the problem and the importance of timing within the wingbeat.
+
+A burst gives you several opportunities to catch an appealing posture and a moment of lower wingtip movement. It does not guarantee a good frame. Autofocus can miss, the eye can be closed, the background can be distracting, and a beautiful wing position may arrive between exposures.
+
+Review a short burst rather than judging a camera from one frame. Compare the eyes, the head angle, the wing positions and the detail on the bird. If every frame is similarly blurred, investigate shutter speed, focus and camera movement. If some are sharp and others are not, the changing subject motion and focus behaviour are useful clues.
+
+## 11. Choose the keeper deliberately
+
+Here is a simple way to review similar frames. Start with the story and posture. Which frame has the head angle or behaviour you want? Then inspect the eye and the important feather detail. Finally, check the edges of the crop for cut-off wings, branches or distractions.
+
+Compare at the same displayed size. If one bird is shown much larger than another, it is easy to mistake that difference for a difference in sharpness. When a burst contains nearly identical frames, narrow the choice to a few candidates and compare them side by side.
+
+The free Burst Picker can help by ranking how crisp the detected bird looks. It runs in the browser and is a shortcut for finding candidates, not a judge of the final photograph. A high score does not tell you whether the eye is open, the pose is appealing, or the picture tells the story you want. Scores are relative within the set, not a universal measure of photographic quality.
+
+For a short exercise, think of your last burst. What made you choose the frame you kept? If the answer is only that it was first or easiest to see, try comparing the top three at the same scale next time. The improvement may come from a better choice rather than a different camera setting.
+
+## 12. Before entering a competition
+
+Competition rules change, so this recording does not give you a current deadline or promise that one edit is accepted everywhere. Instead, use this checklist against the organiser's rules for the exact competition, year and category you are entering.
+
+First, find the required dimensions. Is the limit a minimum long edge, a maximum file size, or both? Are preliminary entries and shortlisted files treated differently? Second, check which edits are permitted. Cropping, changing colour, removing objects and generating detail are separate operations and may have different rules.
+
+Third, check what evidence you may need to retain. Keep the untouched camera original and, where useful, nearby frames. Exporting a finished crop should not be the moment you discard the source. Fourth, check the category's subject and ethical requirements. A technically suitable file can still be ineligible for other reasons.
+
+The free contest guide is a starting point with links to organisers. The organiser's current rules are the authority. If a rule is unclear, ask the organiser before entering rather than assuming a software feature makes the edit acceptable. This approach takes a little longer once, but it protects the work you put into the photograph.
+
+## 13. Work backwards from the destination
+
+Let us use a simple example. Imagine a twenty-four megapixel original that is six thousand pixels wide. The bird is only six hundred pixels across. If you crop so the bird fills half the width, the crop is twelve hundred pixels wide. If it fills one fifth, the crop is three thousand pixels wide.
+
+Suppose a destination requires at least three thousand pixels on the long edge without enlargement. The tight twelve hundred pixel crop cannot meet that requirement just because the original camera file was large. The wider three thousand pixel crop may meet the dimension requirement, but you still need to decide whether its composition works.
+
+Take ten seconds to consider your own photograph. What is the smallest crop that keeps the composition you want and still has enough pixels for its destination? If those goals conflict, consider a smaller print, a different image or a wider environmental composition.
+
+[Pause 10 seconds.]
+
+The point is to make the destination part of the decision early. Pixel dimensions are a constraint you can check, not something to discover after spending an hour on the finished export.
+
+## 14. Apply the same idea to a whole trip
+
+Doing this once is manageable. Repeating the same crop work across hundreds or thousands of bird photographs is where BirdFrame is intended to help. It finds birds and makes crops with Tight, Balanced or Wide framing, using the full-size original rather than a smaller preview.
+
+BirdFrame is available for Mac and Windows. Both platforms can work with folders. On Mac, it also works with Apple Photos albums. The Photos workflow and the folder export workflow are different: Photos edits are reversible, while folder exports create separate cropped files and leave the source files untouched.
+
+The two ideas to retain are no repeated cropping by hand and no downscaling of the retained crop. Nothing is generated to fill in feathers or reconstruct a hidden bird. A partly hidden bird remains partly hidden. You still review the results and choose what to keep.
+
+The example on screen shows two birds from one original and separate exported crops. In the Mac Photos workflow, a picture with multiple detected birds can use a combined crop containing them. Do not assume that one Photos asset becomes several separate pictures. Individual bird crops are available through export. The following recorded examples show the distinction and the practical steps.
+
+## 15. Watch the workflow
+
+First, an animation shows real detections and crops from an approved original photograph. It demonstrates the framing choices; it is not a timed screen recording of processing. Notice how the original stays available while different crop sizes tell different stories.
+
+[Play the 35-second crop demonstration.]
+
+Next is a sequence captured from the actual Mac app and Apple Photos. It shows choosing an album, previewing a crop, applying edits, changing the framing and restoring the originals. The sequence is edited from real screenshots rather than an uninterrupted mouse recording. The interface was captured in September, so some labels may differ in a newer version.
+
+[Play the 45-second Photos demonstration.]
+
+The useful pattern is choose the source, choose the framing, review the result and keep a route back to the original. Windows users use the folder workflow rather than Apple Photos. Start with a small set whose originals you know, so you can compare the result comfortably before moving on to a whole trip.
+
+## 16. Try a small batch
+
+If you want to try BirdFrame, it is free for up to fifty photos per run, with as many runs as you like. The one-time purchase unlocks bigger batches. There is no subscription. Your local store shows the current price and system requirements before you install or buy.
+
+Choose a few photographs with different challenges: one obvious bird, one small bird, a partly hidden bird and, if you have one, a picture with two birds. Try a framing choice, inspect the crops, and compare them with the originals. That gives you a better test than choosing only an easy portrait.
+
+Mac and Windows purchases are separate. Mac member codes do not work on the Windows version. If your club already has a Mac code, use the instructions supplied with that code; this recording does not create a new club offer.
+
+There is no need to buy anything to follow the workshop or use the linked educational tools. The practical question is whether the result helps you review and crop your own photographs with less repetitive work. Judge it on those pictures, not on a promise of a particular number of minutes saved.
+
+## 17. Choose one useful tool
+
+The resource links below this recording let you revisit the calculations without memorising them. The reach calculator compares pixels on a bird for a camera, focal length and distance. The shutter-speed tool explores motion under its stated assumptions. The crop-size guide connects pixels with prints and screens.
+
+If your difficulty is choosing from similar frames, try the Burst Picker with a short burst. If you are preparing a competition entry, start with the contest guide and then read the organiser's current rules. If you simply want to see a crop, the browser demo provides a quick example. Its download limits differ from the desktop app, so read the size information shown by the tool.
+
+You do not need to use everything. Pick the tool that answers the question holding up your next photograph. A comparison is most useful when you keep the other assumptions the same. Change one input, look at the result, and decide whether it changes your next practical step.
+
+All the links are on the workshop page. You can also download the slides and transcript if your club wants to revisit a section without replaying the whole recording.
+
+## 18. Your next outing
+
+Before your next outing, choose one habit to practise. It could be leaving more room around a flying bird, checking a burst at the same display size, or deciding the intended print size before making a tight crop.
+
+After the outing, preserve the originals. Make crops from those full-size files. Review the bird and the composition rather than accepting a score or a detection without looking. Export a copy suited to the place you will share it.
+
+The central lesson is simple: the pixels on the bird are limited, but your choices about framing and selection can make much better use of them. A tighter crop is not automatically a better picture. A technically sharper frame is not automatically the best story. Use the calculations to understand the limits, and your judgement to choose the photograph.
+
+Thank you for watching. Questions can go by email to BirdFrame; no live session is needed. The free tools, Mac and Windows download links, slides and transcript are below. For a club discussion, compare two crops of the same original and explain what each one keeps in the story.

@@ -1,0 +1,889 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:00.677
+Welcome.
+
+00:00:00.677 --> 00:00:04.949
+This recorded workshop is about getting more from the bird photographs you
+already have.
+
+00:00:04.949 --> 00:00:12.805
+We will look at how much you can crop, what makes a crop suitable for a
+print, why a sharp eye can come with blurred wingtips, and how to choose
+
+00:00:12.805 --> 00:00:13.591
+between similar frames.
+
+00:00:13.591 --> 00:00:18.412
+The workshop is made by BirdFrame, so there is a short demonstration of the
+app near the end.
+
+00:00:18.412 --> 00:00:22.040
+Most of the session is about decisions you can use with any photo editor.
+
+00:00:22.040 --> 00:00:23.808
+The voice is synthetic narration.
+
+00:00:23.808 --> 00:00:30.628
+You can pause whenever you want, and the page below the video has the
+slides, a transcript and the free tools used in the examples.
+
+00:00:30.628 --> 00:00:36.777
+BirdFrame began with a friend who spent hours cropping and looking closely
+through thousands of bird photographs after trips.
+
+00:00:36.777 --> 00:00:40.592
+Batch cropping made the birds easier to see and the pictures easier to
+review.
+
+00:00:40.592 --> 00:00:48.272
+That is the practical problem behind this workshop: how do we spend less
+time repeating the same steps, while keeping control of the pictures we
+
+00:00:48.272 --> 00:00:48.579
+choose?
+
+00:00:49.579 --> 00:00:51.773
+There are three decisions to keep in mind.
+
+00:00:51.773 --> 00:00:54.923
+First, what do you want the finished photograph to show?
+
+00:00:54.923 --> 00:00:58.775
+A close portrait, the bird's behaviour, or its place in the habitat?
+
+00:00:58.775 --> 00:01:01.089
+Second, where will the picture be used?
+
+00:01:01.089 --> 00:01:06.149
+A phone screen, a club projector, a print and a competition can need
+different dimensions.
+
+00:01:06.149 --> 00:01:09.348
+Third, which original frame gives you the best starting point?
+
+00:01:09.348 --> 00:01:13.845
+We will start with a picture containing two birds, then work through crop
+size and reach.
+
+00:01:13.845 --> 00:01:19.206
+After that come movement, selecting a frame from a burst, and a checklist
+for competition entries.
+
+00:01:19.206 --> 00:01:23.656
+Finally, we will see how batch cropping works and how to try it on Mac or
+Windows.
+
+00:01:23.656 --> 00:01:27.625
+If you have a recent bird photograph nearby, keep it in mind as we go.
+
+00:01:27.625 --> 00:01:30.637
+You do not need to install anything to follow the workshop.
+
+00:01:30.637 --> 00:01:37.694
+A useful outcome is simply to leave knowing which crop to make, why it has
+enough pixels for its purpose, and which original to preserve.
+
+00:01:38.694 --> 00:01:40.678
+Here is an original bird photograph.
+
+00:01:40.678 --> 00:01:42.466
+There are two birds in the branches.
+
+00:01:42.466 --> 00:01:45.793
+Before looking at the next slide, try finding both of them.
+
+00:01:45.793 --> 00:01:50.463
+Think about whether you would keep the two birds together or make a separate
+photograph of each one.
+
+00:01:50.463 --> 00:01:52.483
+There is no single right composition.
+
+00:01:52.483 --> 00:01:58.020
+A wider frame may tell you more about the setting, while a tighter frame can
+make the subject easier to see.
+
+00:01:58.020 --> 00:02:01.343
+Take a few seconds to decide what you want this picture to say.
+
+00:02:01.343 --> 00:02:13.343
+Pause and consider your own photograph.
+
+00:02:14.343 --> 00:02:18.520
+Here are the same two birds marked in the original, alongside the separate
+crops.
+
+00:02:18.520 --> 00:02:20.242
+The second bird is partly hidden.
+
+00:02:20.242 --> 00:02:26.185
+These are real BirdFrame detections and crops from the original photograph,
+not invented birds or filled-in detail.
+
+00:02:26.185 --> 00:02:30.640
+Notice the distinction between finding the subject and deciding the final
+composition.
+
+00:02:30.640 --> 00:02:32.902
+A tool can give you a useful first crop.
+
+00:02:32.902 --> 00:02:39.927
+You still decide whether the branch matters, whether the bird needs more
+space in the direction it faces, and whether two birds belong together in
+
+00:02:39.927 --> 00:02:40.489
+the story.
+
+00:02:40.489 --> 00:02:42.683
+That is why it helps to retain the original.
+
+00:02:42.683 --> 00:02:47.894
+A close crop is one interpretation of the photograph, not a replacement for
+everything outside it.
+
+00:02:47.894 --> 00:02:53.477
+If you later want a different shape, a wider view, or two birds together,
+you can return to the source.
+
+00:02:53.477 --> 00:02:57.659
+For your own picture, ask two questions before moving any crop handles.
+
+00:02:57.659 --> 00:02:58.824
+What is the subject?
+
+00:02:58.824 --> 00:03:01.352
+And what part of the surroundings helps explain it?
+
+00:03:01.352 --> 00:03:06.585
+Removing everything else is often a good starting point, but the
+surroundings are not automatically clutter.
+
+00:03:07.585 --> 00:03:09.965
+Cropping removes pixels around the subject.
+
+00:03:09.965 --> 00:03:13.690
+It does not, by itself, make the pixels you keep less sharp.
+
+00:03:13.690 --> 00:03:20.566
+A small bird that is a little soft in the original will still be a little
+soft in the crop; it will simply be easier to see that softness when the
+
+00:03:20.566 --> 00:03:21.896
+bird fills more of the screen.
+
+00:03:21.896 --> 00:03:24.904
+The important habit is to crop from the full-size original.
+
+00:03:24.904 --> 00:03:28.762
+Suppose your original is six thousand pixels wide and four thousand high.
+
+00:03:28.762 --> 00:03:36.642
+If you first export a copy that is only two thousand and forty-eight pixels
+wide, then crop that copy, you have already thrown away most of the
+
+00:03:36.642 --> 00:03:38.977
+available pixels before you start framing the bird.
+
+00:03:38.977 --> 00:03:44.583
+Enlarging the finished crop changes its output dimensions but does not
+recover the original captured detail.
+
+00:03:44.583 --> 00:03:50.518
+Tools that synthesize new detail are a different kind of edit and may not
+suit documentary or competition uses.
+
+00:03:50.518 --> 00:03:53.373
+Check the rules for the destination before relying on them.
+
+00:03:53.373 --> 00:03:57.512
+Also avoid repeatedly opening and saving the same JPEG at a lossy setting.
+
+00:03:57.512 --> 00:04:03.445
+Keep the camera original, do your editing from that source, and make a
+delivery copy for the place you are sharing it.
+
+00:04:03.445 --> 00:04:07.077
+A full-resolution crop means the retained area is not downscaled.
+
+00:04:07.077 --> 00:04:11.754
+It does not mean a small crop still contains the original photograph's full
+pixel count.
+
+00:04:12.754 --> 00:04:15.796
+Print size is a useful calculation rather than a mystery.
+
+00:04:15.796 --> 00:04:19.150
+Divide the pixel dimensions by the intended pixels per inch.
+
+00:04:19.150 --> 00:04:26.045
+A crop that is three thousand pixels wide and two thousand high makes a ten
+by six point seven inch print at three hundred pixels per inch.
+
+00:04:26.045 --> 00:04:28.021
+The table gives several examples.
+
+00:04:28.021 --> 00:04:32.073
+These are dimensions, not a guarantee that every file will look equally
+sharp.
+
+00:04:32.073 --> 00:04:36.917
+Focus, motion, noise, processing, paper and viewing distance still matter.
+
+00:04:36.917 --> 00:04:43.498
+A slightly softer photograph can work well as a modest print, while a large
+file can disappoint if the bird was out of focus.
+
+00:04:43.498 --> 00:04:45.901
+There is an easy trap in the phrase half a crop.
+
+00:04:45.901 --> 00:04:49.360
+Halving the width and halving the height retains one quarter of the pixels.
+
+00:04:49.360 --> 00:04:55.975
+A six thousand by four thousand photograph becomes three thousand by two
+thousand: six megapixels rather than twenty-four.
+
+00:04:55.975 --> 00:04:58.530
+That is still a useful image for many purposes.
+
+00:04:58.530 --> 00:05:02.979
+Try this calculation with a two thousand four hundred by three thousand
+pixel crop.
+
+00:05:02.979 --> 00:05:06.726
+At three hundred pixels per inch, what print dimensions do you get?
+
+00:05:06.726 --> 00:05:08.315
+Divide each side separately.
+
+00:05:08.315 --> 00:05:10.173
+The answer is eight by ten inches.
+
+00:05:10.173 --> 00:05:16.023
+If the print lab needs a different shape, allow for that additional crop
+before deciding whether the file is large enough.
+
+00:05:17.023 --> 00:05:22.096
+This table compares a fourteen-centimetre bird with a four hundred
+millimetre lens on several cameras.
+
+00:05:22.096 --> 00:05:27.590
+Treat it as a geometric comparison with the same assumptions, not a ranking
+of overall camera quality.
+
+00:05:27.590 --> 00:05:34.757
+The numbers describe pixels across the bird, not autofocus, lens sharpness,
+low-light quality or the chance of getting the shot.
+
+00:05:34.757 --> 00:05:36.379
+Read across one row first.
+
+00:05:36.379 --> 00:05:39.754
+As distance increases, the bird occupies fewer pixels.
+
+00:05:39.754 --> 00:05:41.528
+Read down one column next.
+
+00:05:41.528 --> 00:05:48.136
+Cameras with different pixel densities put different numbers of pixels
+across the same subject at the same distance with the same lens.
+
+00:05:48.136 --> 00:05:51.640
+A crop mode by itself does not create extra detail on the bird.
+
+00:05:51.640 --> 00:05:54.228
+It changes the portion of the sensor you retain.
+
+00:05:54.228 --> 00:05:59.620
+Likewise, a higher megapixel number does not tell the whole story without
+knowing the sensor size.
+
+00:05:59.620 --> 00:06:03.838
+What matters for this comparison is how densely the pixels cover the image
+of the bird.
+
+00:06:03.838 --> 00:06:08.636
+The green cells mark one illustrative threshold, fifteen hundred pixels
+across the bird.
+
+00:06:08.636 --> 00:06:10.738
+That is not a universal pass or fail.
+
+00:06:10.738 --> 00:06:14.904
+A small web image and a large close-viewed print ask different things of the
+photograph.
+
+00:06:14.904 --> 00:06:23.365
+Use the reach calculator to compare a specific camera, lens, bird size and
+distance, then remember that the real photograph also depends on technique
+
+00:06:23.365 --> 00:06:24.070
+and conditions.
+
+00:06:25.070 --> 00:06:27.866
+If the bird is too small, there are several choices.
+
+00:06:27.866 --> 00:06:31.767
+Cropping changes the framing without increasing the captured detail on the
+bird.
+
+00:06:31.767 --> 00:06:35.759
+A longer lens or a teleconverter can make the bird's image larger on the
+sensor.
+
+00:06:35.759 --> 00:06:39.735
+Moving closer can do that too, when it is safe and does not disturb the
+bird.
+
+00:06:39.735 --> 00:06:46.351
+A one point four times teleconverter increases the linear image size by
+roughly that factor and loses about one stop of light.
+
+00:06:46.351 --> 00:06:50.946
+A two times converter gives roughly twice the linear size and loses about
+two stops.
+
+00:06:50.946 --> 00:06:53.294
+Compatibility and optical quality matter.
+
+00:06:53.294 --> 00:06:57.329
+More pixels across a blurred subject are not the same as more useful detail.
+
+00:06:57.329 --> 00:07:02.405
+The table illustrates how moving from twenty metres to ten metres compares
+with adding focal length.
+
+00:07:02.405 --> 00:07:06.722
+It is a simplified example, not a reason to approach wildlife too closely.
+
+00:07:06.722 --> 00:07:08.386
+The bird's welfare comes first.
+
+00:07:08.386 --> 00:07:14.520
+Stay back from nests and sensitive behaviour, follow local access rules, and
+let the bird choose its distance.
+
+00:07:14.520 --> 00:07:18.506
+Waiting quietly in an appropriate place may be a better option than
+advancing.
+
+00:07:18.506 --> 00:07:22.469
+Sometimes the best answer is to keep the wider environmental photograph.
+
+00:07:22.469 --> 00:07:25.427
+A bird does not need to fill the frame for the picture to work.
+
+00:07:25.427 --> 00:07:33.076
+If the habitat, light or behaviour is the story, preserving that context can
+be more valuable than forcing a close portrait from too few pixels.
+
+00:07:34.076 --> 00:07:35.745
+Now consider a flying bird.
+
+00:07:35.745 --> 00:07:39.893
+When you pan with it, you are trying to reduce the bird's movement across
+the frame.
+
+00:07:39.893 --> 00:07:42.230
+The wings are still moving relative to the body.
+
+00:07:42.230 --> 00:07:45.886
+That is why a photograph can have a sharp eye and visibly blurred wingtips.
+
+00:07:45.886 --> 00:07:48.351
+Wing movement also changes during a wingbeat.
+
+00:07:48.351 --> 00:07:55.164
+In a simplified picture of the motion, the wingtips move quickly through the
+middle of the stroke and more slowly near the turn at the top and bottom.
+
+00:07:55.164 --> 00:08:01.285
+Two pictures from the same burst can therefore show very different wingtip
+sharpness even though the camera settings did not change.
+
+00:08:01.285 --> 00:08:07.785
+A shutter speed around one two-thousandth of a second is a useful example
+starting point for some birds in flight, not a promise.
+
+00:08:07.785 --> 00:08:14.058
+Species, distance, direction, magnification and your intended output all
+affect how much motion you see.
+
+00:08:14.058 --> 00:08:16.855
+Check your own results at the size you plan to use them.
+
+00:08:16.855 --> 00:08:19.281
+Decide what you want before judging the picture.
+
+00:08:19.281 --> 00:08:22.796
+A little wing blur can communicate movement while the head remains clear.
+
+00:08:22.796 --> 00:08:30.051
+If your goal is a fully frozen wing, you may need brighter light, a faster
+shutter, a different moment in the wingbeat, or a different framing.
+
+00:08:30.051 --> 00:08:33.778
+Sharpness is one part of the photograph, not its entire purpose.
+
+00:08:34.778 --> 00:08:41.733
+These examples estimate how fast a shutter would need to be to limit wingtip
+movement to a few pixels under a particular set of assumptions.
+
+00:08:41.733 --> 00:08:46.565
+The swallow example is far faster than the maximum mechanical shutter speed
+of many cameras.
+
+00:08:46.565 --> 00:08:50.118
+That helps explain why sharp bodies can still have soft wingtips.
+
+00:08:50.118 --> 00:08:54.303
+Do not read the numbers as exact settings for every swallow, osprey or
+heron.
+
+00:08:54.303 --> 00:08:58.602
+The calculation simplifies the wing path, and some wingbeat inputs are
+estimates.
+
+00:08:58.602 --> 00:09:01.338
+Real birds change speed, angle and wing shape.
+
+00:09:01.338 --> 00:09:05.591
+The useful lesson is the scale of the problem and the importance of timing
+within the wingbeat.
+
+00:09:05.591 --> 00:09:10.895
+A burst gives you several opportunities to catch an appealing posture and a
+moment of lower wingtip movement.
+
+00:09:10.895 --> 00:09:12.797
+It does not guarantee a good frame.
+
+00:09:12.797 --> 00:09:20.406
+Autofocus can miss, the eye can be closed, the background can be
+distracting, and a beautiful wing position may arrive between exposures.
+
+00:09:20.406 --> 00:09:23.666
+Review a short burst rather than judging a camera from one frame.
+
+00:09:23.666 --> 00:09:27.755
+Compare the eyes, the head angle, the wing positions and the detail on the
+bird.
+
+00:09:27.755 --> 00:09:32.780
+If every frame is similarly blurred, investigate shutter speed, focus and
+camera movement.
+
+00:09:32.780 --> 00:09:38.316
+If some are sharp and others are not, the changing subject motion and focus
+behaviour are useful clues.
+
+00:09:39.316 --> 00:09:41.857
+Here is a simple way to review similar frames.
+
+00:09:41.857 --> 00:09:43.614
+Start with the story and posture.
+
+00:09:43.614 --> 00:09:46.323
+Which frame has the head angle or behaviour you want?
+
+00:09:46.323 --> 00:09:49.005
+Then inspect the eye and the important feather detail.
+
+00:09:49.005 --> 00:09:53.698
+Finally, check the edges of the crop for cut-off wings, branches or
+distractions.
+
+00:09:53.698 --> 00:09:55.663
+Compare at the same displayed size.
+
+00:09:55.663 --> 00:10:01.152
+If one bird is shown much larger than another, it is easy to mistake that
+difference for a difference in sharpness.
+
+00:10:01.152 --> 00:10:07.367
+When a burst contains nearly identical frames, narrow the choice to a few
+candidates and compare them side by side.
+
+00:10:07.367 --> 00:10:11.306
+The free Burst Picker can help by ranking how crisp the detected bird looks.
+
+00:10:11.306 --> 00:10:16.598
+It runs in the browser and is a shortcut for finding candidates, not a judge
+of the final photograph.
+
+00:10:16.598 --> 00:10:22.576
+A high score does not tell you whether the eye is open, the pose is
+appealing, or the picture tells the story you want.
+
+00:10:22.576 --> 00:10:27.131
+Scores are relative within the set, not a universal measure of photographic
+quality.
+
+00:10:27.131 --> 00:10:30.071
+For a short exercise, think of your last burst.
+
+00:10:30.071 --> 00:10:31.990
+What made you choose the frame you kept?
+
+00:10:31.990 --> 00:10:38.107
+If the answer is only that it was first or easiest to see, try comparing the
+top three at the same scale next time.
+
+00:10:38.107 --> 00:10:41.915
+The improvement may come from a better choice rather than a different camera
+setting.
+
+00:10:42.915 --> 00:10:49.593
+Competition rules change, so this recording does not give you a current
+deadline or promise that one edit is accepted everywhere.
+
+00:10:49.593 --> 00:10:56.151
+Instead, use this checklist against the organiser's rules for the exact
+competition, year and category you are entering.
+
+00:10:56.151 --> 00:10:58.615
+First, find the required dimensions.
+
+00:10:58.615 --> 00:11:02.654
+Is the limit a minimum long edge, a maximum file size, or both?
+
+00:11:02.654 --> 00:11:06.110
+Are preliminary entries and shortlisted files treated differently?
+
+00:11:06.110 --> 00:11:08.320
+Second, check which edits are permitted.
+
+00:11:08.320 --> 00:11:14.566
+Cropping, changing colour, removing objects and generating detail are
+separate operations and may have different rules.
+
+00:11:14.566 --> 00:11:17.277
+Third, check what evidence you may need to retain.
+
+00:11:17.277 --> 00:11:21.445
+Keep the untouched camera original and, where useful, nearby frames.
+
+00:11:21.445 --> 00:11:25.007
+Exporting a finished crop should not be the moment you discard the source.
+
+00:11:25.007 --> 00:11:28.621
+Fourth, check the category's subject and ethical requirements.
+
+00:11:28.621 --> 00:11:32.346
+A technically suitable file can still be ineligible for other reasons.
+
+00:11:32.346 --> 00:11:35.925
+The free contest guide is a starting point with links to organisers.
+
+00:11:35.925 --> 00:11:38.317
+The organiser's current rules are the authority.
+
+00:11:38.317 --> 00:11:44.747
+If a rule is unclear, ask the organiser before entering rather than assuming
+a software feature makes the edit acceptable.
+
+00:11:44.747 --> 00:11:49.518
+This approach takes a little longer once, but it protects the work you put
+into the photograph.
+
+00:11:50.518 --> 00:11:52.335
+Let us use a simple example.
+
+00:11:52.335 --> 00:11:56.396
+Imagine a twenty-four megapixel original that is six thousand pixels wide.
+
+00:11:56.396 --> 00:11:58.954
+The bird is only six hundred pixels across.
+
+00:11:58.954 --> 00:12:03.526
+If you crop so the bird fills half the width, the crop is twelve hundred
+pixels wide.
+
+00:12:03.526 --> 00:12:07.158
+If it fills one fifth, the crop is three thousand pixels wide.
+
+00:12:07.158 --> 00:12:12.131
+Suppose a destination requires at least three thousand pixels on the long
+edge without enlargement.
+
+00:12:12.131 --> 00:12:17.812
+The tight twelve hundred pixel crop cannot meet that requirement just
+because the original camera file was large.
+
+00:12:17.812 --> 00:12:24.479
+The wider three thousand pixel crop may meet the dimension requirement, but
+you still need to decide whether its composition works.
+
+00:12:24.479 --> 00:12:27.256
+Take ten seconds to consider your own photograph.
+
+00:12:27.256 --> 00:12:32.752
+What is the smallest crop that keeps the composition you want and still has
+enough pixels for its destination?
+
+00:12:32.752 --> 00:12:38.775
+If those goals conflict, consider a smaller print, a different image or a
+wider environmental composition.
+
+00:12:38.775 --> 00:12:48.775
+Pause and consider your own photograph.
+
+00:12:48.775 --> 00:12:51.890
+The point is to make the destination part of the decision early.
+
+00:12:51.890 --> 00:12:58.089
+Pixel dimensions are a constraint you can check, not something to discover
+after spending an hour on the finished export.
+
+00:12:59.089 --> 00:13:00.801
+Doing this once is manageable.
+
+00:13:00.801 --> 00:13:06.580
+Repeating the same crop work across hundreds or thousands of bird
+photographs is where BirdFrame is intended to help.
+
+00:13:06.580 --> 00:13:13.358
+It finds birds and makes crops with Tight, Balanced or Wide framing, using
+the full-size original rather than a smaller preview.
+
+00:13:13.358 --> 00:13:15.664
+BirdFrame is available for Mac and Windows.
+
+00:13:15.664 --> 00:13:17.876
+Both platforms can work with folders.
+
+00:13:17.876 --> 00:13:20.891
+On Mac, it also works with Apple Photos albums.
+
+00:13:20.891 --> 00:13:28.566
+The Photos workflow and the folder export workflow are different: Photos
+edits are reversible, while folder exports create separate cropped files and
+
+00:13:28.566 --> 00:13:30.310
+leave the source files untouched.
+
+00:13:30.310 --> 00:13:35.317
+The two ideas to retain are no repeated cropping by hand and no downscaling
+of the retained crop.
+
+00:13:35.317 --> 00:13:38.680
+Nothing is generated to fill in feathers or reconstruct a hidden bird.
+
+00:13:38.680 --> 00:13:40.989
+A partly hidden bird remains partly hidden.
+
+00:13:40.989 --> 00:13:43.502
+You still review the results and choose what to keep.
+
+00:13:43.502 --> 00:13:48.065
+The example on screen shows two birds from one original and separate
+exported crops.
+
+00:13:48.065 --> 00:13:53.868
+In the Mac Photos workflow, a picture with multiple detected birds can use a
+combined crop containing them.
+
+00:13:53.868 --> 00:13:57.670
+Do not assume that one Photos asset becomes several separate pictures.
+
+00:13:57.670 --> 00:14:00.466
+Individual bird crops are available through export.
+
+00:14:00.466 --> 00:14:04.370
+The following recorded examples show the distinction and the practical
+steps.
+
+00:14:05.370 --> 00:14:10.342
+First, an animation shows real detections and crops from an approved
+original photograph.
+
+00:14:10.342 --> 00:14:15.007
+It demonstrates the framing choices; it is not a timed screen recording of
+processing.
+
+00:14:15.007 --> 00:14:19.566
+Notice how the original stays available while different crop sizes tell
+different stories.
+
+00:14:19.566 --> 00:14:54.666
+Animation of real detections and crops · not a timed processing recording
+
+00:14:54.666 --> 00:14:58.459
+Next is a sequence captured from the actual Mac app and Apple Photos.
+
+00:14:58.459 --> 00:15:04.645
+It shows choosing an album, previewing a crop, applying edits, changing the
+framing and restoring the originals.
+
+00:15:04.645 --> 00:15:09.118
+The sequence is edited from real screenshots rather than an uninterrupted
+mouse recording.
+
+00:15:09.118 --> 00:15:13.739
+The interface was captured in September, so some labels may differ in a
+newer version.
+
+00:15:13.739 --> 00:15:58.739
+Mac Photos · real screenshot sequence recorded September 2026
+
+00:15:58.739 --> 00:16:04.501
+The useful pattern is choose the source, choose the framing, review the
+result and keep a route back to the original.
+
+00:16:04.501 --> 00:16:07.883
+Windows users use the folder workflow rather than Apple Photos.
+
+00:16:07.883 --> 00:16:14.365
+Start with a small set whose originals you know, so you can compare the
+result comfortably before moving on to a whole trip.
+
+00:16:15.365 --> 00:16:21.029
+If you want to try BirdFrame, it is free for up to fifty photos per run,
+with as many runs as you like.
+
+00:16:21.029 --> 00:16:23.435
+The one-time purchase unlocks bigger batches.
+
+00:16:23.435 --> 00:16:24.805
+There is no subscription.
+
+00:16:24.805 --> 00:16:29.525
+Your local store shows the current price and system requirements before you
+install or buy.
+
+00:16:29.525 --> 00:16:38.032
+Choose a few photographs with different challenges: one obvious bird, one
+small bird, a partly hidden bird and, if you have one, a picture with two
+
+00:16:38.032 --> 00:16:38.359
+birds.
+
+00:16:38.359 --> 00:16:42.809
+Try a framing choice, inspect the crops, and compare them with the
+originals.
+
+00:16:42.809 --> 00:16:45.897
+That gives you a better test than choosing only an easy portrait.
+
+00:16:45.897 --> 00:16:48.027
+Mac and Windows purchases are separate.
+
+00:16:48.027 --> 00:16:50.819
+Mac member codes do not work on the Windows version.
+
+00:16:50.819 --> 00:16:57.772
+If your club already has a Mac code, use the instructions supplied with that
+code; this recording does not create a new club offer.
+
+00:16:57.772 --> 00:17:02.346
+There is no need to buy anything to follow the workshop or use the linked
+educational tools.
+
+00:17:02.346 --> 00:17:07.980
+The practical question is whether the result helps you review and crop your
+own photographs with less repetitive work.
+
+00:17:07.980 --> 00:17:12.424
+Judge it on those pictures, not on a promise of a particular number of
+minutes saved.
+
+00:17:13.424 --> 00:17:18.362
+The resource links below this recording let you revisit the calculations
+without memorising them.
+
+00:17:18.362 --> 00:17:23.253
+The reach calculator compares pixels on a bird for a camera, focal length
+and distance.
+
+00:17:23.253 --> 00:17:26.623
+The shutter-speed tool explores motion under its stated assumptions.
+
+00:17:26.623 --> 00:17:29.714
+The crop-size guide connects pixels with prints and screens.
+
+00:17:29.714 --> 00:17:34.623
+If your difficulty is choosing from similar frames, try the Burst Picker
+with a short burst.
+
+00:17:34.623 --> 00:17:40.484
+If you are preparing a competition entry, start with the contest guide and
+then read the organiser's current rules.
+
+00:17:40.484 --> 00:17:44.813
+If you simply want to see a crop, the browser demo provides a quick example.
+
+00:17:44.813 --> 00:17:49.896
+Its download limits differ from the desktop app, so read the size
+information shown by the tool.
+
+00:17:49.896 --> 00:17:51.724
+You do not need to use everything.
+
+00:17:51.724 --> 00:17:55.323
+Pick the tool that answers the question holding up your next photograph.
+
+00:17:55.323 --> 00:17:59.094
+A comparison is most useful when you keep the other assumptions the same.
+
+00:17:59.094 --> 00:18:04.248
+Change one input, look at the result, and decide whether it changes your
+next practical step.
+
+00:18:04.248 --> 00:18:06.355
+All the links are on the workshop page.
+
+00:18:06.355 --> 00:18:12.468
+You can also download the slides and transcript if your club wants to
+revisit a section without replaying the whole recording.
+
+00:18:13.468 --> 00:18:16.551
+Before your next outing, choose one habit to practise.
+
+00:18:16.551 --> 00:18:24.340
+It could be leaving more room around a flying bird, checking a burst at the
+same display size, or deciding the intended print size before making a tight
+
+00:18:24.340 --> 00:18:24.618
+crop.
+
+00:18:24.618 --> 00:18:27.065
+After the outing, preserve the originals.
+
+00:18:27.065 --> 00:18:29.289
+Make crops from those full-size files.
+
+00:18:29.289 --> 00:18:33.872
+Review the bird and the composition rather than accepting a score or a
+detection without looking.
+
+00:18:33.872 --> 00:18:36.482
+Export a copy suited to the place you will share it.
+
+00:18:36.482 --> 00:18:43.683
+The central lesson is simple: the pixels on the bird are limited, but your
+choices about framing and selection can make much better use of them.
+
+00:18:43.683 --> 00:18:46.514
+A tighter crop is not automatically a better picture.
+
+00:18:46.514 --> 00:18:49.798
+A technically sharper frame is not automatically the best story.
+
+00:18:49.798 --> 00:18:54.494
+Use the calculations to understand the limits, and your judgement to choose
+the photograph.
+
+00:18:54.494 --> 00:18:55.716
+Thank you for watching.
+
+00:18:55.716 --> 00:18:59.582
+Questions can go by email to BirdFrame; no live session is needed.
+
+00:18:59.582 --> 00:19:04.357
+The free tools, Mac and Windows download links, slides and transcript are
+below.
+
+00:19:04.357 --> 00:19:09.886
+For a club discussion, compare two crops of the same original and explain
+what each one keeps in the story.
