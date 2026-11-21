@@ -4,6 +4,7 @@
   const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPtbFPqPdkhFrhk3cLJ2hblnX10RbqNf0tjJgeY8KeFnsjl_jLo36XIA6HU0cNGjmwdA/exec'; // Apps Script web app (analytics/website/waitlist.gs)
   const PIXEL_ID = ''; // off since 31 Oct 2026 (the Meta ad test never left draft; launch week). To re-enable: '1664656798359783', the Meta dataset "BirdFrame website" in the BirdFrame business portfolio
   const PT = '127908484'; // App Store Connect provider token (from the campaign links made in ASC, 26 Oct); enables campaign links (pt/ct)
+  const MS_STORE = 'https://apps.microsoft.com/detail/9PK8KBZ9L7R3'; // BirdFrame for Windows. ?cid= is Microsoft's custom campaign ID (Partner Center → Acquisitions)
 
   const ses = {
     get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
@@ -98,22 +99,36 @@
   if (!ses.get('bf_visit')) { ses.set('bf_visit', '1'); send('visit'); }
 
   // App Store links: add campaign tags when we have a provider token, and count clicks.
+  // This visit's campaign token: its source (UTM tags, ?ref= or the referring site), else direct.
+  function campaignToken() {
+    const t = context();
+    return [t.utm_source || 'direct', t.utm_campaign, t.utm_content].filter(Boolean).join('-').replace(/[^\w.-]/g, '_').slice(0, 40);
+  }
   function storeLink(href) {
     if (!PT) return href;
-    const t = context();
-    const ct = [t.utm_source || 'direct', t.utm_campaign, t.utm_content].filter(Boolean).join('-').replace(/[^\w.-]/g, '_').slice(0, 40);
+    const ct = campaignToken();
     const u = new URL(href);
     u.searchParams.set('pt', PT); u.searchParams.set('ct', ct); u.searchParams.set('mt', '8');
     return u.toString();
   }
+  // Microsoft Store link with Microsoft's campaign ID: the swapped App Store link's own ct (ja-site, calc…) if it has one,
+  // else this visit's token, the same name App Store Connect gets, so both stores' reports split by the same channels.
+  function msStoreLink(href) {
+    let cid = '';
+    try { cid = decodeURIComponent((/[?&]ct=([^&#]+)/.exec(href || '') || [])[1] || ''); } catch (e) {}
+    return MS_STORE + '?cid=' + encodeURIComponent(cid || campaignToken());
+  }
   window.bfStoreLink = storeLink;
+  window.bfMsStoreLink = msStoreLink;
   window.bfSend = send;
   document.addEventListener('click', e => {
-    const a = e.target.closest && e.target.closest('a[href^="https://apps.apple.com"]');
+    const a = e.target.closest && e.target.closest('a[href^="https://apps.apple.com"], a[href^="https://apps.microsoft.com/detail/9PK8KBZ9L7R3"]'); // not other apps' Store links
     if (!a) return;
-    // A link that names its own campaign (e.g. ct=ja-site on /ja/) keeps it; other links get one from this visit.
-    if (!/[?&]ct=/.test(a.href)) a.href = storeLink(a.href.split('?')[0]);
-    const target = a.dataset.cta || (a.closest('nav') ? 'nav' : a.closest('.hero') ? 'hero' : a.closest('#pricing') ? 'pricing' : 'other');
+    const ms = a.href.indexOf(MS_STORE) === 0;
+    // A link that names its own campaign (ct=ja-site on /ja/, cid=press) keeps it; other links get one from this visit.
+    if (ms && !/[?&]cid=/.test(a.href)) a.href = msStoreLink('');
+    if (!ms && !/[?&]ct=/.test(a.href)) a.href = storeLink(a.href.split('?')[0]);
+    const target = (ms ? 'ms_' : '') + (a.dataset.cta || (a.closest('nav') ? 'nav' : a.closest('.hero') ? 'hero' : a.closest('#pricing') ? 'pricing' : 'other'));
     send('app_store_click', { target });
     pixel('trackCustom', 'AppStoreClick', { placement: target });
   }, true);
@@ -121,11 +136,9 @@
   // Waitlist: any element with data-waitlist="windows" or "mac_link" opens the dialog;
   // a form with data-waitlist-form="…" signs up inline.
   const JA = document.documentElement.lang === 'ja'; // the Japanese page (/ja/) gets Japanese dialog text
-  const COPY = JA ? {
-    windows: { h: 'Windows 版は準備中です', p: 'メールアドレスを登録すると、公開したときにお知らせします。お送りするのはその1通だけです。', b: '登録する', done: '登録しました。公開したらメールでお知らせします。' },
+  const COPY = JA ? { // no Windows list any more: BirdFrame for Windows is on the Microsoft Store
     mac_link: { h: 'Mac 用のリンクを受け取る', p: 'Mac で開けるダウンロードリンクをメールでお送りします。', b: 'リンクを送る', done: '送信しました。Mac でメールを確認してください。' },
-  } : {
-    windows: { h: 'BirdFrame for Windows is coming soon', p: 'Leave your email and we\'ll tell you when it\'s out. One email, nothing else.', b: 'Notify me', done: 'You\'re on the list. We\'ll email you when it\'s out.' },
+  } : { // (no Windows list)
     mac_link: { h: 'Get the link on your Mac', p: 'We\'ll email you the download link to open on your Mac.', b: 'Email me the link', done: 'Sent. Check your inbox on your Mac.' },
   };
   const ERR = JA ? { email: 'メールアドレスを確認してください。', other: '送信できませんでした。birdframe.app@gmail.com までメールでご連絡ください。' }
@@ -181,19 +194,19 @@
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('form[data-waitlist-form]').forEach(f => {
       const list = f.dataset.waitlistForm;
+      if (!COPY[list]) return; // the retired Windows waitlist: BirdFrame for Windows is on the Microsoft Store
       f.innerHTML = formHTML(list);
       wire(f, list);
     });
-    // Windows visitors can't use the Mac app yet: lead with the Windows list.
+    // Windows visitors get BirdFrame for Windows on the Microsoft Store, labelled as Microsoft's badge is in the page's
+    // language. (The data-windows-show blocks were the waitlist sign-up: they stay hidden.)
     if (device === 'windows') {
+      const lang = (document.documentElement.lang || '').toLowerCase();
+      const label = /^ja/.test(lang) ? 'Microsoft Store からダウンロード' : /^zh/.test(lang) ? '從 Microsoft Store 下載' : 'Download from the Microsoft Store';
       document.querySelectorAll('[data-windows-swap]').forEach(a => {
-        a.removeAttribute('href');
-        a.setAttribute('role', 'button');
-        a.dataset.waitlist = 'windows';
-        a.textContent = a.dataset.windowsSwap;
+        a.href = msStoreLink(a.getAttribute('href'));
+        a.textContent = label;
       });
-      // Blocks marked data-windows-show (hidden by default) appear only here, e.g. the tool pages' inline Windows sign-up.
-      document.querySelectorAll('[data-windows-show]').forEach(el => { el.hidden = false; });
     }
     if (q.get('waitlist') && COPY[q.get('waitlist')]) open(q.get('waitlist'));
   });

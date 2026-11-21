@@ -60,6 +60,10 @@ function campaign() {
 }
 
 const STORE_URL = `https://apps.apple.com/jp/app/apple-store/id6754513569?pt=127908484&ct=${campaign()}&mt=8`;
+// BirdFrame for Windows on the Microsoft Store: cid (Microsoft's campaign ID) = the same token; nothing is stored.
+const MS_STORE_URL = `https://apps.microsoft.com/detail/9PK8KBZ9L7R3?cid=${campaign()}`;
+const ON_WINDOWS = /Windows/.test(navigator.userAgent) && !/Android|iPhone|iPad|iPod/.test(navigator.userAgent);
+const MS_LABEL = 'Microsoft Store からダウンロード';
 
 let detectorPromise = null;
 let detectorEp = null;
@@ -454,6 +458,8 @@ function renderSamples() {
 
 async function init() {
   for (const a of document.querySelectorAll('a[href^="https://apps.apple.com/"]')) a.href = STORE_URL;
+  for (const a of document.querySelectorAll('a[href^="https://apps.microsoft.com/detail/9PK8KBZ9L7R3"]')) a.href = MS_STORE_URL;
+  if (ON_WINDOWS) for (const a of document.querySelectorAll('[data-windows-swap]')) { a.href = MS_STORE_URL; a.textContent = MS_LABEL; }
   els.choose.addEventListener('click', () => {
     els.file.click();
     // Start getting ready while the visitor picks a photo.
