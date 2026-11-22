@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>野鳥写真を一括で自動トリミング｜BirdFrame（Mac アプリ）</title>
-<meta name="description" content="野鳥撮影の写真を、手作業でトリミングしない。BirdFrame は写真アプリのアルバムやフォルダから小さな鳥や遠くの鳥まで見つけ、一羽ずつトリミングする Mac アプリです。何千枚でも一度に、フル解像度のまま。RAW 対応、1回50枚まで無料。">
+<title>野鳥写真を一括で自動トリミング｜BirdFrame（Mac・Windows）</title>
+<meta name="description" content="野鳥撮影の写真を、手作業でトリミングしない。BirdFrame は小さな鳥や遠くの鳥まで見つけ、一羽ずつトリミングする Mac・Windows 用アプリです。何千枚でも一度に、フル解像度のまま。RAW 対応、1回50枚まで無料。">
 <link rel="canonical" href="https://getbirdframe.com/ja/">
 <link rel="alternate" hreflang="en" href="https://getbirdframe.com/">
 <link rel="alternate" hreflang="ja" href="https://getbirdframe.com/ja/">
 <link rel="alternate" hreflang="x-default" href="https://getbirdframe.com/">
 <meta property="og:title" content="BirdFrame：鳥の写真を、手作業でトリミングしない">
-<meta property="og:description" content="写真の鳥を見つけて、一羽ずつトリミングする Mac アプリ。何千枚でも一度に、フル解像度のまま。1回50枚まで無料。">
+<meta property="og:description" content="写真の鳥を見つけて、一羽ずつトリミングする Mac・Windows 用アプリ。何千枚でも一度に、フル解像度のまま。1回50枚まで無料。">
 <meta property="og:image" content="https://getbirdframe.com/guides/img/treetop-found.jpg">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="795">
@@ -43,9 +43,10 @@ h1{font-size:clamp(28px,4.6vw,52px)}
 </style>
 <script src="../track.js" defer></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"BirdFrame","operatingSystem":"macOS 15 以降",
- "applicationCategory":"PhotographyApplication","description":"Apple の「写真」のアルバムやフォルダから、小さな鳥や遠くの鳥、半分隠れた鳥まで一羽ずつ見つけ出し、選んだ構図でトリミングします。",
- "url":"https://apps.apple.com/jp/app/birdframe/id6754513569",
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"BirdFrame","operatingSystem":"macOS 15 以降、Windows 10・11",
+ "applicationCategory":"PhotographyApplication","description":"フォルダから小さな鳥や遠くの鳥、半分隠れた鳥まで見つけ出し、選んだ構図で一羽ずつ切り出します。Mac では Apple の「写真」のアルバムにも対応します。",
+ "url":"https://getbirdframe.com/ja/",
+ "downloadUrl":["https://apps.apple.com/jp/app/birdframe/id6754513569","https://apps.microsoft.com/detail/9PK8KBZ9L7R3?hl=ja-JP&gl=JP"],
  "offers":[{"@type":"Offer","price":"0","priceCurrency":"JPY","description":"1回の処理につき50枚まで無料"}]}
 </script>
 <script type="application/ld+json">
@@ -60,7 +61,7 @@ h1{font-size:clamp(28px,4.6vw,52px)}
     <a class="brand" href="./"><img src="../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
     <div class="links">
       <a href="#features">特長</a><a href="#pricing">料金</a>
-      <a class="btn" data-windows-swap="Windows 版の通知" href="https://apps.apple.com/jp/app/apple-store/id6754513569?pt=127908484&amp;ct=ja-site&amp;mt=8">Mac App Store で入手</a>
+      <a class="btn" href="#download">アプリを入手</a>
     </div>
   </nav>
 
@@ -68,13 +69,14 @@ h1{font-size:clamp(28px,4.6vw,52px)}
     <div class="copy">
       <h1>鳥の写真を、<wbr>手作業で<wbr>トリミングしない。</h1>
       <p class="sub">何千枚でも一度に。<wbr>元のフル解像度のまま。</p>
-      <p class="lede">BirdFrame は Apple の「写真」のアルバムやフォルダから、小さな鳥や遠くの鳥、半分隠れた鳥まで一羽ずつ見つけ出し、選んだ構図でトリミングする Mac アプリです。</p>
-      <div class="ctas">
-        <a class="btn" data-windows-swap="Windows 版の通知を受け取る" href="https://apps.apple.com/jp/app/apple-store/id6754513569?pt=127908484&amp;ct=ja-site&amp;mt=8">Mac App Store で無料ダウンロード</a>
+      <p class="lede">BirdFrame はフォルダの写真から、小さな鳥や遠くの鳥、半分隠れた鳥まで見つけ、選んだ構図で一羽ずつ切り出します。Windows と Mac に対応し、Mac では Apple の「写真」のアルバムも使えます。</p>
+      <div class="ctas" id="download">
+        <a class="btn" href="https://apps.apple.com/jp/app/apple-store/id6754513569?pt=127908484&amp;ct=ja-site&amp;mt=8">Mac App Store で入手</a>
+        <a class="btn" href="https://apps.microsoft.com/detail/9PK8KBZ9L7R3?hl=ja-JP&amp;gl=JP&amp;cid=ja-site">Microsoft Store で入手</a>
         <a class="btn ghost" href="demo/">写真1枚で試す</a>
         <a class="btn ghost mobile-only" data-waitlist="mac_link" href="mailto:?subject=BirdFrame%EF%BC%88Mac%20%E7%94%A8%EF%BC%89&amp;body=BirdFrame%20%E3%81%AF%E3%80%81%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0%E3%82%84%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E9%B3%A5%E3%82%92%E8%A6%8B%E3%81%A4%E3%81%91%E3%81%A6%E4%B8%80%E7%BE%BD%E3%81%9A%E3%81%A4%E3%83%88%E3%83%AA%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%99%E3%82%8B%20Mac%20%E3%82%A2%E3%83%97%E3%83%AA%E3%81%A7%E3%81%99%E3%80%821%E5%9B%9E50%E6%9E%9A%E3%81%BE%E3%81%A7%E7%84%A1%E6%96%99%EF%BC%9Ahttps%3A%2F%2Fapps.apple.com%2Fjp%2Fapp%2Fapple-store%2Fid6754513569%3Fpt%3D127908484%26ct%3Dja-site%26mt%3D8">Mac 用のリンクをメールで送る</a>
       </div>
-      <p class="fine">1回50枚まで無料 · 買い切り（サブスクなし） · macOS 15 以降</p>
+      <p class="fine">1回50枚まで無料 · 買い切り（サブスクなし）</p>
     </div>
     <figure class="ba">
       <img src="../guides/img/treetop-found.jpg" width="1600" height="795" alt="トウヒの木にいる2羽の鳥（1羽は枝に半分隠れている）を写真全体で枠に囲み、右にそれぞれのトリミングを並べた画像" fetchpriority="high">
@@ -85,27 +87,27 @@ h1{font-size:clamp(28px,4.6vw,52px)}
   <section id="features">
     <h2>野鳥撮影のあとは、<wbr>まとめてトリミング</h2>
     <div class="feat">
-      <div class="step"><b>写真アプリと<wbr>フォルダ<wbr>（RAW 対応）</b><span>Apple の「写真」では、トリミングを元に戻せる編集として保存し、オリジナルはそのまま残ります。フォルダには JPEG、HEIC、カメラの RAW ファイルを入れられ、RAW+JPEG のペアは1枚として数えます。</span></div>
+      <div class="step"><b>フォルダと<wbr>Apple の「写真」</b><span>Mac と Windows では、フォルダの写真を新しい JPEG に切り出します。元のファイルはそのまま残ります。Mac の Apple「写真」では、元に戻せる編集として保存できます。</span></div>
       <div class="step"><b>フル解像度、<wbr>生成は一切なし</b><span>トリミングはすべて、元のフルサイズの画像から切り出します。縮小も、画像の生成や描き足しもありません。</span></div>
       <div class="step"><b>構図を選ぶ</b><span>Tight・Balanced・Wide（きつめ・標準・ゆったり）をプレビューで比べ、正方形か長方形の比率を選べます。一度選べば、アルバムやフォルダ全体に適用されます。</span></div>
       <div class="step"><b>Moments<wbr>（連写を<wbr>1枚のカードに）</b><span>同じ場面を数秒おきに撮った写真を一つの「モーメント」にまとめ、いちばんはっきり写った鳥を表示します。開くと、その場面のすべての鳥を確認できます。</span></div>
-      <div class="step"><b>すべて Mac の中で</b><span>鳥を見つける処理もトリミングも、Mac の中で行います。BirdFrame が写真をアップロードすることはありません。</span></div>
+      <div class="step"><b>すべて端末の中で</b><span>鳥を見つける処理もトリミングも、お使いの Mac または Windows PC の中で行います。BirdFrame が写真をアップロードすることはありません。</span></div>
     </div>
   </section>
 
   <section id="pricing">
     <h2>料金</h2>
-    <p class="deal" id="black-friday">11月20日〜12月1日の年末セール：アンロック（買い切り）が3,000円（通常5,000円）。コードは不要です。</p>
+    <p class="deal" id="black-friday">Mac 版の年末セール（11月20日〜12月1日）：アンロック（買い切り）が3,000円（通常5,000円）。コードは不要です。</p>
     <script>/* Sale line, same switch as the English home page: Apple's price change at 00:00 Pacific = 08:00 UTC (17:00 JST), 20 Nov to 2 Dec 2026, then hides. Without JS the line above stays. */
     (function (el, now) {
       if (!el) return;
       if (now >= Date.UTC(2026, 11, 2, 8)) el.style.display = 'none';
-      else if (now >= Date.UTC(2026, 10, 20, 8)) el.innerHTML = '年末セール中（12月1日まで）：アンロック（買い切り）が3,000円（通常5,000円）。コードは不要で、App Store の価格はすでに下がっています。';
+      else if (now >= Date.UTC(2026, 10, 20, 8)) el.innerHTML = 'Mac 版の年末セール中（12月1日まで）：アンロック（買い切り）が3,000円（通常5,000円）。コードは不要で、Mac App Store の価格はすでに下がっています。';
     })(document.getElementById('black-friday'), Date.now());</script>
     <div class="buy">
-      <p>1回の処理につき50枚まで、何回でも無料で使えます。1回限りのアプリ内課金（買い切り）で、より多くの写真をまとめて処理できます。サブスクリプションではありません。</p>
-      <p class="fine">macOS 15 以降が必要です。Apple シリコン搭載の Mac で最も速く動作します。<br>※ アプリの画面とヘルプは英語表記です。</p>
-      <a class="btn" data-windows-swap="Windows 版の通知を受け取る" href="https://apps.apple.com/jp/app/apple-store/id6754513569?pt=127908484&amp;ct=ja-site&amp;mt=8">BirdFrame を入手</a>
+      <p>1回の処理につき50枚まで、何回でも無料で使えます。1回限りのアプリ内課金（買い切り）で、より多くの写真をまとめて処理できます。サブスクリプションではありません。Mac 版と Windows 版は別々の購入です。価格はそれぞれのストアでご確認ください。</p>
+      <p class="fine">macOS 15 以降、または Windows 10・11 に対応しています。<br>※ アプリの画面は英語です。</p>
+      <a href="#download">Mac・Windows のダウンロード先を選ぶ ↑</a>
     </div>
   </section>
 
@@ -113,9 +115,9 @@ h1{font-size:clamp(28px,4.6vw,52px)}
     <h2>よくある質問</h2>
     <div class="faq">
       <div><h3>小さい鳥や遠くの鳥も見つかりますか？</h3><p>はい。小さな鳥や遠くの鳥、半分隠れた鳥まで一羽ずつ見つけ出し、それぞれをトリミングします。</p></div>
-      <div><h3>元の写真は変更されますか？</h3><p>いいえ。「写真」では、トリミングを元に戻せる編集として保存し、オリジナルはそのまま残ります。フォルダからは Export Crops で鳥ごとに新しい JPEG を書き出すので、元のファイルは変更されません。</p></div>
-      <div><h3>RAW は使えますか？</h3><p>はい。フォルダのカメラ RAW（CR2、CR3、NEF、ARW、ORF、RAF、RW2、DNG）に対応しています。RAW+JPEG のペアは1枚として数えます。</p></div>
-      <div><h3>Windows 版はありますか？</h3><p>はい。Windows 版（Windows 10・11 対応）は <a href="https://apps.microsoft.com/detail/9PK8KBZ9L7R3?cid=ja-site">Microsoft Store</a> で入手できます。</p></div>
+      <div><h3>元の写真は変更されますか？</h3><p>いいえ。Mac の「写真」では、トリミングを元に戻せる編集として保存し、オリジナルはそのまま残ります。フォルダからは Export Crops で鳥ごとに新しい JPEG を書き出すので、元のファイルは変更されません。</p></div>
+      <div><h3>RAW は使えますか？</h3><p>はい。フォルダのカメラ RAW（CR2、CR3、NEF、ARW、ORF、RAF、RW2、DNG）に対応しています。RAW+JPEG のペアは1枚として数えます。Windows では RAW 画像拡張機能が必要です。対応状況はカメラによって異なります。<a href="crop-raw-photos-windows/">WindowsでRAWを開く手順</a></p></div>
+      <div><h3>Windows 版はありますか？</h3><p>はい。Windows 版（Windows 10・11 対応）は <a href="https://apps.microsoft.com/detail/9PK8KBZ9L7R3?hl=ja-JP&amp;gl=JP&amp;cid=ja-site">Microsoft Store</a> で入手できます。</p></div>
     </div>
   </section>
 

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WindowsでRAWの野鳥写真を開く・一括トリミングする方法｜BirdFrame</title>
+<meta name="description" content="Windows 11・10でキヤノンのCR3、ニコンのNEF、ソニーのARWなどを開く方法。Microsoftの無料RAW拡張機能を入れて、野鳥写真のフォルダから元画像の解像度で切り出します。">
+<link rel="canonical" href="https://getbirdframe.com/ja/crop-raw-photos-windows/">
+<link rel="alternate" hreflang="en" href="https://getbirdframe.com/crop-raw-photos-windows/">
+<link rel="alternate" hreflang="ja" href="https://getbirdframe.com/ja/crop-raw-photos-windows/">
+<link rel="alternate" hreflang="x-default" href="https://getbirdframe.com/crop-raw-photos-windows/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="WindowsでRAWの野鳥写真を開く・一括トリミングする方法">
+<meta property="og:description" content="エクスプローラーにRAWのサムネイルを表示し、フォルダの野鳥写真から元画像の解像度で切り出す方法。">
+<meta property="og:url" content="https://getbirdframe.com/ja/crop-raw-photos-windows/">
+<meta property="og:image" content="https://getbirdframe.com/assets/windows-crop-thousands.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.png">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../guides/guide.css">
+<script src="../../track.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"WindowsでRAWの野鳥写真を開く・一括トリミングする方法","mainEntityOfPage":"https://getbirdframe.com/ja/crop-raw-photos-windows/","inLanguage":"ja","datePublished":"2026-11-22","dateModified":"2026-11-22","image":"https://getbirdframe.com/assets/windows-crop-thousands.png","author":{"@type":"Organization","name":"BirdFrame","url":"https://getbirdframe.com/ja/"}}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../"><img src="../../assets/icon-512.png" alt="" width="34" height="34">BirdFrame</a>
+    <div class="links"><a href="../../crop-raw-photos-windows/" lang="en">English</a></div>
+  </nav>
+  <main class="article">
+    <p class="crumb"><a href="../">BirdFrame</a> · Windows</p>
+    <h1>Windowsで<wbr>RAWの野鳥写真を開く・<wbr>一括トリミングする方法</h1>
+    <p class="lede">撮影から戻ってフォルダを開くと、RAWファイルのサムネイルが出ないことがあります。まずWindowsでRAWが開けるようにしましょう。鳥を一枚ずつ探して切り出す手間は、一括処理で減らせます。</p>
+    <div class="tldr"><p><b>まず確認すること</b>　エクスプローラーでRAWのサムネイルが出なければ、Microsoftの無料の<a href="https://apps.microsoft.com/detail/9NCTDW2W1BH8?hl=ja-JP&amp;gl=JP">Raw 画像拡張機能</a>をインストールします。撮影した機種のRAWファイルが1枚開けたら、フォルダごとの処理に進みます。</p></div>
+
+    <h2>1. エクスプローラーでRAWを確認する</h2>
+    <ol>
+      <li>Microsoft Storeで「Raw 画像拡張機能」を入手します。Windows 10ではバージョン1903以降が必要です。</li>
+      <li>フォルダを開き直し、サムネイルが出るか確認します。キヤノンのCR3、ニコンのNEF、ソニーのARWなどは、拡張子が同じでも機種によって対応状況が異なります。</li>
+      <li>開けない場合は、拡張機能を更新し、<a href="https://www.libraw.org/supported-cameras">LibRawの対応機種一覧</a>を確認します。急ぐときは、カメラが同時に記録したJPEGや、普段のRAW現像ソフトから書き出したJPEGを使えます。</li>
+    </ol>
+
+    <h2>2. 1枚だけなら「フォト」で切り出す</h2>
+    <p>画像を開き、「画像の編集」（Ctrl + E）からトリミングします。ポートレートなら鳥の視線の先、環境も見せたいなら枝や水面との位置関係を残すと、同じ写真でも意図が伝わりやすくなります。<a href="https://support.microsoft.com/ja-jp/windows/apps/photos/edit-photos-and-videos-in-windows">Microsoftの編集手順</a></p>
+
+    <h2>3. 野鳥写真が何千枚もあるなら、フォルダごと切り出す</h2>
+    <p>BirdFrameは小さく写った鳥や枝に隠れた鳥を探し、フォルダの写真を一度にトリミングします。元のフルサイズ画像から切り出して、新しいJPEGとして保存します。</p>
+    <ol>
+      <li>撮影したフォルダを選びます。同じ名前のRAWとJPEGのペアは1枚として数えます。</li>
+      <li>プレビューで構図を比べます。<b>Tight</b>は鳥を大きく見せたいとき、<b>Wide</b>は周囲の環境を残したいとき、<b>Balanced</b>はその中間です。</li>
+      <li>結果を確認して、必要な写真を別のフォルダに書き出します。元のRAWファイルはそのまま残り、引き続き普段のソフトで現像できます。</li>
+    </ol>
+    <figure>
+      <img src="../../assets/windows-crop-thousands.png" width="1920" height="1080" loading="lazy" alt="Windows版BirdFrameに、まとめて処理した野鳥写真のトリミング結果が並んでいる画面">
+      <figcaption>Windows版BirdFrameのトリミング結果。書き出す写真をここで確認できます。</figcaption>
+    </figure>
+    <section class="cta-box" aria-labelledby="try">
+      <h2 id="try">次の撮影フォルダで試す</h2>
+      <p>Windows 10・11対応。1回50枚まで、何回でも無料です。それ以上の枚数を一度に処理する場合は買い切りで解除できます。アプリの画面は英語です。</p>
+      <a class="btn" href="https://apps.microsoft.com/detail/9PK8KBZ9L7R3?hl=ja-JP&amp;gl=JP&amp;cid=ja-raw-windows">Microsoft Storeで入手</a>
+    </section>
+  </main>
+  <footer>
+    <a href="../">BirdFrame 日本語ホーム</a>
+    <a href="../../privacy/">プライバシー</a>
+  </footer>
+</div>
+</body>
+</html>
