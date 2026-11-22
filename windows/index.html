@@ -16,6 +16,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="../style.css">
+<style>
+  .video img { height: auto; }
+  #try-sample h2 + p, #try-sample .ctas { margin-top: 16px; }
+  #try-sample figure { margin: 24px 0 0; }
+  #try-sample figcaption { margin-top: 8px; }
+</style>
 <script src="../track.js" defer></script>
 </head>
 <body>
@@ -28,7 +34,10 @@
     <div class="copy">
       <h1>Batch crop bird photos on Windows</h1>
       <p class="lede">Choose a folder and the framing you want. BirdFrame finds hard-to-see birds and crops thousands of photos in one go. Each crop comes from the full-size original, and your originals stay untouched.</p>
-      <div class="ctas"><a class="ms-badge" data-cta="windows_page" href="https://apps.microsoft.com/detail/9PK8KBZ9L7R3"><picture><source media="(prefers-color-scheme: dark)" srcset="../assets/ms-store-badge-en-light.svg"><img src="../assets/ms-store-badge-en-dark.svg" alt="Download from the Microsoft Store" width="161" height="44"></picture></a></div>
+      <div class="ctas">
+        <a class="ms-badge" data-cta="windows_page" href="https://apps.microsoft.com/detail/9PK8KBZ9L7R3"><picture><source media="(prefers-color-scheme: dark)" srcset="../assets/ms-store-badge-en-light.svg"><img src="../assets/ms-store-badge-en-dark.svg" alt="Download from the Microsoft Store" width="161" height="44"></picture></a>
+        <a class="btn ghost" href="#try-sample">Try a sample folder</a>
+      </div>
       <p class="fine">Windows 10 and 11. Free for up to 50 photos per run, with unlimited runs. Unlock larger batches for US$29.99 once. See the Store for local pricing.</p>
       <p class="fine">On a Mac? <a href="../">Get BirdFrame for Mac</a>.</p>
     </div>
@@ -36,6 +45,32 @@
       <img src="../assets/windows-crop-thousands.png" width="1920" height="1080" alt="BirdFrame on Windows showing a grid of cropped bird photos from a batch">
     </div>
   </header>
+
+  <section id="try-sample" aria-labelledby="sample-heading">
+    <h2 id="sample-heading">Make your first batch of crops</h2>
+    <p>Try five photos with birds in open sky, in branches and far away in a meadow. The folder fits in one free run.</p>
+    <div class="steps">
+      <div class="step">
+        <b>1. Extract the photos</b>
+        <span>Download the ZIP. In File Explorer, right-click it, choose <strong>Extract All</strong> and open the extracted folder.</span>
+      </div>
+      <div class="step">
+        <b>2. Choose a framing</b>
+        <span>In BirdFrame, click <strong>Choose Folder</strong> and select the extracted <strong>Photos</strong> folder. Select <strong>Balanced</strong> in Crop Settings and click <strong>Crop Photos</strong>.</span>
+      </div>
+      <div class="step">
+        <b>3. Compare and export</b>
+        <span>Open a result and switch between <strong>Crop</strong> and <strong>Original</strong>. Try Wide to keep more of the scene, then use <strong>Export Crops</strong> to save new JPEGs.</span>
+      </div>
+    </div>
+    <div class="ctas"><a class="btn ghost" href="birdframe-sample-photos.zip" download>Download 5 sample photos (1.9 MB)</a></div>
+    <figure>
+      <div class="video">
+        <img src="../guides/img/treetop-found.jpg" width="1600" height="795" alt="The spruce sample, with one bird at the tip and a second between the branches, alongside separate crops of both birds." loading="lazy">
+      </div>
+      <figcaption class="fine">One of the sample photos, shown with both birds cropped separately.</figcaption>
+    </figure>
+  </section>
 
   <section aria-labelledby="windows-guides">
     <h2 id="windows-guides">Try it on your photos</h2>
