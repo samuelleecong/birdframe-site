@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your first batch of bird crops · BirdFrame</title>
+  <meta name="description" content="A five-photo practice exercise for the BirdFrame workshop. Compare Balanced and Wide crops, then export JPEGs on Mac or Windows.">
+  <link rel="canonical" href="https://getbirdframe.com/club-workshop/first-batch/">
+  <link rel="icon" href="../../assets/favicon.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #16201a;
+      --muted: #495950;
+      --line: #ccd7cc;
+      --green: #235e44;
+      --paper: #f6f8f3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 16px/1.55 system-ui, sans-serif;
+    }
+    main { max-width: 880px; margin-inline: auto; padding: 32px 28px 44px; }
+    a { color: var(--green); text-underline-offset: .18em; }
+    a:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+    h1 {
+      margin: 11px 0 12px;
+      max-width: 760px;
+      font: 500 clamp(38px, 6.25vw, 65px)/1.02 Georgia, serif;
+      letter-spacing: -.035em;
+      text-wrap: balance;
+    }
+    p, figure { margin: 0; }
+    .workshop { font-size: .88rem; font-weight: 680; }
+    .summary { color: var(--muted); font-size: 1.12rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 9px; margin: 21px 0; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 46px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      font-size: .93rem;
+      font-weight: 680;
+      text-decoration: none;
+    }
+    .button:hover { border-color: var(--green); text-decoration: underline; }
+    .primary { background: var(--green); border-color: var(--green); color: white; }
+    figure { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: white; }
+    figure img { display: block; width: 100%; height: auto; }
+    figcaption { color: var(--muted); padding: 8px 12px; font-size: .88rem; }
+    ol {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 28px;
+      padding-left: 1.45rem;
+      margin: 20px 0 16px;
+    }
+    li { border-top: 1px solid var(--line); padding: 12px 0; }
+    li::marker { color: var(--green); font-weight: 750; }
+    h2 { margin: 0 0 .25em; font-size: 1.07rem; line-height: 1.25; }
+    .pick { padding: 13px 16px; background: #e9f1e8; border-left: 3px solid var(--green); }
+    .footer { display: flex; gap: 12px 24px; align-items: center; margin-top: 18px; font-size: .9rem; }
+    .footer img { width: 105px; height: 105px; flex: none; }
+    .page-address { overflow-wrap: anywhere; }
+    .print-only { display: none; }
+    .fine { color: var(--muted); font-size: .88rem; margin-top: .45em; }
+    @media (max-width: 590px) {
+      main { padding: 24px 17px 30px; }
+      ol { grid-template-columns: 1fr; }
+      .button { justify-content: center; }
+      .primary { flex-basis: 100%; }
+      .footer { flex-wrap: wrap; }
+    }
+    @media print {
+      @page { margin: .52in; }
+      body { background: white; color: #141a15; font-size: 10.3pt; line-height: 1.38; }
+      main { padding: 0; }
+      h1 { font-size: 32pt; margin: 8pt 0; }
+      h2 { font-size: 10.8pt; }
+      .summary { font-size: 11.5pt; margin-bottom: 12pt; }
+      .screen-only { display: none; }
+      .print-only { display: inline; }
+      figure { break-inside: avoid; }
+      figure img { max-height: 3.25in; object-fit: contain; }
+      figcaption { padding: 5pt 7pt; font-size: 9pt; }
+      ol { gap: 0 19pt; margin: 12pt 0; padding-left: 15pt; }
+      li { padding: 7pt 0; break-inside: avoid; }
+      .pick { padding: 7pt 9pt; }
+      .footer { margin-top: 9pt; font-size: 9.5pt; }
+      .footer img { display: block; width: 1in; height: 1in; }
+      .fine { font-size: 9pt; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <a class="workshop" href="https://getbirdframe.com/club-workshop/">BirdFrame’s recorded bird photography workshop</a>
+    <h1>Your first batch of bird crops</h1>
+    <p class="summary">Try five photos on Mac or Windows. BirdFrame finds the birds and crops a batch from the full-size originals, so you can compare framings without cropping each photo by hand.</p>
+    <nav class="actions screen-only" aria-label="Practice photos and app downloads">
+      <a class="button primary" href="https://getbirdframe.com/windows/birdframe-sample-photos.zip" download>Download five photos · 1.9 MB</a>
+      <a class="button" href="https://apps.apple.com/app/apple-store/id6754513569?pt=127908484&amp;ct=club-first-batch&amp;mt=12">Mac App Store</a>
+      <a class="button" href="https://apps.microsoft.com/detail/9PK8KBZ9L7R3?cid=club-first-batch">Microsoft Store</a>
+    </nav>
+  </header>
+  <figure>
+    <img src="spruce-example.jpg" width="1600" height="795" alt="A spruce with two distant birds at left, with closer views of the birds at right. One bird perches at the tip, while the other sits between branches.">
+    <figcaption>The spruce sample has two birds. The closer views at right come from that same photo.</figcaption>
+  </figure>
+  <ol>
+    <li>
+      <h2>Open the sample folder</h2>
+      <p><span class="print-only">Get BirdFrame and the five photos using the address below. </span>On Mac, double-click the ZIP. On Windows, right-click it and choose <strong>Extract All</strong>. In BirdFrame, click <strong>Choose Folder</strong> and select the extracted <strong>Photos</strong> folder.</p>
+    </li>
+    <li>
+      <h2>Start with Balanced</h2>
+      <p>In <strong>Crop Settings</strong>, select <strong>Balanced</strong>, then click <strong>Crop Photos</strong>. Open the spruce result and compare the crop with the original. Look for the bird at the top and the one among the branches.</p>
+    </li>
+    <li>
+      <h2>Compare with Wide</h2>
+      <p>Switch to <strong>Wide</strong> in Crop Settings and click <strong>Crop Photos Again</strong>. Compare the same bird. Does the extra space make the setting easier to read?</p>
+    </li>
+    <li>
+      <h2>Save your crops</h2>
+      <p>Use <strong>Export Crops</strong> and choose an output folder. The exported JPEGs are separate files, and your originals stay untouched. For a side-by-side comparison, export the Balanced run before changing framing and the Wide run to a second folder.</p>
+    </li>
+  </ol>
+  <p class="pick"><strong>Try your own photos next.</strong> Pick one small folder from a recent outing. Compare the crops before deciding which frames to share or print.</p>
+  <footer class="footer">
+    <img class="print-only" src="desktop-link.png" width="410" height="410" alt="QR code for the practice page address printed alongside">
+    <div>
+      <p class="print-only"><strong>Open on your Mac or Windows PC</strong><br>
+      <a class="page-address" href="https://getbirdframe.com/club-workshop/first-batch/">getbirdframe.com/club-workshop/first-batch/</a></p>
+      <p class="fine">BirdFrame is free for 50 photos per run. Check your local store for system requirements.</p>
+      <p class="fine screen-only"><a href="birdframe-first-batch.pdf">Print the one-page handout (PDF)</a></p>
+    </div>
+  </footer>
+</main>
+</body>
+</html>
