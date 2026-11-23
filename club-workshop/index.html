@@ -12,6 +12,15 @@
 <style>
 :root{color-scheme:light;--ink:#16201a;--green:#2c6a4d;--muted:#526257;--line:#d6ded5;--paper:#f6f8f3}
 *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:17px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--green);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #b07a1e;outline-offset:4px}.wrap{max-width:1100px;margin:auto;padding:0 28px}nav{display:flex;justify-content:space-between;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}nav a{text-decoration:none}.brand{font-weight:750;color:var(--ink)}.brand img{width:28px;height:28px;vertical-align:middle;margin-right:8px}header{max-width:850px;padding:58px 0 30px}.eyebrow{font-size:12px;letter-spacing:.14em;font-weight:700;text-transform:uppercase;color:var(--green)}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;font-weight:500}h1{font-size:clamp(38px,6vw,62px);letter-spacing:-.035em;margin:12px 0 24px}h2{font-size:32px;margin:0 0 16px}h3{font-size:24px}.lede{font-size:21px;color:var(--muted);max-width:780px}.fine{font-size:14px;color:var(--muted)}.player{background:var(--ink);border-radius:16px;overflow:hidden;box-shadow:0 12px 36px #16201a12}video{display:block;width:100%;height:auto;aspect-ratio:8/5}.downloads{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 17px;border:1px solid var(--line);border-radius:9px;background:white;text-decoration:none;font-weight:600;font-size:15px}.primary{color:white;background:var(--green);border-color:var(--green)}.section{padding:38px 0;border-bottom:1px solid var(--line)}.chapters{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;list-style:none;margin:20px 0 0;padding:0}.chapters a{text-decoration:none;display:flex;gap:14px;width:100%;padding:13px 14px;text-align:left;background:white;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:15px;color:var(--ink);cursor:pointer}.chapters a:hover{border-color:var(--green);background:#edf3ed}.chapters time{font-variant-numeric:tabular-nums;color:var(--green);min-width:45px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:white;border:1px solid var(--line);border-radius:12px;padding:22px}.card h3{margin:0 0 12px}.card p{font-size:16px;margin:0}.callout{background:#eaf1e8;border:1px solid #ceddcb;border-radius:14px;padding:30px;margin:38px 0}.callout h2{max-width:750px}.tools{padding-left:22px}.tools li{padding:5px 0}.transcript{max-width:800px}.transcript section{padding-top:15px}.transcript p{font-size:16px}summary{cursor:pointer;font-weight:650;font-size:19px}footer{padding:24px 0 40px;display:flex;justify-content:space-between;gap:20px;font-size:14px;color:var(--muted)}@media(max-width:680px){.wrap{padding:0 18px}header{padding-top:34px}.lede{font-size:19px}.chapters,.cards{grid-template-columns:1fr}.callout{padding:22px}.section{padding:28px 0}.downloads .button{flex:1 1 auto}nav{font-size:15px}footer{display:block}h2{font-size:28px}}
+.listing-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.listing-card{display:flex;flex-direction:column;gap:12px}
+.listing-card h3{margin:0}
+.listing-text{display:grid;gap:8px;overflow-wrap:anywhere}
+.listing-card .listing-actions{margin-top:auto;display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap}
+.copy-listing{color:var(--green);cursor:pointer;font-family:inherit}
+.copy-listing[hidden]{display:none}
+.copy-status{color:var(--muted);font-size:14px}
+@media(max-width:680px){.listing-cards{grid-template-columns:1fr}}
 </style></head><body><div class="wrap">
 <nav aria-label="Main navigation"><a class="brand" href="../"><img src="../assets/icon-128.png" alt="" width="28" height="28">BirdFrame</a><a href="../guides/">Free photography guides</a></nav>
 <main><header><div class="eyebrow">A recorded workshop for bird photographers</div>
@@ -21,7 +30,7 @@
 <div class="player"><video id="workshop" controls playsinline preload="metadata" poster="poster.jpg" aria-label="Recorded bird photography workshop"><source src="workshop.mp4" type="video/mp4"><track kind="captions" src="captions.vtt" srclang="en" label="English"><p><a href="workshop.mp4">Download the workshop video</a> or <a href="transcript.txt">read the transcript</a>.</p></video></div>
 <div class="downloads"><a class="button primary" href="workshop.mp4" download>Download video · 17 MB</a><a class="button" href="slides.pdf">Download slides · PDF</a><a class="button" href="crop-worksheet.pdf">Crop worksheet · PDF</a><a class="button" href="transcript.txt" download>Transcript</a><a class="button" href="captions.vtt" download>Captions · VTT</a></div>
 <p class="fine">Made by BirdFrame, with synthetic narration. Recorded 21 November 2026. Captions are included in the picture, so the downloaded video works without a separate caption file.</p>
-<section class="section"><h2>For your club, or at your own pace</h2><div class="cards"><div class="card"><h3>Play it offline</h3><p>Download the captioned video, slides, printable worksheet and 30-minute host plan in one file.</p><p><a class="button" href="birdframe-club-screening-kit.zip" download>Club kit · 21 MB ZIP</a></p></div><div class="card"><h3>Pause and compare</h3><p>Use the <a href="crop-worksheet.html">one-bird, two-crop worksheet</a> to compare a tight crop and a habitat crop from the same photo. Allow about 30 minutes for the recording and discussion.</p></div><div class="card"><h3>Keep the useful parts</h3><p>Use the <a href="print-lesson/">short print-sizing lesson</a> in a newsletter or on your club’s website, or jump straight to a chapter. Questions are welcome <a href="mailto:birdframe.app@gmail.com?subject=Recorded%20workshop%20question">by email</a>.</p></div></div></section>
+<section class="section"><h2>For your club, or at your own pace</h2><div class="cards"><div class="card"><h3>Play it offline</h3><p>Download the captioned video, slides, printable worksheet and 30-minute host plan in one file.</p><p><a class="button" href="birdframe-club-screening-kit.zip" download>Club kit · 21 MB ZIP</a></p></div><div class="card"><h3>Pause and compare</h3><p>Use the <a href="crop-worksheet.html">one-bird, two-crop worksheet</a> to compare a tight crop and a habitat crop from the same photo. Allow about 30 minutes for the recording and discussion.</p></div><div class="card"><h3>Share with members</h3><p>Copy a <a href="#share-with-your-club">newsletter or calendar listing</a>, or use the <a href="print-lesson/">short print-sizing lesson</a> on your club’s website. Questions are welcome <a href="mailto:birdframe.app@gmail.com?subject=Recorded%20workshop%20question">by email</a>.</p></div></div></section>
 <section class="section" aria-labelledby="chapter-heading"><h2 id="chapter-heading">Watch or share a chapter</h2><p>Copy a chapter link to share its starting point.</p><ol class="chapters"><li><a href="?t=0#workshop" data-time="0.000"><time>0:00</time><span>A practical workshop</span></a></li>
 <li><a href="?t=49#workshop" data-time="49.579"><time>0:49</time><span>The plan</span></a></li>
 <li><a href="?t=98#workshop" data-time="98.694"><time>1:38</time><span>Look before you crop</span></a></li>
@@ -40,6 +49,30 @@
 <li><a href="?t=975#workshop" data-time="975.365"><time>16:15</time><span>Try a small batch</span></a></li>
 <li><a href="?t=1033#workshop" data-time="1033.424"><time>17:13</time><span>Choose one useful tool</span></a></li>
 <li><a href="?t=1093#workshop" data-time="1093.468"><time>18:13</time><span>Your next outing</span></a></li></ol></section>
+<section class="section" id="share-with-your-club" aria-labelledby="club-sharing-heading">
+<h2 id="club-sharing-heading">Share with your club</h2>
+<p>Use the newsletter item for members watching at home. For a club screening, add your date, time and venue to the calendar description.</p>
+<div class="cards listing-cards">
+<div class="card listing-card">
+<h3>Newsletter item</h3>
+<div class="listing-text" id="newsletter-text">
+<strong>How much can you crop a bird photo?</strong>
+<p>Try a free, 19-minute captioned workshop on framing birds, sizing crops for print and choosing a keeper from a burst. Compare two crops of the same photo with the printable worksheet and any photo editor. The recording includes a short BirdFrame demonstration of cropping a batch from full-size originals.</p>
+<a href="https://getbirdframe.com/club-workshop/">https://getbirdframe.com/club-workshop/</a>
+</div>
+<div class="listing-actions"><button class="button copy-listing" type="button" data-copy-listing="newsletter-text" hidden>Copy newsletter item</button><span class="copy-status" role="status"></span></div>
+</div>
+<div class="card listing-card">
+<h3>Calendar description</h3>
+<div class="listing-text" id="calendar-text">
+<strong>One bird, two crops · Club screening and exercise</strong>
+<p>In this 30-minute club session, we’ll watch a free, captioned bird photography workshop from BirdFrame, then compare a tight crop and a wider crop from the same original. Bring one bird photo with room around the subject and use any photo editor, or follow along with the printed worksheet.</p>
+<a href="https://getbirdframe.com/club-workshop/">https://getbirdframe.com/club-workshop/</a>
+</div>
+<div class="listing-actions"><button class="button copy-listing" type="button" data-copy-listing="calendar-text" hidden>Copy calendar description</button><span class="copy-status" role="status"></span></div>
+</div></div>
+<p><strong>At the meeting</strong> · Play the <a href="./#workshop">19-minute recording</a>, allow about six minutes for the <a href="crop-worksheet.html">crop exercise</a>, then compare the results. If you have less time, play the <a href="?t=134#workshop">two-crop example from 2:14</a> through 5:17 and go straight to the exercise.</p>
+</section>
 <section class="section"><h2>Tools to use afterwards</h2><ul class="tools">
 <li><a href="../bird-reach-calculator/">Bird reach calculator</a> — compare pixels on the bird for your camera, lens and distance.</li>
 <li><a href="../how-much-can-you-crop-a-bird-photo/">How much can you crop?</a> — connect crop dimensions with prints and screens.</li>
@@ -151,5 +184,25 @@ if (initialTime !== undefined) video.currentTime = initialTime;
 window.addEventListener("popstate", () => {
   video.currentTime = selectedStartTime() ?? 0;
 });
+
+for (const button of document.querySelectorAll("[data-copy-listing]")) {
+  const listing = document.getElementById(button.dataset.copyListing);
+  const status = button.nextElementSibling;
+  const text = Array.from(listing.children, part => part.textContent.trim()).join("\n\n");
+  button.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      status.textContent = "Copied.";
+    } catch {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(listing);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      status.textContent = "Text selected. Copy it using your browser or keyboard.";
+    }
+  });
+  button.hidden = false;
+}
 </script>
 </body></html>
