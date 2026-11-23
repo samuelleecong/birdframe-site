@@ -17,6 +17,11 @@
 .article .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .article .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .article .note{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:18px 0;font-size:16px}
+.print-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.print-fields label{display:grid;gap:4px;font-size:14px;font-weight:600}
+.print-fields input,.print-fields select{width:100%;min-width:0;min-height:44px;padding:6px 8px;border:1px solid var(--line);border-radius:6px;font:inherit;color:var(--ink);background:var(--card)}
+.print-results{padding-top:12px}
+.print-results p{margin:0}
 .article table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px}
 .article th,.article td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}
 .article th{font-weight:600;color:var(--ink)}
