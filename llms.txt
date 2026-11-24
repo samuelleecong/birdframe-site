@@ -16,6 +16,7 @@
 - [Windows](https://getbirdframe.com/windows/): download BirdFrame from the Microsoft Store.
 - [Home](https://getbirdframe.com/): what BirdFrame does, pricing and FAQ
 - [日本語 (Japanese)](https://getbirdframe.com/ja/): what BirdFrame does, pricing and FAQ, in Japanese
+- [Windowsで野鳥写真を一括トリミングする方法](https://getbirdframe.com/ja/crop-multiple-photos-windows/): Japanese first-batch guide with five practice photos and exact Windows app labels
 - [WindowsでRAWの野鳥写真を開く・一括トリミングする方法](https://getbirdframe.com/ja/crop-raw-photos-windows/): Japanese guide to opening camera RAW files and batch cropping bird photos on Windows
 - [野鳥撮影のリーチ計算ツール (Japanese reach calculator)](https://getbirdframe.com/ja/bird-reach-calculator/): the reach calculator in Japanese, with Japanese birds (カワセミ, シマエナガ, オオワシ…)
 - [連写ピッカー (Japanese Burst Picker)](https://getbirdframe.com/ja/burst-picker/): the Burst Picker in Japanese: drop in a burst of bird photos to see which frame has the sharpest bird; runs in the browser, nothing is uploaded
