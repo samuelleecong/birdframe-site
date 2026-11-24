@@ -16,7 +16,7 @@ const els = {
 };
 
 const CROP_SOURCE_MAX_AREA = 16_000_000; // keep full resolution for crops up to 16 MP
-const DOWNLOAD_MAX_SIDE = 1000; // downloads are a taste; the Mac app saves full-size crops
+const DOWNLOAD_MAX_SIDE = 1000; // downloads are a taste; the desktop app saves full-size crops
 const mb = (bytes) => (bytes / 1e6).toFixed(bytes < 10e6 ? 1 : 0);
 const FRAMING_ZH = { tight: '緊湊', balanced: '標準', wide: '寬鬆' }; // Tight / Balanced / Wide
 
@@ -62,8 +62,6 @@ function campaign() {
 const STORE_URL = `https://apps.apple.com/tw/app/apple-store/id6754513569?pt=127908484&ct=${campaign()}&mt=8`;
 // BirdFrame for Windows on the Microsoft Store: cid (Microsoft's campaign ID) = the same token; nothing is stored.
 const MS_STORE_URL = `https://apps.microsoft.com/detail/9PK8KBZ9L7R3?cid=${campaign()}`;
-const ON_WINDOWS = /Windows/.test(navigator.userAgent) && !/Android|iPhone|iPad|iPod/.test(navigator.userAgent);
-const MS_LABEL = '從 Microsoft Store 下載';
 
 let detectorPromise = null;
 let detectorEp = null;
@@ -119,8 +117,8 @@ function retryButton(label, fn) {
   return el('button', { type: 'button', class: 'btn small', text: label, onclick: fn });
 }
 
-function appStoreLink() {
-  return el('a', { class: 'btn small ghost', href: STORE_URL, text: 'Mac 版 BirdFrame' });
+function desktopAppLink() {
+  return el('a', { class: 'btn small ghost', href: '#download', text: "下載桌面版" });
 }
 
 function shrinkForDownload(canvas) {
@@ -195,13 +193,13 @@ function getDetector() {
 function explainDetectorError(e, retry) {
   setStatus('');
   if (e.stage === 'unsupported') {
-    showProblem('這個瀏覽器無法執行找鳥功能。請改用最新版的 Safari、Chrome、Edge 或 Firefox，或用電腦試試看。Mac 版 BirdFrame 可在所有 macOS 15 以上的 Mac 上使用。', [appStoreLink()]);
+    showProblem("這個瀏覽器無法執行找鳥功能。請改用最新版的 Safari、Chrome、Edge 或 Firefox，或試試桌面版。", [desktopAppLink()]);
   } else if (e.stage === 'runtime') {
-    showProblem('無法開始找鳥。請檢查網路連線後再試一次。如果還是不行，請改用最新版的 Safari、Chrome、Edge 或 Firefox，或用電腦試試看。', [retryButton('再試一次', retry), appStoreLink()]);
+    showProblem('無法開始找鳥。請檢查網路連線後再試一次。如果還是不行，請改用最新版的 Safari、Chrome、Edge 或 Firefox，或用電腦試試看。', [retryButton('再試一次', retry), desktopAppLink()]);
   } else if (e.stage === 'download') {
     showProblem('無法下載找鳥所需的資料。請檢查網路連線後再試一次。', [retryButton('再試一次', retry)]);
   } else {
-    showProblem('這台裝置無法執行找鳥功能，可能是記憶體不足。請關閉其他分頁後再試一次，或用電腦試試看。', [retryButton('再試一次', retry), appStoreLink()]);
+    showProblem('這台裝置無法執行找鳥功能，可能是記憶體不足。請關閉其他分頁後再試一次，或用電腦試試看。', [retryButton('再試一次', retry), desktopAppLink()]);
   }
 }
 
@@ -390,7 +388,7 @@ function sizeLine(birds, W, H) {
     el('a', { href: '../../how-small-is-the-bird/', hreflang: 'en', text: '詳細資料（英文）' })];
 }
 
-// Downloads here stop at 1,000 px; say so, with the full size the Mac app would save.
+// Downloads here stop at 1,000 px; say so, with the full size the desktop app would save.
 function sizeNote(crops, W, H) {
   const full = crops.map((c) => cropPixelRect(c.cropRect, W, H));
   const big = full.filter((r) => Math.max(r.w, r.h) > DOWNLOAD_MAX_SIDE);
@@ -398,8 +396,8 @@ function sizeNote(crops, W, H) {
   const top = big.reduce((a, b) => (a.w * a.h >= b.w * b.h ? a : b));
   const size = `${Math.round(top.w).toLocaleString('zh-TW')} × ${Math.round(top.h).toLocaleString('zh-TW')} px`;
   return crops.length === 1
-    ? `在這裡下載的圖片最大為 1,000 px。Mac 版 BirdFrame 能以原始完整尺寸 ${size} 儲存這張裁切照片。`
-    : `在這裡下載的圖片最大為 1,000 px。Mac 版 BirdFrame 能以完整尺寸（最大 ${size}）儲存這些裁切照片。`;
+    ? `在這裡下載的圖片最大為 1,000 px。Mac 和 Windows 版 BirdFrame 都能以原始完整尺寸 ${size} 儲存這張裁切照片。`
+    : `在這裡下載的圖片最大為 1,000 px。Mac 和 Windows 版 BirdFrame 都能以完整尺寸（最大 ${size}）儲存這些裁切照片。`;
 }
 
 async function renderCrops() {
@@ -459,7 +457,6 @@ function renderSamples() {
 async function init() {
   for (const a of document.querySelectorAll('a[href^="https://apps.apple.com/"]')) a.href = STORE_URL;
   for (const a of document.querySelectorAll('a[href^="https://apps.microsoft.com/detail/9PK8KBZ9L7R3"]')) a.href = MS_STORE_URL;
-  if (ON_WINDOWS) for (const a of document.querySelectorAll('[data-windows-swap]')) { a.href = MS_STORE_URL; a.textContent = MS_LABEL; }
   els.choose.addEventListener('click', () => {
     els.file.click();
     // Start getting ready while the visitor picks a photo.

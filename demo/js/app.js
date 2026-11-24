@@ -15,7 +15,7 @@ const els = {
 };
 
 const CROP_SOURCE_MAX_AREA = 16_000_000; // keep full resolution for crops up to 16 MP
-const DOWNLOAD_MAX_SIDE = 1000; // downloads are a taste; the Mac app saves full-size crops
+const DOWNLOAD_MAX_SIDE = 1000; // downloads are a taste; the desktop app saves full-size crops
 const mb = (bytes) => (bytes / 1e6).toFixed(bytes < 10e6 ? 1 : 0);
 
 // App Store links carry a campaign token so App Store Connect can say which channel an install came from:
@@ -49,8 +49,6 @@ function campaign() {
 const STORE_URL = `https://apps.apple.com/app/apple-store/id6754513569?pt=127908484&ct=${campaign()}&mt=8`;
 // BirdFrame for Windows on the Microsoft Store: cid (Microsoft's campaign ID) = the same token; nothing is stored.
 const MS_STORE_URL = `https://apps.microsoft.com/detail/9PK8KBZ9L7R3?cid=${campaign()}`;
-const ON_WINDOWS = /Windows/.test(navigator.userAgent) && !/Android|iPhone|iPad|iPod/.test(navigator.userAgent);
-const MS_LABEL = 'Download from the Microsoft Store';
 
 let detectorPromise = null;
 let detectorEp = null;
@@ -106,8 +104,8 @@ function retryButton(label, fn) {
   return el('button', { type: 'button', class: 'btn small', text: label, onclick: fn });
 }
 
-function appStoreLink() {
-  return el('a', { class: 'btn small ghost', href: STORE_URL, text: 'BirdFrame for Mac' });
+function desktopAppLink() {
+  return el('a', { class: 'btn small ghost', href: '#download', text: "Get BirdFrame" });
 }
 
 function shrinkForDownload(canvas) {
@@ -182,13 +180,13 @@ function getDetector() {
 function explainDetectorError(e, retry) {
   setStatus('');
   if (e.stage === 'unsupported') {
-    showProblem("This browser can't run the bird finder. Try the latest Safari, Chrome, Edge or Firefox, or a computer. BirdFrame for Mac works on any Mac with macOS 15 or later.", [appStoreLink()]);
+    showProblem("This browser can't run the bird finder. Try the latest Safari, Chrome, Edge or Firefox, or use the desktop app.", [desktopAppLink()]);
   } else if (e.stage === 'runtime') {
-    showProblem("The bird finder couldn't start. Check your connection and try again. If it still doesn't work, try the latest Safari, Chrome, Edge or Firefox, or a computer.", [retryButton('Try again', retry), appStoreLink()]);
+    showProblem("The bird finder couldn't start. Check your connection and try again. If it still doesn't work, try the latest Safari, Chrome, Edge or Firefox, or a computer.", [retryButton('Try again', retry), desktopAppLink()]);
   } else if (e.stage === 'download') {
     showProblem("Couldn't download the bird finder. Check your connection and try again.", [retryButton('Try again', retry)]);
   } else {
-    showProblem("This device couldn't run the bird finder, probably because it ran short of memory. Close other tabs and try again, or try it on a computer.", [retryButton('Try again', retry), appStoreLink()]);
+    showProblem("This device couldn't run the bird finder, probably because it ran short of memory. Close other tabs and try again, or try it on a computer.", [retryButton('Try again', retry), desktopAppLink()]);
   }
 }
 
@@ -377,7 +375,7 @@ function sizeLine(birds, W, H) {
     el('a', { href: '../how-small-is-the-bird/', text: 'How small is the bird?' })];
 }
 
-// Downloads here stop at 1,000 px; say so, with the full size the Mac app would save.
+// Downloads here stop at 1,000 px; say so, with the full size the desktop app would save.
 function sizeNote(crops, W, H) {
   const full = crops.map((c) => cropPixelRect(c.cropRect, W, H));
   const big = full.filter((r) => Math.max(r.w, r.h) > DOWNLOAD_MAX_SIDE);
@@ -385,8 +383,8 @@ function sizeNote(crops, W, H) {
   const top = big.reduce((a, b) => (a.w * a.h >= b.w * b.h ? a : b));
   const size = `${Math.round(top.w).toLocaleString('en-US')} × ${Math.round(top.h).toLocaleString('en-US')} px`;
   return crops.length === 1
-    ? `Downloads here are up to 1,000 px. BirdFrame for Mac saves this crop at its full ${size}.`
-    : `Downloads here are up to 1,000 px. BirdFrame for Mac saves these crops at full size, up to ${size}.`;
+    ? `Downloads here are up to 1,000 px. BirdFrame for Mac and Windows saves this crop at its full ${size}.`
+    : `Downloads here are up to 1,000 px. BirdFrame for Mac and Windows saves these crops at full size, up to ${size}.`;
 }
 
 async function renderCrops() {
@@ -445,7 +443,6 @@ function renderSamples() {
 async function init() {
   for (const a of document.querySelectorAll('a[href^="https://apps.apple.com/"]')) a.href = STORE_URL;
   for (const a of document.querySelectorAll('a[href^="https://apps.microsoft.com/detail/9PK8KBZ9L7R3"]')) a.href = MS_STORE_URL;
-  if (ON_WINDOWS) for (const a of document.querySelectorAll('[data-windows-swap]')) { a.href = MS_STORE_URL; a.textContent = MS_LABEL; }
   els.choose.addEventListener('click', () => {
     els.file.click();
     // Start getting ready while the visitor picks a photo.

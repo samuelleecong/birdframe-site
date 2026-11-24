@@ -80,6 +80,8 @@ section.try{border-top:0;padding-top:0}
 .cta .btn{background:var(--mark);color:#16201A!important}
 .cta .btn:focus-visible{outline-color:var(--night-ink)}
 .cta-buy{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta-store-links{display:flex;flex-wrap:wrap;gap:10px}
+.cta-buy .fine{margin-top:0}
 
 .noscript-msg{margin:0;font-weight:500}
 .first-run{margin-top:12px}

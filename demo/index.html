@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'wasm-unsafe-eval'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' blob: data:; connect-src 'self' https://cdn.jsdelivr.net https://huggingface.co https://*.hf.co; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta property="og:title" content="Find the birds in your photo, cropped the way you like">
-<meta property="og:description" content="A free in-browser demo of BirdFrame for Mac. Your photo never leaves your device.">
+<meta property="og:description" content="Try the free browser demo of BirdFrame for Mac and Windows. Your photo stays on your device.">
 <meta property="og:image" content="https://getbirdframe.com/assets/og.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://getbirdframe.com/demo/">
@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="demo.css">
 <noscript><link rel="stylesheet" href="noscript.css"></noscript>
-<script type="module" src="js/app.js"></script>
+<script type="module" src="js/app.js?v=20261124"></script>
 </head>
 <body>
 <a class="skip" href="#try">Skip to the demo</a>
@@ -34,7 +34,7 @@
     <a class="brand" href="../"><img src="../assets/icon-128.png" alt="" width="34" height="34">BirdFrame</a>
     <div class="links">
       <a href="../#how">How it works</a><a href="../#pricing">Pricing</a>
-      <a class="btn" data-windows-swap="Windows waitlist" href="https://apps.apple.com/app/birdframe/id6754513569">Get it on the Mac App Store</a>
+      <a class="btn" href="#download">Get BirdFrame</a>
     </div>
   </nav>
 
@@ -48,7 +48,7 @@
     <section id="try" class="try" aria-labelledby="try-title">
       <h2 id="try-title" class="visually-hidden">Try it</h2>
       <div class="drop" id="drop">
-        <noscript><p class="noscript-msg">This demo needs JavaScript. BirdFrame for Mac doesn't: <a href="https://apps.apple.com/app/birdframe/id6754513569">get it on the Mac App Store</a>.</p></noscript>
+        <noscript><p class="noscript-msg">The browser demo needs JavaScript. You can download BirdFrame for Mac or Windows below. <a href="#download">Get BirdFrame</a></p></noscript>
         <div class="choose-row">
           <button type="button" class="btn big" id="choose">Choose a photo</button>
           <input type="file" id="file" accept="image/*" hidden>
@@ -89,14 +89,17 @@
       </div>
     </section>
 
-    <section class="cta" aria-labelledby="cta-title">
+    <section class="cta" id="download" aria-labelledby="cta-title">
       <div>
-        <h2 id="cta-title">Do this for a whole album or folder on your Mac</h2>
-        <p>BirdFrame crops the birds in a whole Apple Photos album or folder in one go. Your originals stay untouched.</p>
+        <h2 id="cta-title">Crop a whole folder on Mac or Windows</h2>
+        <p>Crop thousands of bird photos from full-size originals in one run. Folder crops are saved as new files. On Mac, you can also make reversible edits to an Apple Photos album.</p>
       </div>
       <div class="cta-buy">
-        <a class="btn big" data-windows-swap="Join the Windows waitlist" href="https://apps.apple.com/app/birdframe/id6754513569">Download free on the Mac App Store</a>
-        <p class="fine">Free for up to 50 photos per run · $29.99 once · macOS 15 or later · Also on Windows: <a href="https://apps.microsoft.com/detail/9PK8KBZ9L7R3">Microsoft Store</a></p>
+        <div class="cta-store-links">
+          <a class="btn" href="https://apps.apple.com/app/birdframe/id6754513569">Mac App Store</a>
+          <a class="btn" href="https://apps.microsoft.com/detail/9PK8KBZ9L7R3">Microsoft Store</a>
+        </div>
+        <p class="fine">Free for up to 50 photos per run on either platform. A one-time purchase unlocks larger batches. macOS 15 or later or Windows 10/11.</p>
       </div>
     </section>
 
@@ -104,6 +107,7 @@
       <h2 id="faq-title">Questions</h2>
       <div class="faq">
         <div><h3>Is my photo uploaded?</h3><p>No. Everything happens on your device. No cookies or tracking.</p></div>
+        <div><h3>How is the desktop app different?</h3><p>The demo processes one photo at a time and caps downloads at 1,000 px. The desktop app crops whole folders from the full-size originals.</p></div>
         <div><h3>Which photos work?</h3><p>JPEG, PNG or WebP, and HEIC in Safari.</p></div>
       </div>
     </section>
